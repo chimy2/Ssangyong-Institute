@@ -1,0 +1,95 @@
+c:\class\code\java\필기.txt
+
+2024-06-19
+
+Java 
+
+Java 개발 환경 구성(설치)
+- JRE, Java Runtime Environment, 자바 실행 환경(통상적으로 JDK에 포함되어 있음)
+- JDK, Java Development Kit, 자바 개발 도구(SDK, Software Development Kit, 소프트 웨어 개발을 위한 도구 모음)
+
+JDK 종류(유료(사업자)로 바뀌면서 종류가 생김 오픈소스와 별차이는 없음)
+- Oracle JDK(FM)
+- Oracle OpenJDK
+- Adopt OpenJDK
+- Rad Hat OpenJDK
+- AWS Corretto JDK
+
+JDK 버전(=Java 버전)
+- 1.0 ~ 22
+- JDK 11 & JDK 17(spring boot용)
+- JDK 8, JDK 11, JDK 17, JDK 21 (LTS, Long Term Support 버전, 장기 지원 버전, 미장기 지원 버전은 6개월 지원)
+
+JDK 설치
+- https://www.oracle.com/kr/java/technologies/javase/jdk11-archive-downloads.html
+- Java SE Development Kit 11.0.22 > Windows x64 Installer > jdk-11.0.22_windows-x64_bin.exe
+
+- 설치 경로 : C:\class\dev\jdk-11
+- C:\class\dev\jdk-11\bin > *.dll, *.exe > 프로그램(실행파일)
+	- javac.exe
+	- java.exe
+	- javaw.exe
+	- javadoc.exe
+	- jar.exe
+
+- 설치 후 추가 설정(선택 > 되도록 권장)
+	- 환경 변수 등록 > Path
+
+- 새 시스템 변수
+	- 변수 이름: JAVA_HOME(약속)
+	- 변수 값: C:\class\dev\jdk-11
+
+- Path > 새로 만들기 > %JAVA_HOME%\bin
+
+개발 툴 설치
+- 메모장 > 텍스트 편집기라면 모두 가능
+- IDE(Integrated Development Environment, 통합 개발 환경)
+
+Java IDE
+- Eclipse > 4.24 2022-06 버전(JDK11 지원)
+- Itellij > Community(무료), Ultimate(유료)
+- NetBeans
+- Visual Studio Code
+- Visual Studio (Java x)
+
+Eclipse 설정
+- 인코딩 설정
+	- Window > Preference > General > Workspace에서 Text file의 encoding UTF-8로 설정
+
+- 폰트 > 가독성(⭐⭐⭐)
+	- Window > Preference > General > Appearance > Colors and Fonts에서 Basic의 Text Font 설정
+	- 나눔고딕코딩	> 네이버
+	- D2Coding	> 네이버
+	- 영어 특화 폰트 : Consolas, Bitstream Sans Mono, jetBrains Mono 등 
+
+
+* .java - 소스(코드)파일 / .class - 실행파일
+
+* GUI(Graphic User Interface)
+CLI(Command Line Interface)
+
+- Window + R > cmd(command)
+
+오전에 했던 행동들.. > 메모장 사용
+1. Hello.java 생성
+	- 코드 작성
+	- 산출물 > [소스/소스 파일] > 프로그램이 아니라 텍스트 파일이다 -> 메모장으로 열림
+2. 실행파일/프로그램이 아니라서 $ javac.exe Hello.java로 실행
+	- 컴파일(Compile) => 1차 컴파일
+	- 산출물 > Hello.class > [실행파일] > (진짜)프로그램
+ 	* javac : java compiler 내가 만든 소스코드를 컴퓨터가 이해할 수 있도록 번역
+	* 컴파일 오류 : 번역 시 나는 문법오류
+3. $ java.exe Hello 실행
+	- 의도했던 대로 프로그램 실행 => 2차 컴파일(기계어 번역)
+	- 산출물 > 없음
+
+java는 2번 컴파일하는데
+1차로 ar?언어를 중간 번역을 하고 (class 파일) 
+2차로 실제로 실행 할 때 운영체제 별로 알맞게 기계어로 컴퓨터가 알아들을 수 있게 번역하여 실행
+그러나 운영체제가 담당하는 기능이 너무 많아 한계에 부딪힘
+
+오후에 했던 행동들.. > 이클립스 사용
+1. Hello.java 생성
+	- 코드 작성
+2. Ctrl+ F11
+	- 1차 컴파일 + 2차 컴파일

@@ -93,3 +93,22 @@ java는 2번 컴파일하는데
 	- 코드 작성
 2. Ctrl+ F11
 	- 1차 컴파일 + 2차 컴파일
+
+
+2024-06-20
+
+프로그래밍 구문
+1. 자바는 대소문자 구분한다.(철저하게)
+2. 공백 문자(스페이스, 탭, 개행) > 처리? > 자유롭다.
+
+자바 소스파일 > 관리하기 위한 폴더 > 패키지(Package)
+
+- com.test.java > Ex01.java
+
+- com.test.java > Ex02_DataType.java
+
+- com.test.java > Ex03_Variable.java
+
+- com.test.java > Ex04_Variable.java
+
+

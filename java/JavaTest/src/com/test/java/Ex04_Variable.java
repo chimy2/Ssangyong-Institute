@@ -176,14 +176,31 @@ public class Ex04_Variable {
 		
 		byte candy = 32,
 				milk = 1,
-				water = 8;
+				water = 8,
+				potato = 6,
+				tomato = 10;
 
 		System.out.println("사탕이 " + candy + "개 남아있습니다");
 		System.out.println("우유가 " + milk + "병 남아있습니다");
 		System.out.println("물이 " + water + "병 남아있습니다");
+		System.out.println("감자가" + potato+ "개 남아있습니다");
+		System.out.println("토마토가 " + tomato + "개 남아있습니다");
 
-//		short
-		
+		short operatingIncome0624 = -5000, 
+				operatingIncome0625 = 12000, 
+				operatingIncome0626 = -32000,
+				operatingIncome0627 = 23000, 
+				operatingIncome0628 = -6000, 
+				operatingIncome0629 = -20,
+				operatingIncome0630 = 7500;
+
+		System.out.println("6월 24일 영업이익은 " + operatingIncome0624 + "원입니다");
+		System.out.println("6월 25일 영업이익은 " + operatingIncome0625 + "원입니다");
+		System.out.println("6월 26일 영업이익은 " + operatingIncome0626 + "원입니다");
+		System.out.println("6월 27일 영업이익은 " + operatingIncome0627 + "원입니다");
+		System.out.println("6월 28일 영업이익은 " + operatingIncome0628 + "원입니다");
+		System.out.println("6월 29일 영업이익은 " + operatingIncome0629 + "원입니다");
+		System.out.println("6월 30일 영업이익은 "+ operatingIncome0630+"원입니다");
 		
 		int priceBanana = 5740;
 		int priceApple = 3380;
@@ -204,7 +221,20 @@ public class Ex04_Variable {
 							+ "서울 한우 양지의 가격은 100g 당 "+priceBeefBrisket+"원입니다.\n"
 							+ "서울 돼지고기 삼겹살의 가격은 100g 당 "+priceForkBelly+"원입니다.\n"
 							+ "서울 돼지고기 앞다리살의 가격은 100g 당"+priceForkPicnicShoulder+"원입니다.");
-//		long
+		
+		long revenue2019 = 523000000000000l, 
+				revenue2020 = 793777000000000000l, 
+				revenue2021 = 49510000000000l,
+				revenue2022 = 1000400000000l, 
+				revenue2023 = 8842000000000000l, 
+				revenue2024 = 800000000000l;
+
+		System.out.println("2019년 매출액은 " + revenue2019 + "원입니다");
+		System.out.println("2020년 매출액은 " + revenue2020 + "원입니다");
+		System.out.println("2021년 매출액은 " + revenue2021 + "원입니다");
+		System.out.println("2022년 매출액은 " + revenue2022 + "원입니다");
+		System.out.println("2023년 매출액은 " + revenue2023 + "원입니다");
+		System.out.println("2024년 매출액은 " + revenue2024 + "원입니다");
 		
 		float avgTemperature2019 = 13.5f,
 				avgTemperature2020 = 13.2f,
@@ -267,6 +297,35 @@ public class Ex04_Variable {
 							+ "현재 영화 순위 10위는 "+rankMovie10+"입니다.");
 		
 		
+//		주민등록번호 입력 > 출력
+//		ex) 950621 
+		int jumin = 950621;
+		System.out.println("주민등록번호: "+jumin);
+
+		jumin=030731;	//12761
+		System.out.println("주민등록번호: "+jumin);
+		
+//		자바의 기수법
+//		- 10진수
+//		- 8진수
+//		- 16진수
+//		- 2진수
+		System.out.println(10);		//10진수
+		System.out.println(010);	//8진수
+		System.out.println(0x10);	//16진수
+		System.out.println(0b10);	//2진수
+		
+//		String 클래스 > 모든 클래스의 이름 > 파스칼 표기법
+		String jumin2 = "030731";
+		System.out.println(jumin2);
+		
+//		실수 리터럴
+		double d4 = 12000000000000.0;
+		double d5 = 1.2e13;
+		
+		double d6 = 0.012;
+		double d7 = 1.2e-2;
+		System.out.println(d7);
 		
 		
 	}

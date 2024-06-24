@@ -7,13 +7,13 @@ public class Ex04_Variable {
 //		정수형
 		byte b1;
 		b1 = 10;	// 10 > 상수(데이터) 정수형 상수 > 정수형 리터럴
-		System.out.println(b1);
-		
-		b1=127;
-		System.out.println(b1);
+		System.out.println(b1);	//10
 
-		b1=-128;
-		System.out.println(b1);
+		b1 = 127;
+		System.out.println(b1);	//127
+
+		b1 = -128;
+		System.out.println(b1);	//-128
 
 //		Type mismatch: cannot convert from int to byte
 //		b1 = 128;
@@ -30,30 +30,30 @@ public class Ex04_Variable {
 //		boolean	>	Boolean
 //		char	> 	Character
 		
-		System.out.println(Byte.MAX_VALUE);
-		System.out.println(Byte.MIN_VALUE);
+		System.out.println(Byte.MAX_VALUE);	//127
+		System.out.println(Byte.MIN_VALUE);	//-128
 
 //		short
 		short s1;
 		s1 = 10000;
-		System.out.println(s1);
-		System.out.println(Short.MAX_VALUE);
-		System.out.println(Short.MIN_VALUE);
+		System.out.println(s1);	//10000
+		System.out.println(Short.MAX_VALUE);	//32767
+		System.out.println(Short.MIN_VALUE);	//-32768
 
 //		int
 		int n1;
 		n1 = 1000000000;
-		System.out.println(n1);
-		System.out.println(Integer.MAX_VALUE);
-		System.out.println(Integer.MIN_VALUE);
+		System.out.println(n1);	//1000000000
+		System.out.println(Integer.MAX_VALUE);	//2147483647
+		System.out.println(Integer.MIN_VALUE);	//-2147483648
 
 //		long
 		long l1;
 		l1 = 1000;
 		l1 = 1000000000;
-		System.out.println(l1);
-		System.out.println(Long.MAX_VALUE);
-		System.out.println(Long.MIN_VALUE);
+		System.out.println(l1);	//1000000000
+		System.out.println(Long.MAX_VALUE);	//9223372036854775807
+		System.out.println(Long.MIN_VALUE);	//-9223372036854775808
 //		Shift + 방향키 > 글자단위
 //		Shift + Ctrl + 방향키 > 단어단위
 //		Shift + Home(End)
@@ -78,39 +78,38 @@ public class Ex04_Variable {
 		s1 = 100;
 		n1 = 100;
 		l1 = 100;
-		System.out.println(100);
+		System.out.println(100);	//100
 		
 		float f1;
 //		Type mismatch: cannot convert from double to float
 //		f1=3.14;
 		f1 = 3.14F;
 		f1 = 3.14f;
-		System.out.println(f1);
+		System.out.println(f1);	//3.14
 
 		double d1;
 		d1 = 5.28;
 		d1 = 5.28D;
-		System.out.println(d1);
+		System.out.println(d1);	//5.28
 		
 //		float > 단정도형
 //		double > 배정도형
 		f1 = 1000000000000000000000000000000000.0F;
 		d1 = 1000000000000000000000000000000000.0D;
 		
-		System.out.println(f1);
-		System.out.println(d1);
+		System.out.println(f1);	//1.0E33
+		System.out.println(d1);	//1.0E33
 
 		
 		f1 = 1234567890123456789012345678901234.0F;
 		d1 = 1234567890123456789012345678901234.0D;
 		
-		System.out.println(f1);
-		System.out.println(d1);
+		System.out.println(f1);	//1.2345679E33
+		System.out.println(d1);	//1.2345678901234568E33
 		
 		double d2 = 0.2;
 		double d3 = 0.1;
-		System.out.println(d2 + d3);
-//		0.30000000000000004
+		System.out.println(d2 + d3);	//0.30000000000000004
 		
 //		0.2 * 10 = 2
 //		0.1 * 10 = 1
@@ -122,20 +121,20 @@ public class Ex04_Variable {
 		// 문자 cannot be resolved to a variable
 //		c1 = 문자;
 		c1 = 'A';	//문자형 리터럴
-		System.out.println(c1);
+		System.out.println(c1);	//A
 
 		c1 = '가';
-		System.out.println(c1);
+		System.out.println(c1);	//가
 		
 		c1 = '&';
-		System.out.println(c1);
+		System.out.println(c1);	//&
 		
 		c1 = '5';	// 문자형 5
-		System.out.println(c1);
+		System.out.println(c1);	//5
 		
 //		Invalid character constant
 //		c1 = 'ABC';
-		System.out.println(c1);
+		System.out.println(c1);	//5
 		
 		char name1 = '홍';
 		char name2 = '길';
@@ -144,7 +143,7 @@ public class Ex04_Variable {
 //		String > 문자열
 		String name = "홍길동";	//"홍길동" > 문자열 리터럴
 		
-		System.out.println(name);
+		System.out.println(name);	//홍길동
 		
 //		논리형
 		boolean flag;

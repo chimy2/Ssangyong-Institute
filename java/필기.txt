@@ -161,3 +161,18 @@ _ -밑줄, 언더라인
 - com.test.java > Ex08_Error.java
 
 - com.test.java > Ex09_Casting.java
+
+
+2024-06-24
+
+- com.test.java > Ex10_Operator.java
+
+- com.test.java > Ex11_Operator.java
+
+- com.test.question > Q001
+
+코드리뷰
+
+- 동일 목적 + 구현 코드 + 의견 교환
+- 필수 문제 > 추가 문제
+- 주의🌟🌟🌟 > 듣기(x)

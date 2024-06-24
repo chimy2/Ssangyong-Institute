@@ -24,7 +24,7 @@ public class Ex01 {//헤더
 	public static void main(String[] args) {
 		
 //		명령어
-		System.out.println("첫번째 예제");
+		System.out.println("첫번째 예제");	//첫번째 예제
 
 	}
 	

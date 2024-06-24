@@ -24,19 +24,18 @@ public class Ex03_Variable {
 //		국어 점수
 		byte 국어;
 		국어 = 90;
-		System.out.println(국어);
+		System.out.println(국어);	//90
 
 //		영어 점수
 		byte eng;
 		eng = 80;	//초기화
-		System.out.println(eng);
+		System.out.println(eng);	//80
 		
 		eng = 70; //치환(덮어쓰기)
-		System.out.println(eng);
+		System.out.println(eng);	//70
 		
 //		변수 <> 상수(=리터럴, Literal)
-		System.out.println(100);
-		System.out.println(100);
+		System.out.println(100);	//100
 		
 //		변수명을 만들 때 규칙
 //		1. 영문자 + 숫자 + _, $ 을 사용한다. > 관습적 + 물리적
@@ -162,11 +161,11 @@ public class Ex03_Variable {
 //		데이터 중 일부는 값을 변화시키면 안되는 값들
 		double pi = 3.14;	//파이(원주율)
 
-		System.out.println(3.14 * 10);
-		System.out.println(pi * 10);
+		System.out.println(3.14 * 10);	//31.400000000000002
+		System.out.println(pi * 10);	//31.400000000000002
 
 		pi = 5.5;
-		System.out.println(pi * 10);
+		System.out.println(pi * 10);	//55.0
 
 //		상수 > 모든 문자를 대문자로 사용
 		final double pi2 = 3.14;

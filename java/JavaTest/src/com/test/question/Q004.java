@@ -9,6 +9,13 @@ public class Q004 {
 //		- ℉ = ℃ × 1.8 + 32
 //		- 소수 입력 가능
 //		- 소수 이하 1자리까지 출력하시오.
+		
+//		입력
+//		섭씨(℃): 29
+		
+//		출력
+//		섭씨 29.0℃는 화씨 84.2℉입니다.
+		
 		Scanner scan = new Scanner(System.in);
 		
 		System.out.print("섭씨(℃): ");

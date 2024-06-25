@@ -169,6 +169,8 @@ _ -밑줄, 언더라인
 
 - com.test.java > Ex11_Operator.java
 
+- com.test.java > Ex12_Operator.java
+
 - com.test.question > Q001
 
 코드리뷰
@@ -176,3 +178,31 @@ _ -밑줄, 언더라인
 - 동일 목적 + 구현 코드 + 의견 교환
 - 필수 문제 > 추가 문제
 - 주의🌟🌟🌟 > 듣기(x)
+- 3명 ~ 4명
+1. 통성명
+2. 리뷰 방식 결정
+3. 리뷰 진행
+
+4. 질문 사항 > 스스로 해결 / 질문
+
+
+2024-06-25
+
+- com.test.java > Ex13_Method.java
+
+- com.test.java > Ex14_Method.java
+
+- com.test.java > Ex15_Method.java
+
+- com.test.java > Ex16_LocalVariable.java
+
+- com.test.java > Ex17_Method.java
+
+- com.test.java > Ex18_Method.java
+
+- com.test.java > Ex19_DateTime.java
+
+
+2024-06-26
+
+

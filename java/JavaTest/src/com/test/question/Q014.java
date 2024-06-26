@@ -48,7 +48,7 @@ public class Q014 {
 	
 	public static int getTime(int station, int change, int time) {
 //		1)
-		return station * 2 + change * (time +2);
+		return station * 2 + change * (time + 2);
 		
 //		2)
 //		int result = station * 2;

@@ -78,10 +78,9 @@ public class Q011 {
 	
 	public static String divide(int n1, int n2) {
 //		1)
-		return n1 + " / " + n2 + " = " + Math.ceil((double)n1 / n2 * 10) / 10;
+		return n1 + " / " + n2 + " = " + Math.round((double)n1 / n2 * 10) / 10;
 //		2)
 //		return n1 + " / " + n2 + " = " + String.format("%.1f",(double)n1 / n2);
-		
 	}
 	
 	public static String mod(int n1, int n2) {

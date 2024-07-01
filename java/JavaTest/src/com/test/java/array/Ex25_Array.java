@@ -2,6 +2,7 @@ package com.test.java.array;
 
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Scanner;
 
 public class Ex25_Array {
 	public static void main(String[] args) {
@@ -21,7 +22,270 @@ public class Ex25_Array {
 //		m6();
 //		m7();
 //		m8();
-		m9();
+//		m9();
+//		m10();
+//		m11();
+//		m12();
+//		m13();
+//		m14();
+//		m15();
+//		m16();
+		m17();
+	}
+
+	private static void m17() {
+		int[][] nums = new int[5][5];
+		
+//		입력 (문제에 따른 구현 코드)
+		int n = 1;
+		for(int i=0; i<5; i++) {
+			for(int j=0; j<i+1; j++) {
+				nums[i][j] = n++;
+			}
+		}
+		
+//		출력(지금 코드만 사용 > 수정 금지) Q70~Q74
+		for(int i=0; i<5; i++) {
+			for(int j=0; j<5; j++) {
+				System.out.printf("%3d", nums[i][j]);
+			}
+			System.out.println();
+		}
+	}
+
+	private static void m16() {
+//		1~10
+		for(int i=0; i<5; i++) {
+			System.out.println((int)(Math.random() * 10) + 1);
+		}
+	}
+
+	private static void m15() {
+//		🌟🌟🌟 배열의 길이는 불변이다.
+//		- 한번 만들어진 배열 방의 개수(길이)는 더 늘리거나 삭제할 수 없다.
+//		- 배열은 항상 미리 예측해서 적절한 길이로 생성한다.(🌟🌟🌟)
+//		- 배열의 길이를 동적으로 정할 수 있다.(🌟🌟🌟🌟🌟)
+		
+//		int[] kor = new int[300];	//정적 길이(소스 상에 고정으로 기재)
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("학생수: ");
+		int length = scan.nextInt();
+		
+		int[] kor = new int[length];	//동적 길이
+										// > 미리 정하지 않고 실행 시 크기를 정해서 동적이라고 함
+		
+		System.out.println(kor.length);
+	}
+
+	private static void m14() {
+//		초기화 리스트
+		int[] nums1 = { 10, 20, 30 };	// 배열 리터럴
+		
+		int[][] nums2 = { { 10, 20, 30 }, { 40, 50, 60 } };
+		int[][][] nums3 = { 
+				{ { 10, 20, 30 }, { 40, 50, 60 } },
+				{ { 70, 80, 90 }, { 100, 110, 120 } }
+		};
+	}
+
+	private static void m13() {
+//		배열의 차원
+//		- 1차원 배열, 2차원 배열, 3차원 배열..
+		
+//		1차원 배열
+		int[] nums1 = new int[3];
+		
+		nums1[0] = 10;
+		nums1[1] = 20;
+		nums1[2] = 30;
+		
+		System.out.println(Arrays.toString(nums1));
+		
+//		2차원 배열
+		int[][] nums2 = new int[2][3];	//2행 3열
+		
+		nums2[0][0] = 10;
+		nums2[0][1] = 20;
+		nums2[0][2] = 30;
+		
+		nums2[1][0] = 40;
+		nums2[1][1] = 50;
+		nums2[1][2] = 60;
+		
+		System.out.println(Arrays.toString(nums2));	//1차원 배열에서만 사용
+		System.out.println(Arrays.deepToString(nums2));	//2차원 배열이상에서 사용
+		
+		for(int i=0; i<2; i++) {	//층(행)
+			for(int j=0; j<3; j++) {	//호(열)
+				System.out.print(nums2[i][j] + "\t");
+			}
+			System.out.println();
+		}
+		
+		for(int i=0; i<nums2.length; i++) {
+			System.out.println(Arrays.toString(nums2[i]));
+		}
+		
+//		3차원 배열
+		int[][][] nums3 = new int[2][2][3];
+		
+		nums3[0][0][0] = 10;
+		nums3[0][0][1] = 20;
+		nums3[0][0][2] = 30;
+		
+		nums3[0][1][0] = 40;
+		nums3[0][1][1] = 50;
+		nums3[0][1][2] = 60;
+		
+		nums3[1][0][0] = 70;
+		nums3[1][0][1] = 80;
+		nums3[1][0][2] = 90;
+		
+		nums3[1][1][0] = 100;
+		nums3[1][1][1] = 110;
+		nums3[1][1][2] = 120;
+		
+		for(int i=0; i<nums3.length; i++) {	//동
+			for(int j=0; j<nums3[i].length; j++) {	//층
+				for(int k=0; k<nums3[i][j].length; k++) {	//호
+					System.out.printf("%5d", nums3[i][j][k]);
+				}
+				System.out.println();
+			}
+			System.out.println();
+		}
+		
+		System.out.println(Arrays.deepToString(nums3));
+	}
+
+	private static void m12() {
+		int[] nums = { 5, 3, 1, 4, 2 };
+		String[] names = {"홍길동", "강감찬", "이율곡", "허준", "강아지", "고양이", "닭"};
+		
+//		정렬(오름차순) > Quick Sort(퀵정렬)
+		Arrays.sort(nums);
+		Arrays.sort(names);
+		System.out.println(Arrays.toString(nums));
+		System.out.println(Arrays.toString(names));
+		
+		nums = new int[]{ 5, 3, 1, 4, 2, 6, 8, 7, 9, 10, 0};
+		Arrays.sort(nums, 3, 7);
+		System.out.println(Arrays.toString(nums));
+//		[5, 3, 1, 2, 4, 6, 8, 7, 9, 10, 0]
+	}
+
+	private static void m11() {
+		String s1 = "홍길동";
+		String s2 = "강감찬";
+		
+//		문자열 > 문자 추출 > 문자 코드값
+//		System.out.println(s1.charAt(첨자));
+//		System.out.println(s1.charAt(0) > s2.charAt(0));
+		System.out.println(s1.compareTo(s2));	//10808
+		System.out.println(s2.compareTo(s1));	//-10808
+		
+//		compareTo 반환값
+//		- 양수: s1 크다
+//		- 음수: s2 크다
+//		- 0: s1과 s2가 동일하다
+		
+		String[] names = {"홍길동", "강감찬", "이율곡", "허준", "강아지", "고양이", "닭"};
+		String temp = "";
+		
+		for(int i=0; i<names.length - 1; i++) {
+			for(int j=0; j<names.length - i - 1; j++) {
+				if(names[j].compareTo(names[j + 1]) > 0) {
+					temp = names[j];
+					names[j] = names[j + 1];
+					names[j + 1] = temp;
+				}
+			}
+		}
+		System.out.println(Arrays.toString(names));
+		
+		for(int i=0; i<names.length - 1; i++) {
+			for(int j=0; j<names.length - i - 1; j++) {
+				if(names[j].compareTo(names[j + 1]) < 0) {
+					temp = names[j];
+					names[j] = names[j + 1];
+					names[j + 1] = temp;
+				}
+			}
+		}
+		System.out.println(Arrays.toString(names));
+	}
+
+	private static void m10() {
+//		배열 > 사용 업무 > 정렬
+//		- 크기 비교 후 > 요소간의 재배치
+		
+//		1. 오름차순
+//			a. 숫자: 작은수 > 큰수
+//			b. 문자열: 문자코드값 순서대로 
+//			c. 날짜시간: 과거 > 미래
+		
+//		2. 내림차순
+//			a. 숫자 : 큰수 > 작은수
+//			b. 문자열: 문자코드값 역순서대로
+//			c. 날짜시간: 미래 > 과거
+		
+//		정렬 구현
+//		1. 직접 구현 > 정렬 알고리즘
+//		2. JDK 제공
+		
+//		정렬 > swap > 두 공간의 값을 바꾸는 행동
+		int a = 10;
+		int b = 5;
+		int temp;
+		
+		temp = a;
+		a = b;
+		b = temp;
+		
+		System.out.println("a: " + a);
+		System.out.println("b: " + b);
+		
+//		버블 정렬
+
+		int[] nums = { 5, 3, 1, 4, 2 };
+
+		System.out.println(Arrays.toString(nums));
+
+		for (int i = 0; i < nums.length - 1; i++) {
+			for (int j = 0; j < nums.length - i - 1; j++) {
+//				i(0) > j(0,1,2,3)
+//				i(1) > j(0,1,2)
+//				i(2) > j(0,1)
+//				i(3) > j(0)
+				
+//				왼쪽방 vs 오른쪽방
+//				0 vs 1
+//				1 vs 2
+//				2 vs 3
+//				3 vs 4
+				if (nums[j] > nums[j + 1]) {
+					temp = nums[j];
+					nums[j] = nums[j + 1];
+					nums[j + 1] = temp;
+				}//if
+//				System.out.println(Arrays.toString(nums));
+			}//for j
+//			System.out.println();
+		}//for i
+		System.out.println(Arrays.toString(nums));
+		
+		for (int i=0; i<nums.length - 1; i++) {
+			for (int j=0; j<nums.length - i - 1; j++) {
+				if(nums[j] < nums[j + 1]) {
+					temp = nums[j];
+					nums[j] = nums[j + 1];
+					nums[j + 1] = temp;
+				}
+			}
+		}
+		System.out.println(Arrays.toString(nums));
 	}
 
 	private static void m9() {

@@ -33,7 +33,7 @@ public class Q053 {
 				System.out.println();
 			} else {
 				int startDan = (i / 10) * 4 + 2;
-				for(int j= startDan; j<startDan+4; j++) {
+				for(int j= startDan; j<startDan + 4; j++) {
 					System.out.printf("%d x %d = %2d\t", j, i % 10,  j * (i % 10));
 				}
 				System.out.println();

@@ -30,7 +30,88 @@ public class Ex25_Array {
 //		m14();
 //		m15();
 //		m16();
-		m17();
+//		m17();
+//		m18();
+//		m19();
+		m20();
+	}
+
+	private static void m20() {
+		int[][] nums = new int[5][5];
+//		입력
+		int n = 1;
+		
+		for(int i=0; i<nums.length - 1; i++) {
+			for(int j=0; j<nums[i].length - 1; j++) {
+				nums[i][j] = n;
+				
+				nums[i][4] += n;
+				
+				nums[4][j] += n;
+				
+				nums[4][4] += n;
+				
+				n++;
+			}
+		}
+		
+//		출력
+		for(int i=0; i<nums.length; i++) {
+			for(int j=0; j<nums[i].length; j++) {
+				System.out.printf("%4d", nums[i][j]);
+			}
+			System.out.println();
+		}
+	}
+
+	private static void m19() {
+//		배열 > 요소 삭제 > Left Shift 구현
+		int[] list = { 5, 6, 1, 3, 2, 4, 8, 7, 9, 3 };
+		
+		int index = -1;	//삭제 위치
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("삭제 위치: ");
+		index = scan.nextInt();
+		
+		System.out.println("원본: " + Arrays.toString(list));
+		
+//		삭제 구현
+		for(int i=index; i<list.length - 1; i++) {
+			list[i] = list[i + 1];
+		}
+		
+		list[list.length - 1] = 0;
+		
+		System.out.println("결과: " + Arrays.toString(list));
+	}
+
+	private static void m18() {
+//		배열 > 요소 삽입 > Right Shift 구현
+		int[] list = { 5, 6, 1, 3, 2, 4, 0, 0, 0, 0 };
+		
+		int index = -1;	//삽입 위치
+		int value = 0;	//삽입 값
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("삽입 위치: ");
+		index = scan.nextInt();
+		
+		System.out.print("값: ");
+		value = scan.nextInt();
+		
+		System.out.println("원본: " + Arrays.toString(list));
+		
+//		삽입 구현
+		for(int i=list.length - 2; i>=index ; i--) {
+			list[i + 1] = list[i];
+		}
+		
+		list[index] = value;
+		
+		System.out.println("결과: " + Arrays.toString(list));
 	}
 
 	private static void m17() {

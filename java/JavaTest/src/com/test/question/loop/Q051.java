@@ -36,10 +36,10 @@ public class Q051 {
 		int count = scan.nextInt();
 		char star = '*';
 		char empty = ' ';
+		int crit = count - 1;
 		
 		for(int i=0; i<count; i++) {
-			int crit = count - 1;
-			for(int j=0; j<(count - 1) * 2 + 1; j++) {
+			for(int j=0; j<crit * 2 + 1; j++) {
 				if(Math.abs(j - crit) <= i) {
 					System.out.print(star);
 				} else {

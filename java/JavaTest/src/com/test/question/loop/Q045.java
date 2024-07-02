@@ -35,12 +35,7 @@ public class Q045 {
 				}
 			}
 			
-			if(check > 0) {
-				System.out.print("짝".repeat(check));
-			} else {
-				System.out.print(i);
-			}
-			System.out.print(" ");
+			System.out.print((check > 0 ? "짝".repeat(check) : i) + " ");
 		}
 	}
 }

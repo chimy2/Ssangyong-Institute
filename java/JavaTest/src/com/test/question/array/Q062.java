@@ -1,4 +1,5 @@
 package com.test.question.array;
+
 import java.util.Arrays;
 import java.util.Scanner;
 

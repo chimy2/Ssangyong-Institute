@@ -36,7 +36,7 @@ public class Q052 {
 		int count = scan.nextInt();
 		
 		for(int i=0; i<count; i++) {
-			for(int j=0; j<count*2; j++) {
+			for(int j=0; j<count * 2; j++) {
 				int num = i - (int) Math.abs(j - (count * 2 - 1) / 2.0);
 				if(num >= 0) {
 					System.out.print((char)('a' + num));

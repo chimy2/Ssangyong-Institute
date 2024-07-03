@@ -45,16 +45,9 @@ public class Q065 {
 		for(int i=0; i<arr.length; i++) {
 			int num = arr[i];
 			if(num >= min && num <= max) {
-				output += arr[i];
-				if(i != arr.length - 1) {
-					output += ", ";
-				}
+				output += arr[i] + ", ";
 			}
 		}
-		if(output.charAt(output.length()-1) == ' ') {
-			System.out.printf("\n결과: %s", output.substring(0, output.length() - 2));
-		} else {
-			System.out.printf("\n결과: %s", output);
-		}
+		System.out.printf("\n결과: %s", output.substring(0, output.length() - 2));
 	}
 }

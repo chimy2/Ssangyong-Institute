@@ -41,12 +41,16 @@ public class Q088 {
 		int count = 0;
 		
 		for(int i=0; i<words.length; i++) {
+			
 			int len = words[i].length();
+			
 			for(int j=0; j<input.length(); j++) {
+				
 				int idx = input.indexOf(words[i]);
+				
 				if(idx > -1) {
-					input = input.substring(0, idx) + "*".repeat(len) + input.substring(idx + len);
 					j = idx + len;
+					input = input.substring(0, idx) + "*".repeat(len) + input.substring(j);
 					count++;
 				} else {
 					break;

@@ -292,3 +292,17 @@ Q67(삽입), Q68(삭제)> *****, 자주 하는 행동
 2. 전역 변수
 
 - com.test.java.obj > Ex29_Class.java
+
+
+2024-07-03
+
+- com.test.java.obj > Ex30_Class.java
+
+- com.test.java.obj > Ex31_Access.java
+
+- com.test.java.obj > Ex32_Class.java
+
+- com.test.java.obj > Ex33_Class.java
+
+- com.test.java.obj > Ex34_Constructor
+

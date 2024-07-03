@@ -63,7 +63,7 @@ public class Q091 {
 //				+, * 은 정규표현식에 사용되는 패턴문자라 \\로 이스케이프 처리해줘야 함
 				String splitStr = (i <= 1 ? "\\" : "") + oper;
 				String[] operands = expression.split(splitStr);
-				System.out.println(Arrays.toString(operands));
+				
 				if(operands.length < 2 
 						|| operands.length == 2 && operands[0].equals("")) {
 					result = "피연산자가 부족합니다";

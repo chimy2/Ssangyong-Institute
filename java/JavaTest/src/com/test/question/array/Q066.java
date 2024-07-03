@@ -17,12 +17,14 @@ public class Q066 {
 		for(int i=0; i<lotto.length; i++) {
 			int num = getRandom();
 			boolean check = false;
+			
 			for(int j=0; j<i; j++) {
 				if(num == lotto[j]) {
 					check = true;
 					break;
 				}
 			}
+			
 			if(check) {
 				i--;
 			} else {

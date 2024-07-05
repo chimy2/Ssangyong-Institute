@@ -328,3 +328,14 @@ Q67(삽입), Q68(삭제)> *****, 자주 하는 행동
 
 2024-07-05
 
+- com.test.java.obj.inheritance > Ex43_Abstract.java
+
+- com.test.java.obj.inheritance > Ex44_Interface.java
+
+- com.test.java.obj.inheritance > Ex45.java
+
+- com.test.java.obj.inheritance > Ex46_Object.java
+
+- com.test.java.obj.inheritance > Ex47_Generic.java
+
+- com.test.java.obj.inheritance > Ex48_Generic.java

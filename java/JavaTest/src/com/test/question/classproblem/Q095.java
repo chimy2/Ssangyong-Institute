@@ -16,7 +16,7 @@ public class Q095 {
 //			- Employee 객체 메소드
 //				- void info() : 직원 정보 확인
 		/*
-		기초코드
+		기초코드-----------------------------------------------------------
 		class Employee {
 		   private String name;
 		   private String department;
@@ -31,7 +31,7 @@ public class Q095 {
 		   }
 		}
 		
-		호출
+		호출-----------------------------------------------------------
 		Employee e1 = new Employee();
 		
 		e1.setName("홍길동");
@@ -53,7 +53,7 @@ public class Q095 {
 		
 		e2.info();
 		
-		출력
+		출력-----------------------------------------------------------
 		[홍길동]
 		- 부서: 홍보부
 		- 직위: 부장

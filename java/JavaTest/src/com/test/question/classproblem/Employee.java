@@ -91,9 +91,9 @@ public class Employee {
 	private boolean checkNumber(String nums) {
 		char c;
 		for(int i=0; i<nums.length(); i++) {
-			if(i == 4) continue;
 			c = nums.charAt(i);
-			if(c < '0' || c > '9') {
+			if(i == 4 &&  c != '-' 
+					|| c < '0' || c > '9') {
 				return false;
 			}
 		}

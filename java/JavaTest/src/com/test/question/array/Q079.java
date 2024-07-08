@@ -10,10 +10,10 @@ public class Q079 {
 //		9	5	1
 //		4	3	8
 		
-		int len = 5;
+		int len = 3;
 		int[][] arr = new int[len][len];
 		int[][] direction = { { -1, 1 }, { 0, -1 } };
-		int x = 1;
+		int x = (len / 2) - 1;
 		int y = 0;
 		
 		for(int value=0; value<=len * len; value++) {
@@ -24,12 +24,10 @@ public class Q079 {
 			if(arr[nextX][nextY] != 0 ) {
 				check = false;
 			}
-			System.out.println(nextX+" , " + nextY+ " = "+arr[nextX][nextY] );
 			x = (x + len + direction[check ? 0 : 1][0]) % len;
 			y = (y + len + direction[check ? 0 : 1][1]) % len;
 			arr[x][y] = value;
 		}
-
 		printArr(arr);
 	}
 

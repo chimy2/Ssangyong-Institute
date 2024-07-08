@@ -25,6 +25,7 @@ public class Q074 {
 		for(int i=0; i<len; i++) {
 			int start = Math.abs(len/2 - i);  
 			int count = i > len / 2 ? (len - i - 1) * 2 + 1 : i * 2 + 1;
+			
 			for(int j=0; j<count; j++) {
 				arr[i][start + j] = num++;
 			}

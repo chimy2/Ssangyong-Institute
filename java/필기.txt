@@ -339,3 +339,16 @@ Q67(삽입), Q68(삭제)> *****, 자주 하는 행동
 - com.test.java.obj.inheritance > Ex47_Generic.java
 
 - com.test.java.obj.inheritance > Ex48_Generic.java
+
+
+2024-07-08
+
+- com.test.java.obj.inheritance > Ex49_Exception.java
+
+- com.test.java.collection > Ex50_ArrayList.java
+
+- com.test.java.collection > Ex51_Stack.java
+
+- com.test.java.collection > Ex52_Queue.java
+
+

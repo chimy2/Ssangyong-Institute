@@ -349,6 +349,18 @@ Q67(삽입), Q68(삭제)> *****, 자주 하는 행동
 
 - com.test.java.collection > Ex51_Stack.java
 
-- com.test.java.collection > Ex52_Queue.java
+
+2024-07-09
+
+- com.test.java.colleciton > Ex52_HashMap.java
+
+- com.test.java.collection > Ex53_HashSet.java
+
+- com.test.java.file > Ex54_File.java
 
 
+2024-07-10
+
+- com.test.java.file > 
+
+- com.test.java.file > 

@@ -73,6 +73,7 @@ public class Q105 {
 		//배열 생성
 		MyQueue queue = new MyQueue();
 		
+		System.out.println(queue);
 		//추가
 		queue.add("빨강");
 		queue.add("노랑");
@@ -99,5 +100,13 @@ public class Q105 {
 		//초기화
 		queue.clear();
 		System.out.println(queue.size());
+		
+		MyQueue queue2 = new MyQueue();
+		
+		for (int i=0; i<100; i++) {
+			queue2.add("" + i);
+		}
+		System.out.println(queue2.size());
+		System.out.println(queue2);
 	}
 }

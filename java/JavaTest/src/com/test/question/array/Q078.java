@@ -36,6 +36,7 @@ public class Q078 {
 			if(!isMoveedCorrectDirection()) {
 				value--;
 			}
+			printArr(arr);
 		}
 		
 		printArr(arr);

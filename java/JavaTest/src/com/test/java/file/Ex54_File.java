@@ -5,6 +5,10 @@ import java.io.IOException;
 import java.util.Calendar;
 
 public class Ex54_File {
+	private static int fileCount;
+	private static int dirCount;
+	private static long dirSize;
+	
 	public static void main(String[] args) {
 		/*
 		 * 1. 파일/디렉토리 조작
@@ -26,7 +30,140 @@ public class Ex54_File {
 //		m8();
 //		m9();
 //		m10();
-		m11();
+//		m11();
+//		m12();
+//		m13();
+		m14();
+	}
+
+	private static void m13() {
+//		폴더 크기? > 재귀 구조
+		String path = "C:\\class\\code\\java\\file";
+		File dir = new File(path);
+		
+		int count = 0;	//파일 개수
+		
+		if(dir.exists()) {
+			File[] list = dir.listFiles();	//file 폴더(부모)
+			
+			for(File file : list) {
+				if(file.isFile()) {
+					count++;
+				}
+			}
+			
+			for(File subdir : list) {
+				if(subdir.isDirectory()) {
+//					자식 폴더 내용
+					File[] sublist = subdir.listFiles();	//자식 폴더
+					
+					for(File subfile : sublist) {
+						if(subfile.isFile()) {
+							count++;
+						}
+					}
+					
+					for(File subsubdir : sublist) {
+						if(subsubdir.isDirectory()) {
+//							자식의 자식 폴더
+							File[] subsublist = subsubdir.listFiles();
+							
+							for(File subsubfile : subsublist) {
+								if(subsubfile.isFile()) {
+									count++;
+								}
+							}
+						}
+					}
+				}
+			}
+			
+			System.out.printf("파일 개수: %d개\n", count);
+		}
+	}
+
+	private static void m14() {
+//		폴더  > 크기?
+//		1. 크기 > 734MB (770,646,494 바이트)
+//		2. 내용 > 파일 11,893, 폴더 2,637
+		String path = "C:\\class\\dev\\eclipse";
+		File dir = new File(path);
+		
+		if(dir.exists()) {
+			count(dir);
+			
+			System.out.printf("총 파일 개수: %,d개\n", fileCount);
+			System.out.printf("총 폴더 개수: %,d개\n", dirCount);
+			System.out.printf("폴더 크기: %,dbyte\n", dirSize);
+			System.out.printf("폴더 크기: %,dMB\n", dirSize / 1024 / 1024);
+		}
+		
+	}
+
+	public static void count(File dir) {
+		File[] list = dir.listFiles();
+		
+		for(File file : list) {
+			if(file.isFile()) {
+				fileCount++;
+				dirSize += file.length();
+			}
+		}
+		
+		for(File subdir : list) {
+			if(subdir.isDirectory()) {
+				dirCount++;
+				count(subdir);
+			}
+		}
+	}
+
+	private static void m12() {
+//		특정 폴더 > 내용물 열람(파일, 자식폴더)
+		
+		String path = "C:\\class\\dev\\eclipse";
+		File dir = new File(path);
+		
+		if(dir.exists()) {
+//			1. dir.list()
+//			2. dir.listFile()
+			/*
+			 * // Returns an array of strings naming the files and directories String[] list
+			 * = dir.list(); //파일 + 폴더
+			 * 
+			 * for(String item : list) { // 가져온 item이 폴더? 파일? System.out.println(item); File
+			 * subFile = new File(path + "\\" + item);
+			 * 
+			 * System.out.println(subFile.isFile() ? "파일" : "폴더"); System.out.println();
+			 * 
+			 * }
+			 */
+			
+//			String[] list = dir.list();	> 이름 > 가공 > File
+			File[] list = dir.listFiles();
+			
+//			for(File item : list) {
+//				System.out.println(item.getName());
+//				System.out.println(item.isFile());
+//			}
+			
+			for(File item : list) {
+				if(item.isDirectory()) {
+					System.out.printf("📁 %s\n", item.getName());
+				}
+			}
+			
+			for(File item : list) {
+				if(item.isFile()) {
+					System.out.printf("📄 %s\n", item.getName());
+				}
+			}
+			
+			
+		} else {
+			System.out.println("폴더가 없습니다.");
+		}
+		
 	}
 
 	private static void m11() {

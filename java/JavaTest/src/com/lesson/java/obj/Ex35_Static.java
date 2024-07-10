@@ -40,8 +40,6 @@ public class Ex35_Static {
 		System.out.println(s1.info());
 		System.out.println(s2.info());
 		System.out.println(s3.info());
-			
-		
 	}//main
 	
 }//class
@@ -94,18 +92,4 @@ class Student {
 								, this.age
 								, Student.school);
 	}
-	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -22,14 +22,9 @@ public class Q118 {
 //		..	
 		ArrayList<FileInfo> files = new ArrayList<FileInfo>();
 		
-		String path = System.getProperty("user.dir") + "\\src";
-		String[] folders = Q118.class.getPackageName().split("\\.");
+		String path = System.getProperty("user.dir");
 		
-	
-		for(String folder : folders) {
-			path += "\\" + folder;
-		}
-		
+		path += "\\src\\" + Q118.class.getPackageName().replace(".", "\\");
 		path += "\\resource\\크기 정렬";
 		
 		File dir = new File(path);

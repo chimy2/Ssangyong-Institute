@@ -21,13 +21,9 @@ public class Q119 {
 //		분류가 완료되었습니다.
 		
 		HashMap<String, HashMap<String, ArrayList<File>>> categories = new HashMap<String, HashMap<String, ArrayList<File>>>();
-		String path = System.getProperty("user.dir") + "\\src";
-		String[] folders = Q119.class.getPackageName().split("\\.");
+		String path = System.getProperty("user.dir");
 		
-		for(String folder : folders) {
-			path += "\\" + folder;
-		}
-		
+		path += "\\src\\" + Q119.class.getPackageName().replace(".", "\\");
 		path += "\\resource\\직원";
 		
 		File dir = new File(path);
@@ -74,7 +70,7 @@ public class Q119 {
 					}
 				}
 			}
-			
+			System.out.println("분류가 완료되었습니다.");
 		} else {
 			System.out.println("해당 경로가 존재하지 않습니다.");
 		}

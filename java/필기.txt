@@ -361,6 +361,17 @@ Q67(삽입), Q68(삭제)> *****, 자주 하는 행동
 
 2024-07-10
 
-- com.test.java.file > 
+- com.test.java.collection > Ex55_Anonymous.java
 
-- com.test.java.file > 
+- com.test.java.collection > Ex56_Sort.java
+
+
+2024-07-11
+
+- com.test.java.collection > Ex57_LinkedList.java
+
+- com.test.java.collection > Ex58_TreeSet.java
+
+- com.test.java.collection > Ex59_TreeMap.java
+
+- com.test.java.file > Ex60_File.java

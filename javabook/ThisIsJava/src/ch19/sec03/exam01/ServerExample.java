@@ -1,11 +1,13 @@
 package ch19.sec03.exam01;
 
+import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
 public class ServerExample {
+//	ServerExample 클래스 먼저 실행 후 ClientExample 실행
 	private static ServerSocket serverSocket = null;
 	
 	public static void main(String[] args) {
@@ -28,6 +30,24 @@ public class ServerExample {
 		
 //		TCP 서버 종료
 		stopServer();
+		
+		/*
+		--------------------------------------------------------
+		서버를 종료하려면 q 또는 Q를 입력하고 Enter 키를 입력하세요.
+		--------------------------------------------------------
+		[서버] 시작됨
+
+		[서버] 연결 요청을 기다림
+
+		[서버] 127.0.0.1의 연결요청을 수락함
+		[서버] 127.0.0.1의 연결을 끊음
+
+		[서버] 연결 요청을 기다림
+
+		q
+		[서버] 종료됨 
+		[서버] Interrupted function call: accept failed
+		*/
 	}
 	
 	public static void startServer() {
@@ -51,10 +71,9 @@ public class ServerExample {
 						
 //						연결 끊기
 						socket.close();
-						System.out.println("???");
 						System.out.println("[서버] " + isa.getHostString() + "의 연결을 끊음");
 					}
-				} catch (Exception e) {
+				} catch (IOException e) {
 					System.out.println("[서버] " + e.getMessage());
 				}
 			}

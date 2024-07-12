@@ -40,9 +40,71 @@ public class Ex35_Static {
 		System.out.println(s1.info());
 		System.out.println(s2.info());
 		System.out.println(s3.info());
+			
+		
+		Test t1 = new Test();
+		
+		
+		회원 길동 = new 회원();
+		회원 강아지 = new 회원();
+		회원 고양이 = new 회원();
+		
+		길동.회원명수정하기("길철"); //개인적인 > 객체 변수, 객체 메서드
+		//길동.모임명수정하기("스터디");
+		
+		회원.모임명수정하기("스터디"); //단체 > 정적 변수, 정적 메서드
+		
+		
 	}//main
 	
 }//class
+
+
+class 회원 {
+	
+	private String 회원명; //객체 변수 > 개인 정보
+	private static String 모임명; //정적 변수 > 공용 정보
+	
+	public void 회원명수정하기(String 이름) {
+		this.회원명 = 이름;
+	}
+	
+	public static void 모임명수정하기(String 이름) {
+		모임명 = 이름;
+	}
+	
+}
+
+
+class Test {
+	
+	private int a;
+	private static int b;
+	
+	//객체 메서드 > 객체 변수, 객체 메서드, 정적 변수, 정적 메서드
+	//정적 메서드 > 정적 변수, 정적 메서드
+	
+	public void ccc() {
+		//객체 메서드 > 객체 변수, 정적 변수
+		this.a = 10;
+		Test.b = 20;
+		Test.ddd();
+	}
+	
+	public static void ddd() {
+		//정적 메서드 > 객체 변수, 정적 변수
+		//this.a = 30;
+		Test.b = 40;
+		//this.ccc();
+		
+//		Test t2 = new Test();
+//		t2.a = 30;
+//		t2.ccc();
+		
+	}
+	
+}
+
 
 class Student {
 	
@@ -92,4 +154,18 @@ class Student {
 								, this.age
 								, Student.school);
 	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

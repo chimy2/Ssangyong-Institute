@@ -1,7 +1,7 @@
 package com.test.java.obj;
 
-import com.lesson.java.obj.Test;
-import com.lesson.java.obj.회원;
+import com.lesson.java.resource.Test;
+import com.lesson.java.resource.회원;
 
 public class Ex35_Static {
 //	1. 여러가지 선행 작업 > 클래스 로딩(클래스 인식)

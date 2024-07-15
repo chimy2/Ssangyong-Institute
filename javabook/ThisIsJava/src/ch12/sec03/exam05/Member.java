@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 //@NoArgsConstructor
 //@AllArgsConstructor
-public class member {
+public class Member {
 	private String id;
 //	private String name;
 	@NonNull private String name;

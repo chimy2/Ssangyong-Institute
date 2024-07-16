@@ -383,4 +383,24 @@ Q67(삽입), Q68(삭제)> *****, 자주 하는 행동
 
 - com.test.java.file > Ex62_Process.java
 
-- com.test.java.file > Ex63_
+- com.test.java.lambda > Ex63_Lambda.java
+
+- com.test.java.lambda > Ex64_Lambda.java
+
+- com.test.java.lambda > Ex65_Stream.java
+
+
+2024-07-15
+
+- com.test.java > Ex66_String.java
+
+- com.test.java > Ex67_RegEx.java
+
+
+2024-07-16
+
+- com.test.java > Ex68_Dummy.java
+
+- com.test.java > Ex69.java
+
+- com.test.java > Ex70.java

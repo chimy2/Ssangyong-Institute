@@ -1,8 +1,5 @@
 package com.test.java.obj;
 
-import com.lesson.java.resource.Test;
-import com.lesson.java.resource.회원;
-
 public class Ex35_Static {
 //	1. 여러가지 선행 작업 > 클래스 로딩(클래스 인식)
 //	- 클래스 로딩을 위해 클래스들을 읽는 과정 중 정적 멤버들은 메모리에 올려놓음
@@ -132,12 +129,16 @@ class Test {
 	
 	public static void ddd() {
 //		정적 메서드 > 객체 변수, 정적 변수
-		a = 30;	//Cannot make a static reference to the non-static field a
-		this.a = 30;	//Cannot use this in a static context
+//		a = 30;	
+		//Cannot make a static reference to the non-static field a
+//		this.a = 30;	
+		//Cannot use this in a static context
 //		a가 문제가 아니라 this 문제, this는 객체라는 인스턴스가 자신을 부를 때 쓰는 키워드
 		
-		ccc();	//Cannot make a static reference to the non-static method ccc() from the type Test
-		this.ccc();	//Cannot use this in a static context
+//		ccc();	
+		//Cannot make a static reference to the non-static method ccc() from the type Test
+//		this.ccc();	
+		//Cannot use this in a static context
 		b = 40;
 		
 		Test test = new Test();

@@ -1,7 +1,6 @@
 package com.test.java;
 
 import java.io.File;
-import java.io.IOException;
 
 import com.github.lalyos.jfiglet.FigletFont;
 

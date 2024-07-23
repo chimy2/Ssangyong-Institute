@@ -1,0 +1,13 @@
+2024-07-23
+
+1. c:\class\code\oracle 폴더 생성
+
+2. 스크립트 파일(*.sql)
+
+오라클이 실행불가 시 첫번째로
+서비스에서 OracleServiceXE, OracleXETNSListener가 실행중인지 확인
+
+데이터베이스 개론과 실습 Chapter 2, 6, 7🌟🌟🌟
+
+Oracle SQL 강좌 - 구루비 넷 / 뉴렉처(유튜브)
+http://www.gurubee.net/oracle/sql

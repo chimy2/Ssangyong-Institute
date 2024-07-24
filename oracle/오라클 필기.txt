@@ -11,3 +11,7 @@
 
 Oracle SQL 강좌 - 구루비 넷 / 뉴렉처(유튜브)
 http://www.gurubee.net/oracle/sql
+
+
+2024-07-24
+

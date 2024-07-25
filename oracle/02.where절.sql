@@ -10,7 +10,7 @@ select name, jikwi from tblInsa where buseo = '개발부';
 select name, basicpay from tblInsa where city = '서울' and jikwi = '부장';
 
 -- 4. 입사일(ibsaDate)이 2010년 1월 1일 이후인 직원의 이름과 입사일을 조회하세요.
-select name, ibsadate from tblInsa where ibsadate >= '2010-01-01';
+select name, ibsadate from tblInsa where ibsadate > '2010-01-01';
 
 -- 5. 급여가 2,000,000원 이상이고 수당(sudang)이 150,000원 이상인 직원의 이름과 급여, 수당을 조회하세요.
 select name, basicpay, sudang from tblInsa where basicpay >= 2000000 and sudang >= 150000;
@@ -59,15 +59,14 @@ select name, capital from tblCountry where population is null;
 -- 19. 면적이 10 이상 100 이하인 국가의 이름과 면적을 조회하세요.
 select name, area from tblCountry where area between 10 and 100;
 
--- 20. 국가 이름이 'K'로 시작하거나 'a'로 끝나는 국가의 이름을 조회하세요.
-select name from tblCountry where name like 'K%' and name like '%a';
+-- 20. 국가 이름이 '인'로 시작하거나 '국'로 끝나는 국가의 이름을 조회하세요.
+select name from tblCountry where name like '인%' or name like '%국';
 
 
 -- tblComedian
 
 -- 21. 몸무게(weight)가 70kg 이상인 코미디언의 이름(first, last)과 몸무게를 조회하세요.
 select last || first from tblComedian where weight >= 70;
-select * from tblComedian;
 
 -- 22. 성별(gender)이 'f'인 코미디언의 이름과 키(height)를 조회하세요.
 select last || first, height from tblComedian where gender = 'f';
@@ -219,10 +218,10 @@ select title, adddate from tbltodo where title like '자바%';
 select title, adddate from tbltodo where adddate between '2024-02-01' and '2024-02-07';
 
 -- 68. 완료된 할 일 중 추가된 날짜와 완료된 날짜가 같은 항목의 제목을 조회하세요.
-select title from tbltodo where adddate = completedate;
+select title from tbltodo where to_char(adddate, 'yyyymmdd') = to_char(completedate, 'yyyymmdd');
 
 -- 69. 아직 완료되지 않은 할 일을 추가된 날짜의 오름차순으로 조회하세요.
-select adddate from tbltodo where completedate is null order by adddate;
+select title, adddate from tbltodo where completedate is null order by adddate;
 
 -- 70. 제목에 '예약'이 포함된 완료된 할 일의 제목과 완료일을 조회하세요.
 select title, completedate from tbltodo where title like '%예약%' and completedate is not null;

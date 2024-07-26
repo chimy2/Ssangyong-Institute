@@ -1,7 +1,7 @@
 Ssangyong Institute
 
 primary key, unique, check, default, sequence, insert
-문제 05~06
+문제 07
 
 uml 기초, it 엔지니어를 위한 네트워크 입문
 
@@ -41,4 +41,31 @@ https://drive.google.com/drive/folders/1Yqx8e1YViYLMufjaiT4fuQ5mwT8gXG55
 클래스 따라 만들기
 - 컬렉션 따라 만들기
 
-1. 
+클래스 별 역할
+데이터 백업 조심
+더미데이터 생성 중요
+1. 4
+2.3
+3.3
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+11.
+12.
+13.
+14.
+15.
+16.
+17.
+8.
+9.
+20.
+21.
+2.
+3.
+4.
+5.

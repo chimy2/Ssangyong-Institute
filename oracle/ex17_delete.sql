@@ -13,4 +13,9 @@ rollback;
 
 select * from tblInsa;
 
-delete from tblInsa where name = '홍길동';
+delete from tblInsa where name = '홍길동'; 
+delete from tblInsa where PK; 
+delete from tblInsa where num = 1001; 
+delete from tblInsa; 
+
+select count(*) from tblInsa;

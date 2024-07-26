@@ -1,0 +1,7 @@
+Oracle
+
+1. Oracle Database 11g Express Edition
+   - 데이터베이스 > 오라클
+
+2. SQL Developer
+     - 데이터베이스 클라이언트 툴

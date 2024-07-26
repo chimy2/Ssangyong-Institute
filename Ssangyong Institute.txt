@@ -1,0 +1,44 @@
+Ssangyong Institute
+
+primary key, unique, check, default, sequence, insert
+문제 05~06
+
+uml 기초, it 엔지니어를 위한 네트워크 입문
+
+13~24 확인 비교
+57 - m2필기
+
+67, 68> *****, 자주 하는 행동 (배열 시프트)
+
+알고리즘 도감 책/앱
+
+AWS > Linus(Ubuntu)
+
+자바 > 오라클 > AWS(신용카드 필요, bc, master)
+
+${primary_type_name} : class name
+${enclosing_method} : method name
+BOF(begin of file)
+
+사이트
+- 다운로드
+http://192.168.10.30:8011/foldertree/frame.htm?action=SkinFile#/
+- 문제
+http://pinnpublic.dothome.co.kr/
+- 아스키 아트
+https://wepplication.github.io/tools/asciiArtGen/
+- JFiglet
+https://github.com/dtmo/jfiglet
+- 자바 콘솔 프로젝트 제출 드라이브
+https://drive.google.com/drive/folders/1Yqx8e1YViYLMufjaiT4fuQ5mwT8gXG55
+
+
+🌟🌟🌟🌟🌟
+1. 제어문
+2. 배열 > 컬렉션
+3. 클래스
+
+클래스 따라 만들기
+- 컬렉션 따라 만들기
+
+1. 

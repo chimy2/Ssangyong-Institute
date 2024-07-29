@@ -14,7 +14,7 @@
                 - 12345678901234567890123456789012345678000000000000000000000000000
                 - 5~22byte
                 - 정수: -9.223372036854775808E+18 ~ 9.223372036854775807E+18
-                - 실수: -1.7976931348623157E+308 ~ 1.79769
+                - 실수: -1.7976931348623157E+308 ~ 1.7976931348623157E+308
                 - number: 정수 or 실수
                 - number(precision): 정수만 저장
                 - number(precision, scale): 정수/실수 저장
@@ -111,7 +111,7 @@ select * from tabs;
 -- insert into 테이블명(컬럼명), values(값)
 insert into tblType(num) values(100);   -- 정수 리터럴
 insert into tblType(num) values(3.14);  -- 실수 리터럴
-insert into tblType(num) values(1234567890123456789012345678901234567890);  -- 실수 리터럴
+insert into tblType(num) values(1234567890123456789012345678901234567890);
 -- SQL 오류: ORA-01438: value larger than specified precision allowed for this column > overflow
 insert into tblType(num) values(999);  
 insert into tblType(num) values(-999);   

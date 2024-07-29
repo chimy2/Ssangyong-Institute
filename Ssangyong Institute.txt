@@ -1,6 +1,6 @@
 Ssangyong Institute
 
-primary key, unique, check, default, sequence, insert
+subquery, join
 문제 07
 
 uml 기초, it 엔지니어를 위한 네트워크 입문
@@ -47,7 +47,7 @@ https://drive.google.com/drive/folders/1Yqx8e1YViYLMufjaiT4fuQ5mwT8gXG55
 1. 4
 2.3
 3.3
-4.
+4. 3
 5.
 6.
 7.

@@ -17,7 +17,7 @@ select to_char(buydate, 'w') 주, sum(qty), sum(price)
     from tblHousekeeping group by to_char(buydate, 'w') order by 주;
 
 -- 5. 구매 수량이 10개 이상인 물품들의 평균 가격을 구하시오.
-select avg(price) from tblHousekeeping where qty >= 10; --  ********************************************************다시보기
+select avg(price) from tblHousekeeping where qty >= 10; 
 
 -- 6. 각 물품별로 구매 횟수를 구하고, 구매 횟수가 1회 초과인 물품만 출력하시오.
 select item from tblHousekeeping group by item having count(*) > 1;
@@ -197,7 +197,6 @@ select floor(maxDiff * 24) || '시간' from
         order by floor(completedate - adddate) desc
         )
     where rownum <= 1;
--- ***************************************************확인
 
 -- 8. 등록 후 완료까지 걸린 기간별(당일, 1일, 2일 이상)로 할 일의 수를 구하시오.
 select 

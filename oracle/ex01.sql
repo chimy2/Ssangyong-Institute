@@ -77,7 +77,7 @@
         - alter user 유저명 account unlock;
     2. 암호 바꾸기
         - alter user 유저명 identified by 암호명;
-    3. 
+        
 */
 
 
@@ -216,7 +216,7 @@ ALTER USER hr IDENTIFIED BY java1234;
     
 */
 
--- alt + '
+-- alt + ': 대소문자 바꾸기
 select * from tabs;
 
 SELECT * FROM tabs;

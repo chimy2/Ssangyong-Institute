@@ -20,3 +20,13 @@ http://www.gurubee.net/oracle/sql
 
 무경설 제약조건 > 무결성을 유지하기 위한 제약조건
 무결성 깨짐 > 데이터 손상 > 데이터 신뢰X > 사용 불가능
+
+
+2024-07-29
+
+표준SQL(전체SQL)
+1. 서브쿼리
+2. 조인
+
+https://www.exerd.com/down.do
+3.X 버전은 30일 제한이 있으므로 2.X버전 설치

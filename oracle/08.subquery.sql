@@ -2,7 +2,7 @@
 
 
 -- 1. employees. 'Munich' 도시에 위치한 부서에 소속된 직원들 명단?
-select * from employees where department_id like 
+select * from employees where department_id in 
     (select department_id from departments 
         where location_id = (select location_id from locations where city = 'Munich')
     );
@@ -31,14 +31,14 @@ select hometown from
         where job = (select job from tblAddressBook 
             group by job having count(*) = 
                 (select max(count(*)) max from tblAddressBook group by job))
-    group by hometown order by count(*) desc) where rownum <= 1;
+    group by hometown order by count(*) desc) where rownum = 1;
 
 -- 4. tblAddressBook. 이메일 도메인들 중 평균 아이디 길이가 가장 긴 이메일 사이트의 도메인은 무엇인가?
 select substr(email, instr(email, '@') + 1) 도메인 from tblAddressBook
     group by substr(email, instr(email, '@') + 1)
-    having avg(length(substr(email, 0, instr(email, '@') - 1))) = (select max(avg) from (
-            select avg(length(substr(email, 0, instr(email, '@') - 1))) avg from tblAddressBook 
-                group by substr(email, instr(email, '@') + 1)));
+    having avg(length(substr(email, 1, instr(email, '@') - 1))) = 
+        (select max(avg(length(substr(email, 1, instr(email, '@') - 1)))) max from tblAddressBook 
+                group by substr(email, instr(email, '@') + 1));
 
 -- 5. tblAddressBook. 평균 나이가 가장 많은 출신(hometown)들이 가지고 있는 직업 중 가장 많은 직업은?
 select job from tblAddressBook 
@@ -53,7 +53,7 @@ select job from tblAddressBook
 -- 6. tblAddressBook. 남자 평균 나이보다 나이가 많은 서울 태생 + 직업을 가지고 있는 사람들을 가져오시오.
 select * from tblAddressBook
     where hometown = '서울' and age >= (select avg(age) from tblAddressBook where gender = 'm') and job not in ('학생', '백수', '취업준비생');
-    
+
 -- 7. tblAddressBook. gmail.com을 사용하는 사람들의 성별 > 세대별(10,20,30,40대) 인원수를 가져오시오.
 select gender, floor(age / 10) || '0대' 나이대, count(*) from tblAddressBook where email like '%@gmail.com' group by gender, floor(age / 10)
     order by gender, 나이대;
@@ -64,8 +64,8 @@ select * from tblAddressBook where job =
 
 -- 9. tblAddressBook.  동명이인이 여러명 있습니다. 이 중 가장 인원수가 많은 동명이인의 명단을 가져오시오.(모든 이도윤)
 select * from tblAddressBook where name = 
-(select name from tblAddressBook group by name
-    having count(*) = (select max(cnt) from (select count(*) cnt from tblAddressBook group by name)));
+    (select name from tblAddressBook group by name
+        having count(*) = (select max(cnt) from (select count(*) cnt from tblAddressBook group by name)));
 
 -- 10. tblAddressBook. 가장 사람이 많은 직업의(332명) 세대별 비율을 구하시오.
 --    [10대]       [20대]       [30대]       [40대]

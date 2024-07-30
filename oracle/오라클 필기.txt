@@ -30,3 +30,15 @@ http://www.gurubee.net/oracle/sql
 
 https://www.exerd.com/down.do
 3.X 버전은 30일 제한이 있으므로 2.X버전 설치
+
+
+2024-07-30
+
+1. ex01 ~ ex12 > DML 수업(select)
+2. DDL > 테이블(구조)
+3. DML 수업(insert, update, delete, select)
+4. 추가 select
+5. 데이터베이스 설계
+6. PL/SQL
+-------------------
+7. 프로젝트 > 2주일(주제 고정)

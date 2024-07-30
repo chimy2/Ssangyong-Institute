@@ -397,7 +397,104 @@ select name, tel, count(*) from tblMember m
                 order by count(*) desc;
 /*
 
+    inner join > 테이블 2개
+    outer join > 테이블 2개
+    inner join + self join > 테이블 1개
+    outer join + self join > 테이블 1개
+    
     4. 셀프 조인, Self Join
-    5. 전체 외부 조인, Full Outer Join
+    - 1개의 테이블을 사용하는 조인
+    - 테이블이 자기 스스로와 관계를 맺는 경우에 사용
 
 */
+
+-- 직원 테이블
+create table tblSelf (
+    seq number primary key,                 -- 직원번호(PK)
+    name varchar2(30) not null,             -- 직원명
+    department varchar2(30) not null,       -- 부서명
+    super number references tblSelf(seq)    -- 상사번호(FK) > 자기 참조
+);
+
+insert into tblSelf values(1, '홍사장', '사장실', null);
+insert into tblSelf values(2, '김부장', '영업부', 1);
+insert into tblSelf values(3, '박과장', '영업부', 2);
+insert into tblSelf values(4, '최대리', '영업부', 3);
+insert into tblSelf values(5, '정사원', '영업부', 4);
+insert into tblSelf values(6, '이부장', '개발부', 1);
+insert into tblSelf values(7, '하과장', '개발부', 6);
+insert into tblSelf values(8, '신과장', '개발부', 6);
+insert into tblSelf values(9, '황대리', '개발부', 7);
+insert into tblSelf values(10, '허사원', '개발부', 9);
+
+select * from tblSelf;
+
+-- 직원 명단을 가져오시오. 단, 상사의 이름도
+-- 1. join
+-- 2. sub query
+-- 3. 계층형 쿼리(오라클 전용)
+select 
+    s2.name as 직원명,
+    s1.name as 상사명,
+    s2.department as 부서명
+from tblSelf s1              -- 역할: 상사 > 부모테이블
+    inner join tblSelf s2    -- 역할: 직원 > 자식 테이블
+        on s1.seq = s2.super;
+
+select 
+    s2.name as 직원명,
+    s1.name as 상사명,
+    s2.department as 부서명
+from tblSelf s1                     -- 역할: 상사 > 부모테이블
+    right outer join tblSelf s2     -- 역할: 직원 > 자식 테이블
+        on s1.seq = s2.super;
+        
+select 
+    name as 직원명,
+    department as 부서명,
+    (select name from tblSelf where seq = a.super) 상사명  -- 서브 쿼리 > 부모 테이블 > 상사
+from tblSelf a;                             -- 서브쿼리 사용 시 메인 쿼리 > 자식 테이블 > 직원
+
+
+/*
+
+    5. 전체 외부 조인, Full Outer Join
+    - 서로 참조하고 있는 관계에서 사용
+    
+*/
+
+select * from tblMen;
+select * from tblWomen;
+
+-- 커플인 남/녀를 가져오시오.
+select 
+    m.name as 남자,
+    w.name as 여자
+from tblMen m               -- 부모
+    inner join tblWomen w   -- 자식
+        on m.couple = w.name;
+        
+-- 커플 + 남자 솔로
+select 
+    m.name as 남자,
+    w.name as 여자
+from tblMen m               -- 부모
+    left outer join tblWomen w   -- 자식
+        on m.couple = w.name;
+
+-- 커플 + 여자 솔로
+select 
+    m.name as 남자,
+    w.name as 여자
+from tblMen m               -- 부모
+    right outer join tblWomen w   -- 자식
+        on m.couple = w.name;
+
+-- 커플 + 남자 솔로 + 여자 솔로
+select
+    m.name as 남자,
+    w.name as 여자
+from tblMen m
+    full outer join tblWomen w
+        on m.couple = w.name
+            order by m.name, w.name;

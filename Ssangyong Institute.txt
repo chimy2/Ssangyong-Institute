@@ -1,7 +1,6 @@
 Ssangyong Institute
 
-계층형 쿼리,
-문제 10
+PL/SQL, 복합키
 
 uml 기초, it 엔지니어를 위한 네트워크 입문
 

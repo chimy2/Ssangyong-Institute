@@ -42,3 +42,83 @@ https://www.exerd.com/down.do
 6. PL/SQL
 -------------------
 7. 프로젝트 > 2주일(주제 고정)
+
+
+2024-08-07
+
+aws 
+
+ubuntu 
+
+$ clear
+이전 사용 명령어 / 이후 사용 명령어 
+
+$ pwd
+현재 사용 경로
+
+$ ls
+현재 폴더에 들어 있는 것들
+
+$ cd 경로
+경로 바꾸기
+
+$ cd ~
+사용자 폴더로 이동
+
+1. swap 메모리 설정
+	- EC2(메모리 1GB) > 오라클 설치
+	- 하드 디스크 일부 > 메모리처럼 사용 > swap 메모리
+
+$ cd /
+$ sudo mkdir /swap
+$ sudo dd if=/dev/zero of=/swap/swapfile bs=1024 count=2097152
+$ cd /swap
+$ sudo mkswap swapfile
+$ sudo swapon swapfile
+
+저장설정이 날라가므로
+sudo vi /etc/fstab 에서 vi로 해당 경로의 파일을 열고
+/swap/swapfile swap swap defaults 0 0 추가해서 저장(:wp)
+
+오라클 11g ex rinux 다운 후 홈폴더로 이동
+
+압축을 풀고 SFTP를 만들어서 rpm 파일을 드래그해서 복사한다
+
+sudo apt-get install 파일명
+설치파일을 받아와서 알아서 설치해줌
+sudo apt-get install alien
+
+sudo alien --scripts -d oracle*
+sudo alien --scripts -d oracle > tab -> oracle-xe-11.2.0-1.0.x86_64.rpm
+
+설치할 수 있는 deb 파일이 생성됨
+
+-- deb 설치
+$ sudo dpkg -i 파일명
+sudo dpkg -i oracle-xe_11.2.0-2_amd64.deb
+
+-- 환경 설정
+$ sudo /etc/init.d/oracle-xe configure
+
+-- 오라클 동작 확인
+$ sudo systemctl status oracle-xe
+
+- bashsehll 시작 설정에 오라클 등록하기 위해서 아래 작업 진행하구요
+$ /u01/app/oracle/product/11.2.0/xe/bin/oracle_env.sh
+$ sudo vi ~/.bashrc
+
+# .bashrc 파일의 맨 아래에 추가
+export ORACLE_HOME=/u01/app/oracle/product/11.2.0/xe  
+export ORACLE_SID=XE  
+export NLS_LANG=`$ORACLE_HOME/bin/nls_lang.sh`  
+export ORACLE_BASE=/u01/app/oracle  
+export LD_LIBRARY_PATH=$ORACLE_HOME/lib:$LD_LIBRARY_PATH  
+export PATH=$ORACLE_HOME/bin:$PATH
+
+- 수정한 내용 적용
+$ source ~/.bashrc
+
+
+
+-- 타임존이 다르므로 시간대 변경
+sudo dpkg-reconfigure tzdata > asia > seoul

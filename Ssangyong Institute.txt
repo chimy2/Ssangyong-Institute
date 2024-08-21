@@ -1,15 +1,33 @@
 Ssangyong Institute
 
-index, 프로젝트 참고사항
+원격 접속 > 클라이언트 툴
+SSH 클라이언트 툴 > 원격 컴퓨터 접속
+- cmd 
+- putty
+- mobaXterm
 
 체크시간이 지각시간 이후인데 출석이 안된 학생의 이름
 체크시간이 퇴실시간 이후인데 퇴실체크가 안된 학생의 이름
+프로젝트
+QnA - 관리자
+교사평가(학생)
+구내식당
+대여서비스
+취업연계 기업
 
 
+Project1
+
+https://024848476518.signin.aws.amazon.com/console
+024848476518
+chimy2408
 내일 오전 수업 후 AWS
 오라클 8월 6일 ~ 21일 
 수요일 오후2시에 발표
 2주
+
+
+
 
 uml 기초, it 엔지니어를 위한 네트워크 입문
 
@@ -67,6 +85,28 @@ https://drive.google.com/drive/folders/1Yqx8e1YViYLMufjaiT4fuQ5mwT8gXG55
 6. 테이블 DDL
 7. 데이터 복사 > insert문 생성
 
-크롤링
-mainList[0].children[0].querySelector('span').innerText
-1. 
+2024-08-21
+~월요일 > 산출물 제출 + 팀(자리배치)
+
+다음수업
+- Console > Web(Client + Server)
+- Client > HTML, CSS, JavaScript 등..
+- HTML(2~3일)
+
+이클립스 기존 워크스페이스 환경 > 새 워크스페이스 환경
+기존 워크스페이스 - export > general > preferences > export all 
+새 워크스페이스 - import > general > preferences > import all > finish > restart
+
+
+1. 인코딩 > UTF-8
+	- Text
+	- CSS
+	- HTML
+	- JSP
+preferences > general > content types > text 선택 > default encoding: UTF-8을 적은 후 update
+	web > css/html/jsp file > encoding : 맨위의 UTF-8 선택
+new > dynamic web project > Hello 프로젝트 생성
+
+2. 웹서버
+	- 자바 진영 > Apache Tomcat
+	- https://apache.org > 하단 Tomcat > Tomcat 9.0.X 설치 > 윈도우64.zip 설치 후 압축 풀고 dev 폴더로 이동

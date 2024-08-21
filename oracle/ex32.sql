@@ -131,5 +131,30 @@ from vwDate v
             order by v.regdate;
 
 
+/*
 
-
+    요구사항
+    
+    - 계정 > 관리자 계정, 교사 계정, 학생 계정
+            > 오라클 계정(system, hr 등..)
+    
+    create table tblStudent (
+        id varchar2(),
+        pw varchar2()
+    );
+    
+    insert into tblStudent values ('hong', '111', '홍길동'..)
+    
+    로그인 > 권한 체크 > SQL + 자바 > 오라클 프로젝트이므로 스킵
+    
+    1. 요구분석서 > 7일 ~ 8일(오전)
+    2. 순서도 > 8일
+    3. ERD > 12 ~ 13일
+    4. 테이블 정의서(DDL) > 13일
+    5. 데이터 정의서(DML) > 16일
+    6. 쿼리문 정의서(ANSI-SQL) > 20일
+    7. 오브젝트 스크립트(PLSQL) > 20일, 하루 ~ 하루 반
+    8. PPT
+    9. 최종 요약본
+    
+*/

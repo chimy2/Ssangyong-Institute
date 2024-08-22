@@ -1,0 +1,162 @@
+2024년 8월 22일
+
+Client Programming
+- Client-side Programming
+- Web Client XXX
+- Front-end XXX
+
+Server Programming
+- Server-side Programming
+- Web Server XXX
+- Back-end XXX
+
+웹 브라우저
+- 크롬(V8 엔진 - 웹페이지를 분석하고 보여주는 코어파일) 
+- IE > Edge
+- 사파리(mac)
+- 파이어폭스
+- 네이버 웨일, 덕덕고, 브레이브
+
+보통 웹브라우저의 환경에 따라 개발소스가 달라지기 때문에
+처음에 기본 웹브라우저를 정하고 시작하는 것은 중요하다
+
+Java
+- 응용 프로그램(콘솔 기반)
+- 클라이언트(X), 서버(X)
+
+Oracle
+- Database Service
+- 클라이언트 > SQL Developer(Database Service 제공 받음)
+- 서버 > Oracle Database(Database Service 제공)
+
+웹서비스 구현
+Web Service
+- 인터넷을 통해서 자료(웹문서, 이미지, 동영상 등)를 제공받는 서비스
+
+Web Server
+- 자료를 생성하고 공유하는 측
+- Web Server Program > Apache Tomcat
+
+Web Client 
+- 자료를 제공받아 소비하는 측
+- Web Client Program > Browser
+
+톰캣 / bin > 프롬프트 열고 startup.bat으로 서버를 열고 브라우저에서 localhost:8080 페이지를 열면 톰캣홈페이지가 열림
+
+oracle이 깔려있다면 8080포트가 사용중이므로 
+톰캣 / conf > server.xml
+    <Connector port="8090" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443"
+               maxParameterCount="1000"
+               />
+8090으로 포트를 바꿔줘야함
+
+톰캣 / webapps / ROOT 에 hello.html 파일을 옮기고 localhost:8090/hello.html로 열면 웹환경에서 hello 파일을 연것
+localhost > 127.0.0.1 > 로컬 IP 주소
+
+다른사람의 포트번호 접속시 방화벽으로 막혀있으므로 열어줘야한다
+여는법은 방화벽 상태 확인 > 고급 설정 > 인바운드 규칙 > 새규칙 
+	> 포트 > 특정 로컬 포트 : xxxx, xxxx-xxxx  > 이름과 설명을 적고 마침
+
+URI, Uniform Resource Identifier
+URL, Uniform Resource Locator
+
+URI = URL
+
+1. 프로토콜(Protocol, Scheme)
+	- Hyper Text Transfer Protocol > 하이퍼 텍스트(HTML문서) 전송 규약(약속)
+	- http://
+	- https:// > http:// + security
+
+2. 서버측 주소
+	- 192.168.10.33 > IP Address
+	- n.news.naver.com > Domain Address
+	- 컴퓨터 > 랜카드(네트워크카드, NIC, Network Interface Card) > 부여된 주소 > IP 주소
+	cf. mac address > 기기 고유주소
+
+3. IP Address
+	- 인터넷에서 호스트(Host)를 구분하는 고유 주소값
+	- XXX.XXX.XXX.XXX > IPv4
+	- IPv6
+
+4. Domain Address
+	- naver.com
+	- google.com
+
+5. DNS, Domain Name System
+	- DNS Server
+
+6. Port Number(0~65535)
+	- 개발 > 8000 ~ 9999
+	- :8090
+	- http://domain:80/ > 포트번호 생략
+	- https://domain:433/ > 포트번호 생략
+
+7. Resource Path
+	- 해당 컴퓨터의 자원의 위치
+	- /hello.html
+	- /mnews/article/014/0005230229
+	- /list.do?seq=10&word=subject
+
+8. Query String
+	- seq=10&word=subject
+	- 서버에게 전달하는 데이터(key=value)
+		- seq=10
+		- word=subject
+
+이클립스 웹서버 설정
+Preferences > Server > Runtime Environment > Apache > Apache Tomcat v9.0
+	> browse > 압축푼 톰캣 경로 > Finish
+톰캣 다운로드 안했을 시 download and install 하면 다운까지 해줌
+
+Window > Show View > Servers 
+Server tab > No servers are available. Click this link to create a new server ...
+	> Tomcat 9.0 설정
+
+Servers 탭에서 port 번호를 바꿀 수 있음
+Server 설정화면에서 Modules 탭으로 가면 현재 서버에서 구동되는 프로젝트가 보이고
+프로젝트를 선택하고  Edit를 누르면 Edit Web Module 창이 열림 > 루트 경로를 바꿀 수 있음
+
+프로젝트를 추가할 때 마다 서버에 등록해줘야함
+
+HTML, Hyper Text Markup Language
+- 하이퍼 텍스트 마크업 언어
+- HyperText > 링크(Link)
+- Markup Language > 태그(Tag)를 사용해서 문법을 표기하는 언어
+	- HTML, SGML(root), XML, XTHML, SVG 등..
+	- HTML, XML
+	- HTML > 오로지 무언가를 화면에 표현하는 기능만 구현
+- http://w3.org / http://w3c.org
+- HTML 1.0 ~ HTML5
+- 수업 > HTML 4.01 + XHTML 1.0 + HTML 5(2014년)
+- HTML은 버전 업 시 기존 버전 호환 가능 > 확장
+
+HTML 1.0 
+- 브라우저
+	1. Mosaic
+	2. Netscape Navigator
+	3. MS > Internet Explorer
+
+	- Netscape vs Ms - 브라우저 1차전쟁 MS win
+
+	4. 파이어폭스(Netscape Navigator 계열)
+	5. 크롬
+	
+HTML 4.01
+
+XHTML 1.0 > 문법이 엄격함 > 이전 언어의 호환성
+XHTML 2.0 > 호환성 포기
+HTML 5 > W3C > 정통 버전 > 2014년 > 표준화 구현(기존 정비 + 기능 확장)
+
+HTML 5(HTML 4.01 + XHTML 1.0)
+
+표준화
+1. HTMl > 페이지 제작 > 안정화 상
+2. CSS > 디자인 제작 > 안정화 중상
+3. JavaScript > 프로그램 제작 > 안정화 중
+
+브라우저 전쟁
+
+HTML 4.01
+

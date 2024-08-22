@@ -26,9 +26,6 @@ chimy2408
 수요일 오후2시에 발표
 2주
 
-
-
-
 uml 기초, it 엔지니어를 위한 네트워크 입문
 
 13~24 확인 비교
@@ -110,3 +107,8 @@ new > dynamic web project > Hello 프로젝트 생성
 2. 웹서버
 	- 자바 진영 > Apache Tomcat
 	- https://apache.org > 하단 Tomcat > Tomcat 9.0.X 설치 > 윈도우64.zip 설치 후 압축 풀고 dev 폴더로 이동
+
+Client > 3주~4주 > 프로젝트(X) > 포트폴리오(O)
+1. HTML > 2~3일
+2. CSS > 4~5일
+3. JavaScript > 1주일 이상

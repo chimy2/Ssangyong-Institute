@@ -1,3 +1,0 @@
-SEVERE	117	0	oracle.ide.extension.HashStructureHook	Unexpected runtime exception while delivering HashStructureHookEvent
-SEVERE	990	12668994	oracle.dbtools.raptor.backgroundTask.RaptorTaskManager$1	oracle.ide.model.ExpiredTextBuffer.newExpiredTextBufferException(ExpiredTextBuffer.java:55)의 educenter@teamaws~2 expired 0.002s ago (see "Caused by:" stack trace below); reported from ExpiredTextBuffer on thread AWT-EventQueue-0 active AWT event:
-	java.awt.event.FocusEvent[FOCUS_LOST,permanent,opposite=null,cause=CLEAR_GLOBAL_FOCUS_OWNER] on Editor1_MAIN

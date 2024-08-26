@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- ex20_html5.html -->
+	<h1>HTML5</h1>
+	
+	<form method="POST" action="ex18.jsp">
+		<label>이름: <input type="text"></label>
+		
+		<hr>
+		
+		<input type="text" value="이름을 입력하세요."
+			onfocus="this.value='';">
+		
+		<hr>
+		
+		<input type="password" value="암호를 입력하세요."
+			onfocus="this.value='';">
+		
+		<hr>
+		
+		<input type="text" placeholder="이름을 입력하세요.">
+		
+		<hr>
+		
+		<input type="password" placeholder="암호를 입력하세요.">
+		
+		<hr>
+		
+		<textarea cols="50" >
+		</textarea>
+		
+		<hr>
+		
+		<h2>입력값 유효성 검사 - 필수값</h2>
+		
+		<h3>로그인</h3>
+		<div><input type="text" size="10" placeholder="아이디" required></div>
+		<div><input type="password" size="10" placeholder="암호" required></div>
+		
+		<hr>
+		
+		<input type="submit" value="보내기">
+	</form>
+</body>
+</html>

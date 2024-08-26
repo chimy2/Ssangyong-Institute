@@ -160,3 +160,29 @@ HTML 5(HTML 4.01 + XHTML 1.0)
 
 HTML 4.01
 
+
+2024년 8월 26일
+
+이클립스 자동 업데이트 설정
+Preferences > install/update > automatic updates 
+	> automatically find new updates and notify me 체크해제
+
+HTML 문서 확장자
+- *.html
+- *.htm > 예전 네자리 확장자를 인식못하는 문제 때문에 썼었음(ms windows)
+
+연습이 필요한 태그
+1. 테이블
+2. 폼
+3. <div> + CSS + JavaScript
+
+에디터 or IDE
+- Eclipse or IntelliJ or NetBeans
+
+에디터
+- SublimeText
+- Atom
+- Bracket
+- Visual Studio Code
+- Cursor
+- 등..

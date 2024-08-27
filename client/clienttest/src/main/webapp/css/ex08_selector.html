@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            CSS 선택자
+            1. 전체 선택자
+            2. 태그 선택자
+            3. 아이디 선택자
+            4. 클래스 선택자(********)
+            5. 그룹 선택자
+            6. 자식 선택자
+            7. 자손 선택자
+            8. 인접 형제 선택자
+            9. 형제 선택자
+            10. 의사 클래스, Pseudo Class
+                - 실제 태그에는 class가 정의되어 있지 않지만, 
+                    선택자에서는 실제로 존재하는 class처럼 취급하는 클래스
+                - <a> 태그에만 제공 > 대부분 태그에게도 적용
+                - HTML5(CSS3) > 대량 증가
+        */
+        /*         
+        a {
+            color: black;
+            text-decoration: none;
+        } 
+        */
+        /* 
+        a:link { color: green; } > 한번도 갔다오지 않은 상태
+        a:visited { color: red; } > 한번 갔다온 상태
+        a:active { color: orange; } > 포커스가 간 상태
+        a:hover { color: cornflowerblue; } > 마우스가 올라간 상태 
+        */
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: red;
+            text-decoration: underline;
+        }
+
+        .data {
+            outline: none;
+        }
+        /* 
+            인디케이터, Indicator
+            -  조작 결과를 나타내거나 조작 처리에 대한 조건을 지정(제어)하는 데 사용
+         */
+        .data:focus {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex08_selector.html -->
+    <h1>링크</h1>
+    <a href="https://google.com">구글</a>
+
+    <h1>입력 업무</h1>
+
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+</body>
+</html>

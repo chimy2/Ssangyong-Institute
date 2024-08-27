@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- ex15_table.html -->
+	<!-- 
+		표
+		1. 표를 만들기 위해서
+		2. 레이아웃을 만들기 위해서 > CSS
+		
+		테이블 구성요소
+		1. 가장 큰 상자
+			- <table>
+			- 전체 컨테이너
+		
+		2. 중간 긴 상자
+			- <tr>
+			- table row
+			- 테이블 행
+			
+		3. 가장 작은 상자
+			- <td>
+			- table data
+			- 테이블 셀
+			- 데이터를 담는 역할
+		
+		4. 가장 작은 상자
+			- <th>
+			- table header
+			- 제목을 표시하는 역할
+	 -->
+	 
+	 <h1>2행 2열 테이블</h1>
+	 
+	 <table border="1" width="200" height="200" bgcolor="mistyrose">
+	 	<tr bgcolor="green">
+	 		<td bgcolor="gray">
+	 			1
+	 		</td>
+	 		<td background="images/face01.png">
+	 			2
+	 		</td>
+	 	</tr>
+	 	<tr>
+	 		<td align="center" valign="top">
+	 			3
+	 		</td>
+	 		<td align="right" valign="bottom">
+	 			4
+	 		</td>
+	 	</tr>
+	 </table>
+	 
+	 <hr>
+
+	<!-- Ctrl + Alt + 방향키 -->	 
+	 <table border="1" width="200" height="200">
+	 	<tr>
+	 		<td width="100" height="100">홍길동</td>
+	 		<td width="100">홍길동홍길동홍길동</td>
+	 		<!-- 인라인 태그는 부모영역의 끝을 만나면 자동으로 줄바꿈 -->
+	 		<!-- 
+	 			너비는 부모영역에 맞춰 한계가 있지만 높이는 자유롭다.
+	 			기본적으로 웹에서는 너비정책은 제한적이나 높이정책은 자유분방하다 
+	 			숫자나 영어가 부모 영역을 넘어서는 overflow가 발생하면 기본적으로 개행하지 않는다
+	 		 -->
+	 	</tr>
+	 	<tr>
+	 		<td height="100">3</td>
+	 		<td>4</td>
+	 	</tr>
+	 </table>
+	 <table border="1" width="200" height="200">
+	 	<tr>
+	 		<td width="100" height="100">홍길동</td>
+	 		<td width="100">1111111111111111111111111111111111111111111111111111111111111</td>
+	 	</tr>
+	 	<tr>
+	 		<td height="100">3</td>
+	 		<td>4</td>
+	 	</tr>
+	 </table>
+</body>
+</html>

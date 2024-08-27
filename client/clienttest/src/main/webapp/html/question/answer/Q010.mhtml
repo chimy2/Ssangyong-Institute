@@ -1,0 +1,85 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: http://pinnpublic.dothome.co.kr/question/html/table1_impl.html
+Subject: Document
+Date: Mon, 26 Aug 2024 11:14:00 +0900
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--wRw6CUB9TPadoxR9RZhKf1pEUkPzJI9Pb4lItzkbaI----"
+
+
+------MultipartBoundary--wRw6CUB9TPadoxR9RZhKf1pEUkPzJI9Pb4lItzkbaI----
+Content-Type: text/html
+Content-ID: <frame-C2545782D0AC94094D9E222B817883AA@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://pinnpublic.dothome.co.kr/question/html/table1_impl.html
+
+<!DOCTYPE html><html lang=3D"en"><head><meta http-equiv=3D"Content-Type" co=
+ntent=3D"text/html; charset=3DUTF-8"><link rel=3D"stylesheet" type=3D"text/=
+css" href=3D"cid:css-09a8079f-e05c-41f4-bdac-6d1a62627649@mhtml.blink" />
+   =20
+    <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0">
+    <title>Document</title>
+</head>
+<body>
+
+	<h1>Table</h1>
+
+    <table border=3D"1" width=3D"500">
+		<tbody><tr>
+			<td align=3D"center" width=3D"100" height=3D"100" colspan=3D"5">1</td>
+		</tr>
+		<tr>
+			<td align=3D"center" width=3D"100" height=3D"400" rowspan=3D"4">6</td>
+			<td align=3D"center" width=3D"200" height=3D"100" colspan=3D"2">7</td>
+			<td align=3D"center" width=3D"200" height=3D"100" colspan=3D"2">9</td>
+		</tr>
+		<tr>
+			<td align=3D"center" width=3D"100" height=3D"100">12</td>
+			<td align=3D"center" width=3D"100" height=3D"100">13</td>
+			<td align=3D"center" width=3D"100" height=3D"200" rowspan=3D"2">14</td>
+			<td align=3D"center" width=3D"100" height=3D"100">15</td>
+		</tr>
+		<tr>
+			<td align=3D"center" width=3D"100" height=3D"200" rowspan=3D"2">17</td>
+			<td align=3D"center" width=3D"100" height=3D"100">18</td>
+			<td align=3D"center" width=3D"100" height=3D"100">20</td>
+		</tr>
+		<tr>
+			<td align=3D"center" width=3D"100" height=3D"100">23</td>
+            <td align=3D"center" width=3D"200" height=3D"100" colspan=3D"2"=
+>24</td>
+		</tr>
+	</tbody></table>
+
+<div id=3D"__endic_crx__"><div class=3D"css-diqpy0"></div></div></body></ht=
+ml>
+------MultipartBoundary--wRw6CUB9TPadoxR9RZhKf1pEUkPzJI9Pb4lItzkbaI----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-09a8079f-e05c-41f4-bdac-6d1a62627649@mhtml.blink
+
+@charset "utf-8";
+
+.css-diqpy0 { margin: 0px; padding: 0px; font-family: ui-sans-serif, -apple=
+-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Ar=
+ial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; font-variant-ligature=
+s: none; color: var(--text-primary); -webkit-font-smoothing: antialiased; p=
+osition: absolute; left: 0px; top: 0px; width: 0px; height: 0px; z-index: 2=
+147483647; }
+
+@media (prefers-color-scheme: light) {
+  .css-diqpy0 { --text-primary: #202124; --text-secondary: #5f6368; --backg=
+round-color: #fff; --layer-background: #fff; --border-color: #dadce0; --pri=
+mary-blue: #1a73e8; --primary-orange: #f0592a; --hover-color: #20212409; }
+}
+
+@media (prefers-color-scheme: dark) {
+  .css-diqpy0 { --text-primary: #ddd; --text-secondary: #bdc1c6; --backgrou=
+nd-color: #202124; --layer-background: #292a2d; --border-color: #757b80; --=
+primary-blue: #8ab4f8; --primary-orange: #ff835d; --hover-color: #ffffff1a;=
+ }
+}
+------MultipartBoundary--wRw6CUB9TPadoxR9RZhKf1pEUkPzJI9Pb4lItzkbaI------

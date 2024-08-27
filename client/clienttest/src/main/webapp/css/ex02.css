@@ -1,0 +1,6 @@
+/* webapp > css > ex02.css */
+/* CSS 주석 */
+
+body h1:nth-child(5) {
+    color: blue;
+}

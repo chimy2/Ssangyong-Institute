@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            동일한 선택자를 2번 이상 선언 가능
+            1. 속성 충돌X > 아무 문제 없음
+            2. 속성 충돌O > 마지막 속성이 적용
+
+            *** 동일한 선택자를 2번이상 선언하지 말것!!
+
+        */
+        div {
+            color: blue;
+        }
+        div {
+            background-color: yellow;
+        }
+
+        /* 
+            속성 충돌 발생!! > 선택자 우선 순위!!
+            - 서로 다른 선택자가 동일한 태그를 선택했을 때
+                > 동일한 속성 적용 > 어떤 선택자의 속성을 적용할지?
+            - 점수 계산 > 점수가 가장 높은 선택자를 적용
+
+            1. 태그선택자: 개당 1점
+            2. 클래스선택자: 개당 10점
+            3. 아이디선택자: 개당 100점
+
+            > 선택자 우선순위는 정확한 점수계산을 하는 것이 아니라
+                기본적으로 바꿀 수 없는 우선순위가 있다.
+        */
+        div#box1.box { color: plum; }/* 111점 */
+        #box1 { color: greenyellow; } /* 100점 */
+        .box { color: orange; }/* 10점 */
+        div { color: blue; }/* 1점 */
+        /* div { color: orange; } */
+        
+        div#box1 { color: red; }/* 101점 */
+
+        /* .box2.aaa { color: blue; }
+        .box2 { color: red; }
+        #box2 { color: blue; }
+        .aaa.bbb.ccc.ddd.eee.fff.ggg.hhh.iii.jjj.box2 { color: green; } */
+
+        /* 두번째 div.box2를 orange 색으로 바꾸고 싶다 */
+        .box2 { color: blue; }
+
+        div { color: orange; }
+        /* 
+            내가 적은 CSS 우선순위가 밀릴 때 높은 쪽으로 가서 수정하면
+            이미 다른 곳에 적용한 CSS까지 수정될 우려가 있으므로
+            우선순위를 높여 코드를 적는다.
+        */
+
+        div.box2 { color: orange; }
+        /* 
+            Visual Studio Code 선택자에 hover하면 
+            선택자에 대한 점수를 선택기 특이성(0, 0, 0)으로 점수를 알려준다.
+        */
+
+        body > div#box3 { color: pink; }
+        div#box3 { color: green; }
+    </style>
+</head>
+<body>
+    <!-- ex13_selector.html -->
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box2 aaa bbb ccc ddd eee fff ggg hhh iii jjj">상자2</div>
+    <p class="box2">상자2</p>
+
+    <div id="box3">상자3</div>
+</body>
+</html>

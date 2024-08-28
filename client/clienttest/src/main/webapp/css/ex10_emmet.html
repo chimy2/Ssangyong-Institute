@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex10_emmet.html -->
+    <!-- 
+        Emmet, Zen-coding
+        - 대부분의 편집기들이 제공하는 확장 기능(extension)
+        - CSS 선택자를 사용해서 > HTML or CSS 코드를 빠르게 작성하는 기술
+        - https://emmet.io/
+    -->
+
+    <h1>태그 선택자</h1>
+
+    <div></div>
+    
+    a
+    <a href="url">context</a>
+
+    input
+    <input type="radio">
+
+    img
+    <img src="images/dog.jpg" alt="강아지">
+
+    <h1>아이디 선택자</h1>
+
+    div#box {}
+    <div id="box"></div>
+
+    <div id="box"></div>
+
+    <div id="box"></div>
+
+    input#txtName
+    <input type="text" id="txtName">
+
+    h1#title
+    <h1 id="title"></h1>
+
+    <h1>클래스 선택자</h1>
+    
+    div.list {}
+    <div class="list"></div>
+
+    <div class="list"></div>
+
+    img.pet
+    <img src="images/dog.jpg" alt="강아지" class="pet">
+
+    div.one.two.three
+    <div class="one two three"></div>
+
+    <h1>속성 선택자</h1>
+
+    div[title] {}
+    <div title="">A</div>
+    <div>B</div>
+
+    div[title]
+    div[title=상자]
+    div[title='상자']
+    div[title="상자"]
+
+    img
+    img[width]
+    img[wigth heigth]
+    img[width=200 height=100]
+    img[alt=풍선도움말 width=200 height=100]
+    <img src="" alt="풍선도움말" width="200" height="100">
+    
+    <h1>PCDATA</h1>
+
+    CSS > 불가능 > 태그 그 자체에 조건O 내용물 조건으로 검색X
+    <div>상자</div>
+    <div>A</div>
+
+    div{상자}
+    <div>상자</div>
+
+    h1{제목입니다.}
+    h1{제목입니다.}
+
+    div#box1.box[title=상자1]{상자입니다.}
+    <div id="box1" class="box" title="상자1">상자입니다.</div>
+
+    <h1>반복 기능</h1>
+
+    div{상자입니다.}*5
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    .item*5
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+
+    .item{상자입니다.}*5
+    <div class="item">상자입니다.</div>
+    <div class="item">상자입니다.</div>
+    <div class="item">상자입니다.</div>
+    <div class="item">상자입니다.</div>
+    <div class="item">상자입니다.</div>
+
+    div[title]*5
+    <div title=""></div>
+    <div title=""></div>
+    <div title=""></div>
+    <div title=""></div>
+    <div title=""></div>
+
+    div[title].item{상자입니다.}*5
+    <div title="" class="item">상자입니다.</div>
+    <div title="" class="item">상자입니다.</div>
+    <div title="" class="item">상자입니다.</div>
+    <div title="" class="item">상자입니다.</div>
+    <div title="" class="item">상자입니다.</div>
+
+    div[title] .item*5
+    div[title] <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+
+    #box1*5
+    <div id="box1"></div>
+    <div id="box1"></div>
+    <div id="box1"></div>
+    <div id="box1"></div>
+    <div id="box1"></div>
+    <!-- 아이디가 중복값이 나올 순 없음 -->
+
+    #box$*5
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    <div id="box4"></div>
+    <div id="box5"></div>
+
+    div{상자$}*5
+    <div>상자1</div>
+    <div>상자2</div>
+    <div>상자3</div>
+    <div>상자4</div>
+    <div>상자5</div>
+
+    div#box$.box{상자$}*5
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+    <div id="box4" class="box">상자4</div>
+    <div id="box5" class="box">상자5</div>
+
+    div{상자$}*20
+    div{상자$$}*20
+    div{상자$$$}*20
+    <div>상자1</div>
+    <div>상자2</div>
+    <div>상자3</div>
+    <div>상자4</div>
+    <div>상자5</div>
+    <div>상자6</div>
+    <div>상자7</div>
+    <div>상자8</div>
+    <div>상자9</div>
+    <div>상자10</div>
+    <div>상자11</div>
+    <div>상자12</div>
+    <div>상자13</div>
+    <div>상자14</div>
+    <div>상자15</div>
+    <div>상자16</div>
+    <div>상자17</div>
+    <div>상자18</div>
+    <div>상자19</div>
+    <div>상자20</div>
+    <div>상자01</div>
+    <div>상자02</div>
+    <div>상자03</div>
+    <div>상자04</div>
+    <div>상자05</div>
+    <div>상자06</div>
+    <div>상자07</div>
+    <div>상자08</div>
+    <div>상자09</div>
+    <div>상자10</div>
+    <div>상자11</div>
+    <div>상자12</div>
+    <div>상자13</div>
+    <div>상자14</div>
+    <div>상자15</div>
+    <div>상자16</div>
+    <div>상자17</div>
+    <div>상자18</div>
+    <div>상자19</div>
+    <div>상자20</div>
+    <div>상자001</div>
+    <div>상자002</div>
+    <div>상자003</div>
+    <div>상자004</div>
+    <div>상자005</div>
+    <div>상자006</div>
+    <div>상자007</div>
+    <div>상자008</div>
+    <div>상자009</div>
+    <div>상자010</div>
+    <div>상자011</div>
+    <div>상자012</div>
+    <div>상자013</div>
+    <div>상자014</div>
+    <div>상자015</div>
+    <div>상자016</div>
+    <div>상자017</div>
+    <div>상자018</div>
+    <div>상자019</div>
+    <div>상자020</div>
+
+    <h1>형제 선택자</h1>
+
+    a+b: 인접 형제 선택자
+    a~b: 형제 선택자
+
+    h1+p {}
+    
+    <!-- Emmet은 형제 선택자를 지원하지 않는다 -->
+    h1~p
+
+    h1+p+div
+    <h1></h1>
+    <p></p>
+    <div></div>
+
+    h1+p*5
+    <h1></h1>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    
+    (h1+p)*5
+    <h1></h1>
+    <p></p>
+    <h1></h1>
+    <p></p>
+    <h1></h1>
+    <p></p>
+    <h1></h1>
+    <p></p>
+    <h1></h1>
+    <p></p>
+
+    h1#title{제목입니다.}+p.description{내용입니다.}*5
+    <h1 id="title">제목입니다.</h1>
+    <p class="description">내용입니다.</p>
+    <p class="description">내용입니다.</p>
+    <p class="description">내용입니다.</p>
+    <p class="description">내용입니다.</p>
+    <p class="description">내용입니다.</p>
+    
+    (h1#title{제목입니다.}+p.description{내용입니다.})*5
+    <h1 id="title">제목입니다.</h1>
+    <p class="description">내용입니다.</p>
+    <h1 id="title">제목입니다.</h1>
+    <p class="description">내용입니다.</p>
+    <h1 id="title">제목입니다.</h1>
+    <p class="description">내용입니다.</p>
+    <h1 id="title">제목입니다.</h1>
+    <p class="description">내용입니다.</p>
+    <h1 id="title">제목입니다.</h1>
+    <p class="description">내용입니다.</p>
+    
+    <h1>자식 선택자</h1>
+
+    a>b: 자식
+    a b: 자손
+    <!-- 얼마나 하위의 자손인지 모르기 때문에 자손 선택자는 지원하지 않는다. -->
+
+    div>span
+    <div><span></span></div>
+
+    ul>li
+    <ul>
+        <li></li>
+    </ul>
+
+    ul#list1>li.item{항목$}*5
+    <ul id="list1">
+        <li class="item">항목1</li>
+        <li class="item">항목2</li>
+        <li class="item">항목3</li>
+        <li class="item">항목4</li>
+        <li class="item">항목5</li>
+    </ul>
+
+    table>tr>td
+    <table>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+
+    table>tr*20>td*5
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    table#table1>tr*20>td.cell${항목$}*5
+    <table id="table1">
+        <tr>
+            <td class="cell1">항목1</td>
+            <td class="cell2">항목2</td>
+            <td class="cell3">항목3</td>
+            <td class="cell4">항목4</td>
+            <td class="cell5">항목5</td>
+        </tr>
+        <tr>
+            <td class="cell1">항목1</td>
+            <td class="cell2">항목2</td>
+            <td class="cell3">항목3</td>
+            <td class="cell4">항목4</td>
+            <td class="cell5">항목5</td>
+        </tr>
+        <tr>
+            <td class="cell1">항목1</td>
+            <td class="cell2">항목2</td>
+            <td class="cell3">항목3</td>
+            <td class="cell4">항목4</td>
+            <td class="cell5">항목5</td>
+        </tr>
+        <tr>
+            <td class="cell1">항목1</td>
+            <td class="cell2">항목2</td>
+            <td class="cell3">항목3</td>
+            <td class="cell4">항목4</td>
+            <td class="cell5">항목5</td>
+        </tr>
+        <tr>
+            <td class="cell1">항목1</td>
+            <td class="cell2">항목2</td>
+            <td class="cell3">항목3</td>
+            <td class="cell4">항목4</td>
+            <td class="cell5">항목5</td>
+        </tr>
+        <tr>
+            <td class="cell1">항목1</td>
+            <td class="cell2">항목2</td>
+            <td class="cell3">항목3</td>
+            <td class="cell4">항목4</td>
+            <td class="cell5">항목5</td>
+        </tr>
+        <tr>
+            <td class="cell1">항목1</td>
+            <td class="cell2">항목2</td>
+            <td class="cell3">항목3</td>
+            <td class="cell4">항목4</td>
+            <td class="cell5">항목5</td>
+        </tr>
+        <tr>
+            <td class="cell1">항목1</td>
+            <td class="cell2">항목2</td>
+            <td class="cell3">항목3</td>
+            <td class="cell4">항목4</td>
+            <td class="cell5">항목5</td>
+        </tr>
+        <tr>
+            <td class="cell1">항목1</td>
+            <td class="cell2">항목2</td>
+            <td class="cell3">항목3</td>
+            <td class="cell4">항목4</td>
+            <td class="cell5">항목5</td>
+        </tr>
+        <tr>
+            <td class="cell1">항목1</td>
+            <td class="cell2">항목2</td>
+            <td class="cell3">항목3</td>
+            <td class="cell4">항목4</td>
+            <td class="cell5">항목5</td>
+        </tr>
+        <tr>
+            <td class="cell1">항목1</td>
+            <td class="cell2">항목2</td>
+            <td class="cell3">항목3</td>
+            <td class="cell4">항목4</td>
+            <td class="cell5">항목5</td>
+        </tr>
+        <tr>
+            <td class="cell1">항목1</td>
+            <td class="cell2">항목2</td>
+            <td class="cell3">항목3</td>
+            <td class="cell4">항목4</td>
+            <td class="cell5">항목5</td>
+        </tr>
+        <tr>
+            <td class="cell1">항목1</td>
+            <td class="cell2">항목2</td>
+            <td class="cell3">항목3</td>
+            <td class="cell4">항목4</td>
+            <td class="cell5">항목5</td>
+        </tr>
+        <tr>
+            <td class="cell1">항목1</td>
+            <td class="cell2">항목2</td>
+            <td class="cell3">항목3</td>
+            <td class="cell4">항목4</td>
+            <td class="cell5">항목5</td>
+        </tr>
+        <tr>
+            <td class="cell1">항목1</td>
+            <td class="cell2">항목2</td>
+            <td class="cell3">항목3</td>
+            <td class="cell4">항목4</td>
+            <td class="cell5">항목5</td>
+        </tr>
+        <tr>
+            <td class="cell1">항목1</td>
+            <td class="cell2">항목2</td>
+            <td class="cell3">항목3</td>
+            <td class="cell4">항목4</td>
+            <td class="cell5">항목5</td>
+        </tr>
+        <tr>
+            <td class="cell1">항목1</td>
+            <td class="cell2">항목2</td>
+            <td class="cell3">항목3</td>
+            <td class="cell4">항목4</td>
+            <td class="cell5">항목5</td>
+        </tr>
+        <tr>
+            <td class="cell1">항목1</td>
+            <td class="cell2">항목2</td>
+            <td class="cell3">항목3</td>
+            <td class="cell4">항목4</td>
+            <td class="cell5">항목5</td>
+        </tr>
+        <tr>
+            <td class="cell1">항목1</td>
+            <td class="cell2">항목2</td>
+            <td class="cell3">항목3</td>
+            <td class="cell4">항목4</td>
+            <td class="cell5">항목5</td>
+        </tr>
+        <tr>
+            <td class="cell1">항목1</td>
+            <td class="cell2">항목2</td>
+            <td class="cell3">항목3</td>
+            <td class="cell4">항목4</td>
+            <td class="cell5">항목5</td>
+        </tr>
+    </table>
+
+    <h1>Lorem Ipsum</h1>
+
+    <h1>제목입니다.</h1>
+
+    <p>
+        내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
+    </p>
+
+    div{문자열}
+
+    <!-- 예외 -->
+    div>lorem
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro fugit deserunt explicabo rem ipsam odio quam. Accusamus dolore alias ex vel expedita ad ratione quisquam provident magnam! Quaerat, reprehenderit aspernatur!</div>
+
+    div>lorem1
+    div>lorem5
+    <div>Lorem ipsum dolor sit amet.</div>
+
+    h1>lorem5+p>lorem30*3
+    <h1>
+        Lorem ipsum dolor sit amet.
+        <p><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. At aut, hic autem cupiditate quasi fugiat, impedit cumque reiciendis dolor velit perferendis doloremque nobis dignissimos assumenda inventore perspiciatis delectus animi voluptate.</span><span>Ullam rem excepturi porro qui illum? Nobis at accusamus possimus, incidunt veniam quae nam molestiae error molestias in ab. Vero quas repellendus deleniti ad sint hic consequatur ipsum molestiae odio.</span><span>Natus quae consectetur sapiente nemo deserunt deleniti voluptatibus id accusantium quod veniam odio, obcaecati esse cum ad nihil, possimus voluptate temporibus a adipisci mollitia ipsam quidem libero, impedit quia. Odit?</span></p>
+    </h1>
+
+    h1>lorem5+(p>lorem30)*3
+    <h1>
+        Lorem ipsum dolor sit amet.
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate doloremque praesentium labore optio dolor! Vitae odit illo, fugit pariatur possimus modi reiciendis doloribus id. Facere eligendi corporis ad explicabo aperiam?</p>
+        <p>Recusandae accusantium pariatur molestiae perferendis ratione. Fuga doloribus itaque repellat laboriosam adipisci sint animi amet accusamus beatae voluptates. Odio minus laudantium maiores provident rerum in labore? Maiores dolorem eligendi nostrum?</p>
+        <p>Eos dolorem, provident placeat pariatur id minima maxime delectus cupiditate beatae est eum reprehenderit obcaecati maiores ipsum quia facere enim neque expedita! A reiciendis ipsam eaque amet quae explicabo natus.</p>
+    </h1>
+    
+    (h1>lorem5)+(p>lorem30)*3
+    <h1>Lorem ipsum dolor sit amet.</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum aliquam quod esse quis debitis deserunt recusandae facere possimus, asperiores sint libero aperiam nemo iste fuga ad saepe sapiente voluptatibus consequuntur?</p>
+    <p>Iusto exercitationem sed hic beatae officiis debitis rerum incidunt laboriosam eum veniam corrupti accusamus fugiat, iste esse saepe voluptates modi cumque labore. Minima quia vel amet unde quam quos voluptatem.</p>
+    <p>Quam asperiores tempore molestias minima commodi nemo voluptatem nostrum, in non deleniti voluptates sint alias veritatis iste laudantium voluptatibus! Quod corporis ea voluptatibus tempora laboriosam adipisci, sit dignissimos dolore placeat?</p>
+
+    
+</body>
+</html>

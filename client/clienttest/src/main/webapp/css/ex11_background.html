@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            HTML의 속성은 태그에 종속적이다.
+            - <body bgcolor=""> : O
+            - <div bgcolor="">  : X
+            - 해당 태그에 속성이 정의되어있지 않으면 사용이 불가능하다.
+
+            CSS의 속성은 태그와 독립적이다.
+            - 1개의 속성 > 모든 태그에 적용이 가능하다.
+
+            CSS 색상 표현법
+            1. Color Name: red, yellow, blue..
+            2. RGB Color(HEX): #000000 ~ #FFFFFF
+            3. RGB Color(DEC): rgb(0, 0, 0) ~ rgb(255, 255, 255)
+            4. RGBA Color(DEC): rgba(0, 0, 0, 0) ~ rgba(0, 0, 0, 1)
+                - A(alpha): 불투명도(0~1)
+            5. RGBA Color(HEX): #00000000 ~ #FFFFFFFF
+                - 00(0) ~ FF(1)
+
+            background 속성
+
+            1. background-color
+                - 배경색
+
+            2. background-image
+                - 배경이미지
+
+            3. background-repeat
+                - 배경이미지 반복 제어
+
+            4. background-position
+                - 배경이미지 위치
+
+            5. background-attachment
+                - 배경이미지 고정 유무
+        */
+
+        body {
+            background-color: mediumpurple;
+            background-image: url(images/wall01.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        div#box1 {
+            /* background-color: rgba(255, 255, 255, .2); */
+            /* background-color: #FFFFFF88; */
+            background-image: url(images/catty01.png);
+            background-repeat: repeat-y;
+            background-position: center lr;
+        }
+
+        input#txt1 {
+            /* background-color: cadetblue; */
+            background-image: url(images/hangame.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        input#txt1:focus {
+            background-image: url();
+        }
+    </style>
+</head>
+<body>
+    <!-- ex11_background.html -->
+
+    <input type="text" id="txt1">
+
+    <hr>
+
+    <div id="box1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet explicabo illo quod cum magni amet veniam totam iusto, inventore beatae est, natus nesciunt dolores perspiciatis sunt quis. Adipisci soluta architecto reprehenderit molestias placeat officiis suscipit, minus id ipsum autem consequatur facere ea itaque iusto distinctio eos dignissimos quaerat tenetur. Ducimus hic accusamus, rem in nisi, error a iure aperiam eius eveniet cumque veniam obcaecati illum ipsam laboriosam officia vel dolorem eaque sed delectus provident reiciendis necessitatibus dolores doloremque! In ea quasi earum velit tenetur qui! Alias tenetur voluptatum quos dolorum quibusdam eum laboriosam ut id quae, illo autem? Nesciunt, autem optio rerum, perferendis excepturi eveniet dolorem est quam consequuntur, error voluptatibus fuga ratione. Excepturi id vitae magnam facilis dolorem expedita libero iure voluptates saepe ea quaerat unde ducimus molestias est vel, alias culpa praesentium blanditiis qui? Asperiores itaque ducimus commodi beatae veritatis voluptates odit, similique ratione nihil cumque eligendi consectetur labore accusantium reiciendis incidunt quae quod quibusdam odio cupiditate facere possimus, vero quam mollitia magnam? Praesentium natus, eius facilis necessitatibus culpa soluta delectus odio maxime aspernatur, temporibus quis dolorum vero adipisci quae aperiam, quia fugit sapiente aut pariatur? Harum laudantium animi id nesciunt deleniti dicta saepe quasi, perferendis debitis dolores aliquid assumenda porro cupiditate impedit sequi. Eaque illo inventore aliquam iusto. A provident perspiciatis officia consequuntur minus, adipisci nisi magni porro omnis ipsam nostrum quae enim voluptates maiores facilis at possimus corporis vitae fugit voluptatum eaque quam quisquam voluptas? Dolorum quae accusantium sapiente magnam repellat mollitia atque beatae sunt impedit, voluptatum eos nisi optio quisquam cupiditate voluptas quasi est ab rerum labore ullam itaque! Assumenda libero porro distinctio officiis, tempora iusto ducimus. Itaque dignissimos laboriosam error dolor officiis mollitia ipsum adipisci natus sapiente, autem esse amet explicabo qui est reiciendis quisquam, accusantium recusandae vero et distinctio laudantium! Voluptatem, id ex.</div>
+
+    (<p>
+        <l></l>
+    </p>orem)*50
+
+</body>
+</html>

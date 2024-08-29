@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #list section {
+            display: flex;
+            width: 584px;
+            height: 90px;
+            font-size: 13px;
+        }
+
+        #list section > img {
+            width: 110px;
+            height: 75px;
+        }
+
+        #list section > div {
+            display: flex;
+            flex-direction: column;
+            padding-left: 20px;
+            justify-content: space-between;
+            height: 75px;
+            
+        }
+
+        #list section > div > h4 {
+            margin: 0;
+            font-size:15px;
+        }
+
+        #list section > div > p {
+            margin: 0;
+            height: 1rem;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            width: 400px;
+        }
+
+        #list section > div > div {
+        }
+
+        #list section > div > div > span:last-child {
+            color: blue;
+            margin-left: 5px;
+        }
+
+        #list2 {
+            width: 645px;
+            margin: 50px auto;
+            border-left: 1px solid #000;
+            border-right: 1px solid #000;
+        }
+
+        #list2 .item {
+            height: 75px;
+            margin: 20px 30px;
+            border-bottom: 1px solid #DDD;
+            padding-bottom: 20px;
+        }
+
+        #list2 .item img {
+            width: 110px;
+            height: 75px;
+            float: left;
+            border: 1px solid #EEE;
+        }
+
+        #list2 .item .content {
+            float: left;
+            margin: 7px 12px;
+        }
+
+        #list2 .item .content .title {
+            font-size: 15px;
+            font-weight: bold;
+            color: #1E1E23;
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+        }
+
+        #list2 .item .content .desc {
+            font-size: 13px;
+            color: #767678;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+            
+            width: calc(645px - 200px);
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis; 
+        }
+
+        #list2 .item .content .info {
+            font-size: 12px;
+        }
+
+        #list2 .item .content .info .publisher {
+            color: #929298;
+        }
+
+        #list2 .item .content .info .time {
+            color: #3F6CDB;
+        }
+            
+    </style>
+</head>
+<body>
+    <!-- ex21_naver.html -->
+    <div id="list">
+        <section>
+            <img src="https://mimgnews.pstatic.net/image/origin/092/2024/08/29/2343813.jpg?type=nf220_150" alt="">
+            <div class="content">
+                <h4>30주년 맞은 지란지교그룹, 세대교체 기반 지속성장 가속</h4>
+                <p>
+                    삼성SDI가 전고체 배터리 개발을 사실상 완료하고 납품 준비에 돌입했다. 첫 고객사는 글로벌 슈퍼카 업체들이다. 28일 지디넷코리아 취재에 따르면 삼성SDI는 올해 상반기 B샘플 개발을 완료하고 BMW, 페라리, 포
+                </p>
+                <div><span>지디넷코리아</span><span></span><span>9분전</span></div>
+            </div>
+        </section>
+        <section>
+            <img src="https://mimgnews.pstatic.net/image/origin/014/2024/08/29/5234111.jpg?type=nf220_150" alt="사람">
+            <div>
+                <h4>"블랙웰 생산 지연 기술 결함 아니야" 젠슨 황 엔비디아 CEO의 설명</h4>
+                <p>
+                    엔비디아 최고경영자(CEO) 젠슨 황이 올해 4·4분기부터 최신형 인공지능(AI) 칩 '블랙웰'의 본격 생산이 이뤄질 것이라고 밝혔다. 또 황 CEO는 블랙웰로 엔비디아의 매출이 수십억 달러 이상 증가할 것이라는 장
+                </p>
+                <div><span>파이낸셜뉴스</span><span></span><span>12분전</span></div>
+            </div>
+        </section>
+        <section>
+            <img src="https://mimgnews.pstatic.net/image/origin/421/2024/08/29/7756889.jpg?type=nf220_150">
+            <div>
+                <h4>레지던트 사직률 한 달 만에 45%→73%…산부인과 82% 달해</h4>
+                <p>
+                    레지던트 사직률이 73%까지 치솟은 것으로 나타났다. 특히 산부인과와 재활의학과 레지던트의 사직률은 80%대에 달하는 것으로 파악됐다. 의대증원에 반발해 병원을 떠난 후 돌아오지 않거나 임용 포기를 명확히 밝혀 사직
+                </p>
+                <div><span>뉴스1</span><span></span><span>16분전</span></div>
+            </div>
+        </section>
+        <section>
+            <img src="https://mimgnews.pstatic.net/image/origin/138/2024/08/29/2181061.jpg?type=nf220_150">
+            <div>
+                <h4>"현빈·정우성에 내부자들 감독까지"…'메이드 인 코리아', 디즈니+로</h4>
+                <p>
+                    월트디즈니컴퍼니코리아(이하 디즈니코리아)가 내년 디즈니플러스(+)를 통해 오리지널 시리즈 '메이드 인 코리아'를 내년 공개한다고 29일 밝혔다. '메이드 인 코리아'는 1970년대 부와 권력을 쫓는 '백기태'와 그를
+                </p>
+                <div><span>디지털데일리</span><span></span><span>20분전</span></div>
+            </div>
+        </section>
+    </div>
+
+
+    <div id="list2">
+        <div class="item">
+            <img src="https://mimgnews.pstatic.net/image/origin/092/2024/08/29/2343813.jpg?type=nf220_150" alt="">
+            <div class="content">
+                <div class="title">30주년 맞은 지란지교그룹, 세대교체 기반 지속성장 가속</div>
+                <div class="desc">
+                    지란지교그룹이 창립 30주년을 맞아 전사적인 세대교체 기반의 도약에 나선다. 지란지교그룹은 29일 판교 인피니티타워에서 창립 30주년을 맞아 향후 30년을 위한 미래 비전 ‘넥스트 30’을 발표했다.
+                </div>
+                <div class="info">
+                    <span class="publisher">지디넷코리아</span>
+                    <span class="time">9분전</span>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://mimgnews.pstatic.net/image/origin/014/2024/08/29/5234111.jpg?type=nf220_150" alt="사람">
+            <div class="content">
+                <div class="title">"블랙웰 생산 지연 기술 결함 아니야" 젠슨 황 엔비디아 CEO의 설명</div>
+                <div class="desc">
+                    엔비디아 최고경영자(CEO) 젠슨 황이 올해 4·4분기부터 최신형 인공지능(AI) 칩 '블랙웰'의 본격 생산이 이뤄질 것이라고 밝혔다. 또 황 CEO는 블랙웰로 엔비디아의 매출이 수십억 달러 이상 증가할 것이라는 장
+                </div>
+                <div class="info">
+                    <span class="publisher">파이낸셜뉴스</span>
+                    <span class="time">12분전</span>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://mimgnews.pstatic.net/image/origin/421/2024/08/29/7756889.jpg?type=nf220_150">
+            <div class="content">
+                <div class="title">레지던트 사직률 한 달 만에 45%→73%…산부인과 82% 달해</div>
+                <div class="desc">
+                    레지던트 사직률이 73%까지 치솟은 것으로 나타났다. 특히 산부인과와 재활의학과 레지던트의 사직률은 80%대에 달하는 것으로 파악됐다. 의대증원에 반발해 병원을 떠난 후 돌아오지 않거나 임용 포기를 명확히 밝혀 사직
+                </div>
+                <div class="info">
+                    <span class="publisher">뉴스1</span>
+                    <span class="time">16분전</span>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://mimgnews.pstatic.net/image/origin/138/2024/08/29/2181061.jpg?type=nf220_150">
+            <div class="content">
+                <div class="title">"현빈·정우성에 내부자들 감독까지"…'메이드 인 코리아', 디즈니+로</div>
+                <div class="desc">
+                    월트디즈니컴퍼니코리아(이하 디즈니코리아)가 내년 디즈니플러스(+)를 통해 오리지널 시리즈 '메이드 인 코리아'를 내년 공개한다고 29일 밝혔다. '메이드 인 코리아'는 1970년대 부와 권력을 쫓는 '백기태'와 그를
+                </div>
+                <div class="info">
+                    <span class="publisher">디지털데일리</span>
+                    <span class="time">20분전</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

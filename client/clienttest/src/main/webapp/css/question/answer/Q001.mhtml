@@ -1,0 +1,547 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: http://pinnpublic.dothome.co.kr/question/css/table_impl.html
+Subject: Document
+Date: Thu, 29 Aug 2024 12:24:47 +0900
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--cniRK44PzD0k260vHpJzEJN4XXEPv8dVhzEh41aD68----"
+
+
+------MultipartBoundary--cniRK44PzD0k260vHpJzEJN4XXEPv8dVhzEh41aD68----
+Content-Type: text/html
+Content-ID: <frame-9A67DEACC7DCCA7F19DEB87A83374175@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://pinnpublic.dothome.co.kr/question/css/table_impl.html
+
+<!DOCTYPE html><html lang=3D"en"><head><meta http-equiv=3D"Content-Type" co=
+ntent=3D"text/html; charset=3DUTF-8"><link rel=3D"stylesheet" type=3D"text/=
+css" href=3D"cid:css-4d1bd885-72a8-41d4-b608-220bbc10a9cd@mhtml.blink" /><l=
+ink rel=3D"stylesheet" type=3D"text/css" href=3D"cid:css-3dac4fa9-4ac6-4758=
+-84d4-cfc6128001b9@mhtml.blink" />
+   =20
+    <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0">
+    <title>Document</title>
+
+=09
+</head>
+<body>
+	<div id=3D"main">
+
+		<h1><span style=3D"color:cornflowerblue;">M</span>ember list <small style=
+=3D"float:right;font-size:.6em;margin-top:14px;">Table Design</small></h1>
+		<table id=3D"list4">
+			<tbody><tr>
+				<th class=3D"col1">No</th>
+				<th class=3D"col2">Name</th>
+				<th class=3D"col3">Age</th>
+				<th class=3D"col4">ID</th>
+				<th class=3D"col5">Description</th>
+			</tr>
+			<tr>
+				<td class=3D"cell1">01</td>
+				<td class=3D"cell2">Lorem</td>
+				<td class=3D"cell3">21</td>
+				<td class=3D"cell4">Lorem</td>
+				<td class=3D"cell5">Lorem ipsum dolor sit amet</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">02</td>
+				<td class=3D"cell2">Magni</td>
+				<td class=3D"cell3">22</td>
+				<td class=3D"cell4">Facere</td>
+				<td class=3D"cell5">Obcaecati accusamus perspiciatis nesciunt corporis<=
+/td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">03</td>
+				<td class=3D"cell2">Nam</td>
+				<td class=3D"cell3">23</td>
+				<td class=3D"cell4">Laudantium</td>
+				<td class=3D"cell5">Ipsa nam molestiae ea obcaecati</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">04</td>
+				<td class=3D"cell2">Beatae</td>
+				<td class=3D"cell3">24</td>
+				<td class=3D"cell4">Esse</td>
+				<td class=3D"cell5">Repellat expedita dolorum autem architecto</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">05</td>
+				<td class=3D"cell2">Placeat</td>
+				<td class=3D"cell3">25</td>
+				<td class=3D"cell4">Itaque</td>
+				<td class=3D"cell5">Soluta eaque nam nemo enim</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">06</td>
+				<td class=3D"cell2">Eligendi</td>
+				<td class=3D"cell3">26</td>
+				<td class=3D"cell4">Velit</td>
+				<td class=3D"cell5">Dolores, unde ratione Ab, natus</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">07</td>
+				<td class=3D"cell2">Labore</td>
+				<td class=3D"cell3">27</td>
+				<td class=3D"cell4">Doloribus</td>
+				<td class=3D"cell5">Voluptas aperiam ratione suscipit cumque</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">08</td>
+				<td class=3D"cell2">Ducimus</td>
+				<td class=3D"cell3">28</td>
+				<td class=3D"cell4">Ea</td>
+				<td class=3D"cell5">Distinctio possimus neque quisquam asperiores</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">09</td>
+				<td class=3D"cell2">Et</td>
+				<td class=3D"cell3">29</td>
+				<td class=3D"cell4">Nostrum</td>
+				<td class=3D"cell5">Architecto eos odit dignissimos similique</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">10</td>
+				<td class=3D"cell2">Saepe</td>
+				<td class=3D"cell3">21</td>
+				<td class=3D"cell4">Voluptatibus</td>
+				<td class=3D"cell5">Unde, aliquid Deleniti, quae mollitia</td>
+			</tr>
+		</tbody></table>
+
+
+		<h1><span style=3D"color:gold;">M</span>ember list</h1>
+		<table id=3D"list1">
+			<tbody><tr>
+				<th class=3D"col1">No</th>
+				<th class=3D"col2">Name</th>
+				<th class=3D"col3">Age</th>
+				<th class=3D"col4">ID</th>
+				<th class=3D"col5">Description</th>
+			</tr>
+			<tr>
+				<td class=3D"cell1">01</td>
+				<td class=3D"cell2">Lorem</td>
+				<td class=3D"cell3">21</td>
+				<td class=3D"cell4">Lorem</td>
+				<td class=3D"cell5">Lorem ipsum dolor sit amet</td>
+			</tr>
+			<tr class=3D"sprite">
+				<td class=3D"cell1">02</td>
+				<td class=3D"cell2">Magni</td>
+				<td class=3D"cell3">22</td>
+				<td class=3D"cell4">Facere</td>
+				<td class=3D"cell5">Obcaecati accusamus perspiciatis nesciunt corporis<=
+/td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">03</td>
+				<td class=3D"cell2">Nam</td>
+				<td class=3D"cell3">23</td>
+				<td class=3D"cell4">Laudantium</td>
+				<td class=3D"cell5">Ipsa nam molestiae ea obcaecati</td>
+			</tr>
+			<tr class=3D"sprite">
+				<td class=3D"cell1">04</td>
+				<td class=3D"cell2">Beatae</td>
+				<td class=3D"cell3">24</td>
+				<td class=3D"cell4">Esse</td>
+				<td class=3D"cell5">Repellat expedita dolorum autem architecto</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">05</td>
+				<td class=3D"cell2">Placeat</td>
+				<td class=3D"cell3">25</td>
+				<td class=3D"cell4">Itaque</td>
+				<td class=3D"cell5">Soluta eaque nam nemo enim</td>
+			</tr>
+			<tr class=3D"sprite">
+				<td class=3D"cell1">06</td>
+				<td class=3D"cell2">Eligendi</td>
+				<td class=3D"cell3">26</td>
+				<td class=3D"cell4">Velit</td>
+				<td class=3D"cell5">Dolores, unde ratione Ab, natus</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">07</td>
+				<td class=3D"cell2">Labore</td>
+				<td class=3D"cell3">27</td>
+				<td class=3D"cell4">Doloribus</td>
+				<td class=3D"cell5">Voluptas aperiam ratione suscipit cumque</td>
+			</tr>
+			<tr class=3D"sprite">
+				<td class=3D"cell1">08</td>
+				<td class=3D"cell2">Ducimus</td>
+				<td class=3D"cell3">28</td>
+				<td class=3D"cell4">Ea</td>
+				<td class=3D"cell5">Distinctio possimus neque quisquam asperiores</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">09</td>
+				<td class=3D"cell2">Et</td>
+				<td class=3D"cell3">29</td>
+				<td class=3D"cell4">Nostrum</td>
+				<td class=3D"cell5">Architecto eos odit dignissimos similique</td>
+			</tr>
+			<tr class=3D"sprite">
+				<td class=3D"cell1">10</td>
+				<td class=3D"cell2">Saepe</td>
+				<td class=3D"cell3">21</td>
+				<td class=3D"cell4">Voluptatibus</td>
+				<td class=3D"cell5">Unde, aliquid Deleniti, quae mollitia</td>
+			</tr>
+		</tbody></table>
+
+		<h1><span style=3D"color:#C3E871;">M</span>ember list</h1>
+		<table id=3D"list2">
+			<tbody><tr>
+				<th class=3D"col1">No</th>
+				<th class=3D"col2">Name</th>
+				<th class=3D"col3">Age</th>
+				<th class=3D"col4">ID</th>
+				<th class=3D"col5">Description</th>
+			</tr>
+			<tr>
+				<td class=3D"cell1">01</td>
+				<td class=3D"cell2">Lorem</td>
+				<td class=3D"cell3">21</td>
+				<td class=3D"cell4">Lorem</td>
+				<td class=3D"cell5">Lorem ipsum dolor sit amet</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">02</td>
+				<td class=3D"cell2">Magni</td>
+				<td class=3D"cell3">22</td>
+				<td class=3D"cell4">Facere</td>
+				<td class=3D"cell5">Obcaecati accusamus perspiciatis nesciunt corporis<=
+/td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">03</td>
+				<td class=3D"cell2">Nam</td>
+				<td class=3D"cell3">23</td>
+				<td class=3D"cell4">Laudantium</td>
+				<td class=3D"cell5">Ipsa nam molestiae ea obcaecati</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">04</td>
+				<td class=3D"cell2">Beatae</td>
+				<td class=3D"cell3">24</td>
+				<td class=3D"cell4">Esse</td>
+				<td class=3D"cell5">Repellat expedita dolorum autem architecto</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">05</td>
+				<td class=3D"cell2">Placeat</td>
+				<td class=3D"cell3">25</td>
+				<td class=3D"cell4">Itaque</td>
+				<td class=3D"cell5">Soluta eaque nam nemo enim</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">06</td>
+				<td class=3D"cell2">Eligendi</td>
+				<td class=3D"cell3">26</td>
+				<td class=3D"cell4">Velit</td>
+				<td class=3D"cell5">Dolores, unde ratione Ab, natus</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">07</td>
+				<td class=3D"cell2">Labore</td>
+				<td class=3D"cell3">27</td>
+				<td class=3D"cell4">Doloribus</td>
+				<td class=3D"cell5">Voluptas aperiam ratione suscipit cumque</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">08</td>
+				<td class=3D"cell2">Ducimus</td>
+				<td class=3D"cell3">28</td>
+				<td class=3D"cell4">Ea</td>
+				<td class=3D"cell5">Distinctio possimus neque quisquam asperiores</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">09</td>
+				<td class=3D"cell2">Et</td>
+				<td class=3D"cell3">29</td>
+				<td class=3D"cell4">Nostrum</td>
+				<td class=3D"cell5">Architecto eos odit dignissimos similique</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">10</td>
+				<td class=3D"cell2">Saepe</td>
+				<td class=3D"cell3">21</td>
+				<td class=3D"cell4">Voluptatibus</td>
+				<td class=3D"cell5">Unde, aliquid Deleniti, quae mollitia</td>
+			</tr>
+		</tbody></table>
+
+
+
+		<h1><span style=3D"color:#C792EA;">M</span>ember list</h1>
+		<table id=3D"list3">
+			<tbody><tr>
+				<th class=3D"col1">No</th>
+				<th class=3D"col2">Name</th>
+				<th class=3D"col3">Age</th>
+				<th class=3D"col4">ID</th>
+				<th class=3D"col5">Description</th>
+			</tr>
+			<tr>
+				<td class=3D"cell1">01</td>
+				<td class=3D"cell2">Lorem</td>
+				<td class=3D"cell3">21</td>
+				<td class=3D"cell4">Lorem</td>
+				<td class=3D"cell5">Lorem ipsum dolor sit amet</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">02</td>
+				<td class=3D"cell2">Magni</td>
+				<td class=3D"cell3">22</td>
+				<td class=3D"cell4">Facere</td>
+				<td class=3D"cell5">Obcaecati accusamus perspiciatis nesciunt corporis<=
+/td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">03</td>
+				<td class=3D"cell2">Nam</td>
+				<td class=3D"cell3">23</td>
+				<td class=3D"cell4">Laudantium</td>
+				<td class=3D"cell5">Ipsa nam molestiae ea obcaecati</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">04</td>
+				<td class=3D"cell2">Beatae</td>
+				<td class=3D"cell3">24</td>
+				<td class=3D"cell4">Esse</td>
+				<td class=3D"cell5">Repellat expedita dolorum autem architecto</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">05</td>
+				<td class=3D"cell2">Placeat</td>
+				<td class=3D"cell3">25</td>
+				<td class=3D"cell4">Itaque</td>
+				<td class=3D"cell5">Soluta eaque nam nemo enim</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">06</td>
+				<td class=3D"cell2">Eligendi</td>
+				<td class=3D"cell3">26</td>
+				<td class=3D"cell4">Velit</td>
+				<td class=3D"cell5">Dolores, unde ratione Ab, natus</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">07</td>
+				<td class=3D"cell2">Labore</td>
+				<td class=3D"cell3">27</td>
+				<td class=3D"cell4">Doloribus</td>
+				<td class=3D"cell5">Voluptas aperiam ratione suscipit cumque</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">08</td>
+				<td class=3D"cell2">Ducimus</td>
+				<td class=3D"cell3">28</td>
+				<td class=3D"cell4">Ea</td>
+				<td class=3D"cell5">Distinctio possimus neque quisquam asperiores</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">09</td>
+				<td class=3D"cell2">Et</td>
+				<td class=3D"cell3">29</td>
+				<td class=3D"cell4">Nostrum</td>
+				<td class=3D"cell5">Architecto eos odit dignissimos similique</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">10</td>
+				<td class=3D"cell2">Saepe</td>
+				<td class=3D"cell3">21</td>
+				<td class=3D"cell4">Voluptatibus</td>
+				<td class=3D"cell5">Unde, aliquid Deleniti, quae mollitia</td>
+			</tr>
+		</tbody></table>
+
+
+
+		<h1><span style=3D"color:#73B5AF;">M</span>ember list</h1>
+		<table id=3D"list5">
+			<tbody><tr>
+				<th class=3D"col1">No</th>
+				<th class=3D"col2">Name</th>
+				<th class=3D"col3">Age</th>
+				<th class=3D"col4">ID</th>
+				<th class=3D"col5">Description</th>
+			</tr>
+			<tr>
+				<td class=3D"cell1">01</td>
+				<td class=3D"cell2">Lorem</td>
+				<td class=3D"cell3">21</td>
+				<td class=3D"cell4">Lorem</td>
+				<td class=3D"cell5">Lorem ipsum dolor sit amet</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">02</td>
+				<td class=3D"cell2">Magni</td>
+				<td class=3D"cell3">22</td>
+				<td class=3D"cell4">Facere</td>
+				<td class=3D"cell5">Obcaecati accusamus perspiciatis nesciunt corporis<=
+/td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">03</td>
+				<td class=3D"cell2">Nam</td>
+				<td class=3D"cell3">23</td>
+				<td class=3D"cell4">Laudantium</td>
+				<td class=3D"cell5">Ipsa nam molestiae ea obcaecati</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">04</td>
+				<td class=3D"cell2">Beatae</td>
+				<td class=3D"cell3">24</td>
+				<td class=3D"cell4">Esse</td>
+				<td class=3D"cell5">Repellat expedita dolorum autem architecto</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">05</td>
+				<td class=3D"cell2">Placeat</td>
+				<td class=3D"cell3">25</td>
+				<td class=3D"cell4">Itaque</td>
+				<td class=3D"cell5">Soluta eaque nam nemo enim</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">06</td>
+				<td class=3D"cell2">Eligendi</td>
+				<td class=3D"cell3">26</td>
+				<td class=3D"cell4">Velit</td>
+				<td class=3D"cell5">Dolores, unde ratione Ab, natus</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">07</td>
+				<td class=3D"cell2">Labore</td>
+				<td class=3D"cell3">27</td>
+				<td class=3D"cell4">Doloribus</td>
+				<td class=3D"cell5">Voluptas aperiam ratione suscipit cumque</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">08</td>
+				<td class=3D"cell2">Ducimus</td>
+				<td class=3D"cell3">28</td>
+				<td class=3D"cell4">Ea</td>
+				<td class=3D"cell5">Distinctio possimus neque quisquam asperiores</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">09</td>
+				<td class=3D"cell2">Et</td>
+				<td class=3D"cell3">29</td>
+				<td class=3D"cell4">Nostrum</td>
+				<td class=3D"cell5">Architecto eos odit dignissimos similique</td>
+			</tr>
+			<tr>
+				<td class=3D"cell1">10</td>
+				<td class=3D"cell2">Saepe</td>
+				<td class=3D"cell3">21</td>
+				<td class=3D"cell4">Voluptatibus</td>
+				<td class=3D"cell5">Unde, aliquid Deleniti, quae mollitia</td>
+			</tr>
+		</tbody></table>
+	</div>
+
+<div id=3D"__endic_crx__"><div class=3D"css-diqpy0"></div></div></body></ht=
+ml>
+------MultipartBoundary--cniRK44PzD0k260vHpJzEJN4XXEPv8dVhzEh41aD68----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-4d1bd885-72a8-41d4-b608-220bbc10a9cd@mhtml.blink
+
+@charset "utf-8";
+
+body { margin-bottom: 100px; }
+
+body, div, h1, th, td { font-family: Verdana; color: rgb(68, 68, 68); }
+
+#main { width: 800px; margin: 0px auto; }
+
+#main h1 { font-variant: small-caps; border-bottom: 1px dashed rgb(153, 153=
+, 153); margin-top: 30px; }
+
+#list1, #list2, #list4 { border: 1px solid rgb(204, 204, 204); border-colla=
+pse: collapse; width: 800px; }
+
+#list1 th, #list1 td, #list2 th, #list2 td, #list4 th, #list4 td { border: =
+1px solid rgb(204, 204, 204); padding: 5px; font-size: 14px; }
+
+#list5 th, #list5 td { border-width: 1px 0px 1px 1px; border-top-style: sol=
+id; border-bottom-style: solid; border-left-style: solid; border-top-color:=
+ rgb(204, 204, 204); border-bottom-color: rgb(204, 204, 204); border-left-c=
+olor: rgb(204, 204, 204); border-image: initial; border-right-style: initia=
+l; border-right-color: initial; padding: 5px; font-size: 14px; }
+
+#list5 .col5, #list5 .cell5 { border: 1px solid rgb(204, 204, 204); }
+
+#list3 { border-width: 1px 0px; border-top-style: solid; border-bottom-styl=
+e: solid; border-top-color: rgb(204, 204, 204); border-bottom-color: rgb(20=
+4, 204, 204); border-image: initial; border-collapse: collapse; border-left=
+-style: initial; border-left-color: initial; border-right-style: initial; b=
+order-right-color: initial; width: 800px; }
+
+#list3 th, #list3 td { border-width: 1px 0px; border-top-style: solid; bord=
+er-bottom-style: solid; border-top-color: rgb(204, 204, 204); border-bottom=
+-color: rgb(204, 204, 204); border-image: initial; border-left-style: initi=
+al; border-left-color: initial; border-right-style: initial; border-right-c=
+olor: initial; padding: 5px; font-size: 14px; }
+
+#list1 .col1, #list2 .col1, #list3 .col1, #list4 .col1, #list5 .col1 { widt=
+h: 50px; }
+
+#list1 .col2, #list2 .col2, #list3 .col2, #list4 .col2, #list5 .col2 { widt=
+h: 80px; }
+
+#list1 .col3, #list2 .col3, #list3 .col3, #list4 .col3, #list5 .col3 { widt=
+h: 50px; }
+
+#list1 .col4, #list2 .col4, #list3 .col4, #list4 .col4, #list5 .col4 { widt=
+h: 100px; }
+
+#list1 .col5, #list2 .col5, #list3 .col5, #list4 .col5, #list5 .col5 { widt=
+h: 520px; }
+
+#list1 td, #list2 td, #list3 td, #list4 td, #list5 td { text-align: center;=
+ }
+
+#list1 .cell5, #list2 .cell5, #list3 .cell5, #list4 .cell5, #list5 .cell5 {=
+ text-align: left; padding-left: 10px; }
+
+#list1 th, #list2 th, #list3 th, #list4 th, #list5 th { background-color: r=
+gb(221, 221, 221); }
+
+#list1 .sprite { background-color: rgb(238, 238, 238); }
+
+#list2 tr:hover { background-color: rgb(238, 238, 238); }
+------MultipartBoundary--cniRK44PzD0k260vHpJzEJN4XXEPv8dVhzEh41aD68----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-3dac4fa9-4ac6-4758-84d4-cfc6128001b9@mhtml.blink
+
+@charset "utf-8";
+
+.css-diqpy0 { margin: 0px; padding: 0px; font-family: ui-sans-serif, -apple=
+-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Ar=
+ial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; font-variant-ligature=
+s: none; color: var(--text-primary); -webkit-font-smoothing: antialiased; p=
+osition: absolute; left: 0px; top: 0px; width: 0px; height: 0px; z-index: 2=
+147483647; }
+
+@media (prefers-color-scheme: light) {
+  .css-diqpy0 { --text-primary: #202124; --text-secondary: #5f6368; --backg=
+round-color: #fff; --layer-background: #fff; --border-color: #dadce0; --pri=
+mary-blue: #1a73e8; --primary-orange: #f0592a; --hover-color: #20212409; }
+}
+
+@media (prefers-color-scheme: dark) {
+  .css-diqpy0 { --text-primary: #ddd; --text-secondary: #bdc1c6; --backgrou=
+nd-color: #202124; --layer-background: #292a2d; --border-color: #757b80; --=
+primary-blue: #8ab4f8; --primary-orange: #ff835d; --hover-color: #ffffff1a;=
+ }
+}
+------MultipartBoundary--cniRK44PzD0k260vHpJzEJN4XXEPv8dVhzEh41aD68------

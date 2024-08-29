@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            float
+            - 기본의 출력 정책을 따르지 않고, 자신의 원래 위치에서 벗어나 현재 라인의 좌측(우측) 끝으로 이동한다.
+            - 원래의 공간은 앞뒤 요소에 의해서 메꿔진다.
+        */
+
+        #title {
+            color: #444;
+            font-family: Verdana;
+            font-variant: small-caps;
+            letter-spacing: -1.5px;
+            border-bottom: 2px dashed #444;
+            padding-bottom: 5px;
+            width: 600px;
+        }
+
+        #title #first-letter {
+            color: cornflowerblue;
+        }
+
+        #title #sub-title {
+            font-size: 16px;
+            margin-left: auto;
+        }
+
+        p > img {
+            float: left;
+        }
+
+        #txt > span {
+            background-color: yellow;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex26_float.html -->
+    <h1 id="title">
+        <span id="first-letter">M</span>ember List
+        <span id="sub-title">Table Design</span>
+    </h1>
+
+    <h1>대표 인사말</h1>
+
+    <p>
+        <img src="images/man_01.png">
+        안녕하세요. 
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt animi eveniet delectus quasi 
+        optio hic vero dolore voluptatum excepturi veniam ex et nisi explicabo unde rerum laboriosam, 
+        quia placeat! Vero dolorem officia id impedit quis quidem voluptate mollitia reiciendis! 
+        Unde omnis suscipit temporibus aliquam tempora vero eos iusto dicta soluta, 
+        quis cumque error amet eius tempore a? Quaerat illo aperiam dolorem corporis, 
+        omnis totam ut earum ex? Distinctio ea numquam sequi quaerat voluptate ullam ipsam quae 
+        debitis assumenda quibusdam soluta nam excepturi harum atque similique sint, cum maxime 
+        repudiandae obcaecati architecto commodi porro ut. Ratione odit repellat nam porro neque 
+        similique velit labore numquam, aliquid nihil, optio eligendi vero quam? Earum odio praesentium 
+        vitae facere asperiores quam, iure neque. Nulla, in minima velit architecto nihil sint error quo. 
+        Quisquam quas sint consectetur inventore illo quod laborum optio ab facere tempore eius quis in 
+        voluptate voluptatum nesciunt molestias, ex voluptatem ea doloribus dolorem vel et repudiandae. 
+        Omnis minima tenetur architecto, at deleniti consectetur ut recusandae harum, quisquam aut 
+        perferendis similique maiores odit dolorum pariatur! Deleniti rerum, maxime dolores debitis 
+        adipisci unde reiciendis laborum atque facere quia repudiandae culpa obcaecati dolorem sed 
+        corrupti placeat accusamus praesentium, aperiam molestias numquam dolore nemo nisi ab incidunt. 
+        Blanditiis, debitis dolores fuga voluptates maxime dolor quam obcaecati fugit unde atque! 
+        <img src="images/man_01.png">Obcaecati quis veritatis at officia explicabo et, harum non dolore eligendi adipisci dolores sunt sequi ex unde eveniet iusto facilis magni amet ad! Vitae id ipsam, pariatur veritatis perspiciatis nihil! Consequuntur totam accusamus officia laborum earum? Dicta dolorem totam id minus atque amet, libero quisquam odio molestiae iste consequuntur dolore. Pariatur iure placeat aperiam tenetur ullam natus vero obcaecati? Dolorum qui explicabo corrupti, excepturi repellendus nobis aliquid quis velit sapiente. Itaque nostrum vero delectus officiis iure eveniet doloribus voluptates cumque inventore, praesentium omnis corrupti voluptas vitae? Minima voluptate corrupti, assumenda natus non ipsa aspernatur in deleniti magni consectetur possimus, nam similique tempora facere molestias modi sunt inventore illo, amet incidunt nobis ab mollitia earum. Aliquam omnis harum voluptates cum! Sapiente reprehenderit eaque perferendis in aut! Voluptatibus ipsa quam nam accusantium rerum dolor? Repellat voluptate suscipit quaerat, rerum nemo omnis quia quis, exercitationem illum alias odit vitae quod saepe accusamus reprehenderit debitis deleniti! Dolore eos necessitatibus maxime corporis? Amet qui a doloribus veniam adipisci? Veniam dolorum praesentium in laborum voluptas perferendis delectus quo quam possimus totam similique consectetur et veritatis rem asperiores assumenda recusandae, nesciunt corrupti quas!
+    </p>
+
+    <hr>
+
+    <div id="txt">
+        안녕하세요.안녕하세요. <span>홍길동</span>입니다. 
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt animi eveniet delectus quasi 
+        optio hic vero dolore voluptatum excepturi veniam ex et nisi explicabo unde rerum laboriosam, 
+        quia placeat! Vero dolorem officia id impedit quis quidem voluptate mollitia reiciendis! 
+        Unde omnis suscipit temporibus aliquam tempora vero eos iusto dicta soluta, 
+        quis cumque error amet eius tempore a? Quaerat illo aperiam dolorem corporis, 
+        omnis totam ut earum ex? Distinctio ea numquam sequi quaerat voluptate ullam ipsam quae 
+        debitis assumenda quibusdam soluta nam excepturi harum atque similique sint, cum maxime 
+        repudiandae obcaecati architecto commodi porro ut. Ratione odit repellat nam porro neque 
+        similique velit labore numquam, aliquid nihil, optio eligendi vero quam? Earum odio praesentium 
+        vitae facere asperiores quam, iure neque. Nulla, in minima velit architecto nihil sint error quo. 
+        Quisquam quas sint consectetur inventore illo quod laborum optio ab facere tempore eius quis in 
+        voluptate voluptatum nesciunt molestias, ex voluptatem ea doloribus dolorem vel et repudiandae. 
+        Omnis minima tenetur architecto, at deleniti consectetur ut recusandae harum, quisquam aut 
+        perferendis similique maiores odit dolorum pariatur! Deleniti rerum, maxime dolores debitis 
+        adipisci unde reiciendis laborum atque facere quia repudiandae culpa obcaecati dolorem sed 
+        corrupti placeat accusamus praesentium, aperiam molestias numquam dolore nemo nisi ab incidunt. 
+        Blanditiis, debitis dolores fuga voluptates maxime dolor quam obcaecati fugit unde atque! 
+    </div>
+</body>
+</html>

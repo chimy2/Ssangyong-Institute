@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            요소의 위치, position
+            1. padding > 부모가 자식의 위치 지정
+            2. margin > 스스로의 위치를 지정
+            3. position > FM(CSS1, CSS2, CSS3) 
+            4. transform > FM(CSS3)
+            
+            position
+            - 좌표값 사용 > 위치 지정
+            - x(left), y(top)
+            - 좌표를 지정하는 방식이 여러개 > 기준점이 다르다.
+
+            1. position: static;
+                - 기본값
+                - 정적
+                - 워드 프로세서 방식 > Flowlayout 방식
+                - 코딩 순서대로 배치되는 방식
+                
+            2. position: absolute;
+                - 절대 좌표
+                - left, top > 좌표 지정
+                - 문서의 좌측 상단을 원점으로 한다.
+                - 원래 자신의 공간은 사라진다.
+                
+            3. position: relative;
+                - 상대 좌표
+                - left, top > 좌표 지정
+                - 자신의 원래 위치를 원점으로 한다.
+                - 원래 자신의 공간은 사라지지 않는다.
+
+            4. position: fixed;
+
+            5. position: sticky;
+        */
+
+        .box {
+            border: 1px solid black;
+            width: 150px;
+            height: 150px;
+        }
+
+        #box1 { background-color: tomato; }
+        #box2 { background-color: gold; }
+        #box3 { background-color: cornflowerblue; }
+
+        #box2 {
+            position: relative;
+            left: 0px;
+            top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex30_position.html -->
+    <h1>Position</h1>
+
+    <!-- #box$.box{상자$}*3 -->
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+</body>
+</html>

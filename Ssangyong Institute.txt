@@ -82,11 +82,11 @@ https://drive.google.com/drive/folders/1Yqx8e1YViYLMufjaiT4fuQ5mwT8gXG55
 - Console > Web(Client + Server)
 - Client > HTML, CSS, JavaScript 등..
 - HTML(2~3일)
+- CSS(9월 2~3일까지)
 
 이클립스 기존 워크스페이스 환경 > 새 워크스페이스 환경
 기존 워크스페이스 - export > general > preferences > export all 
 새 워크스페이스 - import > general > preferences > import all > finish > restart
-
 
 1. 인코딩 > UTF-8
 	- Text

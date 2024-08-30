@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #list {
+            width: 800px;
+            column-count: 5;
+        }
+
+        #list .item {
+            border: 1px solid #555;
+            width: 150px;
+            border-radius: 3px;
+            margin: 0 auto 15px;
+            box-shadow: 3px 3px 2px #999;
+            /* 
+                인라인 자식 태그를 정렬할 때는 부모에서 정렬하나 우리는 그러기 싫다 
+                    > 자식을 block으로 바꾸고 margin으로 가운데 정렬을 한다. 
+            */
+            /* text-align: center; */
+            /* display:inline-block; */
+            /* float: left; */
+
+            page-break-inside: avoid;
+        }
+
+        #list .item img {
+            display: block;
+            margin: 18px auto;
+            box-shadow: -1px -1px 1px #555;
+        }
+
+        #list .item .txt {
+            color: #444;
+            margin: 0 12px 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex46.html -->
+    <h1>Card Layout</h1>
+
+    <!-- #list>(.item>img[src=images/rect_icon$$.png]+(.txt>lorem10))*20 -->
+    <div id="list">
+        <div class="item">
+            <img src="images/rect_icon01.png" alt="">
+            <div class="txt">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, voluptate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, voluptate.
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon02.png" alt="">
+            <div class="txt">
+                Temporibus veritatis perferendis laboriosam modi recusandae iusto enim cumque aliquam.
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon03.png" alt="">
+            <div class="txt">
+                Officia soluta cum quo repellendus sint eum minus modi ad.
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon04.png" alt="">
+            <div class="txt">
+                Tempora perspiciatis iste repellat rem eaque repellendus alias similique quae?
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon05.png" alt="">
+            <div class="txt">
+                Illo repudiandae ea culpa veritatis dolores ullam modi voluptatibus eveniet?
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon06.png" alt="">
+            <div class="txt">
+                Accusantium iste eligendi debitis quaerat nulla praesentium non est quia!
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon07.png" alt="">
+            <div class="txt">
+                Nostrum nulla dolor eos fugiat incidunt aliquid autem dolore earum!
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon08.png" alt="">
+            <div class="txt">
+                Nobis suscipit tempora, quaerat ipsam obcaecati sapiente ab vitae repudiandae?
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon09.png" alt="">
+            <div class="txt">
+                Natus delectus blanditiis earum voluptates, at tempora dignissimos impedit reiciendis!
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon10.png" alt="">
+            <div class="txt">
+                Ducimus quo cum soluta ex nihil ab officia nisi vitae.
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon11.png" alt="">
+            <div class="txt">
+                Sunt eum delectus doloribus suscipit, quam numquam veniam quo laborum!
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon12.png" alt="">
+            <div class="txt">
+                Laudantium quisquam nulla quam ab laborum pariatur, impedit voluptatem a.
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon13.png" alt="">
+            <div class="txt">
+                Dolores debitis eveniet placeat velit autem adipisci nisi rem perferendis.
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon14.png" alt="">
+            <div class="txt">
+                Laborum, optio unde. In ut aliquam dolorum, repellendus minima aspernatur?
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon15.png" alt="">
+            <div class="txt">
+                Totam mollitia ab veritatis maiores suscipit reprehenderit voluptas porro maxime.
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon16.png" alt="">
+            <div class="txt">
+                Accusamus magnam inventore aspernatur ullam ipsam nemo quia laboriosam totam?
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon17.png" alt="">
+            <div class="txt">
+                Sed rerum ipsa earum atque mollitia nihil facilis corporis est.
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon18.png" alt="">
+            <div class="txt">
+                Consequuntur consectetur at, fugit pariatur hic eligendi rem incidunt perspiciatis.
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon01.png" alt="">
+            <div class="txt">
+                Ullam delectus illo cumque sit dolorum magnam dolor, odio ipsam.
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon02.png" alt="">
+            <div class="txt">
+                Sed pariatur possimus illum adipisci cupiditate animi laborum at neque?
+            </div>
+        </div>
+    </div>
+</body>
+</html>

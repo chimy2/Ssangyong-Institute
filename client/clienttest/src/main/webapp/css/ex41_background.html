@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+            background
+            1. backround-color
+            2. backround-image
+            3. backround-repeat
+            4. backround-position
+            5. backround-attachment
+            6. backround-size
+        */
+
+        #box1 {
+            border: 1px solid black;
+            width: 400px;
+            height: 400px;
+            background-image: url(images/cat05.jpg), url(images/cat04.jpg), url(images/cat01.jpg);
+            background-repeat: no-repeat;
+            /* background-size: 400px 300.8px; */
+            /* background-size: 400px; */
+            /* background-size: auto 400px; */
+            background-position: center;
+
+            /* 
+                영역의 종횡비 <> 배경이미지의 종횡비 
+                - 영역을 꽉 채우기!! 
+                - 이미지의 장축을 영역에 맞추기
+                - 이미지의 단축을 영역에 맞추기
+            */
+            
+            /* 종횡비는 깨뜨리지 않으면서 장축을 영역의 크기에 맞출 때 */
+            /* background-size: 400px auto; */
+            /* background-size: contain; */
+
+            /* 종횡비는 깨뜨리지 않으면서 단축을 영역의 크기에 맞출 때 */
+            /* background-size: auto 400px; */
+            /* background-size: cover; */
+
+            /* background-size: 20px 15px;
+            background-repeat: repeat; */
+            background-position: center center, left top, right bottom;
+        }
+
+        #box2 {
+            border: 1px solid black;
+            width: 800px;
+            height:500px;
+
+            /* 그레디언트, Gradient */
+            /* background: linear-gradient(to top, red, blue);
+            background: linear-gradient(to left, red, blue);
+            background: linear-gradient(45deg, red, blue); */
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, purple);
+
+            /* background: radial-gradient(circle, red, yellow, blue); */
+            background: radial-gradient(circle at right bottom, red, yellow, blue);
+        }
+    </style>
+</head>
+<body>
+    <!-- ex41_background.html -->
+    <div id="box1"></div>
+    <hr>
+    <div id="box2"></div>
+</body>
+</html>

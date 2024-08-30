@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            margin-left: 50px;
+        }
+
+        #box1 {
+            background-color: tomato;
+        }
+
+        #box2 {
+            background-color: gold;
+        }
+
+        #box3 {
+            background-color: cornflowerblue;
+        }
+
+        /* 
+            테두리
+            1. border
+            2. outline
+        */
+
+        #box2:hover {
+            /* border: 주변을 밀어내고 자리를 차지한다. */
+            /* border: 10px solid black; */
+            /* 공간을 차지하지 않고 겹친다. 마치 레이어처럼 */
+            /* outline: 10px solid black; */
+
+            /* border: 100px solid rgba(255,0,0,.5); */
+            /* outline: 100px solid rgba(255,0,0,.5); */
+            /* border: 30px solid black; */
+            outline: 30px solid black;
+        }
+
+        input.txt {
+            display: block;
+            margin-bottom: 0px;
+            outline: none;
+            border: 1px solid #555;
+            border-radius: 3px;
+        }
+
+        input.txt:focus {
+            /* background-color: gold; */
+            /* border-color:red; */
+            /* border: 3px solid blue; */
+            outline: 3px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex44_outline.html -->
+    <!-- #box$.box{상자$}*3 -->
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+
+    <hr>
+
+    <!-- input.txt[type=text]*10 -->
+    <input type="text" class="txt">
+    <input type="text" class="txt">
+    <input type="text" class="txt">
+    <input type="text" class="txt">
+    <input type="text" class="txt">
+    <input type="text" class="txt">
+    <input type="text" class="txt">
+    <input type="text" class="txt">
+    <input type="text" class="txt">
+    <input type="text" class="txt">
+</body>
+</html>

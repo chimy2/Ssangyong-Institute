@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 컨트롤 > 속성 일부 수정 > 브라우저 설정 초기화 */
+        /* input {
+            background-color: gold;
+        } */
+        #list > input {
+            display: block;
+            margin-bottom: 5px;
+            border: 1px solid rgb(118, 118, 118);
+            outline: none;
+            padding: 4px;
+            background-color: #FFF;
+        }
+
+        /* required <-> optional */
+        /* 
+        #list > input:required {
+            background-color: gold;
+        }
+
+        #list > input:optional {
+            background-color: aquamarine;
+        } */
+
+        /* disabled <-> enabled */
+        /* #list > input:disabled {
+            background-color: gold;
+        }
+
+        #list > input:enabled {
+            background-color: tan;
+        } */
+
+        /* read-only <-> read-write */
+        /* #list > input:read-only {
+            background-color: aqua;
+        }
+
+        #list > input:read-write {
+            background-color: beige;
+        } */
+
+        #list > input:read-only {
+            background-color: gold;
+            cursor: not-allowed;
+        }
+
+        input[type=checkbox] {
+            /* width: 100px;
+            height: 100px; */
+            opacity: .3;
+        }
+
+        input[type=checkbox]:checked {
+            width: 30px;
+            height: 30px;
+            opacity: 1;
+        }
+        
+        #cb1:checked + div {
+            /* color: blue; */
+            /* display: none; */
+            visibility: hidden;
+        }
+
+        #notice {
+            border: 1px solid black;
+            width:200px;
+        }
+
+        #notice #cb2 {
+            display: none;
+        }
+
+        #notice label {
+            font-size: 1.5rem;
+            font-family: Arial;
+            font-variant: small-caps;
+            display: block;
+            padding: 10px;
+            background-color: gold;
+            cursor: pointer;
+            /* 더블클릭시 텍스트가 선택되는 것 방지 */
+            user-select: none;
+        }
+
+        #notice div {
+            border-top: 1px solid black;
+            padding: 15px;
+            display: none;
+        }
+
+        /* #notice #cb2:checked ~ div { */
+        #notice #cb2:checked + label + div {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex38_selector.html -->
+    <!-- #notice>input#cb2[type=checkbox]+label[for=cb2]{JavaScript}+(div>lorem100) -->
+    <div id="notice">
+        <input type="checkbox" id="cb2">
+        <label for="cb2">JavaScript</label>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus provident molestiae eaque saepe sequi. Ad vero, dolorum quo aperiam et corporis reiciendis totam iure enim maiores, fugit id neque soluta unde amet, quidem eius porro laborum nesciunt illo? Maiores iste eligendi voluptatum libero necessitatibus temporibus reprehenderit praesentium, ipsa inventore, fuga qui odio voluptatem nesciunt sequi, nulla adipisci? Animi minus, nesciunt excepturi itaque sequi corporis natus porro, veniam cupiditate, vel distinctio maiores quaerat minima. Dolores voluptatum id sunt iure, quibusdam, ullam maxime saepe officia laboriosam reiciendis ut in laudantium corporis modi? Iste commodi at sed animi ad cum, sequi harum blanditiis!</div>
+    </div>
+
+    <hr>
+
+    <input type="checkbox" id="cb1">
+    <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi a, tenetur repellat eius ab, aut similique suscipit error quisquam accusantium neque corrupti nihil quasi illum. Perferendis quasi nihil ab nesciunt consequatur quos ullam esse eum maxime, molestiae iste quibusdam omnis vel officia neque alias deserunt. Cupiditate aspernatur tempora, obcaecati debitis quod repudiandae. Mollitia facilis architecto quam esse, ipsam sit. Consequuntur hic error molestiae facere recusandae explicabo a, adipisci laboriosam odit esse minus. Sapiente asperiores molestias doloremque quisquam expedita temporibus veniam quidem. Earum fugit, sed quam minima perspiciatis voluptatibus rerum ipsam, quis maiores architecto itaque pariatur repellat officiis, similique maxime nobis.
+    </div>
+
+    <hr>
+
+    <div>
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+    </div>
+
+    <hr>
+    
+    <div id="list">
+        <input type="text" value="1" required>
+        <input type="text" value="2" readonly>
+        <input type="text" value="3" required>
+        <input type="text" value="4" readonly>
+        <input type="text" value="5">
+        <input type="text" value="6" disabled>
+        <input type="text" value="7" disabled>
+        <input type="text" value="8">
+        <input type="text" value="9">
+        <input type="text" value="10" required>
+    </div>
+    <!-- Ctrl + Shift + P: 모든 옵션을 다 찾을 수 있음 -->
+</body>
+</html>

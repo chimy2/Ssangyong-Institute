@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            CSS 선택자
+            1. :first-child
+                - 가상 클래스
+
+            2. ::before
+                - 가상 요소, Pseudo Element
+                - :before > 이전 표기법
+                - ::before > 현재 표기법
+            
+            전후 선택자
+            - 선택한 요소의 앞이나 뒤에 내용을 추가하는 역할
+            1. ::before
+                - 
+
+            2. ::after
+        */
+
+        p > span { color: coral; }
+
+        /* p > span::before {
+            content: '문자열';
+            color: blue;
+            font-size: 2rem;
+        } */
+
+        /* p > span::after {
+            content: '홍길동';
+            color: gold;
+            text-decoration: underline;
+        } */
+
+        p > span::before {
+            content: '😹';
+        }
+
+        ul > li::after {
+            /* content: '원'; */
+            content: '💰';
+        }
+    </style>
+</head>
+<body>
+    <!-- ex39_selector.html -->
+    <h1><i class="fa-solid fa-hill-avalanche"></i>CSS Pages</h1>
+
+    <p>
+        Lorem <span>ipsum</span> dolor, sit amet consectetur adipisicing elit. Perspiciatis autem vel officia at, odit, fugit et blanditiis esse architecto iure natus, <span>dolores</span> necessitatibus ab eligendi porro? Perspiciatis voluptatum <span>natus</span> vitae!
+    </p>
+
+    <hr>
+
+    <ul>
+        <li>아메리카노: 2,000</li>
+        <li>카페라떼: 3,500</li>
+        <li>스무디: 4,500</li>
+    </ul>
+</body>
+</html>

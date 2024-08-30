@@ -2,368 +2,449 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=10">
     <title>Q001 - table</title>
+    <style>
+        #list {
+            width: 750px;
+        }
+
+        #list > h1 {
+            font-size: 18px;
+            
+        }
+
+        #list > h1 > span {
+            font-size: 32px;
+            
+        }       
+
+        #list > h1:first-child > span {
+            color: #6495ED;
+            
+        }
+        
+        #list > h2 { 
+            font-size: 18px;
+            font-variant: small-caps;
+
+        }
+
+        #list > hr {
+            
+        }
+    </style>
 </head>
 <body>
-    <!-- (h1+h2+hr+(table>(tr>th{No}+th{Name}+th{Age}+th{ID}+th{Description})+(tr>td{$$}+td>lorem1+td{2$}+td>lorem1+td>lorem5)*10)*5) -->
-    (h1+h2+hr+(table>(tr>th{No}+th{Name}+th{Age}+th{ID}+th{Description})+(tr>td{$$}+td>lorem1+td{2$}+td>lorem1+td>lorem5)*10)*4)
-
-    <tr>
-        <td>01</td>
-        <td>lorem1</td>
-        <td>21</td>
-        <td>lorem5</td>
-    </tr>
-
-    <h1></h1>
-    <h2></h2>
-    <hr>
-    <table>
-        <tr>
-            <th>No</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>ID</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>01</td>
-            <td>lorem</td>
-            <td>21</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>02</td>
-            <td>lorem</td>
-            <td>22</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>03</td>
-            <td>lorem</td>
-            <td>23</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>lorem</td>
-            <td>24</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>05</td>
-            <td>lorem</td>
-            <td>25</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>06</td>
-            <td>lorem</td>
-            <td>26</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>07</td>
-            <td>lorem</td>
-            <td>27</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>08</td>
-            <td>lorem</td>
-            <td>28</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>09</td>
-            <td>lorem</td>
-            <td>29</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>lorem</td>
-            <td>210</td>
-            <td>lorem5</td>
-        </tr>
-    </table>
-    <table>
-        <tr>
-            <th>No</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>ID</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>01</td>
-            <td>lorem</td>
-            <td>21</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>02</td>
-            <td>lorem</td>
-            <td>22</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>03</td>
-            <td>lorem</td>
-            <td>23</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>lorem</td>
-            <td>24</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>05</td>
-            <td>lorem</td>
-            <td>25</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>06</td>
-            <td>lorem</td>
-            <td>26</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>07</td>
-            <td>lorem</td>
-            <td>27</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>08</td>
-            <td>lorem</td>
-            <td>28</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>09</td>
-            <td>lorem</td>
-            <td>29</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>lorem</td>
-            <td>210</td>
-            <td>lorem5</td>
-        </tr>
-    </table>
-    <table>
-        <tr>
-            <th>No</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>ID</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>01</td>
-            <td>lorem</td>
-            <td>21</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>02</td>
-            <td>lorem</td>
-            <td>22</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>03</td>
-            <td>lorem</td>
-            <td>23</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>lorem</td>
-            <td>24</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>05</td>
-            <td>lorem</td>
-            <td>25</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>06</td>
-            <td>lorem</td>
-            <td>26</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>07</td>
-            <td>lorem</td>
-            <td>27</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>08</td>
-            <td>lorem</td>
-            <td>28</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>09</td>
-            <td>lorem</td>
-            <td>29</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>lorem</td>
-            <td>210</td>
-            <td>lorem5</td>
-        </tr>
-    </table>
-    <table>
-        <tr>
-            <th>No</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>ID</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>01</td>
-            <td>lorem</td>
-            <td>21</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>02</td>
-            <td>lorem</td>
-            <td>22</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>03</td>
-            <td>lorem</td>
-            <td>23</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>lorem</td>
-            <td>24</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>05</td>
-            <td>lorem</td>
-            <td>25</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>06</td>
-            <td>lorem</td>
-            <td>26</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>07</td>
-            <td>lorem</td>
-            <td>27</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>08</td>
-            <td>lorem</td>
-            <td>28</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>09</td>
-            <td>lorem</td>
-            <td>29</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>lorem</td>
-            <td>210</td>
-            <td>lorem5</td>
-        </tr>
-    </table>
-    <table>
-        <tr>
-            <th>No</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>ID</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>01</td>
-            <td>lorem</td>
-            <td>21</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>02</td>
-            <td>lorem</td>
-            <td>22</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>03</td>
-            <td>lorem</td>
-            <td>23</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>lorem</td>
-            <td>24</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>05</td>
-            <td>lorem</td>
-            <td>25</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>06</td>
-            <td>lorem</td>
-            <td>26</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>07</td>
-            <td>lorem</td>
-            <td>27</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>08</td>
-            <td>lorem</td>
-            <td>28</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>09</td>
-            <td>lorem</td>
-            <td>29</td>
-            <td>lorem5</td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>lorem</td>
-            <td>210</td>
-            <td>lorem5</td>
-        </tr>
-    </table>
+    <!-- div#list>((h1>span{M}+{EMEBER LIST})+h2{TABLE DESIGN}+hr+table>(tr>th#col1{No}+th#col2{Name}+th#col3{Age}+th#col4{ID}+th#col5{Description})+(tr>td{$$}+(td>lorem1)+td{2$}+(td>lorem1)+(td>lorem5))*9+tr>td{$$}+(td>lorem1)+td{2$}+(td>lorem1)+(td>lorem5))+((h1>span{M}+{EMEBER LIST})+hr+table>(tr>th#col1{No}+th#col2{Name}+th#col3{Age}+th#col4{ID}+th#col5{Description})+(tr>td{$$}+(td>lorem1)+td{2$}+(td>lorem1)+(td>lorem5))*9+tr>td{10}+(td>lorem1)+td{2$}+(td>lorem1)+(td>lorem5))*4 -->
+    <div id="list">
+        <h1><span>M</span>EMEBER LIST</h1>
+        <h2>TABLE DESIGN</h2>
+        <hr>
+        <table>
+            <tr>
+                <th id="col1">No</th>
+                <th id="col2">Name</th>
+                <th id="col3">Age</th>
+                <th id="col4">ID</th>
+                <th id="col5">Description</th>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>Lorem</td>
+                <td>21</td>
+                <td>Lorem</td>
+                <td>Lorem ipsum dolor sit amet</td>
+            </tr>
+            <tr>
+                <td>02</td>
+                <td>Fugiat</td>
+                <td>22</td>
+                <td>Nulla</td>
+                <td>Rem mollitia eos eaque maiores</td>
+            </tr>
+            <tr>
+                <td>03</td>
+                <td>Pariatur</td>
+                <td>23</td>
+                <td>Repudiandae</td>
+                <td>Facilis cupiditate non aliquam voluptates</td>
+            </tr>
+            <tr>
+                <td>04</td>
+                <td>Laborum</td>
+                <td>24</td>
+                <td>Sunt</td>
+                <td>Suscipit illum obcaecati quisquam temporibus</td>
+            </tr>
+            <tr>
+                <td>05</td>
+                <td>A</td>
+                <td>25</td>
+                <td>Deleniti</td>
+                <td>Id consequatur non pariatur eaque</td>
+            </tr>
+            <tr>
+                <td>06</td>
+                <td>Voluptate</td>
+                <td>26</td>
+                <td>Fugit</td>
+                <td>Aliquid velit quos voluptatibus voluptatum</td>
+            </tr>
+            <tr>
+                <td>07</td>
+                <td>Tenetur</td>
+                <td>27</td>
+                <td>Corporis</td>
+                <td>Accusantium fuga animi exercitationem placeat</td>
+            </tr>
+            <tr>
+                <td>08</td>
+                <td>Maiores</td>
+                <td>28</td>
+                <td>Veniam</td>
+                <td>Sed quaerat tempore earum id</td>
+            </tr>
+            <tr>
+                <td>09</td>
+                <td>Rem</td>
+                <td>29</td>
+                <td>Harum</td>
+                <td>Ratione iste necessitatibus possimus suscipit</td>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>Lorem</td>
+                <td>21</td>
+                <td>Lorem</td>
+                <td>Lorem ipsum dolor sit amet</td>
+            </tr>
+        </table>
+        <h1><span>M</span>EMEBER LIST</h1>
+        <hr>
+        <table>
+            <tr>
+                <th id="col1">No</th>
+                <th id="col2">Name</th>
+                <th id="col3">Age</th>
+                <th id="col4">ID</th>
+                <th id="col5">Description</th>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>Lorem</td>
+                <td>21</td>
+                <td>Lorem</td>
+                <td>Lorem ipsum dolor sit amet</td>
+            </tr>
+            <tr>
+                <td>02</td>
+                <td>In</td>
+                <td>22</td>
+                <td>Vero</td>
+                <td>Enim officia molestias exercitationem beatae</td>
+            </tr>
+            <tr>
+                <td>03</td>
+                <td>Ullam</td>
+                <td>23</td>
+                <td>Sed</td>
+                <td>Ipsam dolorum soluta hic deleniti</td>
+            </tr>
+            <tr>
+                <td>04</td>
+                <td>Saepe</td>
+                <td>24</td>
+                <td>Tempora</td>
+                <td>Similique rerum in rem natus</td>
+            </tr>
+            <tr>
+                <td>05</td>
+                <td>Quibusdam</td>
+                <td>25</td>
+                <td>Placeat</td>
+                <td>Obcaecati debitis perferendis culpa consequuntur</td>
+            </tr>
+            <tr>
+                <td>06</td>
+                <td>At</td>
+                <td>26</td>
+                <td>Iste</td>
+                <td>Perspiciatis eum delectus reiciendis eligendi</td>
+            </tr>
+            <tr>
+                <td>07</td>
+                <td>Ratione</td>
+                <td>27</td>
+                <td>Quos</td>
+                <td>Aliquid excepturi nisi harum Odit</td>
+            </tr>
+            <tr>
+                <td>08</td>
+                <td>Iste</td>
+                <td>28</td>
+                <td>Porro</td>
+                <td>Optio quasi corrupti obcaecati libero</td>
+            </tr>
+            <tr>
+                <td>09</td>
+                <td>Facere</td>
+                <td>29</td>
+                <td>Ratione</td>
+                <td>Quod fugiat illum quasi ipsa</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Lorem</td>
+                <td>21</td>
+                <td>Lorem</td>
+                <td>Lorem ipsum dolor sit amet</td>
+            </tr>
+        </table>
+        <h1><span>M</span>EMEBER LIST</h1>
+        <hr>
+        <table>
+            <tr>
+                <th id="col1">No</th>
+                <th id="col2">Name</th>
+                <th id="col3">Age</th>
+                <th id="col4">ID</th>
+                <th id="col5">Description</th>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>Lorem</td>
+                <td>21</td>
+                <td>Lorem</td>
+                <td>Lorem ipsum dolor sit amet</td>
+            </tr>
+            <tr>
+                <td>02</td>
+                <td>Ipsam</td>
+                <td>22</td>
+                <td>Neque</td>
+                <td>Eveniet modi inventore accusantium harum</td>
+            </tr>
+            <tr>
+                <td>03</td>
+                <td>Dignissimos</td>
+                <td>23</td>
+                <td>Est</td>
+                <td>Error veritatis magni possimus maxime</td>
+            </tr>
+            <tr>
+                <td>04</td>
+                <td>Debitis</td>
+                <td>24</td>
+                <td>Repudiandae</td>
+                <td>Delectus, nihil Dolores, incidunt possimus</td>
+            </tr>
+            <tr>
+                <td>05</td>
+                <td>Dolor</td>
+                <td>25</td>
+                <td>Voluptatibus</td>
+                <td>Sint nemo amet deserunt alias</td>
+            </tr>
+            <tr>
+                <td>06</td>
+                <td>Natus</td>
+                <td>26</td>
+                <td>Illum</td>
+                <td>Odio facilis quam magnam dolor</td>
+            </tr>
+            <tr>
+                <td>07</td>
+                <td>Laudantium</td>
+                <td>27</td>
+                <td>Aperiam</td>
+                <td>Nisi quia hic qui Doloribus</td>
+            </tr>
+            <tr>
+                <td>08</td>
+                <td>Delectus</td>
+                <td>28</td>
+                <td>Aut</td>
+                <td>Autem repellat similique obcaecati consequatur</td>
+            </tr>
+            <tr>
+                <td>09</td>
+                <td>Quod</td>
+                <td>29</td>
+                <td>Dignissimos</td>
+                <td>A et nemo neque deleniti</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Distinctio</td>
+                <td>22</td>
+                <td>Facere</td>
+                <td>Perferendis nam soluta non officia</td>
+            </tr>
+        </table>
+        <h1><span>M</span>EMEBER LIST</h1>
+        <hr>
+        <table>
+            <tr>
+                <th id="col1">No</th>
+                <th id="col2">Name</th>
+                <th id="col3">Age</th>
+                <th id="col4">ID</th>
+                <th id="col5">Description</th>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>Lorem</td>
+                <td>21</td>
+                <td>Lorem</td>
+                <td>Lorem ipsum dolor sit amet</td>
+            </tr>
+            <tr>
+                <td>02</td>
+                <td>Fuga</td>
+                <td>22</td>
+                <td>Quod</td>
+                <td>Asperiores, libero Repellendus, quia suscipit</td>
+            </tr>
+            <tr>
+                <td>03</td>
+                <td>Temporibus</td>
+                <td>23</td>
+                <td>Nihil</td>
+                <td>Ducimus corporis enim tempore ipsum</td>
+            </tr>
+            <tr>
+                <td>04</td>
+                <td>Iusto</td>
+                <td>24</td>
+                <td>Expedita</td>
+                <td>Exercitationem deserunt molestiae earum esse</td>
+            </tr>
+            <tr>
+                <td>05</td>
+                <td>Ipsa</td>
+                <td>25</td>
+                <td>Debitis</td>
+                <td>Odit hic provident optio placeat</td>
+            </tr>
+            <tr>
+                <td>06</td>
+                <td>Fugiat</td>
+                <td>26</td>
+                <td>Consequuntur</td>
+                <td>Omnis dolores inventore voluptatum exercitationem</td>
+            </tr>
+            <tr>
+                <td>07</td>
+                <td>Nisi</td>
+                <td>27</td>
+                <td>Culpa</td>
+                <td>Consequuntur eius quia eligendi reiciendis</td>
+            </tr>
+            <tr>
+                <td>08</td>
+                <td>Fugiat</td>
+                <td>28</td>
+                <td>Odit</td>
+                <td>Vitae, fuga Nisi, delectus aspernatur</td>
+            </tr>
+            <tr>
+                <td>09</td>
+                <td>Rerum</td>
+                <td>29</td>
+                <td>Ex</td>
+                <td>Quidem, eveniet Dignissimos, distinctio autem</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Ipsam</td>
+                <td>23</td>
+                <td>Necessitatibus</td>
+                <td>Quas voluptatem hic nulla optio</td>
+            </tr>
+        </table>
+        <h1><span>M</span>EMEBER LIST</h1>
+        <hr>
+        <table>
+            <tr>
+                <th id="col1">No</th>
+                <th id="col2">Name</th>
+                <th id="col3">Age</th>
+                <th id="col4">ID</th>
+                <th id="col5">Description</th>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>Lorem</td>
+                <td>21</td>
+                <td>Lorem</td>
+                <td>Lorem ipsum dolor sit amet</td>
+            </tr>
+            <tr>
+                <td>02</td>
+                <td>At</td>
+                <td>22</td>
+                <td>Quibusdam</td>
+                <td>Voluptatum nobis temporibus reprehenderit non</td>
+            </tr>
+            <tr>
+                <td>03</td>
+                <td>Excepturi</td>
+                <td>23</td>
+                <td>Dicta</td>
+                <td>Eaque sint consequatur voluptatum ab</td>
+            </tr>
+            <tr>
+                <td>04</td>
+                <td>Accusantium</td>
+                <td>24</td>
+                <td>Ex</td>
+                <td>Cum voluptates rerum qui nesciunt</td>
+            </tr>
+            <tr>
+                <td>05</td>
+                <td>Ipsam</td>
+                <td>25</td>
+                <td>Officiis</td>
+                <td>Esse quas accusantium et nam</td>
+            </tr>
+            <tr>
+                <td>06</td>
+                <td>Ducimus</td>
+                <td>26</td>
+                <td>Hic</td>
+                <td>Blanditiis consequuntur porro molestias delectus</td>
+            </tr>
+            <tr>
+                <td>07</td>
+                <td>Sit</td>
+                <td>27</td>
+                <td>Possimus</td>
+                <td>Doloribus cupiditate quam ab fugiat</td>
+            </tr>
+            <tr>
+                <td>08</td>
+                <td>Voluptatibus</td>
+                <td>28</td>
+                <td>Doloribus</td>
+                <td>Odit labore delectus tempore rem</td>
+            </tr>
+            <tr>
+                <td>09</td>
+                <td>Iusto</td>
+                <td>29</td>
+                <td>Aperiam</td>
+                <td>Nisi hic distinctio tempore repellat</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Aspernatur</td>
+                <td>24</td>
+                <td>Omnis</td>
+                <td>Vero praesentium enim ea quia</td>
+            </tr>
+        </table>
+    </div>
     
 </body>
 </html>

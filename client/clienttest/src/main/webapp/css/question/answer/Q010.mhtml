@@ -1,0 +1,133 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: http://pinnpublic.dothome.co.kr/question/css/clock_impl.html
+Subject: Document
+Date: Mon, 2 Sep 2024 14:04:14 +0900
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--oXRrdRVVLIC0UqQyhl7AUNne32AH848wEklTS2VRiq----"
+
+
+------MultipartBoundary--oXRrdRVVLIC0UqQyhl7AUNne32AH848wEklTS2VRiq----
+Content-Type: text/html
+Content-ID: <frame-0BBC1DFA52409784CCCA9E758B2A0172@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://pinnpublic.dothome.co.kr/question/css/clock_impl.html
+
+<!DOCTYPE html><html lang=3D"en"><head><meta http-equiv=3D"Content-Type" co=
+ntent=3D"text/html; charset=3DUTF-8"><link rel=3D"stylesheet" type=3D"text/=
+css" href=3D"cid:css-675359fe-b468-427a-a9e2-25c95a05e6ae@mhtml.blink" /><l=
+ink rel=3D"stylesheet" type=3D"text/css" href=3D"cid:css-7f4bdafa-7b74-4772=
+-bba2-e43659e3ed40@mhtml.blink" />
+   =20
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0">
+    <meta http-equiv=3D"X-UA-Compatible" content=3D"ie=3Dedge">
+    <title>Document</title>
+   =20
+</head>
+
+<body>
+    <div id=3D"clock">
+        <div id=3D"hour">
+            <div>Hour</div>
+        </div>
+        <div id=3D"min">
+            <div>Min</div>
+        </div>
+        <div id=3D"sec">
+            <div>Sec</div>
+        </div>
+    </div>
+
+
+    <br><br><br>
+    <h2 id=3D"source">source code</h2>
+
+    <textarea style=3D"width:700px; height: 500px; margin-top: 300px;margin=
+-right: auto; margin-left: auto; display: block;">&lt;div style=3D"width: 7=
+00px; margin: 30px auto;"&gt;
+	&lt;h1 style=3D"margin-top: 0px;"&gt;transform(rotate) + transform-origin =
++ transition&lt;/h1&gt;
+	&lt;div style=3D"margin: 20px 0px; border-left: 3px dotted gray; padding-l=
+eft: 10px;"&gt;
+		=EC=8B=9C=EA=B3=84=EC=B9=A8=EC=9D=84 =EB=8F=8C=EB=A6=AC=EC=8B=9C=EC=98=A4=
+.
+	&lt;/div&gt;
+	&lt;div id=3D"clock"&gt;
+		&lt;div id=3D"hour"&gt;
+			&lt;div&gt;Hour&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div id=3D"min"&gt;
+			&lt;div&gt;Min&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div id=3D"sec"&gt;
+			&lt;div&gt;Sec&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;	=09
+	</textarea>
+
+
+<div id=3D"__endic_crx__"><div class=3D"css-diqpy0"></div></div></body></ht=
+ml>
+------MultipartBoundary--oXRrdRVVLIC0UqQyhl7AUNne32AH848wEklTS2VRiq----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-675359fe-b468-427a-a9e2-25c95a05e6ae@mhtml.blink
+
+@charset "utf-8";
+
+#clock { border: 30px dashed rgb(153, 153, 153); width: 700px; height: 700p=
+x; position: relative; left: 0px; top: 0px; }
+
+#hour, #min, #sec { border: 16px solid rgb(85, 85, 85); width: 50px; positi=
+on: absolute; border-radius: 50px; }
+
+#hour > div, #min > div, #sec > div { font-variant: small-caps; font-weight=
+: bold; color: white; text-align: center; margin-top: 20px; }
+
+#hour { background-color: tomato; height: 150px; left: 309px; top: 168px; t=
+ransition-property: all; transition-duration: 21600s; transition-timing-fun=
+ction: linear; transform-origin: center bottom; }
+
+#min { background-color: cornflowerblue; height: 220px; left: 309px; top: 9=
+8px; transition-property: all; transition-duration: 360s; transition-timing=
+-function: linear; transform-origin: center bottom; }
+
+#sec { background-color: gold; height: 290px; left: 309px; top: 28px; trans=
+ition-property: all; transition-duration: 60s; transition-timing-function: =
+linear; transform-origin: center bottom; }
+
+#clock:hover #sec { transform: rotate(36000deg); }
+
+#clock:hover #min { transform: rotate(36000deg); }
+
+#clock:hover #hour { transform: rotate(36000deg); }
+------MultipartBoundary--oXRrdRVVLIC0UqQyhl7AUNne32AH848wEklTS2VRiq----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-7f4bdafa-7b74-4772-bba2-e43659e3ed40@mhtml.blink
+
+@charset "utf-8";
+
+.css-diqpy0 { margin: 0px; padding: 0px; font-family: ui-sans-serif, -apple=
+-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Ar=
+ial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; font-variant-ligature=
+s: none; color: var(--text-primary); -webkit-font-smoothing: antialiased; p=
+osition: absolute; left: 0px; top: 0px; width: 0px; height: 0px; z-index: 2=
+147483647; }
+
+@media (prefers-color-scheme: light) {
+  .css-diqpy0 { --text-primary: #202124; --text-secondary: #5f6368; --backg=
+round-color: #fff; --layer-background: #fff; --border-color: #dadce0; --pri=
+mary-blue: #1a73e8; --primary-orange: #f0592a; --hover-color: #20212409; }
+}
+
+@media (prefers-color-scheme: dark) {
+  .css-diqpy0 { --text-primary: #ddd; --text-secondary: #bdc1c6; --backgrou=
+nd-color: #202124; --layer-background: #292a2d; --border-color: #757b80; --=
+primary-blue: #8ab4f8; --primary-orange: #ff835d; --hover-color: #ffffff1a;=
+ }
+}
+------MultipartBoundary--oXRrdRVVLIC0UqQyhl7AUNne32AH848wEklTS2VRiq------

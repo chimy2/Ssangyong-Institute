@@ -4,31 +4,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        /* 
+            CSS
+            - tranform
+            - transition
+            - display: flex, grid
+
+            Javascript
+            - 2주
+
+            -------------------------------------
+
+            Servlet/JSP
+            - 2~3주
+            - 프로젝트 > 3주 > 1주 or X
+
+            Spring
+            - 2~3주
+            - 프로젝트 > 2주 > 3주
+
+            Spring Boot
+            - 1~2주
+            - 프로젝트 > 1~2주 > 2~3주
+
+            transform, 변형
+            - 요소의 위치, 크기, 회전, 비틀기 > 변형
+            - transform: 값;
+
+            값(함수)
+            1. translate() > 위치 변형
+            2. scale() > 크기 변형 > 배율 변형
+            3. rotate() > 회전 변형
+            4. skew() > 비틀기(왜곡) 변형
+            5. matrix() > 사용자 정의형(1~4번 포함)
+        */
+        .box {
+            border: 10px solid black;
+            width: 200px;
+            height: 200px;
+        }
+
+        #box1 { background-color: tomato; }
+        #box2 { background-color: gold; }
+        #box3 { background-color: cornflowerblue; }
+
+        #box2 {
+            /* 위치 변형 > 좌표 지정(relative와 유사) */
+            /* transform: translate(100px, 100px); */
+
+            /* 배율 변형 > 높이, 길이 뿐 아니라 글자 크기, 테두리 등 다 같이 변형됨
+                > 음수가 되면 회전축이 바뀐상태로 변형됨
+            */
+            margin-left: 200px;
+            /* transform: scale(1.5, 1.5); */
+            /* transform: scale(.2, .2); */
+            /* transform: scale(0, 0); */
+            /* transform: scale(-1, 1); */
+            /* transform: scale(-1, -1); */
+
+            /* 회전 변형 */
+            /* transform: rotate(45deg); */
+            /* transform: rotate(90deg); */
+            /* transform: rotate(180deg); */
+            /* transform: rotate(360deg); */
+            /* transform: rotate(-30deg); */
+
+            /* 왜곡 변형 */
+            /* transform: skew(20deg, 0deg); */
+            /* transform: skew(89deg, 0deg); */
+            transform: skew(0deg, 50deg);
+        }
+
+        #box3 {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* 
+            <br>
+            - 공백을 작성하기 위한 용도(X)
+            - 인라인 태그 + 텍스트 개행을 표시하기 위한 용도(O)
+
+        */
+
+        body {
+            margin-bottom: 300px;
+        }
+
+        /* #cat > img:nth-child(1):hover {
+            transform: translate(0px, -30px);
+        } */
+
+        #cat > img:hover {
+            /* transform: translate(0px, -30px); */
+            /* transform: scale(1.5, 1.5); */
+            /* transform: scale(-1, -1); */
+            /* transform: rotate(45deg);    */
+            transform: translate(404px, 20px) scale(2, 2) rotate(45deg);   
+        }
+        /* #cat:hover > img {
+            transform: translate(0px, -30px);
+        } */
+
+        #txt1 {
+            margin: 200px;
+            font-size: 2rem;
+            padding: 10px;
+            /* transform: scale(-1, 1); */
+            transform: rotate(45deg);
+        }
+    </style>
 </head>
 <body>
     <!-- ex47_tansform.html -->
-    <!-- 
-        CSS
-        - tranform
-        - transition
-        - display: flex, grid
+    <!-- #box$.box{상자$}*3     -->
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+    
 
-        Javascript
-        - 2주
+    <hr>
 
-        -------------------------------------
+    <div id="cat">
+        <!-- img[src=images/catty$$.png alt=고양이$]*5 -->
+        <img src="images/catty01.png" alt="고양이1">
+        <img src="images/catty02.png" alt="고양이2">
+        <img src="images/catty03.png" alt="고양이3">
+        <img src="images/catty04.png" alt="고양이4">
+        <img src="images/catty05.png" alt="고양이5">
+    </div>
 
-        Servlet/JSP
-        - 2~3주
-        - 프로젝트 > 3주 > 1주 or X
+    <!-- br*15 -->
 
-        Spring
-        - 2~3주
-        - 프로젝트 > 2주 > 3주
+    <hr>
 
-        Spring Boot
-        - 1~2주
-        - 프로젝트 > 1~2주 > 2~3주
-    -->
+    <input type="text" id="txt1">
 </body>
 </html>

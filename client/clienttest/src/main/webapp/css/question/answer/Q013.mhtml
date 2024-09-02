@@ -1,0 +1,99 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: http://pinnpublic.dothome.co.kr/question/css/ball2_impl.html
+Subject: 
+Date: Mon, 2 Sep 2024 14:04:34 +0900
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--vhwIXlTi2Wiezv2uB91myce57XDrPMj2TnK33JUxaO----"
+
+
+------MultipartBoundary--vhwIXlTi2Wiezv2uB91myce57XDrPMj2TnK33JUxaO----
+Content-Type: text/html
+Content-ID: <frame-5AADF2366D447E8B4DA9ADEAFD1B57CA@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://pinnpublic.dothome.co.kr/question/css/ball2_impl.html
+
+<!DOCTYPE html><html><head><meta http-equiv=3D"Content-Type" content=3D"tex=
+t/html; charset=3DUTF-8"><link rel=3D"stylesheet" type=3D"text/css" href=3D=
+"cid:css-d178dc2f-b59e-43a0-b7bf-b98a6081a12d@mhtml.blink" /><link rel=3D"s=
+tylesheet" type=3D"text/css" href=3D"cid:css-18dcc3ec-de9e-4a18-9f21-415af9=
+fc8d05@mhtml.blink" />
+
+<title></title>
+
+</head>
+<body>
+	<div style=3D"width: 650px; margin: 30px;">
+		<div id=3D"box">
+			<div id=3D"ball1" class=3D"ball"></div>
+			<div id=3D"ball2" class=3D"ball"></div>
+			<div id=3D"ball3" class=3D"ball"></div>
+			<div id=3D"ball4" class=3D"ball"></div>
+			<div id=3D"ball5" class=3D"ball"></div>
+			<div id=3D"ball6" class=3D"ball"></div>
+			<div id=3D"ball7" class=3D"ball"></div>
+		</div>
+	</div>
+
+<div id=3D"__endic_crx__"><div class=3D"css-diqpy0"></div></div></body></ht=
+ml>
+------MultipartBoundary--vhwIXlTi2Wiezv2uB91myce57XDrPMj2TnK33JUxaO----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-d178dc2f-b59e-43a0-b7bf-b98a6081a12d@mhtml.blink
+
+@charset "utf-8";
+
+#box { border: 10px solid black; width: 650px; height: 800px; }
+
+.ball { border: 10px solid black; width: 50px; height: 50px; border-radius:=
+ 50%; float: left; margin-left: 20px; animation-name: keyBall; animation-ti=
+ming-function: ease-in; animation-iteration-count: infinite; animation-dire=
+ction: alternate; }
+
+@keyframes keyBall {=20
+  0% { transform: translate(0px, 0px); }
+  100% { transform: translate(0px, 730px); }
+}
+
+#ball1 { background-color: red; animation-duration: 1s; }
+
+#ball2 { background-color: orange; animation-duration: 0.5s; }
+
+#ball3 { background-color: yellow; animation-duration: 0.7s; }
+
+#ball4 { background-color: green; animation-duration: 0.9s; }
+
+#ball5 { background-color: blue; animation-duration: 0.76s; }
+
+#ball6 { background-color: indigo; animation-duration: 1.1s; }
+
+#ball7 { background-color: violet; animation-duration: 0.9s; }
+------MultipartBoundary--vhwIXlTi2Wiezv2uB91myce57XDrPMj2TnK33JUxaO----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-18dcc3ec-de9e-4a18-9f21-415af9fc8d05@mhtml.blink
+
+@charset "utf-8";
+
+.css-diqpy0 { margin: 0px; padding: 0px; font-family: ui-sans-serif, -apple=
+-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Ar=
+ial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; font-variant-ligature=
+s: none; color: var(--text-primary); -webkit-font-smoothing: antialiased; p=
+osition: absolute; left: 0px; top: 0px; width: 0px; height: 0px; z-index: 2=
+147483647; }
+
+@media (prefers-color-scheme: light) {
+  .css-diqpy0 { --text-primary: #202124; --text-secondary: #5f6368; --backg=
+round-color: #fff; --layer-background: #fff; --border-color: #dadce0; --pri=
+mary-blue: #1a73e8; --primary-orange: #f0592a; --hover-color: #20212409; }
+}
+
+@media (prefers-color-scheme: dark) {
+  .css-diqpy0 { --text-primary: #ddd; --text-secondary: #bdc1c6; --backgrou=
+nd-color: #202124; --layer-background: #292a2d; --border-color: #757b80; --=
+primary-blue: #8ab4f8; --primary-orange: #ff835d; --hover-color: #ffffff1a;=
+ }
+}
+------MultipartBoundary--vhwIXlTi2Wiezv2uB91myce57XDrPMj2TnK33JUxaO------

@@ -1,6 +1,6 @@
 Ssangyong Institute
 
-html5
+grid, animation, javascript datatype, function, scope, casting, string, date, array
 
 원격 접속 > 클라이언트 툴
 SSH 클라이언트 툴 > 원격 컴퓨터 접속

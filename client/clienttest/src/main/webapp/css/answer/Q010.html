@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q010 - clock</title>
+    <style>
+        #clock {
+            border: 30px dashed #999;
+            width: 700px;
+            height: 700px;
+            color: white;
+            font-variant: small-caps;
+            font-weight: bold;
+        }
+
+        #clock > div {
+            border: 20px solid #555;
+            border-radius: 50px;
+            width: 50px;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        #clock > div > div {
+            /* border: 20px solid #555; */
+            border-radius: 50px;
+            /* padding-top: 10px; */
+            text-align: center;
+        }
+
+        #hour {
+            background-color: tomato;
+            width: 50px;
+            height: 100px;
+            /* transform: translate(300px, 220px) rotate(0turn);
+            transition: 5s all; */
+            /* animation-name: hour;
+            animation-duration: 5s; */
+        }
+
+        #min {
+            background-color: cornflowerblue;
+            width: 50px;
+            height: 170px;
+            /* transition: 10s all; */
+        }
+
+        #sec {
+            background-color: gold;
+            width: 50px;
+            height: 240px;
+            /* transition: 40s all; */
+            top: -20px;
+        }
+
+        /* #clock:hover #hour {
+            transform: translate(300px, 250px) rotate(1turn);
+        }
+        
+        #clock:hover #min {
+            transform: rotate(1turn);
+            
+        }
+        
+        #clock:hover #sec {
+            transform: rotate(1turn);
+        } */
+
+        @keyframes hour {
+            0% {
+                transform: translate(200px, 200px);
+                transform-origin: bottom center;
+            }
+            50% {
+                transform: translate(200px, 300px) rotate(180deg);
+                transform-origin: bottom center;
+            }
+            100% {
+                transform: translate(200px, 200px);
+                transform-origin: bottom center;
+            }
+        }
+
+        @keyframes min {
+
+        }
+
+        @keyframes sec {
+
+        }
+    </style>
+</head>
+<body>
+    <div style="width: 700px; margin: 30px auto;">
+        <h1 style="margin-top: 0px;">transform(rotate) + transform-origin + transition</h1>
+        <div style="margin: 20px 0px; border-left: 3px dotted gray; padding-left: 10px;">
+            시계침을 돌리시오.
+        </div>
+        <div id="clock">
+            <div id="hour">
+                <div>Hour</div>
+            </div>
+            <div id="min">
+                <div>Min</div>
+            </div>
+            <div id="sec">
+                <div>Sec</div>
+            </div>
+        </div>
+    </div>		
+        
+</body>
+</html>

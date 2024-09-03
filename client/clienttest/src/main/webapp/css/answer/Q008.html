@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q008 - icon</title>
+    <style>
+        #content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #content > section {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 10px;
+        }
+        
+        #content > section > div {
+            border: 10px solid black;
+            width: 126px;
+            height: 126px;
+            overflow: hidden;
+        }
+        
+        #content > section > div:not(:last-child) {
+            border-right: 0;
+        }
+
+        #list1 > div > img {
+            transform: translate(-126px, 0px);
+            transition: transform .5s;
+        }
+
+        #list1 > div:hover > img {
+            transform: translate(0px, 0px);
+        }
+
+        #list2 > div > img {
+            opacity: 0;
+            transition: opacity .5s;
+        }
+
+        #list2 > div:hover > img {
+            opacity: 1;
+        }
+
+        #list3 > div > img {
+            transform: scale(0, 0);
+            transition: transform .5s;
+        }
+
+        #list3 > div:hover > img {
+            transform: scale(1, 1);
+        }
+
+        #list4 > div > img {
+            transform: translate(0px, -126px) rotate(-360deg) scale(0, 0);
+            transition: transform .5s;
+        }
+
+        #list4 > div:hover > img {
+            transform: translate(0px, 0px) rotate(0deg) scale(1, 1);
+        }
+    </style>
+</head>
+<body>
+    <!-- (#list$>(div>img[src=../../images/rect_icon$$.png alt=$])*5)*4 -->
+    <div id="content">
+        <section id="list1">
+            <div>
+                <img src="../../images/rect_icon01.png" alt="1">
+            </div>
+            <div>
+                <img src="../../images/rect_icon02.png" alt="2">
+            </div>
+            <div>
+                <img src="../../images/rect_icon03.png" alt="3">
+            </div>
+            <div>
+                <img src="../../images/rect_icon04.png" alt="4">
+            </div>
+            <div>
+                <img src="../../images/rect_icon05.png" alt="5">
+            </div>
+        </section>
+        <section id="list2">
+            <div>
+                <img src="../../images/rect_icon01.png" alt="1">
+            </div>
+            <div>
+                <img src="../../images/rect_icon02.png" alt="2">
+            </div>
+            <div>
+                <img src="../../images/rect_icon03.png" alt="3">
+            </div>
+            <div>
+                <img src="../../images/rect_icon04.png" alt="4">
+            </div>
+            <div>
+                <img src="../../images/rect_icon05.png" alt="5">
+            </div>
+        </section>
+        <section id="list3">
+            <div>
+                <img src="../../images/rect_icon01.png" alt="1">
+            </div>
+            <div>
+                <img src="../../images/rect_icon02.png" alt="2">
+            </div>
+            <div>
+                <img src="../../images/rect_icon03.png" alt="3">
+            </div>
+            <div>
+                <img src="../../images/rect_icon04.png" alt="4">
+            </div>
+            <div>
+                <img src="../../images/rect_icon05.png" alt="5">
+            </div>
+        </section>
+        <section id="list4">
+            <div>
+                <img src="../../images/rect_icon01.png" alt="1">
+            </div>
+            <div>
+                <img src="../../images/rect_icon02.png" alt="2">
+            </div>
+            <div>
+                <img src="../../images/rect_icon03.png" alt="3">
+            </div>
+            <div>
+                <img src="../../images/rect_icon04.png" alt="4">
+            </div>
+            <div>
+                <img src="../../images/rect_icon05.png" alt="5">
+            </div>
+        </section>
+            
+    </div>
+</body>
+</html>

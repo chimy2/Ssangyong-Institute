@@ -20,12 +20,12 @@
             width: 50px;
             padding: 20px 0;
             position: relative;
+            transform-origin: center bottom;
+            transition: 200s all linear;
         }
 
         #clock > div > div {
-            /* border: 20px solid #555; */
             border-radius: 50px;
-            /* padding-top: 10px; */
             text-align: center;
         }
 
@@ -33,62 +33,38 @@
             background-color: tomato;
             width: 50px;
             height: 100px;
-            /* transform: translate(300px, 220px) rotate(0turn);
-            transition: 5s all; */
-            /* animation-name: hour;
-            animation-duration: 5s; */
+            top: 170px;
+            left: 305px;
         }
 
         #min {
             background-color: cornflowerblue;
             width: 50px;
             height: 170px;
-            /* transition: 10s all; */
+            top: -80px;
+            left: 305px;
         }
 
         #sec {
             background-color: gold;
             width: 50px;
             height: 240px;
-            /* transition: 40s all; */
-            top: -20px;
+            top: -400px;
+            left: 305px;
         }
 
-        /* #clock:hover #hour {
-            transform: translate(300px, 250px) rotate(1turn);
+        #clock:hover #hour {
+            transform: rotate(1turn);
         }
         
         #clock:hover #min {
-            transform: rotate(1turn);
+            transform: rotate(50turn);
             
         }
         
         #clock:hover #sec {
-            transform: rotate(1turn);
-        } */
-
-        @keyframes hour {
-            0% {
-                transform: translate(200px, 200px);
-                transform-origin: bottom center;
-            }
-            50% {
-                transform: translate(200px, 300px) rotate(180deg);
-                transform-origin: bottom center;
-            }
-            100% {
-                transform: translate(200px, 200px);
-                transform-origin: bottom center;
-            }
-        }
-
-        @keyframes min {
-
-        }
-
-        @keyframes sec {
-
-        }
+            transform: rotate(300turn);
+        } 
     </style>
 </head>
 <body>

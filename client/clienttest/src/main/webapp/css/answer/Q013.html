@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q013 - ball</title>
+    <style>
+        #content {
+            border: 10px solid black;
+            width: 650px;
+            height: 800px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        
+        #content > div {
+            width: 50px;
+            height: 50px;
+            border: 10px solid black;
+            border-radius: 50%;
+            animation-name: bounce;
+            animation-direction: alternate-reverse;
+            animation-timing-function: ease-out;
+            animation-iteration-count: infinite;
+        }
+
+        #content > div:nth-child(1) {
+            background-color: red;
+            animation-duration: 1s;
+        }
+
+        #content > div:nth-child(2) {
+            background-color: orange;
+            animation-duration: .5s;
+        }
+
+        #content > div:nth-child(3) {
+            background-color: yellow;
+            animation-duration: .7s;
+        }
+
+        #content > div:nth-child(4) {
+            background-color: green;
+            animation-duration: .9s;
+        }
+
+        #content > div:nth-child(5) {
+            background-color: blue;
+            animation-duration: .76s;
+        }
+
+        #content > div:nth-child(6) {
+            background-color: indigo;
+            animation-duration: .9s;
+        }
+
+        #content > div:nth-child(7) {
+            background-color: plum;
+        }
+        
+        @keyframes bounce {
+            0% {
+                transform: translate(0, 730px);
+                /* transform: translate(0, 0px); */
+            }
+            100% {
+                transform: translate(0, 0px);
+                /* transform: translate(0, 730px); */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

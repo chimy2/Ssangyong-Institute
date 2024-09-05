@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="Author" content="in">
+	<meta name="Generator" content="Visual Studio Code">
+	<title>JavaScript</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+	<link rel="stylesheet" href="basic.css">
+	<style type="text/css">
+		body {
+			margin: 25px;
+		}
+		#list {
+			display: inline-block;
+			border: 1px solid #DEDEDE;
+			padding: 5px;
+		}
+		
+		#label {
+			border: 0px solid #DEDEDE;
+			font-size: 30px;
+			font-weight: bold;
+			width: 600px;
+			color: #333;
+			margin: 10px;
+		}
+	</style>
+</head>
+<body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
+
+
+
+	<div id="list">
+		<img src="images/img01.jpg" alt="" onmouseover="change();" onmouseout="change();"  />
+		<img src="images/img02.jpg" alt="" onmouseover="change();" onmouseout="change();" />
+		<img src="images/img03.jpg" alt="" onmouseover="change();" onmouseout="change();" />
+	</div>
+	<br>
+	<input type="text" name="label" id="label" readonly="readonly" />
+
+
+
+
+	<script type="text/javascript">
+		function change() {
+			var filename = event.srcElement.src;
+			var index = filename.lastIndexOf("/");
+			filename = filename.substring(index+1);
+			
+			if (filename == "img01.jpg") {
+				document.all.label.value = "'스키'타는 사람이 '당근'으로 변했습니다.";
+			} else if (filename == "img02.jpg") {
+				document.all.label.value = "'해바라기'가 '피망'으로 변했습니다.";
+			} else if (filename == "img03.jpg") {
+				document.all.label.value = "'나무'가 '개'가 됐습니다.";
+			} else {
+				document.all.label.value = "";
+			}
+			
+			
+			if (event.type == "mouseover") {
+				filename = "0" + (parseInt(filename.substr(3)) + 3) + ".jpg";
+			} else if (event.type == "mouseout") {
+				filename = "0" + (parseInt(filename.substr(3)) - 3) + ".jpg";
+			}
+			
+			event.srcElement.src = "images/img" + filename;
+			document.title = event.srcElement.src;
+		}
+	</script>
+
+</body>
+</html>

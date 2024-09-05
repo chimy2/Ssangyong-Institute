@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q001 - click</title>
+    <style>
+        body {
+            color: #777;
+            font-weight: bold;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 120px;
+        }
+    </style>
+</head>
+<body>
+    <h1>데이터 입력</h1>
+    <form name="form1">
+        <span>이름: <input type="text" name="name"></span>
+        <span>나이: <input type="text" name="age"></span>
+        <span>별명: <input type="text" name="nickname"></span>
+        
+        <span>
+            <input type="button" value="Long" name="long">
+            <input type="button" value="Short" name="short">
+        </span>
+    </form>
+    <script>
+        var inputs = document.form1;
+        var long = inputs.long;
+        var short = inputs.short;
+
+        long.onclick = () => {
+            resize(50);
+        }
+
+        short.onclick = () => {
+            resize(20);
+        }
+
+        function resize(size) {
+            for (var i=0; i<inputs.length-2; i++) {
+                inputs[i].size = size; 
+            }
+        }
+    </script>
+</body>
+</html>

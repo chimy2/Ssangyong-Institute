@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/dd69cb37e8.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #8FD1D8;
+        }
+
+        #main {
+            margin: 0 auto;
+            width: 560px;
+        }
+
+        #tape {
+            background-image: url('../../images/tape.png');
+            height: 358px;
+        }
+
+        #lefthole, #righthole {
+            position: relative;
+            animation: rotate 1.5s linear infinite;
+        }
+
+        #lefthole {
+            left: 125px;
+            top: 120px;
+        }
+
+        #righthole {
+            left: 275px;
+            top: 120px;
+        }
+
+        #line {
+            position: relative;
+            left: 218px;
+            top: 43px;
+            background-image: url(../../images/tapeline.png);
+            width: 132px;
+            height: 63px;
+            animation: move 1.5s linear infinite alternate-reverse;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes move {
+            from {
+                background-position: 10px;
+            }
+            to {
+                background-position: -45px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1><i class="fas fa-headphones-alt"></i> Music</h1>
+        <div id="tape">
+            <img id="lefthole" src="../../images/tapehole.png">
+            <img id="righthole" src="../../images/tapehole.png">
+            <div id="line"></div>
+        </div>
+    </div>		
+</body>
+</html>

@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="Author" content="in">
+	<meta name="Generator" content="Visual Studio Code">
+	<title>JavaScript</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+	<link rel="stylesheet" href="basic.css">
+	<style>
+		body {
+			margin: 50px;
+		}
+	</style>
+	<script>
+
+
+		window.onload = function () {
+
+			var list = document.images;
+
+			for (var i = 0; i < list.length; i++) {
+
+				list[i].onmouseover = function () {
+
+					event.srcElement.src = "images/dog0" + getNum(event.srcElement.src) + ".jpg";
+
+				};
+
+				list[i].onmouseout = function () {
+
+					event.srcElement.src = "images/cat0" + getNum(event.srcElement.src) + ".jpg";
+
+				};
+
+			}
+
+		};
+
+		function getNum(url) {
+			var index = url.lastIndexOf(".");
+			return url.substr(index - 1, 1);
+		}
+
+
+	</script>
+</head>
+<body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
+
+	<div>
+		<img src="images/cat01.jpg" name="img1">
+		<img src="images/cat02.jpg" name="img2">
+		<img src="images/cat03.jpg" name="img3">
+		<img src="images/cat04.jpg" name="img4">
+		<img src="images/cat05.jpg" name="img5">
+	</div>
+
+	
+</body>
+</html>

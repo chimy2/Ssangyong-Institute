@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            color: #777;
+            font-weight: bold;
+        }
+
+        form {
+            width: 200px;
+            margin: 0 auto;
+        }
+
+        form > div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 100px;
+        }
+
+        form > div > input {
+            font-weight: bold;
+        }
+
+        form > div > input:last-child {
+            border: 0;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form name="form1">
+        <h1>회원가입</h1>
+
+        <div>
+            <b>아이디:</b>
+            <input type="text" name="id">
+            <input type="text" name="msg">
+        </div>
+    </form>
+    <script>
+        var id = document.form1.id;
+        var msg = document.form1.msg;
+
+        id.onkeyup = check;
+
+        function check() {
+            var value = id.value.trim();
+
+            if(value.length == 0) {
+                msg.value = "";
+            } else if(value.length < 4) {
+                msg.value = "아이디가 너무 짧습니다.";
+            } else if(value.length > 12) {
+                msg.value = "아이디가 너무 깁니다.";
+            } else {
+                msg.value = "아이디가 적합합니다.";
+            }
+        }
+    </script>
+</body>
+</html>

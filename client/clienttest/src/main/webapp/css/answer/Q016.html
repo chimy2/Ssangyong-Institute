@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q016 - music</title>
+    <style>
+        #main {
+            margin: 0 auto;
+            width: 530px;
+        }
+
+        #main h1 {
+            font-variant: small-caps;
+        }
+
+        #main .item {
+            border: 1px solid #999;
+            width: 350px;
+            height: 150px;
+            border-radius: 3px;
+            margin-bottom: 5px;
+            display: flex;
+            overflow: hidden;
+        }
+
+        #main .item input[type=radio] {
+            display: none;
+        }
+
+        #main .item label {
+            font-variant: small-caps;
+            font-size: 42px;
+            font-weight: bold;
+            background-color: #EEE;
+            width: 140px;
+            text-align: center;
+            padding: 20px 0;
+            z-index: 1;
+        }
+
+        #main .item div {
+            width: 200px;
+            height: 150px;
+            background-size: 150px 150px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        #main .item input[type=radio]:checked + label {
+            background-color: #FF6347;
+            color: white;
+        }
+
+        #main .item input[type=radio]:checked ~ .disc {
+            animation-name: rotate;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        
+        #disc1 {
+            background-image: url("../../images/lp01.png");
+        }
+        
+        #disc2 {
+            background-image: url("../../images/lp02.png");
+        }
+        
+        #disc3 {
+            background-image: url("../../images/lp03.png");
+        }
+        
+        #disc4 {
+            background-image: url("../../images/lp04.png");
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0);
+            }
+            to {
+                transform: rotate(1turn);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1>Music</h1>
+        <div class="item">
+            <input type="radio" name="rb" id="rb1">
+            <label for="rb1">Play</label>
+            <div class="disc" id="disc1"></div>
+        </div>
+        <div class="item">
+            <input type="radio" name="rb" id="rb2">
+            <label for="rb2">Play</label>
+            <div class="disc" id="disc2"></div>
+        </div>
+        <div class="item">
+            <input type="radio" name="rb" id="rb3">
+            <label for="rb3">Play</label>
+            <div class="disc" id="disc3"></div>
+        </div>
+        <div class="item">
+            <input type="radio" name="rb" id="rb4">
+            <label for="rb4">Play</label>
+            <div class="disc" id="disc4"></div>
+        </div>
+    </div>		
+    
+</body>
+</html>

@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://kit.fontawesome.com/7121714adf.js" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="../asset/question.css">
+   <title>Document</title>
+   <script>
+
+    window.onload = function() {
+        document.images["cat1"].onmouseover = function() {
+            document.images["cat1"].width += 5;
+        };
+        document.images["cat2"].onmouseover = function() {
+            document.images["cat2"].width += 5;
+        };
+        document.images["cat3"].onmouseover = function() {
+            document.images["cat3"].width += 5;
+        };
+        document.images["cat4"].onmouseover = function() {
+            document.images["cat4"].width += 5;
+        };
+        document.images["cat5"].onmouseover = function() {
+            document.images["cat5"].width += 5;
+        };
+
+        document.images["cat1"].onclick = function() {
+                document.images["cat1"].width = 128;
+        };
+        document.images["cat2"].onclick = function() {
+                document.images["cat2"].width = 128;
+        };
+        document.images["cat3"].onclick = function() {
+                document.images["cat3"].width = 128;
+        };
+        document.images["cat4"].onclick = function() {
+                document.images["cat4"].width = 128;
+        };
+        document.images["cat5"].onclick = function() {
+                document.images["cat5"].width = 128;
+        };
+    }
+
+    window.onkeydown = function(event) {
+        if (event.keyCode >= 48 && event.keyCode <= 57) {
+            document.images["cat" + (event.keyCode - 48)].width += 5;
+        } else if (event.keyCode == 27) {
+            for (var i = 1; i <= 5; i++) {
+                document.images["cat" + i].width = 128;
+            }
+        }
+        
+    }
+</script>
+</head>
+<body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
+
+	<h1>고양이</h1>
+		
+    <img src="../html/images/catty01.png" name="cat1">
+    <img src="../html/images/catty02.png" name="cat2">
+    <img src="../html/images/catty03.png" name="cat3">
+    <img src="../html/images/catty04.png" name="cat4">
+    <img src="../html/images/catty05.png" name="cat5">
+
+</body>
+</html>

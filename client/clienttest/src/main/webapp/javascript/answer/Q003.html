@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            color: #777;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>고양이</h1>
+    <div>
+        <!-- img[src=../../images/catty$$.png name=cat$ alt=cat$]*5 -->
+        <img src="../../images/catty01.png" alt="cat1" name="cat1">
+        <img src="../../images/catty02.png" alt="cat2" name="cat2">
+        <img src="../../images/catty03.png" alt="cat3" name="cat3">
+        <img src="../../images/catty04.png" alt="cat4" name="cat4">
+        <img src="../../images/catty05.png" alt="cat5" name="cat5">
+    </div>
+
+    <script>
+        var imgs = document.images;
+
+        window.onkeydown = () = > {
+            var code = window.keyCode;
+        };
+
+        for(var i=0; i<imgs.length; i++) {
+            imgs[i].onmouseenter = expand;
+            imgs[i].onclick = returnSize;
+        }
+
+
+        function expand() {
+            event.target.width += 5;
+        }
+
+        function returnSize() {
+            event.target.width = 128;
+        }
+    </script>
+</body>
+</html>

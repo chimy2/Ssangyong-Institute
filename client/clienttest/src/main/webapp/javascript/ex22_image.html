@@ -4,15 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            margin-bottom: 300px;
+        }
+    </style>
 </head>
 <body>
     <!-- ex22_image.html -->
     <h1>이미지</h1>
 
     <input type="button" value="버튼" name="btn1">
+
     <hr>
 
     <img src="../../images/cat01.jpg" name="cat1">
+
+    <hr>
+
+    <!-- 토글 버튼 -->
+    <img src="../../images/switch_on.png" alt="" name="sw">
+    <!-- <img src="../../images/switch_off.png" alt=""> -->
+
+    <hr>
+
+    <img src="../../images/rect_icon01.png" alt="" name="icon">
+    
+    <hr>
+
+    <img src="../../images/dog01.jpg" alt="" name="dog">
+    
+    <hr>
+
+    <img src="../../images/0.png" alt="" name="num">
 
     <script>
 
@@ -40,6 +64,89 @@
         function m4() {
             window.document.images['cat1'].src = '../../images/cat01.jpg';
         }
-    </script>
+
+        var sw = window.document.images['sw'];
+
+        sw.onclick = m5;
+        var state = true;
+
+        function m5() {
+            // if(sw.src.endsWith('../../images/switch_on.png'.replace(/\.\.\//g, ''))) {
+            if (state) {
+                sw.src = '../../images/switch_off.png';
+                // state = false;
+                window.document.body.bgColor = '#000';
+                window.document.body.style.color = '#FFF';
+            } else {
+                sw.src = '../../images/switch_on.png';
+                // state = true;
+                window.document.body.bgColor = '#FFF';
+                window.document.body.style.color = '#000';
+            }
+            state = !state;
+        }
+        //number, string, null - 원시타입
+        console.log(typeof null);   //object > 자바스크립트 버그
+
+        // window 생략 가능
+        // var icon = window.document.images['icon'];
+        var icon = document.images['icon'];
+
+        icon.onclick = m6;
+        var n = 1;
+
+        function m6() {
+            n++;
+            if (n > 18) {
+                // return;
+                n = 1;
+            }
+            icon.src = '../../images/rect_icon' + (n + '').padStart(2, '0') + '.png';
+        }
+
+        var dog = window.document.images['dog'];
+
+        // 화면에 포커스만 되면 사용할 수 있는 이벤트 > 전역 이벤트
+        window.onkeydown = m7;
+
+        var no = 1;
+
+        function m7() {
+
+            if (event.keyCode == 39) {
+                no++;
+                if(no > 5) {
+                    // alert('마지막 이미지입니다.');
+                    // return;
+                    no = 1;
+                }
+            } else if (event.keyCode == 37) {
+                no--;
+                if(no < 1) {
+                    // alert('처음 이미지입니다.');
+                    // return;
+                    no = 4;
+                }
+            }
+            dog.src = '../../images/dog0' + no + '.jpg';
+
+        }
+
+        var num = document.images['num'];
+
+        window.onkeydown = m8;
+
+        function m8() {
+            // 상단 숫자키: 0(48)~9(57)
+            // 우측 키패드: 0(96)~9(105)
+            // console.log(event.keyCode);
+
+            var code = event.keyCode;
+
+            if(code >= 48 && code <= 57 || code >= 96 && code <= 105) {
+                num.src = '../../images/' + code%96%48 + '.png';
+            }
+        }
+        </script>
 </body>
 </html>

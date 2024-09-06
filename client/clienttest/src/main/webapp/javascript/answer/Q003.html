@@ -25,8 +25,17 @@
     <script>
         var imgs = document.images;
 
-        window.onkeydown = () = > {
-            var code = window.keyCode;
+        window.onkeydown = () => {
+            var code = event.keyCode;
+
+            if(code >= 49 && code <= 53 
+                || code >= 97 && code <= 101) {
+                    imgs[code%97%49].width += 5;
+            } else if (code == 27) {
+                for (var i = 0; i < imgs.length; i++) {
+                    imgs[i].click();
+                }
+            }
         };
 
         for(var i=0; i<imgs.length; i++) {

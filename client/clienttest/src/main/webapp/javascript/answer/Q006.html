@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q006 - rollover</title>
+    <style>
+        #content {
+            border: 1px solid #DEDEDE;
+            width: 550px;
+            height: 140px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        #disc {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- #content>img[src=../../images/img$$.jpg]*3 -->
+    <div id="content">
+        <img src="../../images/img01.jpg" alt="" data-num="1">
+        <img src="../../images/img02.jpg" alt="" data-num="2">
+        <img src="../../images/img03.jpg" alt="" data-num="3">
+    </div>
+    <p id="disc"></p>
+    <script>
+        var imgs = document.querySelectorAll('#content img');
+        var p = document.querySelector('p');
+
+        for (var i=0; i<imgs.length; i++) {
+            imgs[i].addEventListener('mouseover', (e) => {
+                e.target.src = '../../images/img0' + (parseInt(e.target.dataset.num) + 3) + '.jpg';
+                if (e.target.dataset.num == 1) {
+                    p.textContent = '\'스키\'타는 사람이 \'당근\'으로 변했습니다.';
+                } else if (e.target.dataset.num == 2) {
+                    p.textContent = '\'해바라기\'가 \'피망\'으로 변했습니다.';
+                } else if(e.target.dataset.num == 3) {
+                    p.textContent = '\'나무\'가 \'개\'가 됐습니다.';
+                }
+            })
+            imgs[i].addEventListener('mouseleave', (e) => {
+                e.target.src = '../../images/img0' + e.target.dataset.num + '.jpg';
+                p.textContent = '';
+            });
+        }
+
+    </script>
+</body>
+</html>

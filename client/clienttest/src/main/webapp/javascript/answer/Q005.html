@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q005 - rollover</title>
+    <style>
+        #content { 
+            border: 1px solid #A8A8A8;
+            width: 600px;
+            height: 250px;
+            display: flex;
+
+        }
+
+        #btn {
+            width: 170px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #btn a { 
+            border: 1px solid #A8A8A8;
+            border-radius: 5px;
+            width: 145px;
+            height: 38px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #444;
+            text-align: center;
+            line-height: 38px;
+            background: #EEE;
+
+        }
+
+        #img {
+            width: 440px;
+            border-left: 1px solid #A8A8A8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <section id="btn">
+            <a href="../../images/dog01_big.jpg" id="dog01">강아지1</a>
+            <a href="../../images/dog02_big.jpg" id="dog02">강아지2</a>
+            <a href="../../images/dog03_big.jpg" id="dog03">강아지3</a>
+            <a href="../../images/dog04_big.jpg" id="dog04">강아지4</a>
+            <a href="../../images/dog05_big.jpg" id="dog05">강아지5</a>
+        </section>
+        <section id="img">
+            <img src="../../images/dog01.jpg" alt="dog">
+        </section>
+    </div>
+
+    <script>
+        var links = document.querySelectorAll('#btn a');
+        var img = document.querySelector('#img img');
+
+        for (var i=0; i<links.length; i++) {
+            links[i].onmouseenter = change;
+            links[i].onclick = openNewWindow;
+        }
+
+        function change() {
+            img.src = '../../images/' + event.target.id + '.jpg';
+        }
+
+        function openNewWindow() {
+            window.open(event.target.href, "big", "width=1400, height=1050");
+            return false;
+        }
+    </script>
+</body>
+</html>

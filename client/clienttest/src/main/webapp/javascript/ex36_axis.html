@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div { 
+            border: 1px solid black;
+            padding: 15px;
+            margin: 10px;
+        }
+
+        #me {
+            border: 10px solid cornflowerblue;
+        }
+
+        .find { 
+            outline: 10px solid orange;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex36_axis.html -->
+    <h1>Axis 탐색</h1>
+
+    <input type="button" value="버튼" id="btn1">
+
+    <hr>
+
+    <div>
+        할아버지
+        <div>
+            큰아버지
+            <div>사촌</div>
+        </div>
+        <div>
+            아버지
+            <div>큰형</div>
+            <div>작은형</div>
+            <div id="me">
+                나
+                <div>자식</div>
+                <div>
+                    자식
+                    <div>손자</div>
+                </div>
+                <div>자식</div>
+            </div>
+            <div>동생</div>
+            <div>막내동생</div>
+        </div>
+        <div>
+            작은아버지
+            <div>사촌</div>
+        </div>
+    </div>
+    <script>
+        // 나를 중심으로 부모, 자식, 형제를 탐색
+        document.getElementById('btn1').addEventListener('click', m2);
+        
+        var me = document.getElementById('me');
+
+        function m1() {
+            // <body class="find">
+            // document.body.class = 'find';    // 안됨 > why? > class가 예약어라서
+            // document.body.setAttribute('class', 'find'); // 클래스는 이렇게 바꾸는게 아님
+            
+            // document.body.className = 'find';
+
+            // 자식 태그
+            // - me.childNodes
+            // alert(me.childNodes.length);
+
+            for (var i=0; i<me.childNodes.length; i++) {
+                // console.log(me.childNodes[i]);
+                /* 
+                    DOM 트리 구성요소(=노드)
+                    1. 태그(1) - Element
+                    2. 속성(2) - Attribute
+                    3. PCDATA(3)
+                    -------------
+                    4. 주석(8)
+                    5. 선언문(13)
+                    6....
+
+                    DOM 노드 프로퍼티
+                    1. nodeType
+                        - 해당 노드가 어떤 타입
+                    2. nodeName
+                        - 해당 노드의 이름
+                            - 태그 > 태그명(O)
+                            - 속성 > 속성명(O)
+                            - PCDATA > #text(X)
+                    3. nodeValue
+                        - 해당 노드의 값
+                            - 태그 > null(X)
+                            - 속성 > 속성값(O)
+                            - PCDATA > PCDATA(O)
+                */
+
+                // console.log(i, me.childNodes[i].nodeType,
+                //     me.childNodes[i].nodeName, me.childNodes[i].nodeValue
+                // );
+                /* 
+                    0 3 '#text' '\n                나\n                '
+                    1 1 'DIV' null
+                    2 3 '#text' '\n                '
+                    3 1 'DIV' null
+                    4 3 '#text' '\n                '
+                    5 1 'DIV' null
+                    6 3 '#text' '\n            '
+                */
+
+                if(me.childNodes[i].nodeType == 1) {
+                    me.childNodes[i].className = 'find';
+                }
+            }
+        }
+
+        function m2() {
+            // - me.childNodes > 모든 자식들
+            // - me.children > 모든 자식 태그들
+
+            // me.childNodes
+            // me.children
+
+            // console.log(me.children.length);
+
+            // alert(me.children.length);
+            // for (var i=0; i<me.children.length; i++) {
+            //     me.children[i].className = 'find';
+            // }
+
+            // - me.childNodes
+            // - me.childNodes[0] == me.firstChild
+            // - me.childNodes[me.childNodes.length-1] == me.lastChild
+
+            // - me.children
+            // - me.children == me.firstElementChild
+            // - me.children[me.children.length-1] == me.lastElementChild
+
+            // me.firstElementChild.className = 'find';
+            // me.lastElementChild.className = 'find';
+
+            // 부모 or 조상
+            // - me.parentNode
+            // - me.parentElement
+
+            // me.parentNode.className = 'find';
+            // me.parentElement.className = 'find';
+
+            // me.parentNode.parentNode.className = 'find';
+            // me.parentNode.parentNode.parentNode.className = 'find';
+            // me.parentNode.parentNode.parentNode.parentNode.className = 'find';
+            console.log(me.parentNode.parentNode.parentNode.parentNode.parentNode); //document
+
+            // me.parentElement.parentElement.className = 'find';
+            console.log(me.parentElement.parentElement.parentElement.parentElement.parentElement);  //null
+
+            // 형제 탐색
+            // - me.previusSibling > 바로 위의 형제(노드) > 태그/문자열 둘다 가능
+            // - me.nextSibling > 바로 밑의 형제(노드) > 태그/문자열 둘다 가능
+            // - me.previousElementSibling > 바로 위의 형제태그
+            // - me.nextElementSibling > 바로 밑의 형제태그
+
+            // me.parentNode.children[0].className = 'find';
+
+            me.previousElementSibling.className = 'find';
+            me.previousElementSibling.previousElementSibling.className = 'find';
+
+            me.nextElementSibling.className = 'find';
+            me.nextElementSibling.nextElementSibling.className = 'find';
+
+            // Axis > 무분별한 id와 class를 최소화하기 위한 도구
+
+            // 자바스크립트 태그 검색
+            // - 필요한 최소의 id와 class 사용
+            // + Axis 검색
+
+        }
+    </script>
+</body>
+</html>

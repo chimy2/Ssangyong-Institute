@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q007 - image</title>
+    <style>
+        h1 { 
+            font-size: 38px;
+            color: #777;
+        }
+        
+        #content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #key {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            width: 500px;
+            height: 500px;
+        }
+
+        #key img {
+            border: 10px solid #A9A9A9;
+        }
+
+        #btn {
+            width: 520px;
+        }
+
+        #btn input {
+            border: 10px solid #A9A9A9;
+            width: 250px;
+            height: 60px;
+            font-size: 28px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pattern Lock</h1>
+    <div id="content">
+        <section id="key">
+            <!-- img[src="../../images/rect_icon$$.png" alt="icon$$" data-num="$"]*9 -->
+            <img src="../../images/rect_icon01.png" alt="icon01" data-num="1">
+            <img src="../../images/rect_icon02.png" alt="icon02" data-num="2">
+            <img src="../../images/rect_icon03.png" alt="icon03" data-num="3">
+            <img src="../../images/rect_icon04.png" alt="icon04" data-num="4">
+            <img src="../../images/rect_icon05.png" alt="icon05" data-num="5">
+            <img src="../../images/rect_icon06.png" alt="icon06" data-num="6">
+            <img src="../../images/rect_icon07.png" alt="icon07" data-num="7">
+            <img src="../../images/rect_icon08.png" alt="icon08" data-num="8">
+            <img src="../../images/rect_icon09.png" alt="icon09" data-num="9">
+        </section>
+        <section id="btn">
+            <input type="button" value="RESET">
+            <input type="button" value="INPUT">
+        </section>
+    </div>
+</body>
+</html>

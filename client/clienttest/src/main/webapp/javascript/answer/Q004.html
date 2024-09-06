@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q004 - rollover</title>
+    <style>
+        section {
+            margin: 40px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <img src="../../images/cat01.jpg" alt="1">
+        <img src="../../images/cat02.jpg" alt="2">
+        <img src="../../images/cat03.jpg" alt="3">
+        <img src="../../images/cat04.jpg" alt="4">
+        <img src="../../images/cat05.jpg" alt="5">
+    </section>
+
+    <script>
+        var imgs = document.images;
+
+        for(var i=0; i<imgs.length; i++) {
+            imgs[i].onmouseover = change;
+            imgs[i].onmouseleave = change;
+        }
+
+        function change() {
+            var img = event.target;
+
+            if(img.src.includes("cat")) {
+                img.src = img.src.replace("cat", "dog");
+            } else {
+                img.src = img.src.replace("dog", "cat");
+            }
+        }
+    </script>
+</body>
+</html>

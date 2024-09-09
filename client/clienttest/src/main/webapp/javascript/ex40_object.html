@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex40_object.html -->
+
+    <script>
+        /* 
+            객체, Object
+            - 자바스크립트에서는 클래스가 없다. 하지만 내장 객체를 제공한다.
+
+            1. 내장 객체
+                - Date, Array, Math, String, Object 등..
+
+            2. BOM 객체
+                - window, document, form, text, button 등
+            
+            3. DOM 객체
+                - element, attribute, text, comment 등
+
+            4. 사용자 정의 객체
+                - 자바스크립트는 클래스가 없다.
+                    > 원하는 형태의 객체 생성 불가능
+                    > 가능하게 하는 기술을 제공
+            
+            1. Object 내장 객체를 사용
+                - var list = new Array();
+                - var today = new Date();
+                - var obj = new Object();   // 사용자 정의 객체
+
+            2. {} > 객체 리터럴을 사용
+                - var obj = {};    // 사용자 정의 객체
+
+            자바
+            class User {
+                public String name;
+                public int age;
+                public String address;
+            }
+
+            User hong = new User();
+
+            hong.name = "홍길동";
+            hong.age = 20;
+            hong.address = "서울시 강남구";
+        */
+
+        // 수업 > let vs const ?  
+
+        // 자료형 설계 없이 객체 생성
+        const hong = new Object();  // 빈객체
+        console.log(hong);          // {} or Object
+
+        // *** 모든 객체는 프로퍼티를 자유롭게 추가/삭제가 가능하다.
+        hong.name = '홍길동';
+        hong.age = 20;
+        hong.address = '서울시 강남구';
+
+        console.log(hong);  // {name: '홍길동', age: 20, address: '서울시 강남구'}
+        console.log(hong.name);
+        console.log(hong.age);
+        console.log(hong.address);
+
+        // 프로퍼티 제거
+        delete hong.name;
+        console.log(hong);
+
+        // 프로퍼티 표기법
+        // 1. hong.age
+        // 2. hong['age']
+
+        hong.tel = '010-1234-5678';
+        console.log(hong.tel);
+        console.log(hong['tel']);
+
+        hong['home-tel'] = '02-1234-5678';
+        console.log(hong['home-tel']);
+
+        document.age = 20;
+        console.log(document.age);
+
+        console.clear();
+
+        // 자바스크립트 객체 만들기
+        // 1. 빈 객체를 만든다.
+        // 2. 원하는 프로퍼티를 추가한다.
+        
+        const lee = new Object();
+
+        lee.name = '이순신';
+        lee.age = 30;
+        lee.address = '서울시 강동구';
+
+        console.log(lee);
+
+        const you = new Object();
+        you.name = '유재석';
+        you.age = 40;
+        you.addres = '서울시 강서구';
+        console.log(you);
+        console.log(you.address);
+
+        const park = {};    // new Object();
+        park.name = '박문수';
+        park.age = 50;
+        park.address = '한양';
+
+        console.log(park);
+
+        const park2 = {
+            name: '박문수',
+            age: 50,
+            address: '한양',
+        };
+
+        console.log(park2);
+
+        const dog = {
+            name: '강아지',
+            age: 3,
+            address: '서울시 강남구 역삼동 한독 빌딩 10번지'
+        }
+
+        const address = {
+            si: '서울시',
+            gu: '강남구',
+            dong: '역삼동',
+            building: '한독 빌딩',
+            bunji: '10번지'
+        }
+
+        const dog2 = {
+            name: '강아지',
+            age: 3,
+            address: address
+        }
+
+        console.log(dog);
+        console.log(dog2);
+
+        const cat = {
+            name: '고양이',
+            age: 2,
+            address: {
+                si: '서울시',
+                gu: '강동구',
+                dong: '천호동',
+                bunji: '20번지'
+            },
+            nick: [ '냥이', '고냥이', '생선' ]
+        };
+
+        console.log(cat.name);
+        console.log(cat.address);
+        console.log(cat.address.dong);
+        console.log(cat.nick);
+        console.log(cat.nick[0]);
+
+        const pig = {
+            name: '돼지',
+            age: 5,
+            hello: m1
+        }
+
+        function m1() {
+            console.log('꿀꿀');
+        }
+
+        pig.hello();
+    </script>
+</body>
+</html>

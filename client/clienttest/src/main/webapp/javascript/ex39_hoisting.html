@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex39_hoisting.html -->
+    <script>
+        /* 
+            호이스팅, Hoisting
+            1. 함수 호이스팅(***) > 면접시 대답
+            2. 변수 호이스팅
+
+            - 보통의 함수 사용 순서: 선언 > 사용
+        */
+
+        let a = 10;
+
+        console.log(a);
+
+        f1();
+
+        function f1() {
+            console.log('f1');
+        }
+
+        f1();
+
+        var b = 20;
+        console.log(b);
+
+        console.log(c); //undefined > 변수를 만들고 초기화를 안했을 때 출력
+        var c = 30;
+
+        // Uncaught ReferenceError: Cannot access 'd' before initialization
+        // > let과 const도 호이스팅이 되지만 내부 구조적으로 오류를 발생시킴
+        // console.log(d);
+        // let d = 40;
+    </script>
+</body>
+</html>

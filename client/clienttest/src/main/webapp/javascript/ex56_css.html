@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            margin: 100px;
+            width: 560px;
+            height: 560px;
+        }
+
+        /* #box:hover img {
+            transition: all 1s linear;
+        }
+
+        #box:hover img {
+            transform: rotate(360deg);
+        } */
+    </style>
+</head>
+<body>
+    <!-- ex56_css.html -->
+    <div id="box">
+        <img src="../../images/roulette.png" alt="룰렛">
+    </div>
+
+    <script>
+        const img = document.querySelector('#box img');
+        let degree = 0;
+        let timer = 0;
+
+        img.onclick = function() {
+            if (timer == 0) {
+                timer = setInterval(() => {
+                    img.style.transform = `rotate(${degree}deg)`;
+                    degree += 10;
+                }, 10);
+            } else {
+                clearInterval(timer);
+                timer = 0;
+            }
+        };
+
+    </script>
+</body>
+</html>

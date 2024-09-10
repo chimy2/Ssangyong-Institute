@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q009 - form</title>
+    <style>
+        form {
+            color: #777;
+            font-weight: bold;
+        }
+
+        fieldset {
+            margin: 20px 0;
+            padding: 15px 10px;
+            border: 1px solid #999;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        form > div > label {
+            user-select: none;
+        } 
+    </style>
+</head>
+<body>
+    <!-- http://pinnpublic.dothome.co.kr/question/javascript/form3_impl.html -->
+    <form action="">
+        <h3>주문하기</h3>
+
+        <fieldset id="order">
+            <legend>주문하시는 분</legend>
+            <div>
+                이름 : <input type="text" class="name">
+            </div>
+            <div>
+                주소 : <input type="text" class="address">
+            </div>
+        </fieldset>
+        <div>
+            <input type="checkbox" id="equalPerson">
+            <label for="equalPerson">주문하시는 분의 정보와 동일합니다.</label>
+        </div>
+        <fieldset id="receive">
+            <legend>받으시는 분</legend>
+            <div>
+                이름 : <input type="text" class="name">
+            </div>
+            <div>
+                주소 : <input type="text" class="address">
+            </div>
+        </fieldset>
+    </form>
+
+    <script>
+        const orderName = document.querySelector('#order .name');
+        const orderAddress = document.querySelector('#order .address');
+        const receiveName = document.querySelector('#receive .name');
+        const receiveAddress = document.querySelector('#receive .address');
+        const equalPerson = document.getElementById('equalPerson');
+
+        equalPerson.addEventListener('change', function() {
+            if (this.checked) {
+                receiveName.value = orderName.value;
+                receiveAddress.value = orderAddress.value;
+            } else {
+                receiveName.value = "";
+                receiveAddress.value = "";
+                receiveName.focus();
+            }
+        });
+    </script>
+</body>
+</html>

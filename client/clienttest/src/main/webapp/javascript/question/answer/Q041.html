@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="Author" content="in">
+	<meta name="Generator" content="Visual Studio Code">
+	<title>JavaScript</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+	<link rel="stylesheet" href="basic.css">
+	<style>
+		#main, .main {
+			position: static;
+		}
+		.cat { position: absolute; left:0px; top: 0px; display: none; }
+	</style>
+</head>
+<body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
+
+
+
+	<img src="../html/images/catty01.png" alt="" class="cat">
+	<img src="../html/images/catty02.png" alt="" class="cat">
+	<img src="../html/images/catty03.png" alt="" class="cat">
+	<img src="../html/images/catty04.png" alt="" class="cat">
+	<img src="../html/images/catty05.png" alt="" class="cat">
+	<img src="../html/images/catty06.png" alt="" class="cat">
+	<img src="../html/images/catty07.png" alt="" class="cat">
+	<img src="../html/images/catty08.png" alt="" class="cat">
+	<img src="../html/images/catty09.png" alt="" class="cat">
+	<img src="../html/images/catty10.png" alt="" class="cat">
+	<img src="../html/images/catty11.png" alt="" class="cat">
+	<img src="../html/images/catty12.png" alt="" class="cat">
+	<img src="../html/images/catty13.png" alt="" class="cat">
+	<img src="../html/images/catty14.png" alt="" class="cat">
+	<img src="../html/images/catty15.png" alt="" class="cat">
+	<img src="../html/images/catty16.png" alt="" class="cat">
+	<img src="../html/images/catty17.png" alt="" class="cat">
+	<img src="../html/images/catty18.png" alt="" class="cat">
+	<img src="../html/images/catty19.png" alt="" class="cat">
+	<img src="../html/images/catty20.png" alt="" class="cat">
+	<img src="../html/images/catty21.png" alt="" class="cat">
+
+
+	<script>
+		var cats;
+		var pathX = [];
+		var pathY = [];
+
+		window.onload = function() {
+			cats = document.getElementsByClassName("cat");
+			for (var i=0; i<cats.length; i++) {
+				cats[i].style.zIndex = (cats.length-i);
+			}
+		};
+
+		window.onmousemove = function() {
+			pathX.push(event.clientX);
+			pathY.push(event.clientY);
+
+			if (pathX.length > cats.length) {
+				pathX.shift();
+				pathY.shift();
+			}
+
+			moveCat();
+		};
+
+		function moveCat() {
+
+			for (var i=0; i<cats.length; i++) {
+				if (pathX[i] != null) {
+					cats[i].style.left = pathX[i] - 64 + "px";
+					cats[i].style.top = pathY[i] - 64 + "px";
+					cats[i].style.display = "block";
+				}
+			}
+
+		}
+
+	</script>
+</body>
+</html>

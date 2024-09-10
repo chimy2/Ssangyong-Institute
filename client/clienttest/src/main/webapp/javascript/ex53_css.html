@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box { 
+            width: 150px; 
+            height: 150px; 
+            /* position: absolute; */
+            position: relative;
+            left: 0;
+            top: 0;
+            background-color: gold;
+        }
+    </style>
+</head>
+<body ondragstart="return false;" onselect="return false;" onselectstart="return false;">
+    <!-- ex53_css.html -->
+    
+    <h1>Drag & Drop</h1>
+    <div id="box1" class="box"></div>
+    <p>드래그 앤 드랍을 구현합니다.</p>
+
+    <script>
+        const box1 = document.getElementById('box1');
+        let isDown = false;
+        let x = 0;
+        let y = 0;
+
+        let bx = box1.getBoundingClientRect().x;    //화면에 있는 현재 위치
+        let by = box1.getBoundingClientRect().y;
+        console.log(bx, by);
+
+        // 객체 이동하는 인터페이스
+
+        // 객체를 이동시키는데 박스가 아니라 window에 거는 이유?
+        //  > 상자 영역 안에 있을 때만 이벤트가 발생하기 때문, 상자 영역 바깥으로 벗어나면 이벤트가 깨짐
+        window.onmousedown = function() {
+            if(event.target == box1){
+                isDown = true;
+
+                // 사각형의 어느 부분을 눌렀는지?
+                x = event.offsetX;
+                y = event.offsetY;
+            }
+        };
+
+        window.onmousemove = function() {
+            // if (마우스를 누른채?)
+            if (isDown) {
+                box1.style.left = event.clientX - x - bx + 'px';
+                box1.style.top = event.clientY - y - by + 'px';
+            }
+        };
+
+        window.onmouseup = function() {
+            isDown = false;
+        };
+    </script>
+</body>
+</html>

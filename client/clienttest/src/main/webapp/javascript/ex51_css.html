@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box { 
+            width: 150px; 
+            height: 150px; 
+            /* position: absolute;
+            left: 0;
+            top: 0; */
+        }
+        #box1 { background-color: tomato; }
+        #box2 { background-color: gold; }
+        #box3 { background-color: orange; }
+        #box4 { background-color: olivedrab; }
+        #box5 { background-color: cornflowerblue; }
+    </style>
+</head>
+<body>
+    <!-- ex51_css.html -->
+
+    <!-- #box$.box{상자$}*5 -->
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+    <div id="box4" class="box">상자4</div>
+    <div id="box5" class="box">상자5</div>
+
+    <script>
+        const list = document.getElementsByClassName('box');
+        let index = 0;
+        let zIndex = 0;
+
+        window.onmousedown = function() {
+            // position: absolute 원점 == event.clientX 원점
+
+            //클릭한 위치 > 상자 이동
+            // alert(event.clientX);
+
+            // list[0].style.left = (event.clientX - parseInt(window.getComputedStyle(list[0]).width) / 2) + 'px';
+            // list[0].style.top = event.clientY -  + 'px';
+            list[index].style.position = 'absolute';
+            list[index].style.left = (event.clientX - parseInt(window.getComputedStyle(list[index]).width) / 2) + 'px';
+            list[index].style.top = (event.clientY - parseInt(window.getComputedStyle(list[index]).height) / 2) + 'px';
+            list[index].style.zIndex = zIndex;
+
+            index++;
+            zIndex++;
+            if (index >= list.length) index = 0;
+        }
+    </script>
+</body>
+</html>

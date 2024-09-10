@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 150px;
+            height: 110px;
+            padding: 5px;
+        }
+        input {
+            background-color: #EFEFEF;
+            border: 1px solid #767676;
+            border-radius: 3px;
+            padding: 5px 0px;
+            width: 130px;
+            font-size: 12px;
+        }
+
+        input:hover {
+            background-color: #E5E5E5;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="서울시 강남구 역삼동" data-num="06232">
+    <input type="button" value="서울시 강남구 대치동" data-num="06291">
+    <input type="button" value="서울시 강남구 도곡동" data-num="06267">
+
+    <script>
+        const btns = document.querySelectorAll('input[type=button]');
+        const parentDoc = opener.document;
+        const parentPostCode = parentDoc.querySelector('#address tr:first-child input[type=text]');
+        const parentAddress = parentDoc.querySelector('#address tr:nth-child(2) input[type=text]');
+        const parentAddressDetail = parentDoc.querySelector('#address tr:nth-child(3) input[type=text]');
+
+        for (let i=0; i<btns.length; i++) {
+            btns[i].addEventListener('click', returnAddress);
+        }
+
+        function returnAddress() {
+            const num = this.dataset['num'];
+            const address = this.value;
+
+            parentPostCode.value = num;
+            parentAddress.value = address;
+            parentAddressDetail.focus();
+
+            window.close();
+        }
+    </script>
+</body>
+</html>

@@ -69,7 +69,52 @@
     </div>
 
     <script>
-        var num = 1;
+        let num = 1;
+        const imgs = document.querySelectorAll('#key img');
+        const btns = document.querySelectorAll('#btn input[type=button]');
+        const answer = [1, undefined, undefined, 2, undefined, undefined, 3, 4, 5];
+
+        imgs.forEach(img => {
+            img.addEventListener('mouseover', changeImg);
+        });
+
+        btns[0].addEventListener('click', resetImg);
+        btns[1].addEventListener('click', checkPattern);
+
+
+        function changeImg() {
+            this.dataset.value = num;
+            this.src = '../../images/rect_icon10.png';
+            num++;
+        }
+
+        function resetImg() {
+            imgs.forEach(img => {
+                img.src = `../../images/rect_icon0${img.dataset['num']}.png`;
+                delete img.dataset['value'];
+                num = 1;
+            })
+        }
+
+        function checkPattern() {
+            if (isCorrect()) {
+                location.href = 'https://google.com';
+            } else {
+                alert('Error!');
+                resetImg();
+            }
+        }
+
+        function isCorrect() {
+            for (let i=0; i<answer.length; i++) {
+                if (answer[i] != imgs[i].dataset['value']) {
+                    console.log(i, answer[i],imgs[i].dataset['value']);
+                    return false;
+                }
+            }
+            return true;
+        }
+        
     </script>
 </body>
 </html>

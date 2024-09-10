@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box { 
+            width: 150px; 
+            height: 150px; 
+            background-color: gold;
+            border: 1px solid black;
+        }
+
+        .draggable{ 
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex54_css.html -->
+
+    <h1>Drag & Drop</h1>
+
+    <!-- #box$.box*3 -->
+    <div id="box1" class="box draggable"></div>
+    <div id="box2" class="box draggable"></div>
+    <div id="box3" class="box draggable"></div>
+
+    <img src="../../images/catty01.png" alt="고양이" class="draggable" draggable="false">
+    <!-- 
+        이미지를 드래그하면 고스트이미지가 발생하는데
+        드래그 이벤트 지정에 방해가 되므로 고스트이미지 현상을 제거한다.
+            > draggable="false"
+    -->
+
+    <script>
+        
+        let obj;    // 드래그 대상 객체(box1, box2, box3 등..)
+        let isDown = false;
+        let x = 0;
+        let y = 0;
+        let bx = 0;
+        let by = 0;
+
+        window.onmousedown = function() {
+            if (event.target.classList.contains('draggable')) {
+                isDown = true;
+
+                x = event.offsetX;
+                y = event.offsetY;
+
+                // 한번 움직이면 인라인에 이동 위치가 적혀서 움직인 후에는 위치값을 지정해줘야 함
+                bx = event.target.getBoundingClientRect().x - parseInt(event.target.style.left != '' ? event.target.style.left : 0);
+                by = event.target.getBoundingClientRect().y - parseInt(event.target.style.top != '' ? event.target.style.top : 0);                
+
+                obj = event.target;
+            }
+        };
+
+        window.onmousemove = function() {
+            if (isDown) {
+                obj.style.left = event.clientX - x - bx + 'px';
+                obj.style.top = event.clientY - y - by + 'px';
+
+            }
+        };
+
+        window.onmouseup = function() {
+            isDown = false;
+        };
+    </script>
+</body>
+</html>

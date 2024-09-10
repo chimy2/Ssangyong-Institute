@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q008 - form</title>
+    <style>
+        #address {
+            width: 600px;
+            height: 150px;
+            border-collapse: collapse;
+            color: #777;
+        }
+
+        #address th, #address td {
+            border: 1px solid #808080;
+        }
+
+        #address th {
+            background-color: #DEDEDE;
+            width: 120px;
+        }
+
+        #address td {
+            width: 480px;
+            text-align: center;
+        }
+
+        #address tr:first-child td {
+            text-align: left;
+        }
+
+        #address td input[type=text] {
+            width: 450px;
+        }
+
+        #address tr:first-child input[type=text] {
+            width: 60px;
+            margin-right: 5px;
+            margin-left: 12px;
+        }
+
+
+        input:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>우편 번호 검색</h1>
+
+    <!-- table#address>tr*3>th+td -->
+    <table id="address">
+        <tr>
+            <th>우편번호</th>
+            <td><input type="text"><input type="button" value="우편번호검사하기"></td>
+        </tr>
+        <tr>
+            <th>주소</th>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <th>상세주소</th>
+            <td><input type="text"></td>
+        </tr>
+    </table>
+
+    <script>
+        const btn = document.querySelector('#address input[type=button]');
+
+        btn.addEventListener('click', openSearchWindow);
+
+        function openSearchWindow() {
+            window.open('Q008-2.html', 'search', 'width=250, height=200');
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q010 - form</title>
+    <style>
+        body {
+            color: #777;
+            font-weight: bold;
+        }
+
+        #info {
+            width: 600px;
+            border-collapse: collapse;
+        }
+
+        #info th, #info td {
+            border: 1px solid #999;
+            padding: 10px;
+        }
+
+        #info th {
+            width: 150px;
+            background-color: #EEE;
+        }
+
+        #ssn1, #ssn2 {
+            width: 70px;
+        }
+
+        #year {
+            width: 40px;
+        } 
+
+        #month, #day {
+            width: 25px;
+        }
+    </style>
+</head>
+<body>
+    <!-- http://pinnpublic.dothome.co.kr/question/javascript/form1_impl.html -->
+    <form action="">
+        <h1>회원 가입</h1>
+
+        <!-- table#info>tr*3>th+td -->
+        <table id="info">
+            <tr>
+                <th>주민번호</th>
+                <td>
+                    <input type="text" id="ssn1" maxlength="6">
+                    -
+                    <input type="text" id="ssn2" maxlength="7">
+                </td>
+            </tr>
+            <tr>
+                <th>생년월일</th>
+                <td><input type="text" id="year" maxlength="4">
+                년
+                <input type="text" id="month" maxlength="2">
+                월
+                <input type="text" id="day" maxlength="2">
+                일</td>
+            </tr>
+            <tr>
+                <th>성별</th>
+                <td>
+                    <input type="radio" name="gender" value="M" id="male">
+                    <label for="male">남자</label>
+                    <input type="radio" name="gender" value="M" id="female">
+                    <label for="female">여자</label>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        const ssn1 = document.getElementById('ssn1');
+        const ssn2 = document.getElementById('ssn2');
+        const year = document.getElementById('year');
+        const month = document.getElementById('month');
+        const day = document.getElementById('day');
+        const male = document.getElementById('male');
+        const female = document.getElementById('female');
+
+        ssn1.addEventListener('keyup', function() {
+            if (this.value.length == 6) {
+                year.value = '19' + this.value.substr(0, 2);
+                month.value = this.value.substr(2, 2);
+                day.value = this.value.substr(4, 2);
+                ssn2.focus();
+            }
+        })
+
+        ssn2.addEventListener('keyup', function() {
+            const gender = this.value.charAt(0);
+            console.log(gender);
+            if (parseInt(gender) % 2 == 1) {
+                male.checked = true;
+            } else if (parseInt(gender) % 2 == 0) {
+                female.checked = true;
+            } else {
+                male.checked = false;
+                female.checked = false;
+            }
+        })
+    </script>
+</body>
+</html>

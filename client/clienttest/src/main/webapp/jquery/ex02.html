@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- ex02.html -->
+
+        <h1>jQuery() 함수</h1>
+
+        <input type="button" value="버튼" name="btn1" id="btn1" />
+
+        <hr />
+
+        <!-- #box$.box{상자$}*5 -->
+        <div id="box1" class="box">상자1</div>
+        <div id="box2" class="box">상자2</div>
+        <div id="box3" class="box">상자3</div>
+        <div id="box4" class="box">상자4</div>
+        <div id="box5" class="box">상자5</div>
+
+        <script src="js/jquery-3.7.1.js"></script>
+        <script>
+            // 작업
+            // console.log(jQuery);
+
+            /* 
+            jQuery() 함수
+            - CSS 선택자를 사용해서 태그를 검색한다.(***)
+            - 자바스크립트 객체를 jQuery 객체로 변환한다.
+            - 동적으로 태그를 생성한다.
+            
+            - 항상 검색 결과가 배열이다.
+            - 검색된 결과에 메소드를 적용하면 
+                > 자동으로 모든 요소에 대해 일괄 적용이 된다.(자동으로 루프 실행)
+
+        */
+
+            document.getElementById('btn1').onclick = function () {
+                // jQuery('#btn1').css('color', 'blue');
+
+                // 목적] box를 모두 찾아 조작하시오.
+
+                // 1. DOM
+                const list = document.getElementsByClassName('box');
+
+                // for (let i=0; i<list.length; i++) {
+                //     list[i].style.color = 'blue';
+                // }
+                // Uncaught TypeError: list.forEach is not a function
+                //  > 순수 배열이 아니여서(유사 배열) forEach() 함수 불가
+                // list.forEach(box => box.style.color = 'blue');
+
+                // console.log(list.constructor);  // HTMLCollection()
+
+                // 유사배열 > (변환) > 순수배열
+                // Array.from(list).forEach(box => box.style.color = 'blue');
+
+                // 2. jQuery
+                const list2 = jQuery('.box');
+                // alert(list2.length);
+
+                /* for (let i=0; i<list2.length; i++) {
+                list2[i].style.color = 'blue';  // 설명 추가
+            } */
+                // jQuery('.box').css('color', 'blue');
+                // jQuery 장점 > 선택한 모든 요소들에 대해 다 적용해줌
+
+                // 선택자 테스트
+                // jQuery('div').css('color', 'blue');
+                // jQuery('#box1').css('color', 'blue');
+                // jQuery('.box').css('color', 'blue');
+                // :nth-child > 부모태그의 자식 순서 ********************************** 주의
+                // jQuery('.box:nth-child(even)').css('color', 'blue');
+
+                // *** 주의!!
+                const a = document.all.btn1; //BOM
+                const b = document.getElementById('btn1'); //DOM
+
+                console.log(a === b);
+                // 찾는 방법(BOM이든 DOM이든)은 달라도 결과물은 완벽하게 동일하다.
+
+                const c = jQuery('#btn1');
+
+                console.log(a === c); // false
+                console.log(a == c); // false
+
+                // a.value = '하하';
+                // c.val('호호');
+
+                console.log(a == c[0]); // true;
+                console.log(a === c[0]); // true;
+
+                console.log(a.constructor.name, c.constructor.name); // HTMLInputElement jQuery
+                console.log(a.constructor.name, c[0].constructor.name); // HTMLInputElement HTMLInputElement
+
+                // a.value = '하하';
+                // a.val('하하');   > (X)
+
+                // c.val('호호');
+                // c.value = '호호';    > (X)
+
+                // BOM(DOM) 객체 > (형변환) > jQuery 객체
+                // a.val('하하');
+                jQuery(a).val('하하');
+
+                // jQuery 객체 > (형변환) > BOM(DOM) 객체
+                // c.value = '호호';
+                c[0].value = '호호';
+            };
+        </script>
+        <!-- 
+            함수 호이스팅이 안되기 때문에 위에 선언
+            > 항상 라이브러리를 사용할 때는 위에 선언  
+        -->
+        <!-- <script src="js/jquery-3.7.1.js"></script> -->
+    </body>
+</html>

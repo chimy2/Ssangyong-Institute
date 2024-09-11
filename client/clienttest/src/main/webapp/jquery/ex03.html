@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex03.html -->
+    <h1>jQuery Event</h1>
+
+    <input type="button" value="버튼1" id="btn1" class="btn">
+    <input type="button" value="버튼2" id="btn2" class="btn">
+    <input type="button" value="버튼3" id="btn3" class="btn">
+    <script src="js/jquery-3.7.1.js"></script>
+    <script>
+        /* 
+            1. jQuery의 대부분(99.99%)의 기능은 함수로 제공된다.
+            2. jQuery 함수 패턴
+                a. 전용 함수
+                    - 객체.함수() : Getter
+                    - obj.test()
+                    - 객체.함수(인자) : Setter
+                    - obj.test(param)
+
+                b. 범용 함수
+                    - 객체.함수(인자) : Getter
+                    - obj.test(param1)
+                    - 객체.함수(인자, 인자) : Setter
+                    - obj.test(param1, param2)
+
+            3. jQuery 함수는 객체를 인자로 받는 경우가 많다.
+                - test3('click');
+                - test4(100);
+                - test5(function() {});
+                - test6({});
+
+            1. BOM
+            - <input onclick="">
+            - btn.onclick = function() {};
+            - btn.onclick = null;
+
+            2. DOM
+            - btn.addEventListener('click', function() {});
+            - btn.removeEventListener('click', function() {});
+
+            3. jQuery
+            jQuery = $
+        */
+       
+        // 전용 함수
+        $('#btn1').click(function() {
+            console.log('전용함수 클릭');
+        });
+
+        // 범용 함수
+        $('#btn2').on('click', function() {
+            console.log('범용함수 클릭');
+        });
+
+        $('#btn3').click(function() {
+            // 이벤트 주체?
+            console.log(event.target);
+            console.log(this);
+
+            $('#btn1').off('click');    //이벤트 해제
+            $('#btn2').off('click');
+        });
+
+        $('.btn').off('click');
+
+        // 버튼 3개 > 일괄 클릭 이벤트 추가
+        const list = document.querySelectorAll('.btn');
+        console.log(list.constructor);  // NodeList
+        // 같은 시기에 만들어져서 유사 배열이라도 forEach() 사용 가능
+        // list.forEach(btn => {
+        //     btn.onclick = function() {
+        //         console.log(event.target.id);
+        //     };
+        // });
+
+        // $('.btn').click(function() {
+        //     console.log(event.target.id);
+        // })
+
+
+    </script>
+</body>
+</html>

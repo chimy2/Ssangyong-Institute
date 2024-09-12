@@ -274,3 +274,49 @@ SM SI Solution Service
 수/목 클라이언트 수업 끝
 
 Q33, 34, 40, 41, 43, 46
+
+2024년 9월 11일
+jQuery > MPA(PC, 웹)
+vs
+Angular/React/Vue > SPA(앱, 모바일)
+
+javascript library jquery
+cf. alpine.js
+
+jquery 1.x - 모든 브라우저 지원
+jquery 3.x - 오래된 버전은 버림
+
+jQuery CDN > uncompressed - 원래 소스코드, 디버그용 함수 존재 개발용
+		> minified - 압축버전, 배포용
+
+공부 중요도
+HTML(*)
+CSS(*)
+Bootstrap
+JavaScript(*)
+jQuery
+
+Java(*)
+Oracle(*)
+
+C# > SliverLight/WPF
+Flash
+
+Servlet
+JSP
+EJB
+Spring > 최근(*)
+Spring Boot > 최근(*)
+
+SI, SM, Service, Solution..
+
+1. 정보처리기사
+	- 정부과제 > 기사 필수
+	- 대기업 > 기사 요구
+
+2024년 9월 12일
+jquery ui 
+
+jquery-ui.js
+jquery.js
+jquery

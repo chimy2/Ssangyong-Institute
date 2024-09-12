@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            rel="stylesheet"
+            href="https://code.jquery.com/ui/1.14.0/themes/eggplant/jquery-ui.css"
+        />
+        <style>
+            #a1 {
+                width: 300px;
+            }
+
+            #dialog1 {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- ex18_ui.html -->
+        <h1>컨트롤</h1>
+
+        <!-- 다이얼로그 -->
+        <input type="button" value="확인" id="btn5" />
+        <div id="dialog1">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+            molestias ipsa quasi quisquam praesentium. In quam distinctio
+            quisquam deserunt beatae. Iste illo hic accusamus ut dolorum minima
+            quam, unde et?
+        </div>
+
+        <hr />
+
+        <!-- 날짜 -->
+        <div>
+            <label>날짜(HTML5): </label>
+            <input type="date" />
+        </div>
+
+        <div>
+            <label>날짜(jQuery UI): </label>
+            <input type="text" id="date1" />
+            <div id="date1"></div>
+        </div>
+
+        <!-- Button -->
+        <input type="button" value="글쓰기" id="btn1" class="btn" />
+        <input type="button" value="돌아가기" id="btn2" class="btn" />
+
+        <hr />
+
+        <div id="btns">
+            <input type="button" value="글쓰기" id="btn3" class="btn" />
+            <input type="button" value="돌아가기" id="btn4" class="btn" />
+        </div>
+
+        <hr />
+
+        <a href="https://naver.com" class="btn">네이버</a>
+
+        <!-- Accordion -->
+
+        <div id="a1">
+            <h2>HTML</h2>
+            <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Suscipit facilis atque quia alias nulla debitis voluptas quas
+                expedita eligendi adipisci? Vel accusamus fugiat architecto
+                adipisci temporibus. Magnam, exercitationem fugiat. Maiores!
+            </div>
+
+            <h2>CSS</h2>
+            <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Suscipit facilis atque quia alias nulla debitis voluptas quas
+                expedita eligendi adipisci? Vel accusamus fugiat architecto
+                adipisci temporibus. Magnam, exercitationem fugiat. Maiores!
+            </div>
+
+            <h2>JavaScript</h2>
+            <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Suscipit facilis atque quia alias nulla debitis voluptas quas
+                expedita eligendi adipisci? Vel accusamus fugiat architecto
+                adipisci temporibus. Magnam, exercitationem fugiat. Maiores!
+            </div>
+        </div>
+
+        <script src="js/jquery-3.7.1.js"></script>
+        <script
+            src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"
+            integrity="sha256-u0L8aA6Ev3bY2HI4y0CAyr9H8FRWgX4hZ9+K7C2nzdc="
+            crossorigin="anonymous"
+        ></script>
+        <script>
+            $('#a1').accordion({
+                collapsible: true,
+            });
+
+            $('.btn').button();
+
+            $('#btns').controlgroup();
+
+            $('#date1').datepicker({
+                dateFormat: 'yy-mm-dd' /* 2024-09-03 */,
+                // minDate: -5 /* 5일 전까지 선택 */,
+                // maxDate: 3 /* 3일 후까지 선택 */,
+                // minDate: '-1M -5D' /* 1달 5일 전 */,
+                // maxDate: '1M 5D' /* 1달 5일 후 */,
+                minDate: '2024-06-19',
+                maxDate: '2024-12-03',
+            });
+
+            // $('#dialog1').hide();
+            /*
+                대화 상자
+                1. modal
+                    - 팝업창이 포커스를 독점한다.
+                    -
+
+                2. modeless
+                    - 팝업창과 부모창의 포커스 전환이 자유롭다.
+            */
+            $('#btn5').click(() => {
+                $('#dialog1').dialog({
+                    title: '대화 상자',
+                    width: 300,
+                    height: 400,
+                    draggable: true,
+                    resizable: false,
+                    modal: true,
+                    /* 버튼은 보통필수 요소기 때문에 기본 제공 */
+                    buttons: {
+                        확인: function () {},
+                        취소: function () {
+                            $('#dialog1').dialog('close');
+                        },
+                    },
+                });
+            });
+        </script>
+    </body>
+</html>

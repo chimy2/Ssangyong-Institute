@@ -4,13 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Q011 - form</title>
+    <style>
+        #content { 
+            width: 600px;
+            border-collapse: collapse;
+            margin: 0 auto;
+            color: #777;
+            font-weight: bold;
+        }
+
+        #content td {
+            width: 200px;
+            height: 400px;
+            border: 1px solid gray;
+            text-align: center;
+        }
+
+        #content section {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 200px;
+        }
+        
+        #content section input[type=button] {
+            font-size: 16px;
+            width: 150px;
+            height: 40px;
+            align-self: center;
+            background-color: #E6E6E6;
+            border-radius: 5px;
+            border: 1px solid #4B4B4B;
+        }
+
+        #block, #allow {
+            width: 150px;
+            height: 300px;
+        }
+
+        #block:focus, #allow:focus {
+            outline: none;
+        }
+
+        option {    
+            height: 18px;
+            font-weight: bold;
+            padding: 5px;
+            color: #777;
+        }
+    </style>
 </head>
 <body>
     <table id="content">
         <tr>
             <td>
-                <h3>차단된 친구</h3>
-                <select>
+                <h4>차단된 친구</h4>
+                <select id="block" multiple>
                     <option value="1">권예진</option>
                     <option value="2">권준혁</option>
                     <option value="3">김동식</option>
@@ -23,23 +72,67 @@
                 </select>
             </td>
             <td>
-                <input type="button" value="Add">
+                <section>
+                    <input type="button" value="Add ▷" id="add">
+                    <input type="button" value="◁ Remove" id="remove">
+                    <input type="button" value="Add All ▷ ▷" id="addAll">
+                    <input type="button" value="◁ ◁ Remove All" id="removeAll">
+                </section>
             </td>
             <td>
-                <h3>혀용된 친구</h3>
-                <select>
-                    <option value="1">권예진</option>
-                    <option value="2">권준혁</option>
-                    <option value="3">김동식</option>
-                    <option value="4">김세진</option>
-                    <option value="5">김여정</option>
-                    <option value="6">노형준</option>
-                    <option value="7">박민선</option>
-                    <option value="8">백강현</option>
-                    <option value="9">변기현</option>
+                <h4>허용된 친구</h4>
+                <select id="allow" multiple>
                 </select>
             </td>
         </tr>
     </table>
+
+    <script>
+
+        const block = document.getElementById('block');
+        const allow = document.getElementById('allow');
+        const add = document.getElementById('add');
+        const remove = document.getElementById('remove');
+        const addAll = document.getElementById('addAll');
+        const removeAll = document.getElementById('removeAll');
+
+        add.addEventListener('click', function() {
+            if (block.hasChildNodes) {
+                Array.from(block.children)
+                    .filter(child => child.selected)
+                    .forEach(child => {
+                        allow.appendChild(child);
+                    });
+            }
+        });
+
+        // block.onchange = dragEnter;
+        // block.ondragover = dragOver;
+        // block.ondrag = drag;
+
+        // allow.ondragenter = dragEnter;
+        // allow.ondragover = dragOver;
+        // allow.ondrag = drag;
+
+        window.onclick = function() {
+            
+        }
+
+        function dragEnter() {
+            console.log(1, this);
+            for (let i in this.children) {
+                console.log(i, i.selected);
+            }
+        }
+
+        function dragOver() {
+            console.log(2, this);
+        }
+
+        function drag() {
+            console.log(3, this);
+        }
+
+    </script>
 </body>
 </html>

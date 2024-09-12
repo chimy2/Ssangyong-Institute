@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            rel="stylesheet"
+            href="https://code.jquery.com/ui/1.14.0/themes/eggplant/jquery-ui.css"
+        />
+        <style>
+            #box1 {
+                border: 1pxsolid black;
+                width: 300px;
+                height: 300px;
+                background-color: gold;
+            }
+
+            .cat {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- ex14_ui.html -->
+        <h1>Interactions <small>Droppable</small></h1>
+
+        <div id="box1"></div>
+
+        <img src="../../images/catty01.png" alt="" id="cat1" class="cat" />
+
+        <script src="js/jquery-3.7.1.js"></script>
+        <script
+            src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"
+            integrity="sha256-u0L8aA6Ev3bY2HI4y0CAyr9H8FRWgX4hZ9+K7C2nzdc="
+            crossorigin="anonymous"
+        ></script>
+        <script>
+            $('.cat').draggable({
+                cursor: 'move',
+            });
+
+            $('#box1').droppable({
+                // tolerance: 'fit' /* 완벽히 영역을 넘어갔을 때 발생 */,
+                // tolerance: 'pointer' /* 영역 안에 포인터가 있는지 */,
+                drop: function (event, ui) {
+                    // alert();
+                    // 이벤트 주체 > box1
+                    // $(event.target).css('background-color', 'cornflowerblue');
+                    $(this).css('background-color', 'cornflowerblue');
+
+                    // 던져진 고양이?
+                    // console.log(ui.draggable.attr('id'));
+
+                    ui.draggable.draggable({
+                        // containment: '#box1',
+                        containment: event.target,
+                    });
+                },
+            });
+
+            $('.cat').dblclick(() => {
+                $('#box1').css('background-color', 'gold');
+                $(event.target).draggable({
+                    containment: '',
+                });
+            });
+        </script>
+    </body>
+</html>

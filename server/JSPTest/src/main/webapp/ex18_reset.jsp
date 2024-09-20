@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	/* 
+		방문 횟수 카운트
+		- 누적 변수 필요
+	*/
+	
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,8 +18,14 @@
 	</style>
 </head>
 <body>
-	<!-- ex13_response_2.jsp -->
-	<h1>두번째 페이지</h1>
+	<!-- ex18_reset.jsp -->
+	<h1>세션값 초기화하기</h1>
+	
+	<%
+		session.invalidate();
+	%>
+	
+	<a href="ex18_session.jsp">돌아가기</a>
 	
 	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 	<script src="https://bit.ly/4cMuheh"></script>

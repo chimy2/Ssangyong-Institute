@@ -11,8 +11,14 @@
 	</style>
 </head>
 <body>
-	<!-- ex13_response_2.jsp -->
-	<h1>두번째 페이지</h1>
+	<!-- ex18_del.jsp -->
+	<h1>세션값 삭제하기</h1>
+	
+	<%
+		session.removeAttribute("data");
+	%>
+	
+	<a href="ex18_session.jsp">돌아가기</a>
 	
 	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 	<script src="https://bit.ly/4cMuheh"></script>

@@ -336,3 +336,42 @@ response
 4. 페이지 이동하기
 	- "ex13_response_1.jsp"
 	- "ex13_response_2.jsp"
+
+pageContext
+	- "ex14_pagecontext_1.jsp"
+	- "ex14_pagecontext_2.jsp"
+
+out
+- 출력 객체
+- JSP 방식이 아닌 Servlet 방식으로 출력을 지원하는 객체
+- "ex15_out.jsp"
+
+session & application
+- session > 개인 정보 관리 객체
+- application > 사이트 정보 관리 객체
+
+- "ex16_session.jsp"
+- "ex16_session_2.jsp"
+- "ex16_session_3.jsp"
+
+- "ex17_session.jsp"
+
+- "ex18_session.jsp"	// 메인페이지
+- "ex18_set.jsp"		// ↓기능 페이지들
+- "ex18_del.jsp"
+- "ex18_interval.jsp"
+- "ex18_reset.jsp"
+
+단일 파일 업로드/다운로드
+
+- "ex19_form.jsp"
+- "ex19_ok.jsp"
+
+다중 파일 업로드/다운로드
+
+- "ex20_form.jsp"
+- "ex20_ok.jsp"
+
+cos.jar 다운로드
+원래 jar파일을 프로젝트에 참조하려면 Java Build Path를 설정해주어야하는데
+webapp > WEB-INF > lib 폴더에 jar 파일을 넣으면 자동으로 설정해준다. 

@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	session.setAttribute("a", 20);
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,8 +14,8 @@
 	</style>
 </head>
 <body>
-	<!-- ex13_response_2.jsp -->
-	<h1>두번째 페이지</h1>
+	<!-- ex16_session_3.jsp -->
+	<h1>session</h1>
 	
 	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 	<script src="https://bit.ly/4cMuheh"></script>

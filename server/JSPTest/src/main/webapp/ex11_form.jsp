@@ -6,8 +6,15 @@
 	<meta charset="UTF-8">
 	<title></title>
 	<link rel="stylesheet" href="http://bit.ly/3WJ5ilK">
+	<script src="https://kit.fontawesome.com/dd69cb37e8.js" crossorigin="anonymous"></script>
 	<style>
+		#width, #height, #txt {
+			width: 100px;
+		}
 		
+		#fontsize {
+			width: 50px;
+		}
 	</style>
 </head>
 <body>
@@ -55,11 +62,11 @@
 				<th>아이콘</th>
 				<td>
 					<input type="radio" name="icon" value="none"> 없음
-					<input type="radio" name="icon"><i class="fa-solid fa-house"></i>
-					<input type="radio" name="icon"><i class="fa-solid fa-image"></i>
-					<input type="radio" name="icon"><i class="fa-solid fa-location-dot"></i>
-					<input type="radio" name="icon"><i class="fa-brands fa-github"></i>
-					<input type="radio" name="icon"><i class="fa-solid fa-paperclip"></i>
+					<input type="radio" name="icon" value="house"> <i class="fa-solid fa-house"></i>
+					<input type="radio" name="icon" value="image"> <i class="fa-solid fa-image"></i>
+					<input type="radio" name="icon" value="map"> <i class="fa-solid fa-location-dot"></i>
+					<input type="radio" name="icon" value="git"> <i class="fa-brands fa-github"></i>
+					<input type="radio" name="icon" value="clip"> <i class="fa-solid fa-paperclip"></i>
 					
 				</td>
 			</tr>
@@ -71,18 +78,21 @@
 						<option value="show">보이기</option>
 					</select>
 					<div>
-						두께(px): <input type="number" value="1"><br>
+						두께(px): <input type="number" value="1" name="bordersize"><br>
 						색상: <input type="color" value="#000"><br>
 						스타일: <select class="borderstyle" name="borderstyle">
 							<option>실선</option>
 							<option>쇄선</option>
 							<option>점선</option>
-						</select>
-						모서리(px): <input type="number" value="0" min="0" max="50">
+						</select><br>
+						모서리(px): <input type="number" value="0" min="0" max="50" name="borderradius">
 					</div>
 				</td>
 			</tr>
 		</table>
+		<div>
+			<input type="submit" value="만들기">
+		</div>
 	</form>
 	
 	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>

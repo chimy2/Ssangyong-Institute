@@ -375,3 +375,85 @@ session & application
 cos.jar 다운로드
 원래 jar파일을 프로젝트에 참조하려면 Java Build Path를 설정해주어야하는데
 webapp > WEB-INF > lib 폴더에 jar 파일을 넣으면 자동으로 설정해준다. 
+
+2024년 9월 23일
+
+EL, Expression Language
+- ex23_el.jsp
+- JSP(자바)의 표현식(<%= %>) > HTML 문서에 값을 출력하는 역할
+- JSP 페이지 내에서 JAVA 문법을 사용하지 말자
+- <%= %>을 대신하는 언어 > EL(*****) = 가독성 + 편의성
+
+JSTL, JSP Standard Tag Library
+- 액션 태그
+- 자바의 프로그래밍 구문을 태그 형태로 제공
+- JSP 페이지 내에서 JAVA 문법을 사용하지 말자
+- <% %>을 대신(X) > <% %> 일부 구문 대신(O)
+- ex24_jstl.jsp
+- jstl은 기본 기능이 아니라서 jar를 가져와야한다
+
+∴현재 JSP 안에서는 <%= %>, 스크립틀릿을 안씀
+
+jstl 설치
+- https://apache.org/ > 공식 홈페이지이지만 우리가 생각하는 jstl과 다르므로 공식홈에서 다운로드 X
+- https://mvnrepository.com/search?q=jstl 에서 javax.servlet » jstl > 1.2버전
+- webapp > WEB-INF > lib > jstl-1.2.jar 복사
+
+jstl 사용법
+- jar 파일 가져오기 + 태그라이브러리 설정
+
+application 
+- "ex25_application.jsp"
+
+쿠키, Cookie
+- 브라우저 기능 중 하나 > 데이터 저장소
+- JavaScript or Java로 조작 가능
+- 용도: 사용자(브라우저)가 웹 사이트 방문 
+	> 웹 사이트 측에서 접속한 사용자에 대한 개인 정보를 저장하기 위한 장치 > 사용자의 컴퓨터에 저장한다.(***)
+	> 사용자에 대한 여러가지 정보들을 지속적으로 유지/관리 or 행동 추적 등..
+
+사이트 > 사용자 정보 관리
+1. DB
+	- 가장 좋음
+	- 무겁고 비싸다
+======================== 비교대상은 아님
+2. session
+	- 서버 메모리에 생성
+	- 자바 > 저장 가능한 자료형 > Object(모든 것)
+	- 보안 양호
+	- 크기 무제한(서버 메모리 허용량)
+	- 모든 페이지에서 접근 가능(= 전역 변수 역할)
+
+3. cookie
+	- 클라이언트 메모리 or 하드 디스크에 생성
+	- 텍스트 파일 > 저장 가능한 자료형 > 문자열
+	- 보안 불안정
+	- 4KB, 최대 20개
+	- 모든 페이지에서 접근 가능(= 전역 변수 역할)
+
+- "ex26_cookie.jsp"
+- "ex26_cookie_2.jsp"
+
+- "ex27_cookie.jsp"
+- "ex27_cookie_2.jsp"
+- "ex27_cookie_3.jsp"
+
+- "ex28_cookie_form.jsp"
+- "ex28_cookie_ok.jsp"
+
+새프로젝트
+- "MVCTest" > "mvc" + web.xml(O)
+
+1. Servlet
+2. JSP  > JSP Model 1
+	- 상단부: 자바코드
+	- 중하단부: HTML코드
+3. Servlet + JSP > JSP Model 2
+	- Servlet: 자바코드
+	- JSP: HTML코드
+
+Hello
+- "com.test.java" > "Hello.java"
+- webapp > "hello.jsp"
+
+서블릿 + JSP = 업무 순서: 서블릿 > JSP = 1페이지

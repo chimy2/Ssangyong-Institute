@@ -1,7 +1,6 @@
 Ssangyong Institute
 
-jquery ui, crawling
-Q011~Q013
+el, jstl, application, cookie
 
 원격 접속 > 클라이언트 툴
 SSH 클라이언트 툴 > 원격 컴퓨터 접속

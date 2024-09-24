@@ -457,3 +457,44 @@ Hello
 - webapp > "hello.jsp"
 
 서블릿 + JSP = 업무 순서: 서블릿 > JSP = 1페이지
+
+
+2024년 9월 24일
+
+- com.test.java > "Ex01.java"
+- webapp > "ex01.jsp"
+
+페이지 요청 > 서블릿 호출 > 서블릿 업무 코드 처리 > 산출물을 JSP에 전달 > JSP 호출 > 전달받은 산출물 + HTML 페이지 생성 > 페이지 응답
+
+1. 서블릿을 생성한다.
+
+오라클 동작 확인
+Win+R > services.msc
+- OraclesServiceXE > 실행중
+- OracleXETNSListener > 실행중
+
+oracle developer > system/java1234
+
+안깔려 있다면 Oracle 11g Express Edition으로 설치
+
+create user server identified by java1234;
+grant connect, resource, dba to server;
+
+새프로젝트
+- "JDBCTest" > jdbc + web.xml(O)
+- "com.test.java" > "Ex01.java"
+
+새접속
+system@localhost
+system/java1234, 비밀번호 저장, 테스트 > 저장 > 접속
+
+- "com.test.java" > "Ex02.java"
+- "com.test.java" > "DBUtil.java"
+
+- "com.test.java" > "Ex03_Statement.java"
+
+- "com.test.java" > "Ex04_Select.java"
+
+- "com.test.java" > "Ex05_PreparedStatement.java"
+
+- "com.test.java" > "Ex06_CallableStatement.java"

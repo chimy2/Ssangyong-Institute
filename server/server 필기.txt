@@ -498,3 +498,88 @@ system/java1234, 비밀번호 저장, 테스트 > 저장 > 접속
 - "com.test.java" > "Ex05_PreparedStatement.java"
 
 - "com.test.java" > "Ex06_CallableStatement.java"
+
+
+2024년 9월 25일
+
+새프로젝트
+- "Memo" > "memo" + web.xml(O)
+
+구현 기술
+1. Servlet + JSP > JSP Model 2 or MVC
+2. JDBC(DB)
+3. EL + JSTL
+
+구현 업무
+- 메모장
+- 메모쓰기(C)
+- 메모읽기(R)
+- 메모수정하기(U)
+- 메모 삭제하기(D)
+- 인증(X) > 작성자
+
+DB
+- Memo > "script.sql"
+- DB ERD
+- DB 구현
+- 테스트 & 업무 SQL
+
+기본 폴더 구조
+- "com.test.memo" 패키지
+- webapp > "WEB-INF" > "views" 폴더
+
+화면 설계 & 페이지 설계
+- 포맷 > "template.do"
+	- com.test.memo > "Template.java"
+	- views > "template.jsp"
+- 읽기 > "list.do"
+	- com.test.memo > "List.java"
+	- views > "list.jsp"
+- 쓰기 > "add.do", "addok.jsp"
+	- com.test.memo > "Add.java"
+	- views > "add.jsp"
+	- com.test.memo > "AddOk.java"
+	- views > "addok.jsp"
+- 수정 > "edit.do", "editok.do"
+	- com.test.memo > "Edit.java"
+	- views > "edit.jsp"
+	- com.test.memo > "EditOk.java"
+	- views > "editok.jsp"
+- 삭제 > "del.do", "delok.do"
+	- com.test.memo > "Del.java"
+	- views > "del.jsp"
+	- com.test.memo > "DelOk.java"
+	- views > "delok.jsp"
+- 조각
+	- views > "inc" > "asset.jsp"
+				> "header.jsp"
+
+- 리소스
+	- webapp > "asset" > "css" > "main.css"
+
+- 라이브러리
+	- JSTL
+		- WEB-INF > lib > jstl-1.2jar
+					> ojdbc6.jar
+					> util.jar
+
+편하게 connection을 연결하기 위해 우리가 만든 임의의 DBUtil 클래스를 jar 파일로 만들어서 가져오기
+JavaProject > Util 프로젝트를 만들고 패키지명이 안겹치게 잘 만든 후 전에 만든 DBUtil 클래스에서 open 메소드들 가져오기
+	> export jar.file > util.jar 로 만들어서 가져오기
+
+계속 나오는 경로 > '/'의 의미?
+1. 클라이언트 코드: /memo == webapp
+2. 서버 코드: / == webapp
+
+*******************************************************************************************************************************
+jsp를 그냥 실행할 수 없는 이유?
+	> WEB-INF안에 있는 파일을 직접 읽어 올 수 없도록 막아 놨기 때문에
+왜 WEB-INF 안에 있는 파일에 접근하지 못하게 함? 
+	> 올바른 데이터를 받아와서 프론트를 뿌려줘야되는데 그런 데이터 없이 접근하지 못하도록 억지로 막아놓은셈이다.
+*******************************************************************************************************************************
+
+- DB
+	- "com.test.memo.repository" > "MemoDAO.java"
+	or "com.test.memo.dao"
+	or "com.test.memo.persistence"
+	- "com.test.model" > "MemoDTO.java" > DTO, VO, Entity

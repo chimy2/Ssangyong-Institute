@@ -10,9 +10,59 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Ex04 {
 	public static void main(String[] args) {
 //		셀레니움(자동화 테스트 도구 + 크롤링)
-		m1();
+//		m1();
+		m2();
 	}
 
+	private static void m2() {
+//		http://lms1.sist.co.kr/
+		String url ="http://lms1.sist.co.kr/worknet/Slogin.asp";
+		
+		String webDriverId = "webdriver.chrome.driver";
+		String path = "C:\\class\\dev\\chromedriver.exe";
+		System.setProperty(webDriverId, path);
+		
+		WebDriver driver = new ChromeDriver();
+		driver.get(url);
+		
+//		1. 로그인 하기
+		
+//		strLoginID
+		WebElement strLoginID = driver.findElement(By.id("strLoginID"));
+		strLoginID.sendKeys("박소혜");	//타이핑(텍스트 입력)
+
+//		strLoginPwd
+		WebElement strLoginPwd = driver.findElement(By.id("strLoginPwd"));
+		strLoginPwd.sendKeys("4010");
+		
+		WebElement btn = driver.findElement(By.cssSelector(".login-btn > input"));
+//		System.out.println(btn.getAttribute("value"));	// 로그인
+		btn.click();
+		
+//		2. 게시판들어가기
+		
+//		#content > div > div > div > div.panel-body > div.popbtmbtn_section > div > a:nth-child(10)
+		WebElement a = driver.findElement(By.cssSelector("#content > div > div > div > div.panel-body > div.popbtmbtn_section > div > a:nth-child(10)"));
+		a.click();
+		
+//		동적으로 열리는 팝업인데 바로 불러와서 데이터가 안불러와짐 > 기다리는 시간이 필요
+		try {
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			System.out.println("Ex04.m2");
+			e.printStackTrace();
+		}
+		
+//		#modalContent > div > div.panel-body > div.row > table > tbody > tr:nth-child(2) > td:nth-child(2)
+		List<WebElement> list = driver.findElements(By.cssSelector("#modalContent > div > div.panel-body > div.row > table > tbody > tr > td:nth-child(2)"));
+		
+//		System.out.println(list.size());
+		
+		for(WebElement td: list) {
+			System.out.println(td.getText());
+		}
+	}
+	
 	private static void m1() {
 //		1. 브라우저 드라이버
 //		어떤 브라우저의 내용을 크롤링 할지 정해야함

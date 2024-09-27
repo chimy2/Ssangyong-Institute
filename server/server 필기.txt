@@ -583,3 +583,124 @@ jsp를 그냥 실행할 수 없는 이유?
 	or "com.test.memo.dao"
 	or "com.test.memo.persistence"
 	- "com.test.model" > "MemoDTO.java" > DTO, VO, Entity
+
+
+2024년 9월 26일
+
+새프로젝트
+- "AuthTest" > contextroot name: "auth" + web.xml(O)
+
+인증, Authentication
+- 로그인, 로그아웃
+- 사인인, 사인아웃
+- 현재 접속자가 해당 사이트의 구성원인지 확인하는 작업
+- 본인 확인 작업(아이디, 암호) > 인증 티켓 발급(인증 과정을 거쳐야지만 가질 수 있는 정보) > 사이트내에서 자유롭게 이동 + 사용
+
+허가, Authorization
+- 특정 행동을 할 때 권한이 있는지 확인하는 작업
+
+인증 티켓
+- 전역 + 개인적 > 세션(*) or 쿠키
+
+페이지
+- "com.test.java" > "Index.java"			// 시작 페이지
+- "com.test.java.auth" > "Login.java"		// 로그인 폼 페이지
+				> "LoginOk.java"		// 로그인 처리 페이지
+				> "LogoutOk.java"	// 로그아웃 처리 페이지
+- "com.test.java.member" > "Member.java"	// 회원 전용 페이지
+- "com.test.java.admin" > "Admin.java"		// 관리자 전용 페이지
+- "com.test.java.db" > "AuthDAO.java"		// 업무명 + DAO
+				> "UserDTO.java"	// 테이블명 + DTO
+
+- webapp > "views" > "index.jsp"
+- webapp > views > "auth" > "login.jsp"
+- webapp > views > "memeber" > "member.jsp"
+- webapp > views > "admin" > "admin.jsp"
+- webapp > views > "inc" > "header.jsp"
+
+- AuthTest > "script.sql"
+
+라이브러리
+- WEB-INF > lib > ojdbc6.jar
+			> util.jar
+			> jstl-1.2.jar
+
+
+
+Window > Preferences > Java > Editor > Templates >new template
+
+@WebServlet("/index.do")
+public class Index extends HttpServlet {
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/index.jsp");
+		dispatcher.forward(req, resp);
+	}
+}
+
+@WebServlet("/${name}.do")
+public class ${primary_type_name} extends HttpServlet {
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/${name}.jsp");
+		dispatcher.forward(req, resp);
+	}
+}
+
+새 프로젝트
+- "AjaxTest" > contextroot name: "ajax" + web.xml(O)
+
+Ajax, Asynchronous JavaScript and XML
+- 비동기 자바스크립트 and XML
+- 자바스크립트를 사용해서 서버와 비동기 통신을 하는 기술(주고 받는 데이터의 형식 XML)
+- 클라이언트와 서버간에 XML 형식의 데이터를 주고 받는 자바스크립트 비동기 기법 기능
+
+파일
+- AjaxTest > "script.sql"
+- "com.test.ajax" > "AjaxDAO.java"
+			> "UserDTO.java"
+			> "SurveyDTO.java"
+			> "Ex01.java"
+			> "Ex02.java"
+			> "Ex02Data.java"
+
+- WEB-INF > "views" > "ex01.jsp"
+				> "ex02.jsp"
+				> "ex02data.jsp"
+
+라이브러리
+- lib > ojdbc6.jar
+	> util.jar
+	> jstl-1.2.jar
+
+Window > Preferences > Java > Editor > Templates >new template
+constructor_dao
+private Connection conn;
+	private Statement stat;
+	private PreparedStatement pstat;
+	private ResultSet rs;
+	
+	public AjaxDAO() {
+		this.conn = DBUtil.open();
+	}
+
+private Connection conn;
+	private Statement stat;
+	private PreparedStatement pstat;
+	private ResultSet rs;
+	
+	public ${primary_type_name}() {
+		this.conn = DBUtil.open();
+	}
+
+Ajax 구현
+1. 바닐라 자바스크립트
+	- XMLHttpRequest 객체 사용
+
+2. jQuery Ajax
+
+3. ES6
+	- fetch api
+
+4. Library
+	- Axios(Node.js)

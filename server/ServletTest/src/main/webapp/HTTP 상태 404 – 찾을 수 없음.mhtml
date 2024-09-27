@@ -1,0 +1,82 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: http://localhost:8090/auth/WEB-INF/views/index.jsp
+Subject: =?utf-8?Q?HTTP=20=EC=83=81=ED=83=9C=20404=20=E2=80=93=20=EC=B0=BE=EC=9D?=
+ =?utf-8?Q?=84=20=EC=88=98=20=EC=97=86=EC=9D=8C?=
+Date: Thu, 26 Sep 2024 11:46:10 +0900
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--EEsED7csdugtPJW63trrxtKhfGNrf3SwY8PHoRYd4x----"
+
+
+------MultipartBoundary--EEsED7csdugtPJW63trrxtKhfGNrf3SwY8PHoRYd4x----
+Content-Type: text/html
+Content-ID: <frame-006F80DA97A7CEE5A4A770F866744F17@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://localhost:8090/auth/WEB-INF/views/index.jsp
+
+<!DOCTYPE html><html lang=3D"ko"><head><meta http-equiv=3D"Content-Type" co=
+ntent=3D"text/html; charset=3DUTF-8"><link rel=3D"stylesheet" type=3D"text/=
+css" href=3D"cid:css-19d0fdf6-05b9-4d55-a155-63cf3db5749e@mhtml.blink" /><l=
+ink rel=3D"stylesheet" type=3D"text/css" href=3D"cid:css-274fb55b-1ae7-4989=
+-9876-5dcdbe8ecb41@mhtml.blink" /><title>HTTP =EC=83=81=ED=83=9C 404 =E2=80=
+=93 =EC=B0=BE=EC=9D=84 =EC=88=98 =EC=97=86=EC=9D=8C</title></head><body><h1=
+>HTTP =EC=83=81=ED=83=9C 404 =E2=80=93 =EC=B0=BE=EC=9D=84 =EC=88=98 =EC=97=
+=86=EC=9D=8C</h1><hr class=3D"line"><p><b>=ED=83=80=EC=9E=85</b> =EC=83=81=
+=ED=83=9C =EB=B3=B4=EA=B3=A0</p><p><b>=EC=84=A4=EB=AA=85</b> Origin =EC=84=
+=9C=EB=B2=84=EA=B0=80 =EB=8C=80=EC=83=81 =EB=A6=AC=EC=86=8C=EC=8A=A4=EB=A5=
+=BC =EC=9C=84=ED=95=9C =ED=98=84=EC=9E=AC=EC=9D=98 representation=EC=9D=84 =
+=EC=B0=BE=EC=A7=80 =EB=AA=BB=ED=96=88=EA=B1=B0=EB=82=98, =EA=B7=B8=EA=B2=83=
+=EC=9D=B4 =EC=A1=B4=EC=9E=AC=ED=95=98=EB=8A=94=EC=A7=80=EB=A5=BC =EB=B0=9D=
+=ED=9E=88=EB=A0=A4 =ED=95=98=EC=A7=80 =EC=95=8A=EC=8A=B5=EB=8B=88=EB=8B=A4.=
+</p><hr class=3D"line"><h3>Apache Tomcat/9.0.93</h3><div id=3D"__endic_crx_=
+_"><div class=3D"css-diqpy0"></div></div></body></html>
+------MultipartBoundary--EEsED7csdugtPJW63trrxtKhfGNrf3SwY8PHoRYd4x----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-19d0fdf6-05b9-4d55-a155-63cf3db5749e@mhtml.blink
+
+@charset "utf-8";
+
+body { font-family: Tahoma, Arial, sans-serif; }
+
+h1, h2, h3, b { color: white; background-color: rgb(82, 93, 118); }
+
+h1 { font-size: 22px; }
+
+h2 { font-size: 16px; }
+
+h3 { font-size: 14px; }
+
+p { font-size: 12px; }
+
+a { color: black; }
+
+.line { height: 1px; background-color: rgb(82, 93, 118); border: none; }
+------MultipartBoundary--EEsED7csdugtPJW63trrxtKhfGNrf3SwY8PHoRYd4x----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-274fb55b-1ae7-4989-9876-5dcdbe8ecb41@mhtml.blink
+
+@charset "utf-8";
+
+.css-diqpy0 { margin: 0px; padding: 0px; font-family: ui-sans-serif, -apple=
+-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Ar=
+ial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; font-variant-ligature=
+s: none; color: var(--text-primary); -webkit-font-smoothing: antialiased; p=
+osition: absolute; left: 0px; top: 0px; width: 0px; height: 0px; z-index: 2=
+147483647; }
+
+@media (prefers-color-scheme: light) {
+  .css-diqpy0 { --text-primary: #202124; --text-secondary: #5f6368; --backg=
+round-color: #fff; --layer-background: #fff; --border-color: #dadce0; --pri=
+mary-blue: #1a73e8; --primary-orange: #f0592a; --hover-color: #20212409; }
+}
+
+@media (prefers-color-scheme: dark) {
+  .css-diqpy0 { --text-primary: #ddd; --text-secondary: #bdc1c6; --backgrou=
+nd-color: #202124; --layer-background: #292a2d; --border-color: #757b80; --=
+primary-blue: #8ab4f8; --primary-orange: #ff835d; --hover-color: #ffffff1a;=
+ }
+}
+------MultipartBoundary--EEsED7csdugtPJW63trrxtKhfGNrf3SwY8PHoRYd4x------

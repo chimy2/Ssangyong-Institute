@@ -704,3 +704,28 @@ Ajax 구현
 
 4. Library
 	- Axios(Node.js)
+
+
+2024년 9월 27일
+
+- AjaxTest
+- com.test.ajax > "Ex03.java"
+			> "Ex03Data.java"
+			> "Ex04.java"
+			> "Ex04Data.java"
+			> "Ex05.java"
+			> "Ex05Data.java"
+
+
+- WEB-INF > views > "ex03.jsp"
+				> "ex04.jsp"
+				> "ex05.jsp"
+
+- "Ex06.java"
+- "ex06.jsp"
+
+- "Ex06Data.java"
+
+- MVC 구조 > 정리 > Memo
+- 인증 > 정리
+- Ajax

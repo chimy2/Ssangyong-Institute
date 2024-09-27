@@ -14,7 +14,7 @@ create table tblSurvey (
     cnt4 number default 0 not null          -- 선택4
 );
 
-insert into tblSurvey values (1, '가장 자신잇는 프로그래밍 언어는?',
+insert into tblSurvey values (1, '가장 자신있는 프로그래밍 언어는?',
     'JAVA', 'C#', 'Python', 'C++', default, default, default, default);
     
 select * from tblSurvey;
@@ -27,4 +27,5 @@ update tblSurvey set
         where seq = 1;
         
 commit;
-        
+
+select * from tblUser;

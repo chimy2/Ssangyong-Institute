@@ -29,3 +29,38 @@ update tblSurvey set
 commit;
 
 select * from tblUser;
+
+
+-- 고양이 테이블
+create table tblCat (
+    catid varchar2(50) primary key, -- <img id="cat1">
+    left number not null,
+    top number not null
+);
+
+insert into tblCat values ('cat1', 0, 0);
+
+select * from tblCat;
+
+delete from tblCat;
+
+select max(to_number(substr(catid, 4))) from tblCat;
+
+commit;
+
+select * from tblAddress;
+
+commit;
+
+-- 테이블의 데이터 삭제하기
+-- 1. delete 
+-- 2. truncate = delete + commit
+
+-- 3. drop
+
+delete from tblAddress;
+
+rollback;
+
+-- Table TBLADDRESS이(가) 잘렸습니다.
+truncate table tblAddress;

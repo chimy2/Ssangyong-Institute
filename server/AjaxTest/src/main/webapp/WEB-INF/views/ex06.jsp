@@ -169,7 +169,9 @@
 		}
 		
 		$('#btn3').click(() => {
-			m5();
+			// m5();
+			// m6();
+			m7();
 		});
 		
 		function m5() {
@@ -194,11 +196,63 @@
 		function m6() {
 			$.ajax({
 				type: 'GET',
-				url: '/ajax/ex06.data.do',
-				data: 'type=6'
+				url: '/ajax/ex06data.do',
+				data: 'type=6',
 				dataType: 'json',
 				success: function(result) {
+					// alert(result);	
+					// console.log(result);
 					
+					$(result).each((index, user) => {
+						// console.log(user.name);
+						$('#div3').append(
+								`
+									<ul>
+										<li>아이디: \${user.id}</li>
+										<li>비번: \${user.pw}</li>
+										<li>이름: \${user.name}</li>
+										<li>등급: \${user.lv}</li>
+									</ul>
+									<hr>
+								`		
+							);
+					});
+					
+				},
+				error: function(a, b, c) {
+					console.log(a, b, c);
+				}
+			});
+		}
+		
+		function m7() {
+			$.ajax({
+				type: 'GET',
+				url: '/ajax/ex06data.do',
+				data: 'type=7',
+				dataType: 'json',
+				success: function(result) {
+					// alert(result);	
+					// console.log(result);
+					
+					$(result).each((index, user) => {
+						// console.log(user.name);
+						$('#div3').append(
+								`
+									<ul>
+										<li>아이디: \${user.id}</li>
+										<li>비번: \${user.pw}</li>
+										<li>이름: \${user.name}</li>
+										<li>등급: \${user.lv}</li>
+									</ul>
+									<hr>
+								`		
+							);
+					});
+					
+				},
+				error: function(a, b, c) {
+					console.log(a, b, c);
 				}
 			});
 		}

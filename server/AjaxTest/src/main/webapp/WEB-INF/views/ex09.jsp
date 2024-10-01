@@ -60,7 +60,7 @@
 						$.ajax({
 							type: 'POST',
 							url: '/ajax/ex08data.do',
-							data: 'catid=cat' + seq + '&left=' + ui.position.left + '&top=' + ui.position.top,
+							data: 'catid=${dto.catid}&left=' + ui.position.left + '&top=' + ui.position.top,
 							error: function(a, b, c) {
 								console.log(a, b, c);
 							}
@@ -92,14 +92,14 @@
 				top: '${dto.top}'
 			}); */
 			
-			$('<img src="/ajax/images/catty01.png" id="${dto.catid}">')
+			$('<img src="/ajax/images/catty' + String(n).padStart(2, 0) + '.png" id="${dto.catid}">')
 				.appendTo('#box')
 				.draggable({
 					stop: function(event, ui) {
 						$.ajax({
 							type: 'POST',
 							url: '/ajax/ex08data.do',
-							data: 'catid=${dto.catid}&left=' + ui.position.left + '&top=' + ui.position.top,
+							data: 'catid=' + this.id + '&left=' + ui.position.left + '&top=' + ui.position.top,
 							error: function(a, b, c) {
 								console.log(a, b, c);
 							}
@@ -107,8 +107,8 @@
 					}
 				})
 				.css({
-					left: '${dto.left}',
-					top: '${dto.top}'
+					left: '${dto.left}px',
+					top: '${dto.top}px'
 				});
 			n++;
 			if (n > 21) n = 1;

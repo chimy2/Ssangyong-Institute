@@ -818,3 +818,125 @@ library > star-rating.js
 library를 찾을 때는 충분히  document를 확인 후 원하는 기능이 있는지 체크하고 사용해야 나중에 사서 고생을 안한다.
 기본으로 제공하지 않아도 임의적으로 바꿀 수 있으나 권장하지 않는다.
 하지만 현업에서는 많이 할 수 밖에 없는 실정
+
+
+2024년 10월 8일
+
+새프로젝트
+- "ToyProject" > "toy" + web.xml(o)
+
+1. 주제
+	- 기본 업무 구현
+
+2. 요구분석
+	- 회원 관리
+	- 게시판 구현(***) > 중요한 이유 ? > 우리가 해야할 업무의 기능이 80% 들어가 있기 때문에, 기본기다 
+				> 실력의 척도가 됐으면 좋겠다 
+				> 자료 보지 말고 게시판을 만들 수 있으면 기술 면접에서 떨어질 일이 없다.
+				> 처음에는 하루정도 걸리지만, 익숙해지면 한두시간만에 구현 가능해야 함 
+				> 게시판설계 + 구현 > 반나절정도면 충분
+	- 기타 등등(ex. ajax, api..)
+
+3. 페이지 구성(관계도)
+	- toy.drawio
+
+4. 화면 설계
+	- 생략
+
+5. 스토리보드
+	- 생략
+
+6. 데이터베이스
+	- ERD
+
+7. 스크립트
+	- DDL, DML
+	- 기초 데이터 / 더미 데이터
+	- ToyProject > "script.sql"
+
+8. 구현
+	- 패키지
+		- "com.test.toy": 메인패키지
+			- "Index.java": 시작 페이지
+			- "template.java": 템플릿 페이지
+		- "com.test.toy.user": 회원
+			- "Register.java": 회원 가입
+			- "Unregister.java": 회원 탈퇴
+			- "Login.java": 로그인
+			- "Logout.java": 로그아웃
+			- "Info.java": 회원 정보
+
+		- "com.test.toy.user.repository": DB(DAO)
+			- "UserDAO.java"
+
+		- "com.test.toy.user.model": DB(DTO)
+			- "UserDTO.java"
+
+	- 뷰(webapp > WEB-INF)
+		- "view"
+			- "index.jsp"
+			- "template.jsp"
+
+		- views > "user"
+			- "register.jsp"
+			- "unregister.jsp"
+			- "login.jsp"
+			- "logout.jsp"
+			- "info.jsp"
+
+	- 공통 요소 & 리소스
+		- views > "inc"
+			- "asset.jsp"
+			- "header.jsp"
+
+		- webapp > "asset"
+			- "css"
+				- "main.css"
+			- "js"
+				- "main.js"
+			- "pic"
+
+	- 라이브러리
+		- lib
+			- ojdbc.jar
+			- util.jar
+			- jstl-1.2.jar
+			- cos.jar
+			- json-simple.jar
+			- lombok.jar
+
+- lombok 다운 및 설치
+dev folder 에 lombok.jar 옮기고 더블클릭으로 프로그램 실행
+열리지 않는다면 터미널을 열고
+java -jar lombok.jar
+
+lombok이 열리면 IDE 위치 설정하고 Install
+
+eclipse 폴더에 lombok.jar가 추가되고
+
+eclipse.ini 파일에
+-javaagent:C:\class\dev\eclipse\lombok.jar
+가 추가 됨
+
+- favicon
+	- favorite + icon
+	- ico 확장자 파일이 필요
+
+- 패키지
+	- "com.test.toy.filter"
+		- "EncodingFilter.java"
+
+	- "com.test.toy.test"
+		- "DAOTest.java"
+
+	- "com.test.toy.util"
+		- "OutputUtil.java"
+
+
+1. 로그인 화면(JSP)		2. 서블릿(OK)		3. DAO위임
+<form action>			req.getParameter()	로그인 SQL
+
+지금까지 수업은 1 > 2 > 3 사용자의 입장에서 만들었지만
+보통 3 > 2 > 1 순서로 기본적인 것부터 구성한다.
+따라서 view가 없는 상태에서 테스트 하기 위해 JUnit으로 단위테스트를 하여 확인한다.
+

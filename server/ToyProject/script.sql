@@ -42,3 +42,58 @@ commit;
 
 -- 로그인
 select * from tblUser where id = ? and pw = ?;
+
+-- 게시판 테이블
+create table tblBoard (
+    seq number primary key,                         -- 글번호(PK)
+    subject varchar2(300) not null,                 -- 제목
+    content varchar2(4000) not null,                -- 내용
+    regdate date default sysdate not null,          -- 날짜
+    readcount number default 0 not null,            -- 조회수
+    id varchar2(50) references tblUser(id) not null -- 아이디(FK)
+);
+
+create sequence seqBoard;
+
+select * from tblBoard;
+
+select seq, subject, substr(regdate, 1, 11) as regdate, readcount, id from tblBoard order by seq desc;
+
+-- 함수
+-- 작성 날짜 or 작성 시간 함수
+-- 1. 조회 시각이 오늘과 같은 날짜면 > 시간 반환
+-- 2. 조회 시각이 오늘과 다른 날짜면 > 날짜 반환
+create or replace function fnRegdate (
+    regdate date
+) return varchar2
+is
+
+begin
+    if to_char(sysdate, 'yyyy-mm-dd') = to_char(regdate, 'yyyy-mm-dd') then
+        return to_char(regdate, 'hh24:mi:ss');
+    else 
+        return to_char(regdate, 'yyyy-mm-dd');
+    end if;
+end fnRegdate;
+/
+
+select * from tblBoard;
+select fnRegdate(regdate) from tblBoard;
+-- 에러 발생 시 밑의 줄 확인해서 실행
+
+select tablespace_name, file_name, bytes from dba_data_files;
+select username, default_tablespace from dba_users;
+
+-- system으로 실행
+alter user toy default tablespace users;
+-- 여기까지
+
+select * from tblBoard order by seq desc;
+
+update tblBoard set regdate = regdate - 2 where seq <= 5;
+update tblBoard set regdate = regdate - 1.5 where seq = 6;
+update tblBoard set regdate = regdate - 1 where seq = 7;
+
+select fnRegdate(regdate) from tblBoard order by seq desc;
+
+commit;

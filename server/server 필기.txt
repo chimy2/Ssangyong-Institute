@@ -940,3 +940,41 @@ eclipse.ini 파일에
 보통 3 > 2 > 1 순서로 기본적인 것부터 구성한다.
 따라서 view가 없는 상태에서 테스트 하기 위해 JUnit으로 단위테스트를 하여 확인한다.
 
+
+2024년 10월 10일
+
+Relationship
+1. 식별관계(결합도 상)
+	- 자식 테이블에서 FK를 PK로 사용한다.
+2. 비식별관계(결합도 하)
+	- 자식 테이블에서 FK를 일반 컬럼으로 사용한다.
+
+- 패키지
+	- "com.test.toy.board"
+		- "List.java" // 목록
+		- "View.java" //상세보기	
+		- "Add.java" //글쓰기
+		- "Edit.java" //수정하기
+		- "Del.java" //삭제하기
+	- "com.test.toy.board.repository"
+		- "BoardDAO.java"
+	- "com.test.toy.board.model"
+		- "BoardDTO.java"
+
+- 뷰
+	- views > "board"
+		- "list.jsp"
+		- "view.jsp"
+		- "add.jsp"
+		- "edit.jsp"
+		- "del.jsp"
+
+게시판 구현
+1. CRUD
+2. 인증/허가 구현
+	a. 목록보기, 상세보기 > 미인증(O), 인증(O)
+	b. 글쓰기, 수정하기, 삭제하기 > 미인증(X), 인증(O) > 방식 > 노출 제어
+	c. 수정하기, 삭제하기 > 인증(O) > 본인만 가능
+	d. 수정하기, 삭제하기 > 관리자(O)
+
+게시판 검색

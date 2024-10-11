@@ -978,3 +978,11 @@ Relationship
 	d. 수정하기, 삭제하기 > 관리자(O)
 
 게시판 검색
+
+페이징
+- rownum 구현
+
+댓글
+- com.test.toy.board > "AddComment.java"
+				> "ListComment.java"
+- com.test.toy.board.model > "CommentDTO.java"

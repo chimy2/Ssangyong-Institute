@@ -35,7 +35,6 @@
 		</form>
 	</div>
 	
-	<script src="/toy/asset/js/main.js"></script>
 	<script>
 		
 	</script>	

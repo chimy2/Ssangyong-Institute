@@ -16,7 +16,7 @@
 		Project
 	</h1>
 	<ul>
-		<li><a href="/toy/home.do">Home</a></li>
+		<li><a href="/toy/index.do">Home</a></li>
 		<li><a href="/toy/board/list.do">Board</a></li>
 		
 		<c:if test="${empty user}">

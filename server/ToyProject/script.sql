@@ -97,3 +97,22 @@ update tblBoard set regdate = regdate - 1 where seq = 7;
 select fnRegdate(regdate) from tblBoard order by seq desc;
 
 commit;
+
+select * from (select a.*, rownum as rnum from vwBoard a)
+    where rnum between 1 and 10;
+    
+select * from (select a.*, rownum as rnum from vwBoard a)
+    where rnum between 11 and 20;
+    
+-- 댓글
+create table tblComment(
+    seq number primary key,                         -- 번호(PK)
+    content varchar2(2000) not null,                -- 댓글
+    regdate date default sysdate not null,          -- 날짜
+    id varchar2(50) references tblUser(id) not null,-- 유저(FK)
+    bseq number references tblBoard(seq) not null   -- 부모글(FK)
+);
+
+create sequence seqComment;
+
+select * from tblComment;

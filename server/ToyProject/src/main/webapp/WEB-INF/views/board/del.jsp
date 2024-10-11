@@ -20,13 +20,12 @@
 		<form action="/toy/board/del.do" method="POST">
 			<input type="hidden" name="seq" value="${seq}">
 			<div>
-				<button type="button" class="back" onclick="location.href='/toy/board/view.do';">돌아가기</button>
+				<button type="button" class="back" onclick="location.href='/toy/board/view.do?seq=${seq}&column=${map.column}&=word${map.word}';">돌아가기</button>
 				<button type="submit" class="del primary">삭제하기</button>			
 			</div>
 		</form>
 	</div>
 	
-	<script src="/toy/asset/js/main.js"></script>
 	<script>
 		
 	</script>	

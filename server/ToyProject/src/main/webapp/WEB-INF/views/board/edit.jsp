@@ -36,14 +36,15 @@
 				</tr>
 			</table>
 			<div>
-				<button type="button" class="back" onclick="location.href='/toy/board/view.do?seq=${dto.seq}';">돌아가기</button>
+				<button type="button" class="back" onclick="location.href='/toy/board/view.do?seq=${dto.seq}&word=${map.word}&column=${map.column}';">돌아가기</button>
 				<button type="submit" class="edit primary">수정하기</button>			
 			</div>
 			<input type="hidden" name="seq" value="${dto.seq}">
+			<input type="hidden" name="word" value="${map.word}">
+			<input type="hidden" name="column" value="${map.column}">
 		</form>
 	</div>
 	
-	<script src="/toy/asset/js/main.js"></script>
 	<script>
 		
 	</script>	

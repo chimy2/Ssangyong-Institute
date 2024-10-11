@@ -29,10 +29,26 @@
 
 		<c:if test="${map.search == 'y'}">		
 			<div id="labelSearchResult">
-				'${map.word}'(으)로 검색한 결과로 총 ${list.size()}건 찾았습니다.
+				'${map.word}'(으)로 검색한 결과로 총 ${totalCount}건 찾았습니다.
 			</div>
 		</c:if>
-		
+		<%-- 
+		<div id="pagebar">
+			<input type="number" class="short" id="page" value="${nowPage}" min="1" max="${totalPage}">
+			<input type="button" value="이동하기" onclick="location.href='/toy/board/list.do?page=' + $('#page').val();">
+		</div>
+		 --%>
+		<div id="pagebar">
+			<select onchange="location.href='/toy/board/list.do?page=' + $(this).val();">
+				<!-- 
+				<option value="1">1페이지</option>
+				<option value="26">26페이지</option>
+				 -->
+				 <c:forEach var="i" begin="1" end="${totalPage}">
+				 	<option value="${i}" <c:if test="${i == nowPage}">selected</c:if>>${i}페이지</option>
+				 </c:forEach>
+			</select>
+		</div>
 		<table id="list">
 			<tr>
 				<th>번호</th>
@@ -54,7 +70,7 @@
 				<tr>
 					<td>${dto.seq}</td>
 					<td>
-						<a href="/toy/board/view.do?seq=${dto.seq}">${dto.subject}</a>
+						<a href="/toy/board/view.do?seq=${dto.seq}&word=${map.word}&column=${map.column}&page=${nowPage}">${dto.subject}</a>
 						<c:if test="${dto.isnew < 1}">
 							<span class="isnew">new</span>
 						</c:if>
@@ -64,6 +80,11 @@
 					<td>${dto.readcount}</td>
 				</tr>
 			</c:forEach>
+			<c:if test="${empty list or list.size() == 0}">
+				<tr>
+					<td colspan="5">게시물이 없습니다.</td>
+				</tr>
+			</c:if>
 		</table>
 		
 		<!-- 검색 인터페이스 -->
@@ -79,6 +100,19 @@
 			<input type="submit" value="검색하기">
 		</form>
 		
+		<!-- 페이지바 -->
+		<div id="pagebar">
+			<!-- 
+			<a href="/toy/board/list.do?page=1">1</a>
+			<a href="/toy/board/list.do?page=2">2</a>
+			<a href="/toy/board/list.do?page=3">3</a>
+			<a href="/toy/board/list.do?page=4">4</a>
+			<a href="/toy/board/list.do?page=5">5</a>
+			<a href="/toy/board/list.do?page=6">6</a>
+			 -->
+			${pagebar}
+		</div>
+		
 		<c:if test="${not empty user}">
 			<div>
 				<button type="button" class="add primary" 
@@ -87,7 +121,6 @@
 		</c:if>
 	</div>
 	
-	<script src="/toy/asset/js/main.js"></script>
 	<script>
 		<c:if test="${map.search == 'y'}">
 			$('#searchForm select[name=column]').val('${map.column}');

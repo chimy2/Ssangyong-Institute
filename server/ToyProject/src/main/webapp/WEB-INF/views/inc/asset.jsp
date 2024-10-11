@@ -7,3 +7,5 @@
 <link rel="icon" href="/toy/asset/favicon.ico" type="image/x-icon">
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <script src="https://bit.ly/4cMuheh"></script>
+<!-- <script src="/toy/asset/js/main.js" async></script> -->
+<script src="/toy/asset/js/main.js"></script>

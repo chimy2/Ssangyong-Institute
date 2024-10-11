@@ -19,7 +19,6 @@
 		<p>시작 페이지입니다.</p>
 	</div>
 	
-	<script src="/toy/asset/js/main.js"></script>
 	<script>
 		
 	</script>	

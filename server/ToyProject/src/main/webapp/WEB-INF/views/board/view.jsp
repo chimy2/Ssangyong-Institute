@@ -17,77 +17,114 @@
 	<div id="main">
 		<h1>게시판 <small>상세보기</small></h1>
 		
-		<form action="/toy/board/add.do" method="POST">
-			<table class="vertical" id="view">
-				<!-- 
+		<table class="vertical" id="view">
+			<!-- 
+			<tr>
+				<th>번호</th>
+				<td>10</td>
+			</tr>
+			<tr>
+				<th>이름</th>
+				<td>홍길동(hong)</td>
+			</tr>
+			<tr>
+				<th>제목</th>
+				<td>제목입니다.</td>
+			</tr>
+			<tr>
+				<th>내용</th>
+				<td>내용입니다.</td>
+			</tr>
+			<tr>
+				<th>날짜</th>
+				<td>2024-10-10 11:00:00</td>
+			</tr>
+			<tr>
+				<th>읽음</th>
+				<td>100</td>
+			</tr>
+			 -->
+			<tr>
+				<th>번호</th>
+				<td>${dto.seq}</td>
+			</tr>
+			<tr>
+				<th>이름</th>
+				<td>${dto.name}(${dto.id})</td>
+			</tr>
+			<tr>
+				<th>제목</th>
+				<td>${dto.subject}</td>
+			</tr>
+			<tr>
+				<th>내용</th>
+				<td>${dto.content}</td>
+			</tr>
+			<tr>
+				<th>날짜</th>
+				<td>${dto.regdate}</td>
+			</tr>
+			<tr>
+				<th>읽음</th>
+				<td>${dto.readcount}</td>
+			</tr>
+		</table>
+		
+		
+		<!-- 댓글 보기 -->
+		<table id="comment">
+			<!-- 
+			<tbody>
 				<tr>
-					<th>번호</th>
-					<td>10</td>
+					<td>
+						<div>댓글 내용입니다.</div>
+						<div>2024-10-11 14:10:05</div>
+					</td>
+					<td>
+						<div>
+							<div>홍길동(hong)</div>
+							<div>
+								<span class="material-symbols-outlined">delete</span>
+								<span class="material-symbols-outlined">edit_note</span>
+							</div>
+						</div>
+					</td>
 				</tr>
-				<tr>
-					<th>이름</th>
-					<td>홍길동(hong)</td>
-				</tr>
-				<tr>
-					<th>제목</th>
-					<td>제목입니다.</td>
-				</tr>
-				<tr>
-					<th>내용</th>
-					<td>내용입니다.</td>
-				</tr>
-				<tr>
-					<th>날짜</th>
-					<td>2024-10-10 11:00:00</td>
-				</tr>
-				<tr>
-					<th>읽음</th>
-					<td>100</td>
-				</tr>
-				 -->
-				<tr>
-					<th>번호</th>
-					<td>${dto.seq}</td>
-				</tr>
-				<tr>
-					<th>이름</th>
-					<td>${dto.name}(${dto.id})</td>
-				</tr>
-				<tr>
-					<th>제목</th>
-					<td>${dto.subject}</td>
-				</tr>
-				<tr>
-					<th>내용</th>
-					<td>${dto.content}</td>
-				</tr>
-				<tr>
-					<th>날짜</th>
-					<td>${dto.regdate}</td>
-				</tr>
-				<tr>
-					<th>읽음</th>
-					<td>${dto.readcount}</td>
-				</tr>
-			</table>
-			<div>
-				<button type="button" class="back" onclick="location.href='/toy/board/list.do';">돌아가기</button>
-				
-				<c:if test="${not empty user}">
-					<c:if test="${dto.id == user.id || user.lv == '2'}">
-						<button type="button" class="edit" onclick="location.href='/toy/board/edit.do?seq=${dto.seq}';">수정하기</button>			
-						<button type="button" class="del" onclick="location.href='/toy/board/del.do?seq=${dto.seq}';">삭제하기</button>			
-					</c:if>
-					
-					<button type="button" class="reply">답변하기</button>			
+			</tbody>
+			 -->
+			 <tbody></tbody>
+		</table>
+		
+		<!-- 댓글 쓰기 -->
+		<c:if test="${not empty user}">
+			<form id="addCommentForm" onsubmit="return false;">
+				<table id="addComment">
+					<tr>
+						<td><input type="text" name="content" class="full" required></td>
+						<td><button type="button" class="comment" id="btnAddComment">댓글 쓰기</button></td>
+					</tr>
+				</table>
+			</form>
+		</c:if>
+		
+		<div>
+			<button type="button" class="back" onclick="location.href='/toy/board/list.do?word=${map.word}&column=${map.column}&page=${page}';">돌아가기</button>
+			<!-- <button type="button" class="back" onclick="history.back();">돌아가기</button> -->
+			
+			<c:if test="${not empty user}">
+				<c:if test="${dto.id == user.id || user.lv == '2'}">
+					<button type="button" class="edit" onclick="location.href='/toy/board/edit.do?seq=${dto.seq}&word=${map.word}&column=${map.column}';">수정하기</button>			
+					<button type="button" class="del" onclick="location.href='/toy/board/del.do?seq=${dto.seq}&word=${map.word}&column=${map.column}';">삭제하기</button>			
 				</c:if>
-			</div>
-		</form>
+				
+				<button type="button" class="reply">답변하기</button>			
+			</c:if>
+		</div>
 	</div>
 	
-	<script src="/toy/asset/js/main.js"></script>
 	<script>
-		
+		const lv = ${empty user ? 0 : user.lv};
+		const id = '${user.id}';
 	</script>	
 </body>
 </html>

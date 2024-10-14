@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+import com.test.toy.board.model.CommentDTO;
 import com.test.toy.board.repository.BoardDAO;
-import com.test.toy.board.repository.CommentDTO;
 
 @WebServlet("/board/listcomment.do")
 public class ListComment extends HttpServlet {
@@ -29,18 +29,21 @@ public class ListComment extends HttpServlet {
 		
 		JSONArray arr = new JSONArray();
 		
-		for(CommentDTO dto : list) {
-			JSONObject obj = new JSONObject();
-			
-			obj.put("seq", dto.getSeq());
-			obj.put("content", dto.getContent());
-			obj.put("regdate", dto.getRegdate());
-			obj.put("id", dto.getId());
-			obj.put("bseq", dto.getBseq());
-			obj.put("name", dto.getName());
-			
-			arr.add(obj);
+		if(list != null && list.size() > 0) {
+			for(CommentDTO dto : list) {
+				JSONObject obj = new JSONObject();
+				
+				obj.put("seq", dto.getSeq());
+				obj.put("content", dto.getContent());
+				obj.put("regdate", dto.getRegdate());
+				obj.put("id", dto.getId());
+				obj.put("bseq", dto.getBseq());
+				obj.put("name", dto.getName());
+				
+				arr.add(obj);
+			}
 		}
+		
 		
 		resp.setContentType("application/json");
 		

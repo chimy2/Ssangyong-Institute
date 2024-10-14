@@ -50,10 +50,21 @@
 
 #list .isnew { font-size: 14px; color: tomato; }
 
+#list .commentCount { font-size: 12px; }
+#list .commentCount span { font-size: 15px; }
+
 /* 게시판 > 상세보기 */
 #view tr:nth-child(4) {
 	height: 200px;
 }
+
+#view #imgPlace { max-width: 570px; }
+
+#view #map { width: 570px; height: 300px; }
+
+#view #goodbad { display: flex; align-items: center; }
+#view #goodbad span:nth-child(odd) { margin-right: 3px; cursor: pointer; }
+#view #goodbad span:nth-child(even) { margin-right: 10px; }
 
 /* 게시판 > 검색 */
 #searchForm {

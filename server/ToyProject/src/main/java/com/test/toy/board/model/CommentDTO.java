@@ -1,4 +1,4 @@
-package com.test.toy.board.repository;
+package com.test.toy.board.model;
 
 import lombok.Data;
 

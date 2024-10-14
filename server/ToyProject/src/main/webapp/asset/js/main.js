@@ -4,7 +4,8 @@
  
  // document 내용이 모두 로딩된 후에 이벤트가 설정되어야 하기 때문에
  // ready event에 ajax 내용을 집어 넣음
- $(document).ready(() => {
+ // $(document).ready(() => { > DOM 객체만
+window.onload = () => {
 	// 댓글 쓰기
 	$('#btnAddComment').click(() => {
 
@@ -49,7 +50,7 @@
 					let temp = `
 					<tr data-seq="${dto.seq}">
 						<td>
-							<div>${dto.content}</div>
+							<div>${dto.content.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</div>
 							<div>${dto.regdate}</div>
 						</td>
 						<td>
@@ -90,7 +91,86 @@
 	function delComment(cseq) {
 	}
 	*/
-});
+	
+	// 좋아요
+	$('#btnGood').click(() => {
+		$.ajax({
+			type: 'POST',
+			url: '/toy/board/goodbad.do',
+			data: {
+				state: 1,
+				bseq: $(event.target).data('seq')
+			},
+			dataType: 'json',
+			success: function(result) {
+				// alert(result.result);
+				
+				loadGoodBad();
+			},
+			error: function(a, b, c) {
+				console.log(a, b, c);
+			}
+		})
+	});
+	
+	$('#btnBad').click(() => {
+		$.ajax({
+			type: 'POST',
+			url: '/toy/board/goodbad.do',
+			data: {
+				state: 0,
+				bseq: $(event.target).data('seq')
+			},
+			dataType: 'json',
+			success: function(result) {
+				// alert(result.result);
+				loadGoodBad();
+			},
+			error: function(a, b, c) {
+				console.log(a, b, c);
+			}
+		})
+	});
+	
+	function loadGoodBad() {
+		$.ajax({
+			type: 'POST',
+			url: '/toy/board/loadgoodbad.do',
+			data: {
+				bseq: bseq
+			},
+			dataType: 'json',
+			success: function(result) {
+				//  console.log(result);
+				
+				// alert(result.state);
+				if (result.state == '1') {
+					$('#btnGood').css('color', 'cornflowerblue');
+					$('#btnBad').css('color', '#555');
+				} else if (result.state == '0') {
+					$('#btnGood').css('color', '#555');
+					$('#btnBad').css('color', 'tomato');
+				}
+				
+				$('#good').text(0);
+				$('#bad').text(0);
+				
+				$(result.arr).each((index, item) => {
+					if (item.state == '1') {
+						$('#good').text(item.cnt);
+					} else if (item.state == '0') {
+						$('#bad').text(item.cnt);
+					}
+				})
+			},
+			error: function(a, b, c) {
+				console.log(a, b, c);
+			}
+		});
+	}
+	
+	loadGoodBad();	
+};
 
 function delComment(cseq) {
 	if(!confirm('정말 삭제하겠습니까?')){
@@ -119,6 +199,8 @@ function delComment(cseq) {
 	});
 }
 
+let temp_content;
+
 function editComment(cseq) {
 	
 	// 이전 눌렀던 수정 폼을 되돌리기
@@ -131,6 +213,8 @@ function editComment(cseq) {
 	
 	const div = $(event.target).parents('tr').find('td:first-child div:first-child');
 	const content = div.text();
+	
+	temp_content = content;
 	
 	div.html('');
 	
@@ -160,7 +244,7 @@ function editComment(cseq) {
 					}
 				});
 			} else if(evt.keyCode == 27) {
-				const content = $(evt.target).val();
+				const content = temp_content;
 				$(evt.target).parent().html(content);
 			}
 		})

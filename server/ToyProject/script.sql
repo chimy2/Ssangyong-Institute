@@ -98,6 +98,15 @@ select fnRegdate(regdate) from tblBoard order by seq desc;
 
 commit;
 
+create or replace view vwBoard
+as
+select
+    tblBoard.*, fnRegdate(regdate) as regtime,
+    (select name from tblUser where id = tblBoard.id) as name,
+    (sysdate - regdate) as isnew
+from tblBoard
+    order by seq desc;
+
 select * from (select a.*, rownum as rnum from vwBoard a)
     where rnum between 1 and 10;
     
@@ -116,3 +125,136 @@ create table tblComment(
 create sequence seqComment;
 
 select * from tblComment;
+
+select * from tblBoard order by seq desc;
+
+update tblBoard set subject = '<h1 style=''color:gold;''> 다시 테스트입니다.</h1>' where seq = 285;
+
+commit;
+
+create or replace view vwBoard
+as
+select
+    tblBoard.*, fnRegdate(regdate) as regtime,
+    (select name from tblUser where id = tblBoard.id) as name,
+    (sysdate - regdate) as isnew,
+    (select count(*) from tblComment where bseq = tblBoard.seq) as commentCount 
+from tblBoard
+    order by seq desc;
+
+    
+drop table tblComment;
+drop table tblBoard;
+
+-- 게시판 테이블(+답변 > 계층형)
+create table tblBoard (
+    seq number primary key,                             -- 글번호(PK)
+    subject varchar2(300) not null,                     -- 제목
+    content varchar2(4000) not null,                    -- 내용
+    regdate date default sysdate not null,              -- 날짜
+    readcount number default 0 not null,                -- 조회수
+    id varchar2(50) references tblUser(id) not null,    -- 아이디(FK)
+    thread number not null,                             -- 답변형(그룹+정렬)
+    depth number not null                               -- 답변형(들여쓰기)
+);
+
+-- 댓글
+create table tblComment (
+    seq number primary key,                         -- 번호(PK)
+    content varchar2(2000) not null,                -- 댓글
+    regdate date default sysdate not null,          -- 날짜
+    id varchar2(50) references tblUser(id) not null,-- 유저(FK)
+    bseq number references tblBoard(seq) not null   -- 부모글(FK)
+);
+
+select max(thread) from tblBoard;
+
+select nvl(max(thread), 0) from tblBoard;
+
+select * from tblBoard;
+
+create or replace view vwBoard
+as
+select
+    tblBoard.*, fnRegdate(regdate) as regtime,
+    (select name from tblUser where id = tblBoard.id) as name,
+    (sysdate - regdate) as isnew,
+    (select count(*) from tblComment where bseq = tblBoard.seq) as commentCount 
+from tblBoard
+    order by thread desc;
+    
+select * from vwBoard;
+
+
+drop table tblComment;
+drop table tblBoard;
+
+-- 답변글 O > 수정하도록 컬럼 추가
+create table tblBoard (
+    seq number primary key,                             -- 글번호(PK)
+    subject varchar2(300) not null,                     -- 제목
+    content varchar2(4000) not null,                    -- 내용
+    regdate date default sysdate not null,              -- 날짜
+    readcount number default 0 not null,                -- 조회수
+    id varchar2(50) references tblUser(id) not null,    -- 아이디(FK)
+    thread number not null,                             -- 답변형(그룹+정렬)
+    depth number not null,                              -- 답변형(들여쓰기)
+    ing number(1) default 1 not null                    -- 삭제 유무
+);
+
+-- 댓글
+create table tblComment (
+    seq number primary key,                         -- 번호(PK)
+    content varchar2(2000) not null,                -- 댓글
+    regdate date default sysdate not null,          -- 날짜
+    id varchar2(50) references tblUser(id) not null,-- 유저(FK)
+    bseq number references tblBoard(seq) not null   -- 부모글(FK)
+);
+
+select count(*) from tblBoard where thread < 1997
+    and thread > (select nvl(max(thread), 이전새글의thread) from tblBoard
+        where thread < 현재글thread and depth = 현재글depth);
+        
+select * from vwBoard;
+-- 테이블을 수정하거나 삭제하면 view에 반영이 안되기 때문에 view를 재정의 해줘야 한다.
+
+
+drop table tblComment;
+drop table tblBoard;
+
+-- 첨부파일 추가
+create table tblBoard (
+    seq number primary key,                             -- 글번호(PK)
+    subject varchar2(300) not null,                     -- 제목
+    content varchar2(4000) not null,                    -- 내용
+    regdate date default sysdate not null,              -- 날짜
+    readcount number default 0 not null,                -- 조회수
+    id varchar2(50) references tblUser(id) not null,    -- 아이디(FK)
+    thread number not null,                             -- 답변형(그룹+정렬)
+    depth number not null,                              -- 답변형(들여쓰기)
+    ing number(1) default 1 not null,                   -- 삭제 유무
+    attach varchar2(300) null                           -- 첨부파일
+);
+
+-- 댓글
+create table tblComment (
+    seq number primary key,                         -- 번호(PK)
+    content varchar2(2000) not null,                -- 댓글
+    regdate date default sysdate not null,          -- 날짜
+    id varchar2(50) references tblUser(id) not null,-- 유저(FK)
+    bseq number references tblBoard(seq) not null   -- 부모글(FK)
+);
+
+select * from tblBoard;
+
+-- 좋아요/싫어요 테이블
+create table tblGoodBad (
+    seq number primary key,                             -- PK
+    id varchar2(50) references tblUser(id) not null,    -- 아이디(FK)
+    bseq number references tblBoard(seq) not null,      -- 게시물(FK)
+    state number(1) not null                            -- 1(좋아요), 0(싫어요)
+);
+
+create sequence seqGoodBad;
+
+select * from tblGoodBad;

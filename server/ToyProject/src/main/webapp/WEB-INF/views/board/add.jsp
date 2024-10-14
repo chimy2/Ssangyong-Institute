@@ -15,9 +15,16 @@
 	<%@include file="/WEB-INF/views/inc/header.jsp" %>
 	
 	<div id="main">
-		<h1>게시판 <small>글쓰기</small></h1>
+		<h1>게시판 
+			<c:if test="${mode == 'new'}">
+				<small>글쓰기</small>
+			</c:if>
+			<c:if test="${mode == 'reply'}">
+				<small>답변하기</small>
+			</c:if>
+		</h1>
 		
-		<form action="/toy/board/add.do" method="POST">
+		<form action="/toy/board/add.do" method="POST" enctype="multipart/form-data">
 			<table class="vertical">
 				<tr>
 					<th>제목</th>
@@ -27,11 +34,18 @@
 					<th>내용</th>
 					<td><textarea name="content" id="content" required class="full"></textarea></td>
 				</tr>
+				<tr>
+					<th>장소</th>
+					<td><input type="file" name="attach" id="attach" class="full" accept="image/*"></td>
+				</tr>
 			</table>
 			<div>
 				<button type="button" class="back" onclick="location.href='/toy/board/list.do';">돌아가기</button>
 				<button type="submit" class="add primary">쓰기</button>			
 			</div>
+			<input type="hidden" name="mode" value="${mode}">
+			<input type="hidden" name="thread" value="${thread}">
+			<input type="hidden" name="depth" value="${depth}">
 		</form>
 	</div>
 	

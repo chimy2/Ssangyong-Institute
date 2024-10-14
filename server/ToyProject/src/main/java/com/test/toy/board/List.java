@@ -175,6 +175,10 @@ public class List extends HttpServlet {
 
 				dto.setSubject(subject);
 			}
+			
+//			HTML 태그 이스케이프
+			subject = subject.replace("<", "&lt;").replace(">", "&gt;");
+			dto.setSubject(subject);
 		}
 		
 //		2.

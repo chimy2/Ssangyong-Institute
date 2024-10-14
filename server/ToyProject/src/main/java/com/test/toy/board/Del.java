@@ -1,6 +1,7 @@
 package com.test.toy.board;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.test.toy.board.model.BoardDTO;
 import com.test.toy.board.repository.BoardDAO;
 import com.test.toy.util.OutputUtil;
 
@@ -43,7 +45,32 @@ public class Del extends HttpServlet {
 //		2.
 		BoardDAO dao = BoardDAO.getInstance();
 		
-		int result = dao.del(seq);
+//		*** 메서드 > 단일 업무 구현
+		
+		dao.delCommentAll(seq);	//부모글 번호
+		
+//		답변글 X > 삭제
+//		답변글 O > 수정
+//		int result = dao.del(seq);
+		int result = -1;
+		
+//		현재글의 thread(v)
+//		현재글의 depth(v)
+//		이전 새글의 thread
+		BoardDTO dto = dao.get(seq);
+		int previousThread = (int)Math.floor((dto.getThread() - 1) / 1000) * 1000;
+		
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
+		
+		map.put("thread", dto.getThread());
+		map.put("depth", dto.getDepth());
+		map.put("previousThread", previousThread);
+		
+		if(dao.checkDel(map) == 0) {
+			result = dao.del(seq);
+		} else {
+			result = dao.del2(seq);	// 삭제 상태 변화
+		}
 		
 //		3.
 		if(result == 1) {

@@ -1,8 +1,11 @@
 package com.test.toy.board;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 
+import javax.imageio.ImageIO;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,8 +14,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.drew.imaging.ImageMetadataReader;
+import com.drew.metadata.Metadata;
+import com.drew.metadata.exif.GpsDirectory;
 import com.test.toy.board.model.BoardDTO;
 import com.test.toy.board.repository.BoardDAO;
+
 
 @WebServlet("/board/view.do")
 public class View extends HttpServlet {
@@ -43,8 +50,17 @@ public class View extends HttpServlet {
 		
 //		2.5 DTO 조작
 		
-//		개행문자 처리
 		String content = dto.getContent();
+
+//		HTML 태그 이스케이프
+		String subject = dto.getSubject();
+		subject = subject.replace("<", "&lt;").replace(">", "&gt;");
+		dto.setSubject(subject);
+		
+		content = content.replace("<", "&lt;").replace(">", "&gt;");
+		dto.setContent(content);
+		
+//		개행문자 처리
 		content = content.replace("\r\n", "<br>");
 		
 //		검색어 강조
@@ -57,8 +73,43 @@ public class View extends HttpServlet {
 		}
 		dto.setContent(content);
 		
+		
 		map.put("column", column);
 		map.put("word", word);
+		
+//		첨부파일 > 메타 데이터 가져오기
+		if (dto.getAttach() != null
+				&& !dto.getAttach().trim().equals("")
+				&& (
+					dto.getAttach().toLowerCase().endsWith(".jpg")
+					|| dto.getAttach().toLowerCase().endsWith(".jpeg")
+					|| dto.getAttach().toLowerCase().endsWith(".gif")
+					|| dto.getAttach().toLowerCase().endsWith(".png")
+					)) {
+//			ImageIO.read(new File(req.getRealPath("/asset/place/파일명.jpg")));
+			BufferedImage img = ImageIO.read(new File(req.getRealPath("/asset/place/" + dto.getAttach())));
+			
+//			System.out.println(img.getWidth());
+//			System.out.println(img.getHeight());
+			
+			try {
+//				GPS
+				Metadata metadata = ImageMetadataReader.readMetadata(new File(req.getRealPath("/asset/place/" + dto.getAttach())));
+				
+				GpsDirectory gps = metadata.getFirstDirectoryOfType(GpsDirectory.class);
+				
+				if (gps.containsTag(GpsDirectory.TAG_LATITUDE)
+						&& gps.containsTag(GpsDirectory.TAG_LONGITUDE)) {
+					
+					req.setAttribute("lat", gps.getGeoLocation().getLatitude());
+					req.setAttribute("lng", gps.getGeoLocation().getLongitude());
+					
+				}
+			} catch (Exception e) {
+				System.out.println("View.doGet");
+				e.printStackTrace();
+			}
+		}
 		
 //		3.
 		req.setAttribute("dto", dto);

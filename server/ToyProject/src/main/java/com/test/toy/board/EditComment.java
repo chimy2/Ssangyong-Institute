@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.json.simple.JSONObject;
 
+import com.test.toy.board.model.CommentDTO;
 import com.test.toy.board.repository.BoardDAO;
-import com.test.toy.board.repository.CommentDTO;
 
 @WebServlet("/board/editcomment.do")
 public class EditComment extends HttpServlet {

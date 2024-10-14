@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.test.toy.board.model.BoardDTO;
+import com.test.toy.board.model.CommentDTO;
 import com.test.util.DBUtil;
 
 public class BoardDAO {
@@ -44,12 +45,15 @@ public class BoardDAO {
 	public int add(BoardDTO dto) {
 		try {
 
-			String sql = "insert into tblBoard values(seqBoard.nextVal, ?, ?, default, default, ?)";
+			String sql = "insert into tblBoard values(seqBoard.nextVal, ?, ?, default, default, ?, ?, ?, default, ?)";
 
 			pstat = conn.prepareStatement(sql);
 			pstat.setString(1, dto.getSubject());
 			pstat.setString(2, dto.getContent());
 			pstat.setString(3, dto.getId());
+			pstat.setInt(4, dto.getThread());
+			pstat.setInt(5, dto.getDepth());
+			pstat.setString(6, dto.getAttach());
 
 			return pstat.executeUpdate();
 		} catch (Exception e) {
@@ -118,6 +122,10 @@ public class BoardDAO {
 				dto.setRegtime(rs.getString("regtime"));
 				dto.setName(rs.getString("name"));
 				dto.setIsnew(rs.getDouble("isnew"));
+				dto.setCommentCount(rs.getString("commentCount"));
+				
+				dto.setDepth(rs.getInt("depth"));
+				dto.setIng(rs.getInt("ing"));
 
 				list.add(dto);
 			}
@@ -152,7 +160,12 @@ public class BoardDAO {
 				dto.setReadcount(rs.getInt("readcount"));
 				dto.setRegdate(rs.getString("regdate"));
 				dto.setId(rs.getString("id"));
+				
 				dto.setName(rs.getString("name"));
+				
+				dto.setThread(rs.getInt("thread"));
+				dto.setDepth(rs.getInt("depth"));
+				dto.setAttach(rs.getString("attach"));
 
 				return dto;
 			}
@@ -274,6 +287,7 @@ public class BoardDAO {
 			String sql = "select tblComment.*, (select name from tblUser where id = tblComment.id) as name "
 					+ "from tblComment where bseq = ? order by seq desc";
 			
+			System.out.println("listComment: " + bseq);
 			pstat = conn.prepareStatement(sql);
 			pstat.setString(1, bseq);
 			
@@ -336,5 +350,217 @@ public class BoardDAO {
 		}
 
 		return 0;
+	}
+
+	public void delCommentAll(String seq) {
+		try {
+
+			String sql = "delete from tblComment where bseq = ?";
+
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, seq);
+
+			pstat.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public int getMaxThread() {
+		try {
+
+			String sql = "select nvl(max(thread), 0) as thread from tblBoard";
+
+			stat = conn.createStatement();
+			rs = stat.executeQuery(sql);
+
+			if (rs.next()) {
+
+				return rs.getInt("thread");
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return 0;
+	}
+
+	public void updateThread(HashMap<String, Integer> map) {
+		try {
+
+			String sql = "update tblBoard set thread = thread - 1 where thread between ? and ?";
+
+			pstat = conn.prepareStatement(sql);
+			pstat.setInt(1, map.get("previousThread") + 1);
+			pstat.setInt(2, map.get("parentThread") - 1);
+
+			pstat.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public int del2(String seq) {
+		try {
+
+			String sql = "update tblBoard set ing = 0 where seq = ?";
+
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, seq);
+
+			return pstat.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return 0;
+	}
+
+	public int checkDel(HashMap<String,Integer> map) {
+		try {
+
+			String sql = "select count(*) as cnt from tblBoard where thread < ? "
+					+ "and thread > (select nvl(max(thread), ?) from tblBoard "
+					+ "where thread < ? and depth = ?)";
+
+			pstat = conn.prepareStatement(sql);
+			pstat.setInt(1, map.get("thread"));
+			pstat.setInt(2, map.get("previousThread"));
+			pstat.setInt(3, map.get("thread"));
+			pstat.setInt(4, map.get("depth"));
+
+			rs = pstat.executeQuery();
+
+			if (rs.next()) {
+
+				return rs.getInt("cnt");
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
+
+	public int addGoodBad(HashMap<String, String> map) {
+		try {
+
+			String sql = "insert into tblGoodBad values(seqGoodBad.nextVal, ?, ?, ?)";
+
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, map.get("id"));
+			pstat.setString(2, map.get("bseq"));
+			pstat.setString(3, map.get("state"));
+
+			return pstat.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return 0;
+	}
+
+	public ArrayList<HashMap<String, String>> loadGoodBad(String bseq) {
+		try {
+			
+			String sql = "select state, count(*) as cnt from tblGoodBad where bseq = ? group by state";
+			
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, bseq);
+			
+			rs = pstat.executeQuery();
+			
+			ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
+			
+			while (rs.next()) {
+				
+//				레코드 1줄 > HashMap 1개
+				HashMap<String, String> map = new HashMap<String, String>();
+				
+				map.put("state", rs.getString("state"));
+				map.put("cnt", rs.getString("cnt"));
+				
+				list.add(map);				
+			}	
+			
+			return list;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public String getGoodbad(String bseq, String id) {
+		try {
+
+//			0, 1 > 좋아요/싫어요
+//			-1 > 참여X 
+			String sql = "select state from tblGoodBad where bseq = ? and id = ?";
+
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, bseq);
+			pstat.setString(2, id);
+
+			rs = pstat.executeQuery();
+
+			if(rs.next()) {
+				return rs.getString("state");	// -1, 0, 1
+			} else {
+				return "-1";
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public int editGoodBad(HashMap<String, String> map) {
+		try {
+
+			String sql = "update tblGoodBad set state = ? where bseq = ? and id = ?";
+
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, map.get("state"));
+			pstat.setString(2, map.get("bseq"));
+			pstat.setString(3, map.get("id"));
+
+			return pstat.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
+
+	public boolean checkGoodBad(HashMap<String, String> map) {
+		try {
+
+			String sql = "select count(*) as cnt from tblGoodBad where bseq = ? and id = ?";
+
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, map.get("bseq"));
+			pstat.setString(2, map.get("id"));
+
+			rs = pstat.executeQuery();
+
+			if (rs.next()) {
+
+				if (rs.getInt("cnt") == 0) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
 	}
 }

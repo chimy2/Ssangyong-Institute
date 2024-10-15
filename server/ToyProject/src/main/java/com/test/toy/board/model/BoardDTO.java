@@ -1,9 +1,8 @@
 package com.test.toy.board.model;
 
+import java.util.ArrayList;
+
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
 
 //@Getter
 //@Setter
@@ -28,4 +27,7 @@ public class BoardDTO {
 	private int ing;				// 삭제유무 > 삭제(0), 존재(1)
 	
 	private String attach;			// 첨부파일(사진)
+	
+	private ArrayList<String> tag;	// 해시 태그
+	private int istag;				// 매핑된 해시 태그 개수
 }

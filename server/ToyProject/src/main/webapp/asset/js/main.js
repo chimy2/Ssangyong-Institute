@@ -79,8 +79,6 @@ window.onload = () => {
 		});
 	}
 	
-	loadComment();
-	
 	$('#addComment input[name=content]').keydown((event) => {
 		if (event.keyCode == 13) {
 			$('#btnAddComment').click();
@@ -169,7 +167,10 @@ window.onload = () => {
 		});
 	}
 	
-	loadGoodBad();	
+	if (location.href.indexOf('view.do') > -1) {
+		loadComment();
+		loadGoodBad();	
+	}
 };
 
 function delComment(cseq) {

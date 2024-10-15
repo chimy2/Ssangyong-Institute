@@ -11,6 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.test.toy.board.model.BoardDTO;
@@ -76,6 +81,8 @@ public class Add extends HttpServlet {
 		String mode = multi.getParameter("mode");
 		String attach = multi.getFilesystemName("attach");
 		
+		String tag = multi.getParameter("tag");
+		
 //		2.
 		BoardDAO dao = BoardDAO.getInstance();
 		
@@ -129,7 +136,7 @@ public class Add extends HttpServlet {
 		dto.setThread(thread);
 		dto.setDepth(depth);
 		dto.setAttach(attach);
-		System.out.println("attach" + attach);
+
 //		HTML 태그 이스케이프
 //		content = content.replace("<", "&lt;").replace(">", "&gt;");
 //		dto.setContent(content);
@@ -137,6 +144,54 @@ public class Add extends HttpServlet {
 //		출력할 때 처리한다.
 		
 		int result = dao.add(dto);
+		
+//		관계테이블에서 게시물의 번호를 받아와야되기 때문에
+//		밑에서 작업
+		
+		if(tag != null && !tag.equals("") && !tag.equals("[]")) {
+			
+			try {
+
+//				[{"value":"자바"},{"value":"게시판"},{"value":"태그"}]
+
+				JSONParser parser = new JSONParser();
+				
+//				파싱된 object가 object를 돌려줄 수도 있고 array를 돌려줄 수 있기 때문에 형변환
+				JSONArray arr = (JSONArray)parser.parse(tag);
+				
+				for (Object obj: arr) {
+//					태그 추출
+					JSONObject tagObj = (JSONObject)obj;
+					String tagName = tagObj.get("value").toString();
+//					System.out.println(tagName);
+					
+//					태그를 DB에 추가
+					if (dao.existHashtag(tagName)) {
+						dao.addHashtag(tagName);
+					}
+					
+//					관계 추가
+//					1. 게시물 번호
+//					2. 해시 태그 번호
+					String bseq = dao.getBseq();
+					String hseq = dao.getHseq(tagName);
+//					동시에 글을 쓴다고 해도 잘못된 seq가 넘어올 확률이 너무 적기 때문에 보통 일련번호의 max값을 가져옴
+//					네이버나 구글 같은 사이트는 동접자가 많기 때문에 처리를 해야하지만 그 외 99% 사이트들은 이렇게 처리해줘도 문제가 없다
+//					중요한 포인트는 맞는데 일어날 확률이 적기 때문에 보통 이렇게 처리
+					
+					HashMap<String, String> map = new HashMap<String, String>();
+					
+					map.put("bseq", bseq);
+					map.put("hseq", hseq);
+					
+					dao.addTagging(map);
+				}
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
 		
 //		3.
 		if(result == 1) {

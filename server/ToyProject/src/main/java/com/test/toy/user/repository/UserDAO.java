@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import com.test.toy.user.model.UserDTO;
 import com.test.util.DBUtil;
@@ -180,5 +181,61 @@ public class UserDAO {
 		}
 		
 		return null;
+	}
+
+	public ArrayList<HashMap<String, String>> loadCalendar(HashMap<String, String> map) {
+		try {
+			
+			String sql = "select "
+					+ "to_char(l.regdate, 'yyyy-mm-dd') as regdate, "
+					+ "count(*) as cnt, "
+					+ "(select count(*) from tblBoard where to_char(regdate, 'yyyy-mm-dd') = to_char(l.regdate, 'yyyy-mm-dd') and id = ?) as bcnt, "
+					+ "(select count(*) from tblComment where to_char(regdate, 'yyyy-mm-dd') = to_char(l.regdate, 'yyyy-mm-dd') and id = ?) as ccnt "
+					+ "from tblLog l where to_char(l.regdate, 'yyyy-mm') = ? and l.id = ? "
+					+ "group by to_char(l.regdate, 'yyyy-mm-dd')";
+			
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, map.get("id"));
+			pstat.setString(2, map.get("id"));
+			pstat.setString(3, String.format("%s-%02d", map.get("year"), Integer.parseInt(map.get("month"))));			
+			pstat.setString(4, map.get("id"));
+			
+			rs = pstat.executeQuery();
+			
+			ArrayList<HashMap<String, String>> list =new ArrayList<HashMap<String, String>>();
+			
+			while (rs.next()) {
+				HashMap<String, String> result = new HashMap<String, String>();
+				
+				result.put("regdate", rs.getString("regdate"));
+				result.put("cnt", rs.getString("cnt"));
+				result.put("bcnt", rs.getString("bcnt"));
+				result.put("ccnt", rs.getString("ccnt"));
+				
+				list.add(result);
+			}	
+			
+			return list;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+
+	public void addLog(String id) {
+		try {
+
+			String sql = "insert into tblLog values (seqLog.nextVal, ?, default)";
+
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, id);
+
+			pstat.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

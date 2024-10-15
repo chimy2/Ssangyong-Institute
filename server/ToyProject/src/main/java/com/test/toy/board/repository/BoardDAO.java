@@ -96,12 +96,27 @@ public class BoardDAO {
 			}
 			
 //			String sql = String.format("select * from vwBoard %s", where);
-			String sql = String.format("select * from (select a.*, rownum as rnum from vwBoard a %s) "
-					+ "where rnum between %s and %s", 
-					where,
-					map.get("begin"),
-					map.get("end")
-				);
+			String sql = "";
+			
+			if (map.get("tag") != null) {
+				sql = String.format("select * from (select b.*, rownum as rnum from vwBoard b "
+						+ "inner join tblTagging t on b.seq = t.bseq "
+						+ "inner join tblHashtag h on h.seq = t.hseq "
+						+ "%s and h.tag = '%s')"
+						+ "where rnum between %s and %s", 
+						where,
+						map.get("tag"),
+						map.get("begin"),
+						map.get("end")
+						);
+			} else {
+				sql = String.format("select * from (select a.*, rownum as rnum from vwBoard a %s) "
+						+ "where rnum between %s and %s", 
+						where,
+						map.get("begin"),
+						map.get("end")
+						);
+			}
 			
 			stat = conn.createStatement();
 			rs = stat.executeQuery(sql);
@@ -126,6 +141,8 @@ public class BoardDAO {
 				
 				dto.setDepth(rs.getInt("depth"));
 				dto.setIng(rs.getInt("ing"));
+				
+				dto.setIstag(rs.getInt("istag"));
 
 				list.add(dto);
 			}
@@ -166,6 +183,26 @@ public class BoardDAO {
 				dto.setThread(rs.getInt("thread"));
 				dto.setDepth(rs.getInt("depth"));
 				dto.setAttach(rs.getString("attach"));
+				
+//				해시 태그 추가
+				sql = "select h.tag from tblBoard b "
+					+ "inner join tblTagging t on b.seq = t.bseq "
+					+ "inner join tblHashtag h on h.seq = t.hseq "
+					+ "where b.seq = ?";
+
+				pstat = conn.prepareStatement(sql);
+				
+				pstat.setString(1, seq);
+				
+				rs = pstat.executeQuery();
+				
+				ArrayList<String> tlist = new ArrayList<String>();
+				
+				while(rs.next()) {
+					tlist.add(rs.getString("tag"));
+				}
+				
+				dto.setTag(tlist);
 
 				return dto;
 			}
@@ -562,5 +599,94 @@ public class BoardDAO {
 			e.printStackTrace();
 		}
 		return false;
+	}
+
+	public void addHashtag(String tagName) {
+		try {
+
+			String sql = "insert into tblHashtag values (seqHashtag.nextVal, ?)";
+
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, tagName);
+
+			pstat.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public boolean existHashtag(String tagName) {
+		try {
+
+			String sql = "select count(*) as cnt from tblHashtag where tag = ?";
+
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, tagName);
+
+			rs = pstat.executeQuery();
+
+			if (rs.next()) {
+				return rs.getInt("cnt") == 0 ? true : false;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	public String getBseq() {
+		try {
+
+			String sql = "select max(seq) as seq from tblBoard";
+
+			stat = conn.createStatement();
+			rs = stat.executeQuery(sql);
+
+			if (rs.next()) {
+				return rs.getString("seq");
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+
+	public String getHseq(String tagName) {
+		try {
+
+			String sql = "select seq from tblHashtag where tag = ?";
+
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, tagName);
+
+			rs = pstat.executeQuery();
+
+			if (rs.next()) {
+				return rs.getString("seq");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public void addTagging(HashMap<String, String> map) {
+		try {
+
+			String sql = "insert into tblTagging values(seqTagging.nextVal, ?, ?)";
+
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, map.get("bseq"));
+			pstat.setString(2, map.get("hseq"));
+
+			pstat.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

@@ -62,6 +62,10 @@ public class Login extends HttpServlet {
 			JSONObject obj = new JSONObject();
 			
 			session.setAttribute("user", result);
+			
+//			접속 기록
+			dao.addLog(id);
+			
 			resp.sendRedirect("/toy/index.do");
 		} else {
 //			로그인 실패

@@ -9,6 +9,7 @@
 	<style>
 		
 	</style>
+	<link rel="stylesheet" href="/toy/asset/css/tagify.css" />
 </head>
 <body>
 	<!-- add.jsp > view.jsp -->
@@ -93,6 +94,10 @@
 					</div>
 				</td>
 			</tr>
+			<tr>
+				<th>태그</th>
+				<td><input type="text" id="tag" class="full" readonly></td>
+			</tr>
 		</table>
 		
 		
@@ -148,6 +153,7 @@
 	</div>
 	
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=78ff06ff1ec8759d1aff53a89d95e655"></script>
+	<script src="/toy/asset/js/tagify.js"></script>
 	
 	<script>
 		const lv = ${empty user ? 0 : user.lv};
@@ -179,6 +185,23 @@
 			m1.setImage(mImg);
 			m1.setMap(map);
 		</c:if>
+		
+		const tag = document.getElementById('tag');
+		
+		
+		
+		// tag.value = '게시판';
+		// tag.value = '게시판,자바,오라클';
+		<c:if test="${not empty dto.tag}">
+			tag.value = '${dto.tag.toString().substring(1, dto.tag.toString().length() - 1)}';
+		</c:if>
+		
+		const tagify = new Tagify(tag);
+		
+		tagify.on('click', (e) => {
+			// alert(e.detail.data.value);
+			location.href = '/toy/board/list.do?tag=' + e.detail.data.value;
+		});
 	</script>	
 </body>
 </html>

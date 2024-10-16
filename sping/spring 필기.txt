@@ -1,0 +1,237 @@
+2024년 10월 16일
+
+스프링 개발 툴 설치(STS) > Eclipse + Spring 개발 환경 = STS
+Spring Tool Suite 3 > STS 3 > Spring + Spring Boot
+Spring Tool Suite 4 > STS 4 > Spring Boot
+
+STS 3 설치
+- https://github.com/spring-attic/toolsuite-distribution/wiki/Spring-Tool-Suite-3
+- https://download.springsource.com/release/STS/3.9.18.RELEASE/dist/e4.21/spring-tool-suite-3.9.18.RELEASE-e4.21.0-win32-x86_64.zip 다운
+- 
+
+> sts-bundle 
+	>legal > 
+	> pivotal-tc-server > 
+	> sts-3.9.18.RELEASE
+
+sts-3.
+STS.ini > JDK를 바꿔줘야 함
+1. STS.ini > JDK 11 설정
+openFile 밑에 밑의 줄 추가
+-vm
+C:/class/dev/jdk-11/bin/javaw.exe
+
+2. Lombok >설치
+
+- lombok.jar 파일을 더블클릭해서 실행
+- 더블클릭으로 실행되지 않으면 lombok이 있는 경로에서 프롬프트를 열고 java -jar lombok.jar 명령어로 실행
+
+sts
+C:\class\code\spring 폴더(워크스페이스) 열기
+
+설정
+- encoding
+	- General > workspace > Text file encoding
+			> Content Types > Text > Default encoding > UTF-8
+	- Web > CSS Files > Encoding
+			> HTML Files > Encoding
+			> JSP Files > Encoding
+- font
+	> basic > text font
+- server 
+	> Server > Runtime Environment
+		> Add > Apache 9.0으로 폴더 찾아서 설정
+- 포트 변경 안했으면 아파치 폴더로 가서 포트 설정
+dev > apache-tomcat-9.0.93~ > server.xml
+	>  8080 찾아서 포트번호 변경 > ex. Connector port="8090" protocol="HTTP/1.1"
+
+개발 도움 요소
+1. SDK > Software Development Kit > ex. JDK - 자바라는 언어를 가지고 개발 환경과 수많은 코드 제공, 맨땅에 헤딩해서 코드를 짜는게 아니라 제공된 코드를 이용
+2. Library > ex. *.jar - sdk의 일부분이라고 볼 수 있음, 코드 조각 sdk가 모든 사용자의 요구사항을 만족시킬 수 없기 때문에 공식적으로 제공하는게 아니라 확장돼서 제공하는 개념
+3. Framework > 개발 환경 + 코드 제공
+4. API
+
+Library vs Framework
+개발자인 내가 주체면 Library 내가 주체가 아니라 따라가는 상황이 되면  Framework
+
+라이브러리 같은 경우는 개발자가 주체가 되기 때문에 경력이나 실력, 능력에 따라 결과가 차이가 나지만
+ > 가져다 쓰는 방법을 알고 시작하기만 하면 됨 > 학습곡선이 낮음
+프레임워크는 완성된 틀을 조작하는 느낌이기 때문에 별 차이가 없음 > 이상적인 이야기이고 실력에 따라 차이가 나긴 함
+ > 이미 시스템이 갖춰져 있기 때문에 파악부터 해야 함 > 메뉴얼을 먼저 공부해야 함 > 학습곡선이 높음
+ex. spring - 틀이 짜여서 있어서 시키는대로 따라감
+
+Spring Framework
+- Spring(Core) 프로젝트 > 메인 프로그램 
+- 추가 기능 프로젝트 > 확장 프로그램 
+- Spring Boot 프로젝트 > 확장 프로그램 
+	> 업그레이드 버전이 아님 설정해야 하는 것들을 자동화 시키는 프로그램을 만듦
+
+Spring 설정.zip 파일에 압축을 풀고 Spring MVC Project가 안보일때.txt 에 적힌대로 행동
+
+new > Spring Lagacy project 생성
+	- project name: hello
+	- templates: Spring MVC Project 
+	> next
+- top level package 설정: com.test.hello > finish
+	> HomeController.java 실행 후 경로 변환("/")
+
+Spring MVC Project 구조
+1. src/main/java
+	- 여태 사용하던 폴더와 동일
+	- 패키지 or 파일
+
+2. src/main/resources
+	- Java 소스 이외의 자원을 보관하는 폴더
+	- 스프링 관련 설정 파일 등을 보관
+
+3. src/test/java
+	- 단위 테스트용
+
+4. src/test/resources
+	- 단위 테스트용
+
+5. JRE System Library
+	- JRE 라이브러리
+	- JavaSE-1.6(default) > 11로 변경해야함
+
+6. Maven Dependencies
+	- 빌드 도구(Maven or Gradle)
+	- 프로젝트 생성 or 라이브러리 관리 or 빌드 or 배포 
+
+7. src
+	7.1 main > webapp
+		- 웹 루트 폴더
+	7.2 webapp > resources
+		- asset 역할
+		- CSS, JavaScript, Image 등 정적 자원 보관
+	
+	7.3 webapp > WEB-INF 
+		7.3.1 classes
+			- 컴파일된 자바 실행 파일 저장(*.class)
+			- 이전 bin 폴더(binary)
+			- 개발자 관여(X)
+
+		7.3.2 spring(************************)
+			- 스프링 관련 모든 설정
+			7.3.2.1 appServlet > servlet-context.xml
+				- 스프링 설정 파일
+			7.3.2.2 root-context.xml
+				- 스프링 설정 파일
+
+		7.3.3 views
+			- 뷰 페이지 저장(JSP)
+
+8. target
+9. pom.xml(***)
+	- Project Object Model
+	- 메이븐 설정 파일
+	
+새 프로젝트
+- New > Spring Legacy Project
+- name: "BeginTest"
+- templates: Spring MVC Project
+- package: "com.test.begin"
+
+현재 프로젝트 > 자바 버전 & 스프링 버전 변경
+- 프로젝트 생성 시마다 반복
+- 자바 버전 > 11
+	- pom.xml
+		- properties > java-version > 11
+		- build > org.apache.maven.plugins > source/target > 11
+	- project 우클릭 > Properties > Project Facets
+		- Java > 11
+
+- 스프링 버전 > 5.0.7
+	- pom.xml
+		- properties > org.springframework-version > 5.0.7.RELEASE
+
+Spring Framework
+- https://spring.io/projects/spring-framework
+- Spring 1.0 ~6.1.13
+- Spring 5.X.X 수업
+- 하나하나다 프로젝트임
+- 콘솔 개발, 응용 프로그램 개발, 웹 응용 프로그램 등..
+- 스프링 ? 자바 플랫폼을 위한 오픈 소스 애플리케이션 프레임 워크다
+
+Spring Project
+- Spring
+- Spring MVC
+- Spring AOP
+- Spring Data
+- Spring Security
+- Spring Boot
+- ..
+
+Spring > DI(***), IoC, AOP
+스프링 기술을 이해하는데 DI가 중요 > 디자인 패턴
+
+Spring DI
+- 디자인 패턴: DI > Dependency Injection > 의존(성) 주입
+	> 많은 사람들이 어떤 특정 목적을 가지고 코드를 짰을때 나온 이상적인 형태, 구조
+- 스프링 도입/적용 > Spring DI
+- 스프링에서 가장 중요한 개념 중 하나 > 스프링의 모든 객체 관리에 사용(***)
+- "프로그래밍에서 구성 요소간의 의존 관계가 소스 내부가 아닌 외부 환경에서 정의되게 하는 디자인 패턴"
+
+- 의존 관계?
+- src/main/java > "com.test.begin.di1"
+				> "Main.java"
+				> "Service.java"
+				> "Hong.java"
+
+- src/main/java > "com.test.begin.di2"
+				> "Main.java"
+				> "Service.java"
+				> "Hong.java"
+
+- src/main/java > "com.test.begin.di3"
+				> "Main.java"
+				> "Service.java"
+				> "Hong.java"
+				> "di3.xml"
+
+버전 별 도움말 사이트
+- https://docs.spring.io/spring-framework/docs/
+
+Spring AOP, Aspect Oriented Programming
+- 관점 지향 프로그래밍
+- 코드 작성 = 주 업무 코드 + 보조 업무 코드
+- 가독성이 높아짐 
+- 분리된 주 업무와 보조 업무를 스프링으로 결합하여 실행 하므로 물리적으로는 분리시켜서 관리 가능
+
+Spring AOP 용어
+1. Core Concern
+	- 주업무, 비즈니스 코드
+
+2. Cross-cutting Concern
+	- 보조업무
+
+3. Target
+
+4. Proxy
+
+5. JointPoint
+
+6. Pointcut
+
+7. Aspect
+
+8. Advice
+
+
+메모장
+- "com.test.begin.aop"
+	- "Main.java"				// 메인
+	- "Memo.java"(I)				// 메인 업무 객체(인터페이스)
+	- "MemoImpl.java"(C)			// 메인 업무 객체(클래스) > 구현체
+
+	- "Logger.java"(C)			// 보조 업무 객체(클래스)
+	- "memo.xml"				// 스프링 설정 파일
+
+
+
+
+
+
+
+
+

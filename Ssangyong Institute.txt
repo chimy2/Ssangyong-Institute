@@ -1,6 +1,6 @@
 Ssangyong Institute
 
-Spring 환경설정, STS 3 설치, spring project 구조, 
+Spring 환경설정, STS 3 설치, spring project 구조, DI, IoC
 
 원격 접속 > 클라이언트 툴
 SSH 클라이언트 툴 > 원격 컴퓨터 접속

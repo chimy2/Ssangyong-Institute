@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 
+		스프링 빈
+		- 스프링 환경이 관리하는 객체(인스턴스)
+		
+		스프링 빈 선언
+		- Hong hong = new Hong();
+		
+		<bean>
+	 -->
+	<!-- 여기서 만든 bean들은 모두 스프링이 관리를 해줌 -->
+	<bean id="hong" class="com.test.begin.di3.Hong"></bean>
+	
+	<!-- new Service() -->
+	<!-- <bean id="service" class="com.test.begin.di3.Service"></bean> -->
+	
+	<!-- 생성자 주입 -->
+	
+	<!-- 
+	<bean id="service2" class="com.test.begin.di3.Service">
+		<constructor-arg ref="hong">
+			--><!-- 
+				스프링 빈을 안 만들어놨다면 익명 빈?으로 끼워넣어도 되지만 
+				우리가 이미 bean을 선언했기 때문에 id(ref="아이디값")를 받아와서 사용할 수 있음
+			 -->
+			<!-- <bean class="com.test.begin.di3.Hong"></bean> --><!--
+		</constructor-arg>
+	</bean>
+	 -->
+	
+	<bean id="service3" class="com.test.begin.di3.Service">
+		<!-- 
+			Setter를 사용한 의존 주입
+			name="hong" > setHong()
+		 -->
+		<property name="hong" ref="hong"></property>
+	</bean>
+	
+	<!-- 여러개 만들 수는 있지만 쓸모가 없기 때문에 보통 한 클래스 당 하나의 빈만 선언 -->
+	<bean id="aaa" class="com.test.begin.di3.Hong"></bean>
+	<bean id="bbb" class="com.test.begin.di3.Hong"></bean>
+	<bean id="ccc" class="com.test.begin.di3.Hong"></bean>
+	
+	
+	<!-- <bean id="정식이름" name="별칭" class="com.test.begin.di3.Hong"></bean> -->
+	<bean id="h1" name="h2 h3 h4 h5" class="com.test.begin.di3.Hong"></bean>
+	<!-- 
+		id, name 둘다 식별자로 쓰이기 때문에 id나 name에 같은 이름이 있다면 에러
+		컴파일 에러X/런타임 에러O
+	 -->
+</beans>

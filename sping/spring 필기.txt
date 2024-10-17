@@ -25,6 +25,7 @@ C:/class/dev/jdk-11/bin/javaw.exe
 
 - lombok.jar 파일을 더블클릭해서 실행
 - 더블클릭으로 실행되지 않으면 lombok이 있는 경로에서 프롬프트를 열고 java -jar lombok.jar 명령어로 실행
+sts.exe를 누르고 install
 
 sts
 C:\class\code\spring 폴더(워크스페이스) 열기
@@ -228,10 +229,186 @@ Spring AOP 용어
 	- "memo.xml"				// 스프링 설정 파일
 
 
+2024년 10월 17일
 
+Servlet/JSP = Spring Web
 
+1. 새 프로젝트
+- New > Spring Legacy Project
+- Project name: "WebTest"
+- Templates: Spring MVC Project
+- Enter a topLevelPackage: "com.test.web"
 
+2. 스프링/자바 버전 변경하기
+- pom.xml
+	- 기존 코드1
+	<properties>
+		<java-version>1.6</java-version>	> 변경
+		<org.springframework-version>3.1.1.RELEASE</org.springframework-version>	> 변경
+		<org.aspectj-version>1.6.10</org.aspectj-version>
+		<org.slf4j-version>1.6.6</org.slf4j-version>
+	</properties>
+	- 수정 코드1
+	<properties>
+		<java-version>11</java-version>
+		<org.springframework-version>5.0.7.RELEASE</org.springframework-version>
+		<org.aspectj-version>1.6.10</org.aspectj-version>
+		<org.slf4j-version>1.6.6</org.slf4j-version>
+	</properties>
 
+	- 기존 코드2
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <source>1.6</source>	> 변경
+                    <target>1.6</target>	> 변경
+                    <compilerArgument>-Xlint:all</compilerArgument>
+                    <showWarnings>true</showWarnings>
+                    <showDeprecation>true</showDeprecation>
+                </configuration>
+            </plugin>
+	- 수정 코드2
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                    <compilerArgument>-Xlint:all</compilerArgument>
+                    <showWarnings>true</showWarnings>
+                    <showDeprecation>true</showDeprecation>
+                </configuration>
+            </plugin>
+- 패키지 탐색기 > 우클릭 > Properties > Project Facets > Java > 11
 
+3. 서블릿/JSP 버전 변경하기
+- pom.xml
+	- 기존코드
+		<!-- Servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>	> 변경
+			<version>2.5</version>	> 변경
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>	> 변경
+			<version>2.1</version>	> 변경
+			<scope>provided</scope>
+		</dependency>
+	- 수정코드
+		<!-- Servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.3.3</version>
+			<scope>provided</scope>
+		</dependency>
 
+4. JUnit
+- pom.xml
+	- 기존코드
+		<!-- Test -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.7</version>
+			<scope>test</scope>
+		</dependency>  
+	- 수정코드
+		<!-- Test -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>    
+
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+		<!-- junit이 있지만 스프링과 원할하게 연동하기 위해 테스트 가능 -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-test</artifactId>
+		    <version>${org.springframework-version}</version>
+		    <scope>test</scope>
+		</dependency>
+
+5. lombok 추가
+- pom.xml 
+	- https://mvnrepository.com/artifact/org.projectlombok/lombok/1.18.34
+	<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+		    <groupId>org.projectlombok</groupId>
+		    <artifactId>lombok</artifactId>
+		    <version>1.18.34</version>
+		    <scope>provided</scope>
+		</dependency>
+
+Spring MVC Project
+- 프로젝트에서 사용되는 스프링 설정 파일을 제공한다. > 2개, 가상 주소를 적을
+	- WEB-INF > spring > root-context.xml(스프링 전반적인 설정)
+	- WEB-INF > spring > appServlet > servlet-context.xml(클라이언트 요청/응답 관련 설정)
+
+새 패키지
+- "com.test.web.controller"
+
+- com.test.web.controller > "Ex01Controller.java"
+- views > "ex01.jsp"
+- Spring MVC의 기본 구조
+- ModelAndView 역할
+
+Servlet <- 관계 맺음 -> JSP
+Spring Controller <- 관계 맺음 -> JSP
+
+스프링의 기본 구조
+
+모든 요청을 FrontController 인 DispatcherServlet가 받아 해당 경로인 bean을 찾아서 
+해당 클래스나 메서드를 불러오고 Model에 넘겨줄 데이터들을 추가하고 보낸다
+
+- com.test.web.controller > "Ex02Controller.java"
+- "com.test.web.repository" > "SpringDAO.java"(C)
+- views > "ex02.jsp"
+- 의존 주입(XML 사용)
+
+- com.test.web.controller > "Ex03Controller.java"
+- views > "ex03.jsp"
+- 컨트롤러 구현 > 어노테이션
+
+- com.test.web.controller > "Ex04Controller.java"
+- views > "ex04_1.jsp"
+		> "ex04_2.jsp"
+- 다중 주소 매핑
+
+- com.test.web.controller > "Ex05Controller.java"
+- views > "ex05.jsp"
+		> "ex05ok.jsp"
+- GET/POST 매핑, 매개변수 받기
+
+- com.test.web.controller > "Ex06Controller.java"
+- views > "ex06.jsp"
+- 요청 메서드의 반환 타입 종류
+
+- com.test.web.controller > "Ex07Controller.java"
+- views > "ex07.jsp"
+- 
+
+- 원래 하던 패턴
+Controller > DAO
+- Controller 가 요청을 받으면 DB 작업을 하기위해 DAO에 넘겨주고
+	DB 작업을 한 것을 받아오면 Controller에서 마지막으로 처리하고 사용자에게 응답을 해줌
+
+- 세분화된 패턴
+Controller > Service > DAO
+> 프로젝트의 규모가 커지면 Controller의 일이 너무 많아지므로 하위 중간 객체를 둔다
+- Controller의 일이 너무 많아지면 관리하기 어려우므로 중간에 Service 객체한테 일을 위임한다.
 

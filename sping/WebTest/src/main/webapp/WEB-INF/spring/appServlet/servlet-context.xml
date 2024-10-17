@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- 클래스에 @Controller를 사용할 수 있게 하는 선언  -->
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<annotation-driven />
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<resources mapping="/resources/**" location="/resources/" />
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+	<!-- 
+		모든 곳에서 controller를 찾게 되면 너무 범위가 넓으므로 범위를 지정해준다 
+		처음에 지정해줬던 top level package가 기본적으로 scan component로 선언된다
+		scan 대상이 아닌 것은 어떻게 해도 스캔할 수 없다 > scan 대상이 되도록 선언해주면 됨
+		아이콘에 S자가 안 붙어있으면 Spring 관리하에 있는 Bean이 아니기 때문에 우리가 스프링에서 활용할 수 없다
+	 -->	
+	<context:component-scan base-package="com.test.web" />
+	<context:component-scan base-package="com.test.member" />
+	
+	<!-- 컨트롤러의 가상주소 > 컨트롤러를 스프링 빈으로 선언 -->
+	<beans:bean class="com.test.web.controller.Ex01Controller" name="/ex01.do"></beans:bean>
+	<beans:bean class="com.test.web.controller.Ex02Controller" name="/ex02.do">
+		<!-- 
+		<beans:constructor-arg>
+			한번 쓰고 말거라면 직접 기술
+			<beans:bean class="com.test.web.repository.SpringDAO"></beans:bean>
+		</beans:constructor-arg>
+		 -->
+		<beans:constructor-arg ref="dao"></beans:constructor-arg>
+	</beans:bean>
+	
+	<beans:bean class="com.test.web.repository.SpringDAO" id="dao"></beans:bean>
+	
+</beans:beans>

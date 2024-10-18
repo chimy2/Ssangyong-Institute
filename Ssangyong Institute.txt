@@ -1,6 +1,6 @@
 Ssangyong Institute
 
-스프링 기본구조, 컨트롤러 구현, 다중 주소 매핑, GET/POST 매핑
+어노테이션을 사용한 의존 주입, db 연결, DBCP, MyBatis
 
 원격 접속 > 클라이언트 툴
 SSH 클라이언트 툴 > 원격 컴퓨터 접속

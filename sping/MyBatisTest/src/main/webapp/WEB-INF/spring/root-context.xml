@@ -47,6 +47,7 @@
 		<property name="mapperLocations" value="classpath*:mapper/*.xml"></property>
 		<!-- classpath*:mapper/*.xml > 모든 소스 폴더 밑의 mapper폴더의 xml을 불러옴 -->
 		
+		<property name="configLocation" value="classpath:config/mybatis-config.xml"></property>
 	</bean>
 	
 	<!-- 

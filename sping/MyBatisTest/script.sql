@@ -32,3 +32,7 @@ insert into tblAddress values (seqAddress.nextVal, '낙타', 5, '서울시 강�
 insert into tblAddress values (seqAddress.nextVal, '독수리', 3, '서울시 강북구 미아동', 'm');
 
 select * from tblAddress;
+
+update tblAddress set age = 5, address = '서울시 강남구 대치동', gender = 'f' where seq = 10;
+
+commit;

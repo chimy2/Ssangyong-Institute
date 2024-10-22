@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	<!-- 특정 레이아웃을 가지는 페이지 1장 -->
+	<!-- <definition name="test" template="/WEB-INF/views/layout/test.jsp">
+		template에 attribute 주입, 주입하지 않으면(선언하지 않으면) 조각페이지를 사용할 수 없음
+		조각 페이지(attribute) 선언
+		<put-attribute name="menu" value="/WEB-INF/views/inc/main_menu.jsp"></put-attribute>
+	</definition> -->
+	
+	<!-- member > info -->
+	<!-- 
+	<definition name="info" template="/WEB-INF/views/layout/member.jsp">
+		<put-attribute name="main_menu" value="/WEB-INF/views/inc/main_menu.jsp"></put-attribute>
+		<put-attribute name="member_menu" value="/WEB-INF/views/inc/member_menu.jsp"></put-attribute>
+		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/member/info.jsp"></put-attribute>
+	</definition>
+	 -->
+	
+	<!-- member > history -->
+	<!-- 
+	<definition name="history" template="/WEB-INF/views/layout/member.jsp">
+		<put-attribute name="main_menu" value="/WEB-INF/views/inc/main_menu.jsp"></put-attribute>
+		<put-attribute name="member_menu" value="/WEB-INF/views/inc/member_menu.jsp"></put-attribute>
+		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/member/history.jsp"></put-attribute>
+	</definition>
+	 -->
+	
+	<!-- member > favorite -->
+	<!-- 
+	<definition name="favorite" template="/WEB-INF/views/layout/member.jsp">
+		<put-attribute name="main_menu" value="/WEB-INF/views/inc/main_menu.jsp"></put-attribute>
+		<put-attribute name="member_menu" value="/WEB-INF/views/inc/member_menu.jsp"></put-attribute>
+		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/member/favorite.jsp"></put-attribute>
+	</definition>
+	 -->
+	
+	<!-- admin > log -->
+	<!-- 
+	<definition name="log" template="/WEB-INF/views/layout/admin.jsp">
+		<put-attribute name="main_menu" value="/WEB-INF/views/inc/main_menu.jsp"></put-attribute>
+		<put-attribute name="admin_menu" value="/WEB-INF/views/inc/admin_menu.jsp"></put-attribute>
+		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/admin/log.jsp"></put-attribute>
+	</definition>
+	 -->
+	
+	<!-- admin > setting -->
+	<!-- 
+	<definition name="setting" template="/WEB-INF/views/layout/admin.jsp">
+		<put-attribute name="main_menu" value="/WEB-INF/views/inc/main_menu.jsp"></put-attribute>
+		<put-attribute name="admin_menu" value="/WEB-INF/views/inc/admin_menu.jsp"></put-attribute>
+		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/admin/setting.jsp"></put-attribute>
+	</definition>
+	 -->
+	
+	<!-- info & history & favorite -->
+	<!-- 
+	{1} > 첫번째 와일드 카드
+	<definition name="member.*" template="/WEB-INF/views/layout/member.jsp">
+		<put-attribute name="main_menu" value="/WEB-INF/views/inc/main_menu.jsp"></put-attribute>
+		<put-attribute name="member_menu" value="/WEB-INF/views/inc/member_menu.jsp"></put-attribute>
+		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/member/{1}.jsp"></put-attribute>
+	</definition>
+	 -->
+	
+	<!-- log & setting -->
+	<!-- 
+	<definition name="admin.*" template="/WEB-INF/views/layout/admin.jsp">
+		<put-attribute name="main_menu" value="/WEB-INF/views/inc/main_menu.jsp"></put-attribute>
+		<put-attribute name="admin_menu" value="/WEB-INF/views/inc/admin_menu.jsp"></put-attribute>
+		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/admin/{1}.jsp"></put-attribute>
+	</definition>
+	 -->
+	 
+	<!-- member & admin -->
+	<definition name="*.*" template="/WEB-INF/views/layout/layout.jsp">
+		<put-attribute name="main_menu" value="/WEB-INF/views/inc/main_menu.jsp"></put-attribute>
+		<put-attribute name="sub_menu" value="/WEB-INF/views/inc/{1}_menu.jsp"></put-attribute>
+		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"></put-attribute>
+	</definition>
+	
+	<!-- 
+		index.do
+		지금 name은 index로 패턴이 *.*이 아니기 때문에
+		definition을 하나 더 만들어 주던가 *.* 패턴으로 통일시켜야 하는데 
+		시작 페이지는 보조메뉴가 없음
+			> 그래서 만들어줌		
+		
+		틀이 조금이라도 바뀌면 레이아웃을 다시 만들어야 하기 때문에
+			보통 definition 당 레이아웃을 만듦
+		
+		적은애가 많은애를 잡아먹음
+		구체적인 이름의 definition을 더 상위에 생성해야 함
+	 -->
+	 <definition name="*" template="/WEB-INF/views/layout/index.jsp">
+		<put-attribute name="main_menu" value="/WEB-INF/views/inc/main_menu.jsp"></put-attribute>
+		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/{1}.jsp"></put-attribute>
+	</definition>
+</tiles-definitions>

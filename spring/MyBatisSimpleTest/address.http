@@ -1,0 +1,7 @@
+
+GET http://localhost:8090/mybatis/address?seq=1 
+
+###
+
+GET http://localhost:8090/mybatis/address
+Content-Type: application/json

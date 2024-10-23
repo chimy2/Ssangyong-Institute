@@ -1349,4 +1349,714 @@ TilesTest
 
 - webapp > resources > "files"
 
+
+2024년 10월 23일
+
+Spring AOP
+- MVC + 어노테이션
+
+1. 새 프로젝트
+- New > Spring Legacy Project
+- Project name: "AOPTest"
+- Templates: Spring MVC Project
+- Enter a top-level-package: "com.test.aop"
+
+2. 스프링/자바 버전 변경하기
+
+3. 서블릿/JSP 버전 변경하기
+
+4. aop 의존성 추가
+- pom.xml
+		<!-- AOP -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>{org.aspectj-version}</version>
+		</dependency>        
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>{org.aspectj-version}</version>
+		</dependency>   
+5. AOP 설정
+-servlet-context.xml
+	- 네임스페이스에서 aop 추가
+		<aop:aspectj-autoproxy />
+
+파일 
+- "com.test.aop.controller" > "AOPController.java"
+- "com.test.aop.dao" > "AOPDAO.java"
+- "com.test.aop.dto" > "AOPDTO.java"
+- views > "list.jsp"
+		> "add.jsp"
+		> "view.jsp"
+
+- "com.test.aop.aspect" > "Logger.java"
+
+REST API or RESTful API
+
+1. 새 프로젝트
+- New > Spring Legacy Project
+- Project name: "RESTfulTest"
+- Templates: Spring MVC Project
+- Enter a top-level-package: "com.test.rest"
+
+2. 스프링/자바 버전 변경하기
+- pom.xml
+	- 기존 코드1
+	<properties>
+		<java-version>1.6</java-version>	> 변경
+		<org.springframework-version>3.1.1.RELEASE</org.springframework-version>	> 변경
+		<org.aspectj-version>1.6.10</org.aspectj-version>
+		<org.slf4j-version>1.6.6</org.slf4j-version>
+	</properties>
+	- 수정 코드1
+	<properties>
+		<java-version>11</java-version>
+		<org.springframework-version>5.0.7.RELEASE</org.springframework-version>
+		<org.aspectj-version>1.6.10</org.aspectj-version>
+		<org.slf4j-version>1.6.6</org.slf4j-version>
+	</properties>
+
+	- 기존 코드2
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <source>1.6</source>	> 변경
+                    <target>1.6</target>	> 변경
+                    <compilerArgument>-Xlint:all</compilerArgument>
+                    <showWarnings>true</showWarnings>
+                    <showDeprecation>true</showDeprecation>
+                </configuration>
+            </plugin>
+	- 수정 코드2
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                    <compilerArgument>-Xlint:all</compilerArgument>
+                    <showWarnings>true</showWarnings>
+                    <showDeprecation>true</showDeprecation>
+                </configuration>
+            </plugin>
+- 패키지 탐색기 > 우클릭 > Properties > Project Facets > Java > 11
+
+3. 서블릿/JSP 버전 변경하기
+- pom.xml
+	- 기존코드
+		<!-- Servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>	> 변경
+			<version>2.5</version>	> 변경
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>	> 변경
+			<version>2.1</version>	> 변경
+			<scope>provided</scope>
+		</dependency>
+	- 수정코드
+		<!-- Servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.3.3</version>
+			<scope>provided</scope>
+		</dependency>
+
+4. JUnit
+- pom.xml
+	- 기존코드
+		<!-- Test -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.7</version>	> 변경
+			<scope>test</scope>
+		</dependency>  
+	- 수정코드
+		<!-- Test -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>    
+
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+		<!-- junit이 있지만 스프링과 원할하게 연동하기 위해 테스트 가능 -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-test</artifactId>
+		    <version>${org.springframework-version}</version>
+		    <!-- <scope>test</scope>
+			 test할 때만 사용한다는 표시인데 
+			org.springframework.test 임포트가 안돼서 삭제-->
+		</dependency>
+
+5. lombok 추가
+- pom.xml 
+	- https://mvnrepository.com/artifact/org.projectlombok/lombok/1.18.34
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.34</version>
+			<scope>provided</scope>
+		</dependency>
+
+6. MyBatis 추가
+- pom.xml 
+		<!-- mybatis -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.5.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>1.3.2</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+
++ ojdbc도 필요한데 저작권 문제로 maven repository에서 못가져오기 때문에 파일을 직접 등록해야함
+
+프로젝트 우클릭 > Properties
+
+1. Java Build Path 
+	> Libraries > Classpath 선택 > Add External JARs 클릭
+		- ojdbc가 있는 경로로가서 jar 선택
+		- C:\class\dev\ojdbc6.jar
+
+2. Deployment Assembly
+	> Add > Java Build Path Entries 선택 > Next > ojdbc6.jar 선택 
+
+7. 인코딩 필터 등록
+- webapp > WEB-INF > web.xml 에 추가
+
+	<!-- 데이터 인코딩 -->
+	<filter>
+		<filter-name>encoding</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>		
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encoding</filter-name>
+		<!-- <url-pattern>/</url-pattern> -->
+		<servlet-name>appServlet</servlet-name>
+	</filter-mapping>
+
+8. DB 설정 및 HikariCP 설정 및 MyBatis 설정(데이터베이스 관련 모든 설정)
+- pom.xml
+		<!-- HikariCP -->
+		<dependency>
+			<groupId>com.zaxxer</groupId>
+			<artifactId>HikariCP</artifactId>
+			<version>2.7.4</version>
+		</dependency>
+
+- root-context.xml
+	- <bean> x 4개
+
+	<!-- HikariCP -->
+	<bean class="com.zaxxer.hikari.HikariConfig" id="hikariConfig">
+		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
+		<property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@localhost:1521:xe"></property>
+		
+		<property name="username" value="spring"></property>
+		<property name="password" value="java1234"></property>
+	</bean>
 	
+	<bean class="com.zaxxer.hikari.HikariDataSource" id="dataSource">
+		<constructor-arg ref="hikariConfig"></constructor-arg>
+	</bean>
+	
+	<!-- 
+		MyBatis
+		
+		SqlSessionFactoryBean
+		- Connection (관리하는) 역할
+	 -->
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sessionFactory">
+		<!-- <property name="setMethod이름" ref="hikaricp아이디"></property> -->
+		<property name="dataSource" ref="dataSource"></property>
+		
+		<property name="mapperLocations" value="classpath*:mapper/*.xml"></property>
+		<!-- classpath*:mapper/*.xml > 모든 소스 폴더 밑의 mapper폴더의 xml을 불러옴 -->
+		
+		<property name="configLocation" value="classpath:config/mybatis-config.xml"></property>
+	</bean>
+	
+	<!-- 
+		JDBC > Statement(***) + ResultSet 역할
+	 -->
+	<bean class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sessionFactory"></constructor-arg>
+	</bean>
+
+- src/main/resources > "mapper" > "rest.xml"
+				> "config" > "mybatis-config.xml"
+
+9. Log4j 설정
+	9.1 pom.xml 의존성 추가
+		- 기존 log4j 의존성을 지우고 코드 추가
+		- 기존 코드
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.15</version>
+			<exclusions>
+				<exclusion>
+					<groupId>javax.mail</groupId>
+					<artifactId>mail</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>javax.jms</groupId>
+					<artifactId>jms</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.jdmk</groupId>
+					<artifactId>jmxtools</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.jmx</groupId>
+					<artifactId>jmxri</artifactId>
+				</exclusion>
+			</exclusions>
+			<scope>runtime</scope>
+		</dependency>
+
+		- 수정코드
+		<!-- Log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<!-- 로그를 남기기 위한 log4j -->
+		<dependency>
+			<groupId>org.bgee.log4jdbc-log4j2</groupId>
+			<artifactId>log4jdbc-log4j2-jdbc4</artifactId>
+			<version>1.16</version>
+		</dependency>
+
+	9.2 src/main/resources > log4jdbc.log4j2.properties
+		- log4jdbc.spylogdelegator.name=net.sf.log4jdbc.log.slf4j.Slf4jSpyLogDelegator
+		- jdbc 연동용으로 추가
+
+	9.3 src/main/resources >log4j.xml 일부 수정
+	
+	9.4 root-context.xml > 일부 수정
+
+10. 단위 테스트
+- src/test/java > com.test.rest > "DBTest.java"
+
+REST API
+- REST, Representational State Transfer
+- 자원(문서(페이지), 이미지, 동영상, 데이터 등)을 이름(***)으로 구분하여 해당 자원의 상태(***)를 주고 받는 모든 것을 의미한다.
+- HTTP URI를 통해서 자원을 명시하고, HTTP Method를 통해서 자원에 대한 CRUD를 처리하는 방식
+- 기존에 생성하는 URL의 형식(X) > REST 규칙을 만족하는 URL을 생성(O)
+- 표준이 없다.
+
+URI 작성
+1. 기존 방식
+- GET		http://localhost/member/list.do 			목록보기
+- POST	http://localhost/member/add.do 		추가하기
+- POST	http://localhost/member/edit.do?seq=1	수정하기
+- POST	http://localhost/member/del.do?seq=1		삭제하기
+- GET		http://localhost/member/list.do?w=단어	검색하기
+
+2. REST 방식
+- GET		http://localhsot/member				목록보기
+- POST	http://localhsot/member				추가하기
+- PUT		http://localhsot/member/1			수정하기
+- DELETE	http://localhsot/member/1			삭제하기
+- GET		http://localhsot/member/단어			검색하기
+
+REST API 설계 규칙
+1. URI에서 자원을 표시한다.
+2. URI에 동사를 표시하지 않는다.(행동 표기 X)
+3. HTTP Method를 사용해서 행동을 표시한다.
+	a. GET		> 리소스 요청
+	b. POST	> 데이터 전달 + 서버측 생성
+	c. PUT		> 데이터 전달 + 서버측 수정(전체수정)
+	d. PATCH	> 데이터 전달 + 서버측 수정(부분수정)
+	e. DELETE	> 리소스 삭제
+
+4. URI + HTTP Method = 완성
+5. 구분자는 '/'를 사용한다.
+6. URI의 마지막에 '/'를 적지 않는다.
+	- 서버는 종류에 따라 마지막 슬래시를 붙이느냐 안붙이느냐에 따라 구분하기도 하고 안하기도 함
+		> 혼란을 줄 수 있음
+
+7. '-' > 사용 가능
+8. '_' > 사용 비권장(가독성 때문에)
+9. 확장자를 사용하지 않는다.
+10. REST API의 요청 결과는 순수 데이터만 반환한다.
+	- 기본 방식: 페이지 반환 > 브라우저 출력
+	- REST 방식: 순수 데이터 반환 > 다양한 클라이언트들이 각자의 목적과 상황에 맞게 데이터를 사용
+	- Ajax 방식 == REST 방식
+
+URL vs URI
+- 개념적으로 URI가 URL의 상위 개념인데
+점점 시간이 지나면서 URI와 URL의 개념이 같아짐
+
+REST API 구현 > 서비스
+1. Ajax 용
+2. CSR 서버용 > Angular, Vue, React
+3. OpenAPI 용
+
+파일
+- RESTfulTest > "script.sql"
+- "com.test.rest.controller" > "AddressController.java"
+- "com.test.rest.dao" > "AddressDAO.java"
+- "com.test.rest.dto" > "AddressDTO.java"
+
+- views > 생성X
+
+REST Client
+- CURL
+	- cmd > curl -XGET http://localhost:8090/rest/m1.do
+- Postman
+	- https://www.postman.com/downloads/?utm_source=postman-home
+	- 다운로드 후 설치
+- Insomnia
+
+------------------------------------------------------------------------------
+개발문서를 자동으로 만들어주는 툴: 자바 도큐먼트
+기본적으로 jdk가 제공하는 기능도 있음
+오류가 안나는 프로젝트를 우클릭 export > java > javadoc
+
+Spring + MyBatis
+1. XML Mapper(지금까지의 수업내용)
+2. Interface Mapper
+
+1. 새 프로젝트
+- New > Spring Legacy Project
+- Project name: "MyBatisSimpleTest"
+- Templates: Spring MVC Project
+- Enter a top-level-package: "com.test.mybatis"
+
+2. 스프링/자바 버전 변경하기
+- pom.xml
+	- 기존 코드1
+	<properties>
+		<java-version>1.6</java-version>	> 변경
+		<org.springframework-version>3.1.1.RELEASE</org.springframework-version>	> 변경
+		<org.aspectj-version>1.6.10</org.aspectj-version>
+		<org.slf4j-version>1.6.6</org.slf4j-version>
+	</properties>
+	- 수정 코드1
+	<properties>
+		<java-version>11</java-version>
+		<org.springframework-version>5.0.7.RELEASE</org.springframework-version>
+		<org.aspectj-version>1.6.10</org.aspectj-version>
+		<org.slf4j-version>1.6.6</org.slf4j-version>
+	</properties>
+
+	- 기존 코드2
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <source>1.6</source>	> 변경
+                    <target>1.6</target>	> 변경
+                    <compilerArgument>-Xlint:all</compilerArgument>
+                    <showWarnings>true</showWarnings>
+                    <showDeprecation>true</showDeprecation>
+                </configuration>
+            </plugin>
+	- 수정 코드2
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                    <compilerArgument>-Xlint:all</compilerArgument>
+                    <showWarnings>true</showWarnings>
+                    <showDeprecation>true</showDeprecation>
+                </configuration>
+            </plugin>
+- 패키지 탐색기 > 우클릭 > Properties > Project Facets > Java > 11
+
+3. 서블릿/JSP 버전 변경하기
+- pom.xml
+	- 기존코드
+		<!-- Servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>	> 변경
+			<version>2.5</version>	> 변경
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>	> 변경
+			<version>2.1</version>	> 변경
+			<scope>provided</scope>
+		</dependency>
+	- 수정코드
+		<!-- Servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.3.3</version>
+			<scope>provided</scope>
+		</dependency>
+
+4. JUnit
+- pom.xml
+	- 기존코드
+		<!-- Test -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.7</version>	> 변경
+			<scope>test</scope>
+		</dependency>  
+	- 수정코드
+		<!-- Test -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>    
+
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+		<!-- junit이 있지만 스프링과 원할하게 연동하기 위해 테스트 가능 -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-test</artifactId>
+		    <version>${org.springframework-version}</version>
+		    <!-- <scope>test</scope>
+			 test할 때만 사용한다는 표시인데 
+			org.springframework.test 임포트가 안돼서 삭제-->
+		</dependency>
+
+5. lombok 추가
+- pom.xml 
+	- https://mvnrepository.com/artifact/org.projectlombok/lombok/1.18.34
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.34</version>
+			<scope>provided</scope>
+		</dependency>
+
+6. MyBatis 추가
+- pom.xml 
+		<!-- mybatis -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.5.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>1.3.2</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+
++ ojdbc도 필요한데 저작권 문제로 maven repository에서 못가져오기 때문에 파일을 직접 등록해야함
+
+프로젝트 우클릭 > Properties
+
+1. Java Build Path 
+	> Libraries > Classpath 선택 > Add External JARs 클릭
+		- ojdbc가 있는 경로로가서 jar 선택
+		- C:\class\dev\ojdbc6.jar
+
+2. Deployment Assembly
+	> Add > Java Build Path Entries 선택 > Next > ojdbc6.jar 선택 
+
+7. 인코딩 필터 등록
+- webapp > WEB-INF > web.xml 에 추가
+
+	<!-- 데이터 인코딩 -->
+	<filter>
+		<filter-name>encoding</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>		
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encoding</filter-name>
+		<!-- <url-pattern>/</url-pattern> -->
+		<servlet-name>appServlet</servlet-name>
+	</filter-mapping>
+
+8. DB 설정 및 HikariCP 설정 및 MyBatis 설정(데이터베이스 관련 모든 설정)
+- pom.xml
+		<!-- HikariCP -->
+		<dependency>
+			<groupId>com.zaxxer</groupId>
+			<artifactId>HikariCP</artifactId>
+			<version>2.7.4</version>
+		</dependency>
+
+- root-context.xml
+	- <bean> x 4개
+
+	<!-- HikariCP -->
+	<bean class="com.zaxxer.hikari.HikariConfig" id="hikariConfig">
+		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
+		<property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@localhost:1521:xe"></property>
+		
+		<property name="username" value="spring"></property>
+		<property name="password" value="java1234"></property>
+	</bean>
+	
+	<bean class="com.zaxxer.hikari.HikariDataSource" id="dataSource">
+		<constructor-arg ref="hikariConfig"></constructor-arg>
+	</bean>
+	
+	<!-- 
+		MyBatis
+		
+		SqlSessionFactoryBean
+		- Connection (관리하는) 역할
+	 -->
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sessionFactory">
+		<!-- <property name="setMethod이름" ref="hikaricp아이디"></property> -->
+		<property name="dataSource" ref="dataSource"></property>
+		
+		<property name="mapperLocations" value="classpath*:mapper/*.xml"></property>
+		<!-- classpath*:mapper/*.xml > 모든 소스 폴더 밑의 mapper폴더의 xml을 불러옴 -->
+		
+		<property name="configLocation" value="classpath:config/mybatis-config.xml"></property>
+	</bean>
+	
+	<!-- 
+		JDBC > Statement(***) + ResultSet 역할
+	 -->
+	<bean class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sessionFactory"></constructor-arg>
+	</bean>
+
+- src/main/resources > "mapper" > "rest.xml"
+				> "config" > "mybatis-config.xml"
+
+9. Log4j 설정
+	9.1 pom.xml 의존성 추가
+		- 기존 log4j 의존성을 지우고 코드 추가
+		- 기존 코드
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.15</version>
+			<exclusions>
+				<exclusion>
+					<groupId>javax.mail</groupId>
+					<artifactId>mail</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>javax.jms</groupId>
+					<artifactId>jms</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.jdmk</groupId>
+					<artifactId>jmxtools</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.jmx</groupId>
+					<artifactId>jmxri</artifactId>
+				</exclusion>
+			</exclusions>
+			<scope>runtime</scope>
+		</dependency>
+
+		- 수정코드
+		<!-- Log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<!-- 로그를 남기기 위한 log4j -->
+		<dependency>
+			<groupId>org.bgee.log4jdbc-log4j2</groupId>
+			<artifactId>log4jdbc-log4j2-jdbc4</artifactId>
+			<version>1.16</version>
+		</dependency>
+
+	9.2 src/main/resources > log4jdbc.log4j2.properties
+		- log4jdbc.spylogdelegator.name=net.sf.log4jdbc.log.slf4j.Slf4jSpyLogDelegator
+		- jdbc 연동용으로 추가
+
+	9.3 src/main/resources >log4j.xml 일부 수정
+	
+	9.4 root-context.xml > 일부 수정
+
+
+10. 인터페이스 매퍼 설정
+- root-context.xml
+	- namespace: mybatis 추가 후 코드 추가
+
+	<!-- 인터페이스 매퍼 -->
+	<mybatis-spring:scan base-package="com.test.mybatis.mapper"/>
+	
+
+11. 단위 테스트
+- src/test/java > com.test.rest > "DBTest.java"
+
+파일
+- "com.test.mybatis.controller" > "AddressController.java"
+- "com.test.mybatis.dao" > "AddressDAO.java"
+- "com.test.mybatis.dto" > "AddressDTO.java"
+
+- "com.test.mybatis.mapper" > "AddressMapper.java"(I)
+
+- src/main/resources > "com" > "test" > "mybatis" > "mapper" > "AddressMapper.xml"
+> 인터페이스 명과 동일한 이름으로 만드는것을 권장)
+

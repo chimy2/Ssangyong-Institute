@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 매퍼 파일 > SQL을 작성하는 역할 -->
+
+<mapper namespace="rest">
+
+	<select id="test" resultType="String">
+		select sysdate from dual
+	</select>
+	
+	<select id="m1" resultType="dto">
+		select * from tblAddress where seq = 1
+	</select>
+	
+	<insert id="add">
+		insert into tblAddress
+			values (seqAddress.nextVal, #{name}, #{age},#{address}, #{gender})
+	</insert>
+	
+	<select id="list" resultType="dto">
+		select * from tblAddress order by seq desc
+	</select>
+	
+	<update id="edit">
+		update tblAddress set name = #{name}, age = #{age}, address = #{address},
+			gender = #{gender} where seq = #{seq}
+	</update>
+	
+	<delete id="del">
+		delete from tblAddress where seq = #{seq}
+	</delete>
+	
+	<select id="search" resultType="dto">
+		select * from tblAddress where address like '%' || #{word} || '%'
+		
+	</select>
+</mapper>

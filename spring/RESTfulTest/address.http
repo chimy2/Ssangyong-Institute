@@ -1,0 +1,36 @@
+
+POST http://localhost:8090/rest/address
+Content-Type: application/json
+
+{
+    "name": "하하하",
+    "age": 25,
+    "address": "서울시 강남구 역삼동",
+    "gender": "m"
+}
+
+###
+
+GET http://localhost:8090/rest/address
+
+###
+
+PUT http://localhost:8090/rest/address/20
+Content-Type: application/json
+
+{
+    "name": "호호호",
+    "age": 22,
+    "address": "경기도 용인시",
+    "gender": "f"
+}
+
+###
+
+DELETE http://localhost:8090/rest/address/20
+
+###
+
+GET http://localhost:8090/rest/address/이집트
+
+###

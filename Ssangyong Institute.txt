@@ -1,6 +1,6 @@
 Ssangyong Institute
 
-web socket
+spring security
 
 원격 접속 > 클라이언트 툴
 SSH 클라이언트 툴 > 원격 컴퓨터 접속
@@ -136,3 +136,5 @@ Spring Boot > 1~2주 > 2~3주
 3. 화면 설계서 or 스토리 보드
 4. erd
 5. 구현
+
+다음주 스프링 끝 시큐리티 기반 게시판 만들고 끝

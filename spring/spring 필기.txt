@@ -1194,6 +1194,7 @@ TilesTest
 			<groupId>org.apache.tiles</groupId>
 			<artifactId>tiles-servlet</artifactId>
 			<version>3.0.8</version>
+		</dependency>
 
 5. Tiles 설정
 - servlet-context.xml
@@ -3213,3 +3214,157 @@ CustomUserDetailsService.java
 			> "del.jsp"
 - SpringBoardTest > "script.sql"
 - src/test/java > com.test.spring > "BoardTest.java"
+
+
+2024년 10월 29일
+
+Java Document(javadoc.exe)
+- 전체 프로젝트 문서
+- 핵심 업무( 웹페이지 5~6장) 아주 충실 300% + 나머지 업무(X)
+내가 만든 도움말을 java api 만큼
+
+RestAPI 문서
+- Ajax 응답용
+- 개발 문서(핵심 업무 위주)
+- 스프링 > Swagger
+
+
+1. 새 프로젝트 > Ajax 응답용 Project + Swagger작업
+- New > Spring Legacy Project
+- Project name: "AjaxServer"
+- Templates: Spring MVC Project
+- Enter a topLevelPackage: "com.test.ajax"
+
+1. 새 프로젝트 > Spring MVC Project
+- New > Spring Legacy Project
+- Project name: "ProjectServer"
+- Templates: Spring MVC Project
+- Enter a topLevelPackage: "com.test.project"
+
+
+두 프로젝트다 2,3.4 세팅
+2. 스프링/자바 버전 변경하기
+- pom.xml
+	- 기존 코드1
+	<properties>
+		<java-version>1.6</java-version>	> 변경
+		<org.springframework-version>3.1.1.RELEASE</org.springframework-version>	> 변경
+		<org.aspectj-version>1.6.10</org.aspectj-version>
+		<org.slf4j-version>1.6.6</org.slf4j-version>
+	</properties>
+	- 수정 코드1
+	<properties>
+		<java-version>11</java-version>
+		<org.springframework-version>5.0.7.RELEASE</org.springframework-version>
+		<org.aspectj-version>1.6.10</org.aspectj-version>
+		<org.slf4j-version>1.6.6</org.slf4j-version>
+	</properties>
+
+	- 기존 코드2
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <source>1.6</source>	> 변경
+                    <target>1.6</target>	> 변경
+                    <compilerArgument>-Xlint:all</compilerArgument>
+                    <showWarnings>true</showWarnings>
+                    <showDeprecation>true</showDeprecation>
+                </configuration>
+            </plugin>
+	- 수정 코드2
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                    <compilerArgument>-Xlint:all</compilerArgument>
+                    <showWarnings>true</showWarnings>
+                    <showDeprecation>true</showDeprecation>
+                </configuration>
+            </plugin>
+- 패키지 탐색기 > 우클릭 > Properties > Project Facets > Java > 11
+
+3. 서블릿/JSP 버전 변경하기
+- pom.xml
+	- 기존코드
+		<!-- Servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>	> 변경
+			<version>2.5</version>	> 변경
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>	> 변경
+			<version>2.1</version>	> 변경
+			<scope>provided</scope>
+		</dependency>
+	- 수정코드
+		<!-- Servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.3.3</version>
+			<scope>provided</scope>
+		</dependency>
+
+4. lombok 추가
+- pom.xml 
+	- https://mvnrepository.com/artifact/org.projectlombok/lombok/1.18.34
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.34</version>
+			<scope>provided</scope>
+		</dependency>
+
+AjaxServer + Swagger 구축
+1. 의존성 추가
+- pom.xml
+		<!-- Swagger 구축 -->
+		<!-- springfox vs springdog 비교 -->     
+		<dependency>
+		    <groupId>io.springfox</groupId>
+		    <artifactId>springfox-swagger2</artifactId>
+		    <version>2.9.2</version>
+		</dependency>
+		<dependency>
+		    <groupId>io.springfox</groupId>
+		    <artifactId>springfox-swagger-ui</artifactId>
+		    <version>2.9.2</version>
+		</dependency>
+
+2. 설정 파일
+- "com.test.ajax.config" > "SwaggerConfig.java"
+
+3. servlet-context.xml
+
+4. 실행
+- http://localhost:8090/ajax/swagger-ui.html
+
+5. 도움말 작성
+
+
+
+
+
+
+
+
+
+
+
+
+

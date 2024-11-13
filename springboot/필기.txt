@@ -1,3 +1,5 @@
+2024년 11월 12일
+
 JDK 버전 변경
 - JDK 11, 8 		> Spring Legacy Project(최대 지원 버전이 JDK 11임)
 			> Spring Boot 2.X
@@ -152,7 +154,189 @@ Spring DevTools 미사용
 3. 정적 자원 코드 변경
 	- 자동 반영 됨(툴마다 다름)
 
+Spring DevTools 사용
+1. Java 코드 변경
+	- 자동 반영 됨
+2. JSP 코드 변경
+	- 자동 반영 됨
+3. 정적 자원 코드 변경
+	- 자동 반영 됨
+
+스프링 부트, Spring Boot
+- 스프링 부트는 자바 기반의 웹 애플리케이션과 마이크로서비스를 빠르고 쉽게 만들 수 있는 프레임워크이다.
+
+스프링 부트 특징
+1. 자동 구성(Auto Configuration): 프로젝트에 필요한 의존성 or 설정을 자동으로 구성한다.
+2. 독립 실행형 애플리케이션: 내장 서버를 포함해서 별도의 외부 환경 설치없이 실행 가능
+3. 스프링 스타터: 미리 구성된 의존성 세트로 제공
+4. 복잡한 XML 설정 불필요
+	- application.yml
+	- 기존.xml > Java 설정으로 교체
+5. 보일러플레이트 코드 최소화
+6. 내장 서버 지원 > Tomcat, Jetty, Undertow 등 > 제우스
+
+스프링 설정 방식
+1. xml 방식
+2. 어노테이션 방식
+3. 자바 방식
+
+1,2 > 기존 방식
+2,3 > 부트 방식
+
+서버 아키텍처의 종류 
+1. 모놀리식 아키텍처(Monolithic)
+	- 하나의 애플리케이션으로 모든 기능을 개발
+	- 초기 개발 빠름
+	- 배포가 쉽다
+	- 유지 보수가 어렵다
+	- 기능 변화에 대응 힘듦
+	- 기술 스택 선택의 자유도가 낮다
+	- 부분 장애 > 전체 장애
+
+2. 마이크로서비스 아키텍처(MSA)
+	- 작은 독립적인 서비스를 각각 구현한 뒤 서로 API를 통해서 통신하도록 구성
+	- 초기 개발 비용 필요
+	- 배포가 힘들다
+	- 유지 보수가 쉽다
+	- 기능 변화에 유연
+	- 기술 스택 선택의 자유도가 높다
+	- 부분 장애 > 여파 적음
+
+Spring Boot + MyBatis
+
+프로젝트 생성
+- Name: "boot-mybatis"
+- Type: Gradle(Groovy)
+- Packaging: Jar
+- Java Version: 21
+- Language: Java
+- Group: "com.test"
+- Artifact: "boot-mybatis"
+- Package: "com.test.mybatis"
+- Dependencies: 
+	- Spring Web
+	- Lombok
+	- Spring DevTools
+	- Oracle Driver(JDBC)
+	- MyBatis Framework
+- Finish
+
+ JSP 설정
+- build.gradle
+	- 의존성 추가
+
+	//JSP
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+	implementation 'jakarta.servlet:jakarta.servlet-api'
+	implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api'
+	implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl'
+	
+	//Lombok 테스트 환경
+	testImplementation 'org.projectlombok:lombok'
+	testAnnotationProcessor 'org.projectlombok:lombok'
+
+JDBC 설정
+- application.yml
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521/xe
+    username: hr
+    password: java1234
+
+2024년 11월 13일
+
+spring boot 계정 생성 
+
+tblAddress 생성 + 데이터 추가(50명)
+
+스프링 부트 > HikariCP(기본적 사용)
+
+DB 관련 단위 테스트
+- src/test/java > com.test.mybatis > "DatasourceTest.java"
+- src/test/java > com.test.mybatis > "MapperTest.java"
+
+MyBatis 관련 작업
+- "com.test.mybatis.mapper" > "AddressMapper.java"(I)
+- src/main/resources > "com" > "test" > "mybatis" > "mapper" > "AddressMapper.xml"
+
+업무 페이지
+- tblAddress > list.do
+- "com.tset.mybatis.controller" > "AddresssController.jaa"
+- "com.test.mybatis.service" > "AddressService.java"
+- "com.tset.mybatis.domain" > "AddressDTO.java"
+
+- views > "list.jsp"
 
 
 
- 
+Spring Boot + MyBatis + Thymeleaf
+
+Spring Boot
+- Thymeleaf, Mustache, Groovy, Freemarker, Velocity 등...
+
+Thymeleaf
+- 템플릿 엔진 > 뷰 페이지를 만든느 프로그램 or 환경
+- 자바 웹 or 독립형 환경 > HTML, JavaScript, CSS등을 처리하는 서버 사이드 템플릿 엔진입니다.
+
+프로젝트 생성 
+- Name: "boot-thymeleaf" ***
+- Type: Gradle(Groovy)
+- Packaging: Jar
+- Java Version: 21
+- Language: Java
+- Group: "com.test"
+- Artifact: "boot-thymeleaf"
+- Package: "com.test.thymeleaf"
+- Dependencies: 
+	- Spring Web
+	- Lombok
+	- Spring DevTools
+	- Oracle Driver(JDBC)
+	- MyBatis Framework
+	- Thymeleaf
+- Finish
+
+들어가봐요 여기
+https://www.thymeleaf.org/
+
+설정
+- application.yml
+	- 데이터 소스 설정
+	- 서버 포트 변경
+	- 타임리프 캐시 비활성화
+
+파일 생성
+- "com.test.thymeleaf.controller" > "ThymeleafController.java"
+- "com.test.thymeleaf.mapper" > "AddressMapper.java" (I)
+- "com.test.thymeleaf.domain" > "AddressDTO.java"
+
+- src/main/resources > templates > "result.html"
+
+- src/main/resoucres/mapper > "AddressMapper.xml"
+
+여기 왜 다운로드 버튼이 있냐?
+아 다운로드 하라고 자 여기 보시면 내추럴 템플릿 해가지고
+미리 말하면 JSP랑 하는 일이 좀 겹쳐있는 애에요 JSP랑 약간 좀 근볹방식이 달라서 약간 조 뭐라고 해야하지 그 안쪽을 들여다보면 여러가지 안쪼ㅛㅗㄱ까지 사람들이 아니에요
+겉에서 사용하느 사람들 입장엣 봤으르 때는 대신하는 입장이라고 보시면 됩니다 알았죠 그래서 요런식으 ㅣ표현을 씁니다. ㅜㅇ리가 jstl 이나 EL 을 ㅏㄱ지고 하는 ㅏㅈㄱ업을
+thymeleaf를 통해서 대신 할 작정입니다. 우리는 사용자 정의 태그를 만들었낳아요 방금ㅎ했던거 웬걸? 닫아버럈네 이거 말하는거줘 근데 ㅅ해보시면 근본적으로 비슷비슷한데
+그게 더 사람을 애를 멕여 약간식 특이한 점이 있어서 그런 점이 살짝 정신 좀 차려주시ㄴ면 나머지는 뭄난무난 하게 갌 ㅟ잇ㅇ르 것ㄱ탕ㄴ데 ㅝㅁㄴ가 바인딩 된 것 같지
+요건 컨트롤러가 바인딩된 거 넘겨줫겠지 여긴 딱ㄱ봐도 뭐야 포문 돌리는 거잖아 하나씩 객체애 출력하는 추측할 수 있는 구문들이라고볼 수 있죠 그래서 JSP를 요걸로 한 번 바꿧
+ㅇ기존에 한 번 했던 쥬ㅏㄱ업을 어떻게 유사하게 혹은 다르게 보통 타임리프 정의를 찾아보자면 자바 환경에 오ㅜ베이나 혹은은 몰라 나 지금 적혀있느ㅜㄴ거 적은거야
+아니 근데 이게 딱 맞는 말이ㅇ야 여기서 가장 중요한 키워드가 템플릿 에진이란 뜻이에요 이게 부를 만든느 프로그램 정도? 이런 애들이 있습니다 ㅠ근데 거ㅡ런 ㄱ애들이 타이리프만 있는게
+아니라고ㅛ 했죠7 오리는 탐리픟ㄹ를 붙여서 쓰럭지만 ㅠㅂ	ㅜ라우정모 ㅈ열서어
+근데 오웬걸? 비스무릐해요 ㄱ직므은 타임리프 위주로 쓰고 있어서 다시 보진않으면 ㅠ기억이 가물가물해요 기능차이가 많이 ㄷ없어서 다시 보면 결로은 ㄷ타임리프 집ㅈㅇㅎ샤에ㅛ 건데 회사 간스데
+머스태치를 쓴다 ㅠ그ㅜㅁ바ㅑㅇ 적응하럭엔묘 ㅗㅇ재ㅕ서던 타임리프라는게 기존에 jsp작업을 어떻게 대체하는집 종루별로 족므식 ㅠ마알아보갑시다 ㅜㄱㄴ데 기본젓ㄹ저응ㄹ
+아무것도 안 해놨어 시간을 어제로 대될려서 우리 프ㅜ롲게트 만 이상탤 부파ㅣㄴㅇ리ㅐ 웬ㄱ러?
+웬골? db설정 세팅 마무리 안했다고
+첫뻦ㄴ재가 다르거나
+빌드 그래이들은 이제 건들일게 업어 ㅠ왜? JSP는 잊 안 슬 거니까 그냐 여깃 ㅔ팅 
+기본적으ㄹ 된걸로 끝이에요 얘는 패스하고 ㄷ야믈 파일 이제!!
+"
+개발 중에는 그러면 안되지!!! 이거 강력새로고침!!! 
+xml도 미리 만들어놓읍시다 근데 그건 세팅리라기보다 바로 파링ㄹ로 ㄱ들억바시다ㅣ 서비스 중간 계층을 만드는게 좋긴한데 커트롤 ㄴㅁ어직접 ㅠ데이터 접ㅁ근 하기로
+여기에 jsp 역할을 하는 페이지를 만들건데 확장자는 뭐라고할까 html이에요 순수한 html의 포맷의 페이지 짓이잖아 근데 ㄷ게는 좀 다르거든 JSP 근본적5으로 html처럼 보이지만
+사실 서블릿이엇짢아요 클래스였낳아요 근데 얘는 진짜 html이에요 거ㅡㄴ데 위에다가 추가적인 구므ㅜㄴ이 얹혀져있는 근데 익숙하지 ㅇ낳아요 보면서 느껴보ㅛㅏ요ㅕ 자
+일단 ㅈ준빔눌은 이검섬녀 됐고 ㅈ나 만드세요
+자 그럼 인제 우리 기본페이지가 호ㅇ출을 ㄷ어ㄸ허게 하는지 세팅을 먼저 해봅시다 자 우선 디비는 조금 있다 건드리고요 컨트롤럴를 통해서 템플릿 ㅎ페이지를 ㅎ출하는걸 먼저해보자요
+그냥 리절트라고 해서 호출만 확ㅇ니하고 다음부터 넘ㅂ버링 아귀 찮아
+이번에는 안 만들거야 이제는 옛날 받ㅅ긍르 쓸거야

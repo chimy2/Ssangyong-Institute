@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: boot-thymeleaf
+
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521/xe
+    username: springboot
+    password: java1234
+
+  thymeleaf:
+    cache: false
+# 개발 중에는 그러면 안되지!!! 이거 강력새로고침!!!
+# 조금 더 짜증을 덜 내기 위한 옵션
+# 개발할 때는 새로고침 되야지!!!
+# 서비스할때는 리소스 아껴야지!!!
+# 이러면 야믈은 다 건드린겨~
+# 보화: 이거 참 야물단지네~
+
+
+
+  # JSP 설정 뷰 리솔버 이제 필요없어!!!
+  # 참고로 thymeleaf 관련 설정은 할게 없어!!!
+  #mvc:
+    #view:
+      #prefix: /WEB-INF/views/
+      #suffix: .jsp
+
+server:
+  port: 8090
+
+
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+# 이러면 옛날 방식과 그 다음 방식을 혼합한 방식
+# 이렇게 매퍼 위치는 따로 지정해주는게 편해~
+# 아까 처럼 com > test > 밑에 만드는 것보단 편해~
+

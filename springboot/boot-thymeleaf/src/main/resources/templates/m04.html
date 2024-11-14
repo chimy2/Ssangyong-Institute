@@ -11,6 +11,7 @@
 
         <!-- 
             *** 타임리프의 표현식들은 th:속성과 같이 사용한다.
+            *** HTML의 대부분의 속성은 th: 속성으로 제공된다.
           -->
         <div>${txt}</div>
         <div th:text="${txt}"></div>
@@ -35,5 +36,26 @@
         <div th:style="'background-color: ' + ${color}">Box</div>
         <div th:style="|background-color: ${color}|">Box</div>
 		<div th:text="test"></div>
+		
+		<hr>
+		
+		<div><input type="checkbox" id="cb1" th:checked="${flag}"> 체크함</div>
+		<!-- <div><input type="checkbox" <c:if test="${flag}" />> 체크함</div> -->
+		<div><input type="checkbox"> 성인</div>
+        
+        <select>
+            <option value="red">red</option>
+            <option value="yellow">yellow</option>
+            <option value="blue">blue</option>
+            <option value="cornflowerblue">cornflowerblue</option>
+            <option value="orange">orange</option>
+        </select>
+
+        <script>
+            <c:if test="${flag}">
+                $('#cb1').prop('checked', true);
+            </c:if>
+
+        </script>
     </body>
 </html>

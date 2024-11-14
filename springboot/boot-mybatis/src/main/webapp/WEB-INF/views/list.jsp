@@ -21,13 +21,13 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 <th>성별</th>
             </tr>
             <c:forEach items="${list}" var="dto">
-                <td>
+                <tr>
                     <td>${dto.seq}</td>
                     <td>${dto.name}</td>
                     <td>${dto.age}</td>
                     <td>${dto.address}</td>
                     <td>${dto.gender}</td>
-                </td>
+                </tr>
             </c:forEach>
         </table>
     </body>

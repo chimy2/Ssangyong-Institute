@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>result_dto.html</title>
+        <link rel="stylesheet" href="http://bit.ly/3WJ5ilK" />
+        <style></style>
+    </head>
+    <body>
+        <!-- result_dto.html -->
+        <h1>RESULT DTO</h1>
+
+        <table>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>나이</th>
+                <th>주소</th>
+                <th>성별</th>
+            </tr>
+            <tr th:object="${address}">
+                <td>[[*{seq}]]</td>
+                <td>[[*{name}]]</td>
+                <td>[[*{age}]]</td>
+                <td>[[*{address}]]</td>
+                <td>[[*{gender}]]</td>
+            </tr>
+        </table>
+    </body>
+</html>

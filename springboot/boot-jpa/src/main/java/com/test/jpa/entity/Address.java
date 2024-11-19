@@ -29,6 +29,7 @@ import lombok.ToString;
 @AllArgsConstructor
 //@RequiredArgsConstructor	> final이 붙은 멤버변수만 생성자의 매개변수로 만듦
 public class Address {
+	
 	@Id
 //	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "별칭")
 //	@SequenceGenerator(name="별칭", sequenceName = "seqAddress", allocationSize = 1)
@@ -81,4 +82,16 @@ public class Address {
 			.gender(this.getGender())
 			.build();
 	}
+	
+//	*** JAP의 Entity는 MVC에서 흔히 사용하는 DTO는 역할이 다르다.
+//	- DTO > 계층간의 데이터 전달
+//		- setName() 호출 > 전달할 데이터 추가 or 변경
+//	- Entity > DB 조작 O, 계층간의 데이터 전달 X
+//		- setName() 호출 > DB 데이터 추가 or 수정, 단순하게 데이터 전달 X
+
+//	주소 수정 Setter
+	public void updateAddress(String address) {
+		this.address = address;
+	}
+	
 }

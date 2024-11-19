@@ -13,6 +13,8 @@ import com.test.thymeleaf.domain.AddressDTO;
 import com.test.thymeleaf.mapper.AddressMapper;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 @RequiredArgsConstructor
@@ -183,6 +185,11 @@ public class ThymeleafController {
 		model.addAttribute("list", list);
 		
 		return "m08";
+	}
+	
+	@GetMapping("/m09.do")
+	public String m09(Model model) {
+		return "m09";
 	}
 	
 }

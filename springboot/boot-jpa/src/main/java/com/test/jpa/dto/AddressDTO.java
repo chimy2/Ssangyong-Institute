@@ -2,11 +2,15 @@ package com.test.jpa.dto;
 
 import com.test.jpa.entity.Address;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class AddressDTO {
 
 	private Long seq;
@@ -14,6 +18,8 @@ public class AddressDTO {
 	private Integer age;
 	private String address;
 	private String gender;
+	
+	private Integer birthYear;
 	
 //	본인(DTO) > (변환) > 엔티티
 	public static Address toEntity(AddressDTO dto) {

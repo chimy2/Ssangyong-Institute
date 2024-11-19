@@ -8,6 +8,51 @@
     </head>
     <body>
         <!-- result_list.html -->
-        <h1>RESULT LIST</h1>
+        <h1>Result List</h1>
+
+        <table th:if="${list != null}">
+            <tr th:if="${list instanceof T(java.util.ArrayList)}">
+                <th colspan="5">결과: <span th:text="${list.size()}"></span></th>
+            </tr>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>나이</th>
+                <th>주소</th>
+                <th>성별</th>
+            </tr>
+            <tr th:each="dto : ${list}">
+                <td>[[${dto.seq}]]</td>
+                <td>[[${dto.name}]]</td>
+                <td>[[${dto.age}]], [[${dto.birthYear}]]</td>
+                <td>[[${dto.address}]]</td>
+                <td>[[${dto.gender}]]</td> 
+            </tr>
+        </table>
+
+        <div th:utext="${sb}"></div>
+        
+        <table th:if="${list2 != null}">
+            <tr>
+                <th colspan="5">결과: <span th:text="${list2.size()}"></span></th>
+            </tr>
+            <tr>
+                <th>이름</th>
+                <th>나이</th>
+            </tr>
+            <tr th:each="dto : ${list2}">
+                <td>[[${dto.name}]]</td>
+                <td>[[${dto.age}]]</td>
+            </tr>
+        </table>
+
+        <table th:if="${names != null}">
+            <tr>
+                <th>이름</th>
+            </tr>
+            <tr th:each="name : ${names}">
+                <td th:text="${name}"></td>
+            </tr>
+        </table>
     </body>
 </html>

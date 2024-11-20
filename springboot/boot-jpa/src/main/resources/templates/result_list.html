@@ -24,7 +24,7 @@
             <tr th:each="dto : ${list}">
                 <td>[[${dto.seq}]]</td>
                 <td>[[${dto.name}]]</td>
-                <td>[[${dto.age}]], [[${dto.birthYear}]]</td>
+                <td>[[${dto.age}]]</td>
                 <td>[[${dto.address}]]</td>
                 <td>[[${dto.gender}]]</td> 
             </tr>
@@ -52,6 +52,87 @@
             </tr>
             <tr th:each="name : ${names}">
                 <td th:text="${name}"></td>
+            </tr>
+        </table>
+
+        <table th:if="${tlist != null}">
+            <tr>
+                <th>이름</th>
+                <th>나이</th>
+                <th>성별</th>
+            </tr>
+            <tr th:each="tuple : ${tlist}">
+                <td>[[${tuple.get(0, String)}]]</td>
+                <td>[[${tuple.get(1, Integer)}]]</td>
+                <td>[[${tuple.get(2, String)}]]</td> 
+            </tr>
+        </table>
+
+        <table th:if="${dlist != null}">
+            <tr>
+                <th>이름</th>
+                <th>주소</th>
+            </tr>
+            <tr th:each="dto : ${dlist}">
+                <td>[[${dto.name}]]</td>
+                <td>[[${dto.address}]]</td>
+            </tr>
+        </table>
+        
+        <table th:if="${glist != null}">
+            <tr>
+                <th>성별</th>
+                <th>인원수</th>
+                <th>평균나이</th>
+            </tr>
+            <tr th:each="tuple : ${glist}">
+                <td>[[${tuple.get(0, String)}]]</td>
+                <td>[[${tuple.get(1, Integer)}]]</td>
+                <td>[[${tuple.get(2, Double)}]]</td>
+            </tr>
+        </table>
+        
+        <table th:if="${joinInfoList != null}">
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>나이</th>
+                <th>주소</th>
+                <th>성별</th>
+                <th>학교</th>
+                <th>지역</th>
+            </tr>
+            <tr th:each="info : ${joinInfoList}">
+                <td>[[${info.address.seq}]]</td>
+                <td>[[${info.address.name}]]</td>
+                <td>[[${info.address.age}]]</td>
+                <td>[[${info.address.address}]]</td>
+                <td>[[${info.address.gender}]]</td>
+                <td>[[${info.school}]]</td>
+                <td>[[${info.country}]]</td>
+            </tr>
+        </table>
+        
+        <table th:if="${joinAddressList != null}">
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>나이</th>
+                <th>주소</th>
+                <th>성별</th>
+                <th>메모</th>
+            </tr>
+            <tr th:each="address : ${joinAddressList}">
+                <td>[[${address.seq}]]</td>
+                <td>[[${address.name}]]</td>
+                <td>[[${address.age}]]</td>
+                <td>[[${address.address}]]</td>
+                <td>[[${address.gender}]]</td>
+                <td>
+                	<ul>
+                        <li th:each="memo : ${address.memo}">[[${memo.memo}]]</li>
+                    </ul>
+                </td>
             </tr>
         </table>
     </body>

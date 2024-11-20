@@ -499,3 +499,40 @@ Tomcat(JSP)
 - VO, BO, DAO, DTO
 - VO: 데이터의 원본을 저장하는 객체, 내용 수정X, 읽기 전용 객체
 - 싱글톤
+
+2024년 11월 20일
+Query DSL 세팅
+1. build.gradle 추가
+	- 의존성 추가
+	//Query DSL
+    implementation 'com.querydsl:querydsl-jpa:5.0.0:jakarta'
+    annotationProcessor "com.querydsl:querydsl-apt:${dependencyManagement.importedProperties['querydsl.version']}:jakarta"
+    annotationProcessor "jakarta.annotation:jakarta.annotation-api"
+    annotationProcessor "jakarta.persistence:jakarta.persistence-api"
+
+	- 기타 추가
+// Querydsl 설정부
+def generated = 'src/main/generated'
+
+// querydsl QClass 파일 생성 위치를 지정
+tasks.withType(JavaCompile) {
+	options.getGeneratedSourceOutputDirectory().set(file(generated))
+}
+
+// java source set 에 querydsl QClass 위치 추가
+sourceSets {
+	main.java.srcDirs += [ generated ]
+}
+
+// gradle clean 시에 QClass 디렉토리 삭제
+clean {
+	delete file(generated)
+}
+
+2. Gradle tasks
+	- views에서 창을 열기
+	1. build를 할 프로젝트 열기 > build > clean 우클릭 > Run Gradle Tasks
+	2. build 우클릭 > Run Gradle Tasks
+
+- com.test.jpa.entity > "Info.java"
+						> "Memo.java"

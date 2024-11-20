@@ -21,6 +21,11 @@ public class AddressDTO {
 	
 	private Integer birthYear;
 	
+	public AddressDTO(String name, String address) {
+		this.name = name;
+		this.address = address;
+	}
+	
 //	본인(DTO) > (변환) > 엔티티
 	public static Address toEntity(AddressDTO dto) {
 		return Address.builder()

@@ -1,6 +1,6 @@
 spring:
   application:
-    name: =boot-security
+    name: boot-security
 
   datasource:
     driver-class-name: oracle.jdbc.OracleDriver

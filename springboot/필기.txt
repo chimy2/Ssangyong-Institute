@@ -542,7 +542,7 @@ clean {
 프로젝트 생성 
 - Name: "boot-security"
 - Artifact: "boot-security"
-- Package: "com.test.security
+- Package: "com.test.security"
 - Dependencies: 
 	- Spring Web
 	- Lombok
@@ -618,12 +618,212 @@ DB 기반의 로그인 구현
 - com.test.security.service > "CustomUserDetailsService.java"
 - com.test.security.dto > "CustomUserDetails.java"
 
+2024년 11월 22일
+
+프로젝트 생성 
+- Name: "boot-oauth2"
+- Artifact: "boot-oauth2"
+- Package: "com.test.oauth2"
+- Dependencies: 
+	- Spring Web
+	- Lombok
+	- Spring Boot DevTools
+	- Oracle Driver(JDBC)
+	- Thymeleaf
+	- Spring Data JPA
+	- Spring Security
+	- Oauth2 Client
+- Finish
+
+- 그사이에 스프링 부트 기본 지원 버전이 올라감 3.4.0으로
+	> 다시 3.3.5로 낮춰줌
+
+Spring Boot Security + Oauth2 Client
+
+OAuth 2.0
+- 인증 프로토콜(규칙)
+- 제 3자 애플리케이션(구글, 네이버, 카카오 등)이 사용자를 대신해서 HTTP 서비스(우리 사이트)를 이용할 수 있는 권한을 부여(로그인)하는 기능을 제공한다.
+- 소셜 로그인
+
+구현 목표
+- 구글, 네이버 인증 사용
+- 로컬 > 약간의 추가 정보 저장
+- 허가 구현
+
+데이터베이스 의존성 주석처리
+- jpa
+- ojdbc
+
+기본 컨트롤러
+- "com.test.oauth2.controller" > "MainController.java"
+- templates > "index.html"	//범용
+			> "my.html"		//회원 전용
+			> "inc" > "header.html"
+
+시큐리티 설정
+- "com.test.oauth2.config" > "SecurityConfig.java"
+
+OAuth2 서비스 처리
+- 인증 토큰 받은 뒤 리소스 서버로부터 개인 정보를 받는다.
+- "com.test.oauth2.service" > "CustomOAuth2UserService.java"
+
+- "com.test.oauth2.dto" > "OAuth2Response.java"(I)
+						> "NaverResponse.java"(C)
+						> "GoogleResponse.java"(C)
+						// > "KakaoResponse.java"
+						// > "FaceBootResponse.java"
 
 
+응답 데이터로 로그인 완료하기
+- com.test.oauth2.dto > "UserDTO.java"				>>> 추가 개인 정보
+						> "CustomOAuth2User.java"	>>> CustomUserDetails
+
+유저 정보 > DB 저장
+- "com.test.oauth2.entity" > "UserEntity.java"
+- "com.test.oauth2.repository" > "UserRepository.java"(I)
 
 
+2024년 11월 25일
 
+1. Spring Boot
+2. JPA
+3. MySQL 8.X
+	- local
+	- AWS
+4. 배포
 
+MySQL, MariaDB <> PostreSQL
 
+root/java1234
+
+프로젝트 생성 
+- Name: "boot-mysql"
+- Artifact: "boot-mysql"
+- Package: "com.test.mysql"
+- Dependencies: 
+	- Spring Web
+	- Lombok
+	- Spring Boot DevTools
+	- Thymeleaf
+	- Spring Data JPA
+	- MySQL Driver(***)
+- Finish
+
+MySQL 설정
+- 연결 설정(application.yml)
+
+파일
+- "com.test.mysql.controller" > "TestController.java"
+- "com.test.mysql.entity" > "Member.java"
+- "com.test.mysql.repository" > "MemberRepository.java"
+- templates > "index.html"
+
+/users/ubuntu > boot-mysql-0.0.1-SNAPSHOT.jar 업로드
+
+터미널 
+$ java -jar boot-mysql-0.0.1-SNAPSHOT.jar
+
+http://3.35.9.202/list
+
+벡그라운드 실행 > 터미널을 종료해도 사이트는 계속 실행 중..
+$ java -jar boot-mysql-0.0.1-SNAPSHOT.jar
+
+백그라운드 실행 중인 사이트를 멈추는 방법
+$ ps -ef | grep java
+
+$ kill -9 프로세스ID
+
+2024년 11월 26일
+
+build > clean 
+	> 기존에 있는 QClass 지우기
+
+면접 질문
+Oracle
+1. RDBMS > 관계형 데이터베이스
+2. 다른 DB 사용 유무? NoSQL?(Redis)
+3. DDL, DML, DCL
+4. select > 각 절의 역할 + 실행순서
+5. 프로시저
+6. 트리거
+7. 인덱스 처리 유무? 어떤 업무
+8. 모델링(ERD, 정규화 개념)
+9. 트랜잭션
+
+Servlet/JSP
+- 서블릿 생명 주기 > 그림 
+	> 사용자가 어떤 페이지를 요청 했을떄 톰캣에의해 컴파일 > 메모리에 인스턴스로 올라와서 doget, dopost
+
+스프링
+- 스프링 빈 생명 주기 > 그림
+- DI 정의 or 개념 > 의존 주입 관련 질문
+- IoC 
+- AOP
+- Servlet/JSP MVC vs Spring MVC
+	(유연함)	(틀 자체를 범용화시켜서 제공, 자동화가 잘되어 있음) requestparameter, view, .. 생산성이 높음, 자잘한 코드의 작성이 줄어들음
+- Spring Security > 구현 경험?
+- 스프링 빈 만드는 방법 > XML, annotation, 자바 방식
+
+MyBatis
+- JDBC와 비교
+	> 반복되는 코드 제거
+	> SQL을 XML 파일로 독립적 관리
+	> 동적 쿼리 지원
+
+스프링 부트
+- 스프링 vs 스프링 부트
+	> 자동 설정(Auto Configuration)
+	> 의존성 > 개별 + 스프링 부트 스타터
+	> 보일러플레이트 코드
+	> 초기 설정 비용 절감 + 추가 생성 비용 절감
+
+filter와 interceptor의 차이
+- 요청과 응답 시 개입되는 중간 관문
+- filter > 톰캣의 요청 응답에 반응(톰캣 기반 동작) > 외부 필터
+- interceptor > 스프링의 요청 응답에 반응(스프링 기반 동작) > 스프링 내부 필터
+	> 역할은 같은데 구역이 다름
+
+DI 방법(3가지)과 차이
+- 필드 주입: final 선언 불가능 > 변수이기 때문에 사용자 개입이 불가능
+- 생성자 주입: final 선언 가능 > 사용 > 처음 1회 호출 가능, 재호출(X) > 사용
+- Setter 주입: final 선언 불가능 > 재호출 가능 > 의도파악/관리가 힘듦
+
+카프카
+- Apache Kafka
+- 파이프 라인, 스트리밍 분석, 데이터 통합 및 미션 크리티컬 애플리케이션을 위해 설계된 고성능 분산 이벤트 스트리밍 서버이다
+- 메시지 서비스
+- 링크드인에서 만듦
+
+기존 데이터 시스템
+- Peer to peer > P2P
+- 하나의 컴퓨터와 또 하나의 컴퓨터가 서로 메시지(데이터)를 주고 받을 때
+- 데이터 주고 받는 노드간의 연결 지속
+	- 동기 통신(실시간 연결) > WebSocket
+- REST API > GraphQL
+- Web WebSocket
+- SOAP
+- RTC
+
+기존 방식의 문제점
+- 네트워크 장애 > 데이터 손실
+- 수신측 환경 장애 > 데이터 손실
+- 1:1 관계 > 송신측 or 수신측 변화 > 대응 비용 발생
+
+Message Broker 장단점
+장점
+	- 보내는 쪽과 받는 쪽의 관계 > 유연해짐
+	- 데이터 유실을 방지 > 안전하게 메시지를 전달
+	- 노드간의 독립성 유지 > MSA(마이크로 서비스 아키텍처) <> 모놀리식
+	- Zero Copy > 하드디스크에서 중간단계를 다 스킵하고 바로 네트워크 랜카드로 갈 수 있는 기술을 개발함 
+	- 통신 프로토콜 > TCP/IP를 개량한 자체 프로토콜 개발
+
+카프카 권장사항
+- 메시지 브로커 > PC 1대(CPU 16코어, 32GB, 128GB) X 3개(하나의 집합을 만드는데 필요한 개수)
+- 프로듀서 1대, 컨슈머 2~3대
+- 도커 > 도커 컴포즈
+
+카프카 API
+- 프로듀서 > 데이터 보낼 때 사용코드
+- 컨슈머 > 데이터 가져올 떄 사용코드
 
 

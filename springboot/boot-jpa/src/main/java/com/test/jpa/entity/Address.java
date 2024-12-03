@@ -10,6 +10,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -99,7 +100,8 @@ public class Address {
 	}
 	
 //	자식 참조
-//	private Info info;
+	@OneToOne(mappedBy = "address")
+	private Info info;
 	
 //	1:N 관계
 	@OneToMany

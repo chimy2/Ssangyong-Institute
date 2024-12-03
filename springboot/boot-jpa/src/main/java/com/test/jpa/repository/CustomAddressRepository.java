@@ -17,6 +17,7 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import com.test.jpa.dto.AddressDTO;
 import com.test.jpa.entity.Address;
 import com.test.jpa.entity.Info;
+import com.test.jpa.entity.Memo;
 import com.test.jpa.entity.QAddress;
 
 import lombok.RequiredArgsConstructor;
@@ -206,7 +207,7 @@ public class CustomAddressRepository {
 	public List<Address> findAllJoinAddress() {
 		return jpaQueryFactory.selectFrom(address1)
 //				.join(address1.memo, memo1)	//inner join
-				.leftJoin(address1.memo, memo1)	//left join
+//				.leftJoin(address1.memo, memo1)	//left join
 				.fetch();
 	}
 
@@ -256,6 +257,26 @@ public class CustomAddressRepository {
 //				.where(address1.gender.eq(gender), address1.age.eq(age))
 				.where(gender != null ? address1.gender.eq(gender) : null,
 						age != null ? address1.age.eq(age) : null)
+				.fetch();
+	}
+
+	public List<Address> m38() {
+		
+//		단방향 매핑
+//		- 부모 > 자식
+		
+		return jpaQueryFactory
+				.selectFrom(address1)
+//				.join(참조, 자식)
+				.join(address1.memo, memo1)
+				.fetch();
+	}
+
+	public List<Memo> m39() {
+
+		return jpaQueryFactory
+				.selectFrom(memo1)	//자식 엔티티
+				.join(memo1.address, address1)	//부모엔티티
 				.fetch();
 	}
 	

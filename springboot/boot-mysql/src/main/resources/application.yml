@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: boot-mysql
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mysql?serverTimeZone=Asia/Seoul
+    username: springboot
+    password: java1234
+
+  thymeleaf:
+    cache: false
+  
+  # JPA 설정
+  jpa:
+    database: mysql
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+#     원래 sql 네이밍 규칙에 맞게 스네이크 표기법으로 생성해주는데
+#     네이밍을 개발자가 원하는대로 지어주기 위해서 추가해주는 설정
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true  # 자동 생성된 SQL을 로그에 출력
+    properties:
+      hibernate:
+        format-sql: true # SQL을 이쁘게
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+server:
+  port: 8090

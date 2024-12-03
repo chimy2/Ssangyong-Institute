@@ -148,5 +148,46 @@
                 <td>[[${tuple.get(2, Double)}]]</td>
             </tr>
         </table>
+        
+        <table th:if="${m38list != null}">
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>나이</th>
+                <th>주소</th>
+                <th>성별</th>
+                <th>메모</th>
+            </tr>
+            <tr th:each="address : ${m38list}">
+                <td>[[${address.seq}]]</td>
+                <td>[[${address.name}]]</td>
+                <td>[[${address.age}]]</td>
+                <td>[[${address.address}]]</td>
+                <td>[[${address.gender}]]</td>
+                <td>
+                	<ul>
+                        <li th:each="memo : ${address.memo}">[[${memo.memo}]]</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <table th:if="${m39list != null}">
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>나이</th>
+                <th>주소</th>
+                <th>성별</th>
+                <th>메모</th>
+            <tr th:each="memo : ${m39list}">
+                <td>[[${memo.address.seq}]]</td>
+                <td>[[${memo.address.name}]]</td>
+                <td>[[${memo.address.age}]]</td>
+                <td>[[${memo.address.address}]]</td>
+                <td>[[${memo.address.gender}]]</td>
+                <td>[[${memo.memo}]]</td>
+            </tr>
+        </table>
     </body>
 </html>

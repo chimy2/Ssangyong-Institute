@@ -48,7 +48,7 @@ public class QInfo extends EntityPathBase<Info> {
 
     public QInfo(Class<? extends Info> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
-        this.address = inits.isInitialized("address") ? new QAddress(forProperty("address")) : null;
+        this.address = inits.isInitialized("address") ? new QAddress(forProperty("address"), inits.get("address")) : null;
     }
 
 }

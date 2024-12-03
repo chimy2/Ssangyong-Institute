@@ -18,6 +18,7 @@ import com.test.jpa.dto.AddressDTO;
 import com.test.jpa.entity.Address;
 import com.test.jpa.entity.AddressNameAgeMapping;
 import com.test.jpa.entity.Info;
+import com.test.jpa.entity.Memo;
 import com.test.jpa.repository.AddressRepository;
 import com.test.jpa.repository.CustomAddressRepository;
 
@@ -62,7 +63,7 @@ public class AddressController {
 //		2. 엔티티 객체 생성
 //		3. 리포지토리 객체 + 엔티티 객체 전달 > insert 요청
 		
-		Address address = new Address(null, "꿀꿀이", 5, "서울특별시 강남구 역삼동 한돈빌딩", "m", null); 
+		Address address = new Address(null, "꿀꿀이", 5, "서울특별시 강남구 역삼동 한돈빌딩", "m", null, null); 
 		
 		Address result = addressRepository.save(address);
 
@@ -809,6 +810,15 @@ public class AddressController {
 	@GetMapping("/m38.do")
 	public String m38(Model model) {
 		
+//		단방향 매핑 vs 양방향 매핑
+		
+//		단방향 매핑
+//		- 부모 > 자식
+//		- LIst<부모>
+		
+		List<Address> m38List = customAddressRepository.m38();
+		
+		model.addAttribute("m38list", m38List);
 		
 		return "result_list";
 	}
@@ -816,6 +826,13 @@ public class AddressController {
 	@GetMapping("/m39.do")
 	public String m39(Model model) {
 		
+//		단방향 매핑
+//		- 자식 > 부모
+//		- List<부모>
+		
+		List<Memo> m39list = customAddressRepository.m39();
+		
+		model.addAttribute("m39list", m39list);
 		
 		return "result_list";
 	}
